@@ -1,0 +1,13 @@
+.home-footer {
+    padding: 24px 48px;
+    color: rgba(242, 242, 242, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1000;
+    text-transform: uppercase;
+}
