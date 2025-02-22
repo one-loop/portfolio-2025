@@ -186,7 +186,7 @@ a:hover {
 .hamburger {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 13px;
 }
 
 .hamburger .line {
