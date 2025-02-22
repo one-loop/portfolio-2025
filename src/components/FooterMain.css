@@ -1,0 +1,194 @@
+.main-footer {
+    /* width: 100vw; */
+    grid-column: span 4 / 6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 2px solid #23252a;
+    padding: 30px 0px;
+    /* padding: 24px 48px; */
+    color: rgba(242, 242, 242, 0.5);
+    align-items: center;
+    font-size: 12px;
+    position: relative;
+    padding: 48px;
+    z-index: 10; /* Added to ensure footer stays on top */
+}
+
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+    flex: 1;
+}
+
+.footer-left p {
+    font-size: 12px;
+    margin: 0px;
+    line-height: 1em;
+}
+
+.footer-left-profile-text h2 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.footer-left-profile-text h3 {
+    font-weight: 400;
+    font-size: 14px;
+    display: inline;
+}
+
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    flex: 1;
+}
+
+.copyright-statement {
+    margin-left: 72px;
+    margin-top: 64px;
+}
+
+.copyright-statement h2 {
+    font-size: 16px;
+    font-family: 'New Spirit';
+    font-weight: 400;
+    color: #F2F2F2;
+    margin-bottom: 5px;
+}
+
+.footer-left-profile {
+    display: flex;
+}
+
+.footer-left-profile-text {
+    margin: auto;
+}
+
+.footer-left img {
+    width: 48px;
+    height: 48px;
+    margin-right: 24px;
+    border-radius: 100%;
+
+}
+
+.footer-left svg {
+    display: inline;
+}
+
+.footer-left-text h2 {
+    color: #F2F2F2;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.footer-left-text h3 {
+    color: rgba(242, 242, 242, 0.5);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: end;
+    font-size: 14px;
+    flex: 1;
+}
+
+
+.footer-right h3 {
+    color: #f2f2f2;
+    font-family: 'New Spirit';
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.footer-right a {
+    color: rgb(242, 242, 242, 0.5);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-right a:hover {
+    color: #f2f2f2;
+}
+
+.footer-main-links {
+    flex: 1;
+}
+.footer-contact-links {
+    flex: 1;
+}
+
+.footer-right-external-link {
+    /* height: 17px; */
+    /* margin-bottom: 10.5px; */
+}
+
+.footer-right-external-link:hover svg {
+    transform: translate(0%, 0%);
+}
+
+/* Add this rule to update the svg arrow color */
+.footer-right-external-link:hover svg path {
+    fill: #f2f2f2;
+    fill-opacity: 1;
+}
+
+.footer-right-external-link svg {
+    transform: translate(-10%, 10%);
+    transition: transform .24s cubic-bezier(0.25,0.46,0.45,0.94);
+    transitiion: fill-opacity 0.24s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.footer-right a,
+.footer-main-links a,
+.footer-contact-links a,
+.footer-right,
+.footer-left {
+    pointer-events: auto;
+    /* cursor: pointer; */
+}
+
+/* Mobile Screens */
+@media only screen and (max-width: 768px) {
+    .main-footer {
+        flex-direction: column;
+        padding: 26px;
+    }
+
+    .copyright-statement {
+        margin: 0px;
+        position: absolute;
+        bottom: 20px;
+        text-align: center;
+        margin: auto;
+        width: 100vw;
+        right: 0px;
+    }
+
+    .footer-left {
+        width: 100%;
+        margin-bottom: 26px;
+    }
+
+    .footer-right {
+        width: 100%;
+        justify-content: space-evenly;
+        margin-bottom: 65px;
+        margin-left: 150px;
+    }
+}
+
+

@@ -39,6 +39,8 @@ export default class Camera
         this.modes.default = {}
         this.modes.default.instance = this.instance.clone()
         this.modes.default.instance.rotation.reorder('YXZ')
+        // Change the default camera position so it looks from a lower angle
+        // this.modes.default.instance.position.set(100, 100, 100) // adjust values as needed
 
         // Debug
         this.modes.debug = {}
@@ -74,8 +76,9 @@ export default class Camera
         // Update debug orbit controls
         this.modes.debug.orbitControls.update()
 
-        // Apply coordinates
+        // Apply coordinates from the current mode and then adjust the Y position
         this.instance.position.copy(this.modes[this.mode].instance.position)
+        this.instance.position.y += 1.6 // subtract desired offset value
         this.instance.quaternion.copy(this.modes[this.mode].instance.quaternion)
         this.instance.updateMatrixWorld() // To be used in projection
     }

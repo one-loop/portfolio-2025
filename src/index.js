@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Experience from './Experience/Experience.js'
+import { ExperienceProvider } from './context/ExperienceContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ExperienceProvider>
+      <App />
+    </ExperienceProvider>
   </React.StrictMode>
 );
 

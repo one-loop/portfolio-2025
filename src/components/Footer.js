@@ -26,8 +26,9 @@ const Footer = () => {
 
   return (
     <footer className="home-footer">
-      <p className="left-text">All Systems Operational</p>
-      <p className="right-text" id="visitor-location">Last visit from {location}</p>
+      <p className="left-text" id="visitor-location">Last visit from {location}</p>
+      <p className="right-text">Model by Bruno Simon</p>
+
     </footer>
   );
 };

@@ -8,6 +8,8 @@ import TopChair from './TopChair.js'
 import ElgatoLight from './ElgatoLight.js'
 import BouncingLogo from './BouncingLogo.js'
 import Screen from './Screen.js'
+import { gsap } from 'gsap' // Import gsap
+
 
 export default class World
 {
@@ -25,11 +27,13 @@ export default class World
                 this.setBaked()
                 this.setGoogleLeds()
                 this.setLoupedeckButtons()
-                // this.setCoffeeSteam()
+                this.setCoffeeSteam()
                 this.setElgatoLight()
-                this.setBouncingLogo()
+                // this.setBouncingLogo()
                 this.setScreens()
                 this.setTopChair()
+                // Start the animation once the scene is set up
+                // this.animateScene()
             }
         })
     }
@@ -84,6 +88,16 @@ export default class World
     resize()
     {
     }
+
+    // animateScene()
+    // {
+    //     // Use gsap to animate the scene's position
+    //     gsap.to(this.scene.position, {
+    //         y: -10,  // Move the scene down by 2 units (adjust as needed)
+    //         duration: 1.5,  // Animation duration in seconds
+    //         ease: 'power1.out'  // Ease-out effect
+    //     })
+    // }
 
     update()
     {

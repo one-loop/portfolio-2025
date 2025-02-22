@@ -17,10 +17,10 @@ uniform float uLightPcStrength;
 
 varying vec2 vUv;
 
-// #pragma glslify: blend = require(glsl-blend/add);
-// #pragma glslify: blend = require(glsl-blend/lighten);
-// #pragma glslify: blend = require(glsl-blend/normal);
-// #pragma glslify: blend = require(glsl-blend/screen);
+// #pragma glslify: blend = require(glsl-blend/add)
+#pragma glslify: blend = require(glsl-blend/lighten)
+// #pragma glslify: blend = require(glsl-blend/normal)
+// #pragma glslify: blend = require(glsl-blend/screen)
 
 void main()
 {

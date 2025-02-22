@@ -1,10 +1,8 @@
-import StatsJs from 'stats.js'
+import Stats from 'stats.js'  // Change this line to import from node_modules
 
-export default class Stats
-{
-    constructor(_active)
-    {
-        this.instance = new StatsJs()
+export default class StatsHandler {  // Rename the class to avoid naming conflict
+    constructor(_active) {
+        this.instance = new Stats()
         this.instance.showPanel(3)
 
         this.active = false
@@ -36,7 +34,7 @@ export default class Stats
         this.render = {}
         this.render.context = _context
         this.render.extension = this.render.context.getExtension('EXT_disjoint_timer_query_webgl2')
-        this.render.panel = this.instance.addPanel(new StatsJs.Panel('Render (ms)', '#f8f', '#212'))
+        this.render.panel = this.instance.addPanel(new Stats.Panel('Render (ms)', '#f8f', '#212'))
 
         const webGL2 = typeof WebGL2RenderingContext !== 'undefined' && _context instanceof WebGL2RenderingContext
 

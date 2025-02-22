@@ -142,6 +142,49 @@ export default class Baked
             fragmentShader: fragmentShader
         })
 
+        // Set lighting using a piecewise function for nightMix
+        const now = new Date();
+        const hour = now.getHours() + now.getMinutes() / 60;
+        let nightMix = 0;
+        if(hour < 6) // sun is down
+        {
+            nightMix = 1;
+        }
+        else if(hour >= 6 && hour < 7) // sun is rising at 6:00 - 8:00 AM
+        {
+            nightMix = 1 - (hour - 6);
+        }
+        else if(hour >= 7 && hour < 17.5) // sun is up
+        {
+            nightMix = 0;
+        }
+        else if(hour >= 17.5 && hour < 18.5) // sun is setting at 6:30 PM
+        {
+            nightMix = hour - 17.5;
+            // console.log("nightmix:", nightMix)
+        }
+        else // hour >= 20 // sun is down
+        {
+            nightMix = 1;
+        }
+        // console.log(hour);
+        // console.log(nightMix);
+        this.model.material.uniforms.uNightMix.value = nightMix;
+
+        // By default, lights are on
+        this.model.material.uniforms.uLightTvStrength.value = 2;
+        this.model.material.uniforms.uLightDeskStrength.value = 2;
+        this.model.material.uniforms.uLightPcStrength.value = 2;
+
+        // Turn on tv, desk, and pc light strengths after 6:00 PM
+        const currentHour = now.getHours();
+        if(currentHour < 18 && currentHour >= 6)
+        {
+            this.model.material.uniforms.uLightTvStrength.value = 0;
+            this.model.material.uniforms.uLightDeskStrength.value = 0;
+            this.model.material.uniforms.uLightPcStrength.value = 0;
+        }
+
         this.model.mesh.traverse((_child) =>
         {
             if(_child instanceof THREE.Mesh)

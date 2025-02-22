@@ -20,7 +20,8 @@ export default class Navigation
         this.view = {}
 
         this.view.spherical = {}
-        this.view.spherical.value = new THREE.Spherical(30, Math.PI * 0.35, - Math.PI * 0.25)
+        // Update φ from 0.35 to 0.45 for a less steep angle
+        this.view.spherical.value = new THREE.Spherical(30, Math.PI * 0.40, - Math.PI * 0.25)
         // this.view.spherical.value.radius = 5
         this.view.spherical.smoothed = this.view.spherical.value.clone()
         this.view.spherical.smoothing = 0.005
@@ -46,7 +47,7 @@ export default class Navigation
         this.view.drag.previous = {}
         this.view.drag.previous.x = 0
         this.view.drag.previous.y = 0
-        this.view.drag.sensitivity = 1
+        this.view.drag.sensitivity = 2
         this.view.drag.alternative = false
 
         this.view.zoom = {}
@@ -174,6 +175,29 @@ export default class Navigation
         window.addEventListener('wheel', this.view.onWheel, { passive: false })
     }
 
+    // New methods to disable/enable wheel events
+    disableNavigation() {
+        window.removeEventListener('mousewheel', this.view.onWheel, { passive: false });
+        window.removeEventListener('wheel', this.view.onWheel, { passive: false });
+    }
+
+    // allows for scrolling on other pages, and zooming when on main page
+    enableNavigation() {
+        window.addEventListener('mousewheel', this.view.onWheel, { passive: false });
+        window.addEventListener('wheel', this.view.onWheel, { passive: false });
+    }
+
+    // New method to update target element
+    updateTarget(newTarget) {
+        // Remove the mouse event from the old element if needed
+        if (this.targetElement) {
+            this.targetElement.removeEventListener('mousedown', this.view.onMouseDown);
+        }
+        // Update targetElement and rebind event listeners
+        this.targetElement = newTarget;
+        this.targetElement.addEventListener('mousedown', this.view.onMouseDown);
+    }
+
     update()
     {
         /**
@@ -231,7 +255,8 @@ export default class Navigation
         const viewPosition = new THREE.Vector3()
         viewPosition.setFromSpherical(this.view.spherical.smoothed)
         viewPosition.add(this.view.target.smoothed)
-
+        // Apply zoom in factor (multiply position by 0.8 for 1.25x zoom in)
+        viewPosition.multiplyScalar(0.85)
         this.camera.modes.default.instance.position.copy(viewPosition)
         this.camera.modes.default.instance.lookAt(this.view.target.smoothed)
     }

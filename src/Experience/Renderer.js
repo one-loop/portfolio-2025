@@ -84,7 +84,7 @@ export default class Renderer
 
         // const RenderTargetClass = this.config.pixelRatio >= 2 ? THREE.WebGLRenderTarget : THREE.WebGLMultisampleRenderTarget
         // const RenderTargetClass = THREE.WebGLMultisampleRenderTarget // (deprecated)
-        this.renderTarget = new RenderTargetClass(
+        this.renderTarget = new THREE.RenderTarget( // changed from RenderTargetClass() due to issues on bigger screens
             this.config.width,
             this.config.height,
             {

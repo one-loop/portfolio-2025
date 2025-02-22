@@ -3,11 +3,44 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     top: 0px;
     width: 100vw;
     height: 96px;
     padding: 24px 48px; 
+    position: fixed; /* ensure pseudo-element is positioned relative to navbar */
+}
+
+/* Remove the entire .navbar.scrolled block */
+/* .navbar.scrolled {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+} */
+
+/* Remove the blurred pseudo-element */
+/* .navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: none;
+    pointer-events: none;
+    z-index: 1001;
+} */
+
+.nav-wrapper {
+    position: fixed;
+    z-index: -1;
+    height: 100px;
+    width: 100%;
+    inset: 0 0 auto 0;
+    background: #0a0a0acc;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 20%, transparent calc(100% - 20%));
+    mask-image: linear-gradient(to bottom, #000 20%, transparent calc(100% - 20%));
 }
 
 .nav-center {
@@ -23,6 +56,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* position: relative; */
+    flex: 1;
     position: relative;
 }
 
@@ -32,6 +67,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 32px;
+    user-select: none;
 }
 
 a {
@@ -47,18 +83,17 @@ a:hover {
     font-size: 14px;
     text-decoration: none;
     text-shadow: 0 1px 2px rgba(0,0,0,.2),0 2px 4px rgba(0,0,0,.1);
-    position: relative;
+    /* position: relative; */
 }
 
 .nav-glow {
     /* Glow */
-
     position: absolute;
     width: 40px;
     height: 2px;
     bottom: 0px;
     z-index: 1000;
-    left: 40px; /* Home */
+    left: 40px;
 
     background: #F2F2F2;
     box-shadow: 0px -5px 25px 2px #FFFFFF;
@@ -70,33 +105,214 @@ a:hover {
 .nav-left {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
+    justify-content: start;
+    gap: 16px;
+    flex: 1;
 }
+
+.nav-left h3 {
+    text-shadow: 0 1px 2px rgba(0,0,0,.3),0 2px 4px rgba(0,0,0,.2);
+}
+
 
 .nav-left-text h2 {
     color: #F2F2F2;
     font-size: 20px;
     font-weight: 500;
-    margin-bottom: 4px;
+    /* margin-bottom: 4px; */
+    margin-bottom: 0px;
 }
 
 .nav-left-text h3 {
     color: rgba(242, 242, 242, 0.5);
     font-size: 12px;
     font-weight: 500;
+    display: inline;
+}
+
+.nav-left svg {
+    margin: 0px 3px;
 }
 
 .nav-right-link > a {
     font-size: 14px;
     text-decoration: none;
-    text-shadow: 0 1px 2px rgba(0,0,0,.2),0 2px 4px rgba(0,0,0,.1);
+    text-shadow: 0 1px 2px rgba(0,0,0,.3),0 2px 4px rgba(0,0,0,.2);
     margin-right: 4px;
     margin-bottom: 2px;
+    user-select: none;
+}
+
+.nav-right-link svg {
+    transform: translate(-10%, 10%);
+    transition: transform .24s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.nav-right-link:hover svg {
+    transform: translate(0%, 0%);
 }
 
 .nav-right {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     gap: 20px;
+    flex: 1;
+}
+
+.nav-glow {
+    position: absolute;
+    left: 40px;
+}
+
+
+.nav-center-left {
+    display: none;
+}
+
+/* New hamburger styles */
+.nav-center-right {
+  cursor: pointer;
+  /* Adjust positioning as needed */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  position: absolute;
+  right: 16px;
+  top: 24px;
+
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hamburger .line {
+  background: #fff;
+  height: 1px;
+  width: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* When open: rotate lines oppositely to form an X */
+.hamburger.open .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .line2 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-left {
+    text-decoration: none;
+}
+
+/* Tablet Screens */
+@media only screen and (max-width: 992px) {
+    .nav-left-text {
+        display: none;
+    }
+
+    .nav-right-link:first-child {
+        display: none;
+    }
+}
+
+/* Mobile Screens */
+@media only screen and (max-width: 768px) {
+    .nav-right, .nav-left {
+        display: none !important;
+    }
+
+    .nav-center-links {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .navbar {
+        padding: 10px;
+        height: auto;
+    }
+
+    .nav-center {
+        height: 80px; /* default collapsed height */
+        overflow: hidden; /* ensure content is hidden */
+        transition: height 0.3s ease-in-out; /* animate height */
+        transform-origin: bottom; /* expand downwards only */
+    }
+
+    .nav-glow {
+        display: none;
+    }
+
+    .nav-center-left {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .nav-center-left h2 {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+
+    .nav-center-left h3 {
+        font-size: 12px;
+        font-weight: 500;
+        display: inline;
+        color: rgba(242, 242, 242, 0.5);
+    }
+
+    .nav-center-right {
+       display: flex;  
+       position: absolute;
+       right: 20px;
+       cursor: pointer;
+       padding: 8px;
+    }
+
+    .nav-center-text svg {
+        margin: 0px 2px;
+    }
+
+    /* When mobile-open is active on nav-center */
+    .nav-center.mobile-open {
+        height: 410px; /* expanded height */
+    }
+    .nav-center.mobile-open .nav-center-links {
+        display: flex !important;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        margin-top: 46px;
+        align-items: start;
+        opacity: 1;
+        animation: fadeIn 0.5s forwards;
+    }
+
+    .nav-center-links a {
+        text-align: left;
+        font-size: 22px;   
+    }
+
+    .nav-center-links a.active {
+        font-weight: bold;
+    }
+}
+
+/* Keyframes to fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

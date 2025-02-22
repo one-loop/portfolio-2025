@@ -1,0 +1,154 @@
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 100;
+    gap: 22px;
+}
+
+.experience-item {
+    box-sizing: border-box;
+
+    background: rgba(10, 10, 10, 0.3);
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 12px;
+    padding: 20px 32px;
+    color: #A0A0A0;
+    display: flex;
+    flex-direction: row;
+    max-width: 860px;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+/* New: left column takes approximately 75% */
+.experience-left {
+    flex: 3;
+    /* Optionally add margin/right spacing */
+}
+
+/* New: right column (date) takes approximately 25% */
+.experience-right {
+    flex: 1;
+    text-align: right;
+}
+
+.experience-role, .experience-company {
+    color: #EDEDED;
+    font-size: 16px;
+    font-family: 'New Spirit';
+    /* font-weight: 600; */
+    font-weight: 400;
+    display: inline;
+}
+
+.experience-description {
+    margin-top: 12px;
+    margin-left: 14px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.experience-date {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.experience-skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #ededed;
+    margin-bottom: 12px;
+}
+
+.experience-skills span {
+    /* Rectangle 5 */
+    background: rgba(10, 10, 10, 0.33);
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(12px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 20px;
+    padding: 4px 16px;
+}
+
+.resume-wrapper {
+    width: 100%;
+    max-width: 860px; /* match the experience-item width */
+    text-align: left;
+}
+
+.resume-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px; /* adjust spacing between text and svg */
+    position: relative;
+    margin-left: 0;
+    text-decoration: none;
+    /* text-decoration: underline;
+    text-underline-offset: 12px; */
+    /* Remove underline styling here */
+    margin-top: 12px;
+    margin-bottom: 96px;
+}
+
+.resume-wrapper svg {
+    color: #ededed;
+    z-index: 100;
+}
+
+.resume-wrapper svg {
+    transform: translate(0%, 0%);
+    transition: transform .24s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.resume-link:hover svg {
+    transform: translate(10%, -10%);
+}
+
+.experience-title {
+    /* position: fixed !important;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    transition: opacity 0.1s ease; */
+}
+
+li {
+    margin-bottom: 5px;
+    line-height: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .experience-list {
+        margin: 0px 10px !important;
+        gap: 10px;
+    }
+
+    .experience-title {
+        font-size: 14vw !important;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile Screens */
+
+@media (max-width: 768px) {
+    .resume-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .experience-item {
+        flex-direction: column;
+    }
+}

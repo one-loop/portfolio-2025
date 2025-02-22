@@ -13,12 +13,10 @@ import Navigation from './Navigation.js'
 
 import assets from './assets.js'
 
-export default class Experience
-{
-    static instance
+export default class Experience {
+    static instance;
 
-    constructor(_options = {})
-    {
+    constructor(_options = {}) {
         if (Experience.instance) {
             return Experience.instance;
         }
@@ -31,20 +29,12 @@ export default class Experience
             return;
         }
 
-        // Options
-        // this.targetElement = _options.targetElement
-
-        // if(!this.targetElement)
-        // {
-        //     console.warn('Missing \'targetElement\' property')
-        //     return
-        // }
+        this._isRunning = false;
+        this._rafId = null;
 
         this.time = new Time()
         this.sizes = new Sizes()
         this.setConfig()
-        // this.setStats()
-        // this.setDebug() // turn off debug mode
         this.setScene()
         this.setCamera()
         this.setRenderer()
@@ -52,44 +42,27 @@ export default class Experience
         this.setWorld()
         this.setNavigation()
         
-        this.sizes.on('resize', () =>
-        {
+        this.sizes.on('resize', () => {
             this.resize()
         })
 
+        this._onScroll = this.onScroll.bind(this); // Bind scroll handler
+
         this.update()
     }
-
-    // static getInstance(_options = {})
-    // {
-    //     console.log(Experience.instance)
-    //     if(Experience.instance)
-    //     {
-    //         return Experience.instance
-    //     }
-        
-    //     console.log('create')
-    //     Experience.instance = new Experience(_options)
-        
-    //     return Experience.instance
-    // }
 
     setConfig()
     {
         this.config = {}
     
-        // Pixel ratio
         this.config.pixelRatio = Math.min(Math.max(window.devicePixelRatio, 1), 2)
 
-        // Width and height
         const boundings = this.targetElement.getBoundingClientRect()
         this.config.width = boundings.width
         this.config.height = boundings.height || window.innerHeight
         this.config.smallestSide = Math.min(this.config.width, this.config.height)
         this.config.largestSide = Math.max(this.config.width, this.config.height)
         
-        // Debug
-        // this.config.debug = window.location.hash === '#debug'
         this.config.debug = this.config.width > 420
     }
 
@@ -120,19 +93,29 @@ export default class Experience
         this.camera = new Camera()
     }
 
+    setRaycaster() {
+        // Initialize raycaster and mouse events for the canvas
+        this.raycaster = new THREE.Raycaster();
+        this.mouse = new THREE.Vector2();
+        // ...attach any event listeners needed on the canvas (e.g., mousemove)...
+        this.targetElement.addEventListener('mousemove', (event) => {
+            // update this.mouse based on event coordinates
+        });
+    }
+
     setRenderer()
     {
-        // this.renderer = new Renderer({ rendererInstance: this.rendererInstance }).
-
-        // this.targetElement.appendChild(this.renderer.instance.domElement);
-
         this.renderer = new Renderer({ rendererInstance: this.rendererInstance });
         this.targetElement.appendChild(this.renderer.instance.domElement);
     }
 
     setResources()
     {
-        this.resources = new Resources(assets)
+        this.resources = new Resources(assets);
+        
+        this.resources.on('progress', (progress) => {
+            // console.log(`Loading progress: ${progress}%`);
+        });
     }
 
     setWorld()
@@ -145,31 +128,82 @@ export default class Experience
         this.navigation = new Navigation()
     }
 
-    update()
-    {
-        if(this.stats)
-            this.stats.update()
-        
-        this.camera.update()
-        
-        if(this.renderer)
-            this.renderer.update()
+    addScrollEvents() {
+        window.addEventListener('scroll', this._onScroll);
+    }
 
-        if(this.world)
-            this.world.update()
+    removeScrollEvents() {
+        window.removeEventListener('scroll', this._onScroll);
+    }
 
-        if(this.navigation)
-            this.navigation.update()
+    onScroll(event) {
+        // Prevent scroll changes from affecting the model camera.
+        // For example, ignore scroll values or clamp camera parameters.
+        // If your camera uses window.scrollY, simply do nothing here.
+        // Alternatively, update camera only if the canvas is visible:
+        if (!this.isVisible) return;
+        // ...update camera zoom or other properties if needed...
+    }
 
-        window.requestAnimationFrame(() =>
-        {
-            this.update()
-        })
+    detachCanvas() {
+        if (this.renderer && this.renderer.instance && this.renderer.instance.domElement.parentNode) {
+            this.renderer.instance.domElement.parentNode.removeChild(this.renderer.instance.domElement);
+        }
+    }
+
+    pause() {
+        this._isRunning = false;
+        if (this._rafId) {
+            cancelAnimationFrame(this._rafId);
+            this._rafId = null;
+        }
+        if (this.time) {
+            this.time.stop();
+        }
+        this.removeScrollEvents();
+        // Hide the canvas so it doesn't block scrolling on other pages
+        if (this.renderer && this.renderer.instance) {
+            this.renderer.instance.domElement.style.display = 'none';
+        }
+        // Disable wheel (zoom) events from Navigation
+        if(this.navigation && typeof this.navigation.disableNavigation === 'function') {
+            this.navigation.disableNavigation();
+        }
+    }
+
+    resume() {
+        if (!this._isRunning) {
+            // Re-show the canvas before resuming
+            if (this.renderer && this.renderer.instance) {
+                this.renderer.instance.domElement.style.display = 'block';
+            }
+            this._isRunning = true;
+            if (this.time) {
+                this.time.play();
+            }
+            this.addScrollEvents(); // Enable scroll events on resume
+            // Re-enable wheel events
+            if(this.navigation && typeof this.navigation.enableNavigation === 'function') {
+                this.navigation.enableNavigation();
+            }
+            this.update();
+        }
+    }
+
+    update() {
+        if (!this._isRunning && this._rafId) return;
+
+        if (this.stats) this.stats.update();
+        if (this.camera) this.camera.update();
+        if (this.world) this.world.update();
+        if (this.navigation) this.navigation.update();
+        if (this.renderer) this.renderer.update();
+
+        this._rafId = window.requestAnimationFrame(() => this.update());
     }
 
     resize()
     {
-        // Config
         const boundings = this.targetElement.getBoundingClientRect()
         this.config.width = boundings.width
         this.config.height = boundings.height
@@ -188,8 +222,48 @@ export default class Experience
             this.world.resize()
     }
 
-    destroy()
-    {
+    destroy() {
+        this.pause();
+
+        if (this.scene) {
+            this.scene.traverse((child) => {
+                if (child.geometry) {
+                    child.geometry.dispose();
+                }
+                if (child.material) {
+                    if (Array.isArray(child.material)) {
+                        child.material.forEach(material => material.dispose());
+                    } else {
+                        child.material.dispose();
+                    }
+                }
+            });
+        }
+
+        if (this.renderer && this.renderer.instance) {
+            this.renderer.instance.dispose();
+            this.renderer.instance.domElement.remove();
+        }
+
+        if (this.time) this.time.stop();
+        if (this.sizes) this.sizes.off('resize');
+
+        Experience.instance = null;
+    }
+
+    setCanvas(canvas) {
+        if (canvas === this.targetElement) return;
         
+        this.targetElement = canvas;
+        if (this.renderer && this.renderer.instance) {
+            this.targetElement.appendChild(this.renderer.instance.domElement);
+            // Reinitialize pointer events when the canvas is reattached:
+            this.setRaycaster();
+            this.resize();
+        }
+        // Update Navigation's targetElement so panning works on the new canvas
+        if (this.navigation && typeof this.navigation.updateTarget === 'function') {
+            this.navigation.updateTarget(this.targetElement);
+        }
     }
 }

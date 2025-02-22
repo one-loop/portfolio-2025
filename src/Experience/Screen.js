@@ -34,7 +34,7 @@ export default class Screen
 
         // Texture
         this.model.texture = new THREE.VideoTexture(this.model.element)
-        this.model.texture.encoding = THREE.SRGBColorSpace // removed
+        this.model.texture.colorSpace = THREE.SRGBColorSpace
 
         // Material
         this.model.material = new THREE.MeshBasicMaterial({

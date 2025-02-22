@@ -37,7 +37,7 @@ export default class BouncingLogo
         this.scene.add(this.model.group)
 
         this.model.texture = this.resources.items.threejsJourneyLogoTexture
-        this.model.texture.encoding = THREE.SRGBColorSpace
+        this.model.texture.colorSpace = THREE.SRGBColorSpace
 
         this.model.geometry = new THREE.PlaneGeometry(4, 1, 1, 1)
         this.model.geometry.rotateY(- Math.PI * 0.5)

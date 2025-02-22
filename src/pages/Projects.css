@@ -1,0 +1,95 @@
+body {
+    overflow-y: scroll;
+}
+
+/* Title always fixed at the top by default */
+.projects-title {
+    position: fixed !important; /* force fixed positioning */
+    top: 10px; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100; /* increased z-index so it remains on top */
+    transition: opacity 0.1s ease;
+}
+
+/* Hide title when scrolled past 200px */
+.projects-title.hide {
+    opacity: 0;
+}
+
+.showcase {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin: 0px 12px;
+    margin-top: 150px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 150px;
+}
+
+.showcase section {
+    flex-grow: 1;
+}
+
+.showcase div {
+    height: 300px;
+    background-color: dimgray;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #2c2c2c;
+}
+
+.showcase .item-one {
+    height: 530px;
+}
+
+.showcase .item-two {
+    height: 650px;
+}
+
+.showcase .item-three {
+    height: 320px;
+}
+
+.showcase .item-three {
+    height: 430px;
+}
+
+.showcase .item-five {
+    height: 320px;
+}
+
+.showcase .item-six {
+    height: 630px;
+}
+
+.showcase .item-seven {
+    height: 600px;
+}
+
+.showcase .item-eight {
+    height: 520px;
+}
+
+.showcase .item-nine {
+    height: 300px;
+}
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+    .showcase {
+        margin: 0px 10px;
+        gap: 10px;
+        flex-direction: column;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .showcase div {
+        border-radius: 16px;
+    }
+
+    
+}

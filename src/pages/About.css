@@ -1,0 +1,790 @@
+/* body {
+    overflow-x: hidden !important;
+} */
+/* 
+.nav-glow {
+    left: 110px;
+} */
+
+html, body {
+    overflow-x: hidden;
+}
+
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    padding: 0 0px; /* Add padding only to the left and right */
+    padding-top: 75px;
+}
+
+.about-grid h1 {
+    /* grid-column: 2 / span 2; */
+    font-weight: semi-bold;
+    font-size: 48px;
+    font-family: 'New Spirit';
+    /* color: #f2f2f2; */
+    color: #d9d9d9;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+h1 .emphasize {
+    color: #D3A6FF;    
+}
+
+.hero h2 {
+    /* width: 50%; */
+    font-weight: 400;
+}
+
+.glow-circle {
+    /* Ellipse 2 */
+    width: 10px;
+    height: 10px;
+
+    background: #D9D9D9;
+    box-shadow: 0px 0px 20px #FFFFFF;
+    margin-right: 12px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.tag-header {
+    text-transform: uppercase;
+    /* About Me */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: rgba(242, 242, 242, 0.4);
+    margin-bottom: 38px;
+
+}
+
+.header-tag {
+    margin-bottom: 38px;
+}
+
+.gallery {
+    grid-column: span 6;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    grid-auto-rows: minmax(200px, auto);
+    margin-bottom: 200px;
+    margin-top: 100px;
+    display: none;
+}
+
+.gallery div {
+    background-color: gray;
+    border-radius: 4px;
+    z-index: 10;
+    user-select: none;
+    pointer-events: none;
+    position: relative;
+}
+
+.gallery .img-one {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0) !important;
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: absolute !important;
+    z-index: 12;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.gallery .img-two {
+    grid-column: 3 / 4;
+    grid-row: 1;
+}
+
+.gallery .img-three {
+    grid-column: 4 / 6;
+    grid-row: 1;
+}
+
+.gallery .img-four {
+    grid-column: 6;
+    grid-row: 1 / 3;
+}
+
+
+.gallery .img-five {
+    grid-column: 1;
+    grid-row: 2 / 4;
+}
+
+.gallery .img-six {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.gallery .img-seven {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.gallery .img-eight {
+    grid-column: 3 / 5;
+    grid-row: 2 / 4;
+}
+
+.gallery .img-nine {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+.gallery .img-ten {
+    grid-column: 5;
+    grid-row: 3 / 5;
+}
+
+.gallery .img-eleven {
+    grid-column: 6;
+    grid-row: 3;
+}
+
+.gallery .img-twelve {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.gallery .img-thirteen {
+    grid-column: 2 / 4;
+    grid-row: 4;
+}
+
+.gallery .img-fourteen {
+    grid-column: 4;
+    grid-row: 4;
+}
+
+.gallery .img-fifteen {
+    grid-column: 6;
+    grid-row: 4;
+}
+
+
+.about-grid main {
+    grid-column: span 4 / 6;
+    /* margin-bottom: 120px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.about-grid p {
+    /* grid-column: 2 / span 2; */
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 28px;
+    /* or 175% */
+
+    color: #929292;
+}
+
+h2 {
+    /* grid-column: 2 / span 2; */
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 18px;
+    font-family: 'New Spirit';
+    color: rgba(242, 242, 242, 0.9);
+}
+
+.right {
+    width: 50%;
+    flex-grow: 1;
+    z-index: 3;
+}
+
+.right div {
+    margin-bottom: 50px;
+}
+
+.left {
+    width: 50%;
+    position: relative;
+    text-align: right;
+    user-select: none;
+    pointer-events: none;
+    height: 100%;
+}
+
+.image-container{
+    position: sticky; /* Changed from relative to sticky */
+    top: 150px;       /* Set desired top offset */
+    height: 400px;    /* (Adjust as needed) */
+}
+
+.left img {
+    /* max-width: 300px; Ensure the image does not exceed the width of its container */
+    max-width: 350px; /* Ensure the image does not exceed the width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Fit the image within its container */
+    /* z-index: 5; */
+}
+
+
+
+.hero {
+    grid-column: span 4 / 6;
+    display: flex;
+    flex-direction: row; /* Change to row to align items horizontally */
+    justify-content: space-between; /* Space out the children */
+    align-items: center; /* Center items vertically */
+    gap: 48px; /* Add some space between text and image */
+}
+
+.hero-left {
+    flex: 1;
+    text-align: left; /* Align text to the left */
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+}
+
+.hero-right img {
+    max-width: 400px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%;
+    width: 100%;
+}
+
+.gradient1 {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    z-index: 1;
+    top: 50%;
+    right: 50%;
+    transform: translate(62%, -50%);
+    background: linear-gradient(285.49deg,#f537f9 -14.61%,#f7c12b 106.06%);
+    filter: blur(50px);
+    opacity: 0.6;
+    border-radius: 50%;
+    transition: all 1s ease !important; /* Smooth transition */
+}
+
+.gradient-mask {
+    position: absolute;
+    width: 1100px;
+    height: 1100px;
+    z-index: 2;
+    top: 50%;
+    right: 50%;
+    transform: translate(62%, -50%);
+    background: radial-gradient(rgb(0, 0, 0, 0) 0%, #101010 50%);
+}
+
+.about { 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the container stretches to fill the viewport */
+}
+
+/* Let main content grow to push footer to the bottom */
+.main-content { 
+    flex: 1;
+}
+
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 200px;
+    position: relative;
+    z-index: 100;
+    min-height: calc(100vh - 75px);
+    padding-top: 100px;
+    margin-bottom: 0px;
+    padding-bottom: 150px;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-right {
+    flex: 1;
+    align-content: center;
+    /* justify-content: center; */
+    justify-content: end;
+}
+
+.hero-right img {
+    max-width: 380px;
+    border-radius: 50%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.computer-1, .computer-2, .computer-3 {
+    /* Updated transition for a smoother fade */
+    transition: opacity 1s ease-in-out;
+}
+
+.computer-1 {
+    /* position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); */
+    transition: opacity 0.5s ease;
+    max-width: 300px; /* Adjust width as needed */
+    z-index: 4;
+}
+
+.computer-2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease;
+    max-width: 300px; /* Adjust width as needed */
+    z-index: 3;
+    opacity: 0;
+}
+
+.computer-3 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease;
+    max-width: 300px; /* Adjust width as needed */
+    z-index: 4;
+    opacity: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 200px;
+}
+
+main .right .image-container {
+    position: sticky;
+    top: 150px;
+    height: 100%;
+}
+
+.gradient1, .gradient-mask {
+    z-index: -100;
+}
+
+.right div {
+    margin-bottom: 100px;
+}
+
+/* Add animations for text and hero image */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-text {
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+.animate-image {
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+    animation-delay: 1s;
+}
+
+/* New fade-in for glow-circle */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-glow {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+/* Animated SVG overlay */
+.draw-svg {
+    position: absolute;
+    /* top: 110px; 380px */
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 150px;
+    height: 50px;
+    z-index: 6; /* Ensure it sits above the computer-1 image */
+    /* opacity: 0.5; */
+}
+
+.draw-svg path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 4s linear forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+.bg-mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Increase dimensions by 25% using calc() */
+    width: clamp(calc(300px * 1.25), calc(40vw * 1.25), calc(700px * 1.25));
+    height: clamp(calc(300px * 1.25), calc(40vw * 1.25), calc(700px * 1.25));
+    background: radial-gradient(circle, rgba(16,16,16,0) 0%, #101010 62.5%);
+    z-index: -1;
+    transition: opacity 0.2s linear;
+}
+
+.bg-gradient {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Increase dimensions by 25% using calc() */
+    width: clamp(calc(250px * 1.25), calc(30vw * 1.25), calc(500px * 1.25));
+    height: clamp(calc(250px * 1.25), calc(30vw * 1.25), calc(500px * 1.25));
+    filter: blur(25px);
+    border-radius: 50%;
+    transition: opacity 0.2s linear;
+}
+
+.bg-gradient-1 {
+    background: linear-gradient(89.42deg, rgba(69, 94, 181, 0.6) 16.15%, rgba(86, 67, 204, 0.6) 47.6%, rgba(103, 63, 215, 0.6) 65.57%);
+    z-index: -4;
+}
+
+.bg-gradient-2 {
+    background: linear-gradient(44.78deg, rgba(70, 227, 183, 0.6) -5.94%, rgba(47, 122, 208, 0.6) 62.87%);
+    z-index: -3;
+}
+
+.bg-gradient-3 {
+    background: linear-gradient(314.47deg, rgba(245, 55, 249, 0.6) 7.38%, rgba(247, 193, 43, 0.6) 72.24%);
+    z-index: -4;
+}
+
+/* Limit the about gradient's height and clip overflow */
+.about-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101010 100%), 
+                linear-gradient(89.42deg, rgba(69, 94, 181, 0.2) 16.15%, rgba(86, 67, 204, 0.2) 47.6%, rgba(103, 63, 215, 0.2) 72.31%);
+    z-index: -300;
+}
+
+.last-section-header {
+    margin-bottom: 0px !important;
+}
+
+.computer-1-mobile, .computer-2-mobile, .computer-3-mobile {
+    display: none;
+}
+
+.about main .left {
+    display: flex;
+    justify-content: end;
+}
+
+.about main {
+    margin-bottom: 100px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .about .hero, .about main {
+        padding: 0 100px;
+    }
+}
+
+/* Tablet Layout */
+@media only screen and (max-width: 992px) {
+    .about .hero, .about main {
+        padding: 0 50px;
+    }
+}
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .about .hero {
+        flex-direction: column;
+        padding: 0px 26px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .hero-right img {
+        max-width: 300px;
+    }
+
+    .about h1 {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    .about main .left {
+        display: none;
+    }
+
+    .computer-1-mobile, .computer-2-mobile, .computer-3-mobile {
+        display: block;
+        margin: 50px auto;
+        max-width: 350px;
+        width: 100%;
+    }
+
+    .about main h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+    /* Set main container to a column layout */
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+    /* Make both text and image containers take full width and neutralize fixed positioning */
+    .right,
+    .left {
+        width: 100%;
+        position: static;
+    }
+    /* Remove ordering from the original flex layout */
+    .right > div,
+    .left .computer-1,
+    .left .computer-2,
+    .left .computer-3 {
+        order: unset;
+    }
+    /* Reorder items so they alternate.
+       Assuming:
+         - .right div:nth-child(1): Past text
+         - .left .computer-1: First computer image
+         - .right div:nth-child(2): Present text
+         - .left .computer-2: Second computer image
+         - .right div:nth-child(3): Future text
+         - .left .computer-3: Third computer image
+         - .right div:nth-child(4): Last-section header
+    */
+    .right > div:nth-child(1) { order: 1; }
+    .left .computer-1 { order: 2; display: block; margin: 20px auto; max-width: 100%; }
+    .right > div:nth-child(2) { order: 3; }
+    .left .computer-2 { order: 4; display: block; margin: 20px auto; max-width: 100%; }
+    .right > div:nth-child(3) { order: 5; }
+    .left .computer-3 { order: 6; display: block; margin: 20px auto; max-width: 100%; }
+    .right > div:nth-child(4) { order: 7; margin-top: 20px; }
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: minmax(200px, auto) !important;
+        gap: 10px;
+        display: none;
+    }
+
+    #scroll-anim {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+    }
+}
+
+/* Scroll Down Animation */
+#scroll-anim {
+  cursor: pointer;
+  transition: opacity 0.5s;
+  opacity: 1;
+  width: 80px;
+  margin-top: 80px;
+}
+
+#scroll-anim p {
+  /* Equivalent to: translate-y-[-1rem], opacity-0, text-xs, text-primary-text, relative, z-40,
+     mx-auto, text-center, pointer-events-none, and a custom animation delay */
+  transform: translateY(-1rem);
+  opacity: 0;
+  font-size: 0.75rem;
+  color: #ededed;
+  position: relative;
+  z-index: 40;
+  text-align: center;
+  margin: 0 auto;
+  pointer-events: none;
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 1000ms;
+}
+
+#scroll-anim > div {
+  /* Container for the scroll line: width: 2px; height: 7.5rem; relative; center; translateY(-1rem) etc. */
+  width: 2px;
+  height: 7.5rem;
+  position: relative;
+  margin: 0 auto;
+  z-index: 40;
+  transform: translateY(-1rem);
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 800ms;
+}
+
+/* First child inside scroll-line: full width, height 6.4rem, bottom-aligned, linear gradient background, border-radius:2px */
+#scroll-anim > div > div:first-child {
+  position: absolute;
+  width: 100%;
+  height: 6.4rem;
+  bottom: 0;
+  background: linear-gradient(180deg, #d3a6ff 0%, transparent 100%);
+  border-radius: 2px;
+}
+
+/* Second child inside scroll-line: full width, height 1.6rem, top-aligned, white background, border-radius:2px, and custom animation */
+#scroll-anim > div > div.scroll-line-animation {
+  position: absolute;
+  overflow: hidden;
+  top: 1.1rem;
+  height: 1.6rem;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  animation: scrollLine 2s linear infinite;
+}
+
+/* Keyframe for scroll-line animation */
+@keyframes scrollLine {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(100%); }
+  100% { transform: translateY(0); }
+}
+
+/* Ensure you have a fadeIn keyframe (if not already defined) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Add offset so the first section appears 200px from the top */
+#past-section {
+  scroll-margin-top: 150px;
+}
+
+.gradient-grid-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: clamp(calc(250px* 1.25), calc(30vw* 1.25), calc(500px* 1.25));
+    width: clamp(calc(250px* 1.25), calc(30vw* 1.25), calc(500px* 1.25));
+    z-index: -2;
+    display: block;
+
+    --grid-size: 24px;
+    --grid-size-half: 12px;
+
+    opacity: 1;
+    /* animation: gradient-fade-in 800ms 4s forwards; */
+    background-size: 24px 24px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) var(--grid-size-half), #a9a1ff calc(var(--grid-size-half) + 1px), rgba(0, 0, 0, 0) calc(var(--grid-size-half) + 1px)), linear-gradient(to bottom, rgba(0, 0, 0, 0) var(--grid-size-half), #a9a1ff calc(var(--grid-size-half) + 1px), rgba(0, 0, 0, 0) calc(var(--grid-size-half) + 1px));
+}
+
+.gradient-grid-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: clamp(calc(250px* 1.25), calc(30vw* 1.25), calc(500px* 1.25));
+    width: clamp(calc(250px* 1.25), calc(30vw* 1.25), calc(500px* 1.25));
+    z-index: -3;
+    display: block;
+
+    --grid-size: 24px;
+    --grid-size-half: 12px;
+
+    opacity: 0;
+    background-size: 24px 24px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) var(--grid-size-half), #46e3b7 calc(var(--grid-size-half) + 1px), rgba(0, 0, 0, 0) calc(var(--grid-size-half) + 1px)), linear-gradient(to bottom, rgba(0, 0, 0, 0) var(--grid-size-half), #46e3b7 calc(var(--grid-size-half) + 1px), rgba(0, 0, 0, 0) calc(var(--grid-size-half) + 1px));
+}
+
+.gradient-grid-3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: clamp(calc(250px* 1.25), calc(30vw* 1.25), calc(500px* 1.25));
+    width: clamp(calc(250px* 1.25), calc(30vw* 1.25), calc(500px* 1.25));
+    z-index: -3;
+    display: block;
+
+    --grid-size: 24px;
+    --grid-size-half: 12px;
+
+    opacity: 0;
+    background-size: 24px 24px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) var(--grid-size-half), #f3bd6c calc(var(--grid-size-half) + 1px), rgba(0, 0, 0, 0) calc(var(--grid-size-half) + 1px)), linear-gradient(to bottom, rgba(0, 0, 0, 0) var(--grid-size-half), #f3bd6c calc(var(--grid-size-half) + 1px), rgba(0, 0, 0, 0) calc(var(--grid-size-half) + 1px));
+}
+
+
+@keyframes gradient-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

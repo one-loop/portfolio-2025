@@ -1,0 +1,95 @@
+.main-heading {
+    font-family: 'New Spirit';
+    font-size: 6em;
+    position: absolute;
+    top: 150px; /* Start hidden below the canvas */
+    z-index: 1;
+    font-weight: normal;
+    width: 100%;
+    text-align: center;
+    /* top: 80px; */
+    opacity: 0;
+    background: -webkit-linear-gradient(#eee, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all .6s ease-out;
+    
+    top: 80px;
+    opacity: 1;
+}
+
+.main-heading.animate {
+    top: 80px; /* Move up into view */
+    opacity: 1;
+}
+
+h1 {
+    font-family: 'New Spirit';
+}
+
+.experience {
+    z-index: 2;
+}
+
+.experience {
+    position: absolute;
+    top: 0px;
+    transition: all .6s ease-out;
+
+    /* top: 70px; */
+}
+
+.experience.animate {
+    top: 70px;
+}
+
+.gradient {
+  /* ...existing code... */
+}
+
+.gradient.home {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.home {
+  /* Ensure no overflow or fixed height that might affect scrolling */
+  /* ...existing code... */
+}
+
+body {
+    overflow-y: hidden !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-heading {
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+@media (max-width: 768px) {
+    .main-heading {
+        font-size: 4em;
+        margin-top: 20px;
+    }
+
+    .home-footer .right-text {
+        display: none;
+    }
+
+    .home-footer .left-text {
+        width: 100%;
+        text-align: center;
+    }
+}
