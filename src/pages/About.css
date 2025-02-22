@@ -55,7 +55,7 @@ h1 .emphasize {
 .tag-header {
     text-transform: uppercase;
     /* About Me */
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -197,7 +197,7 @@ h1 .emphasize {
 
 .about-grid p {
     /* grid-column: 2 / span 2; */
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
