@@ -570,6 +570,10 @@ main .right .image-container {
         margin-bottom: 100px;
     }
 
+    .about .hero, .about main {
+        padding: 0 26px;
+    }
+
     .hero-right img {
         max-width: 300px;
         max-height: 300px;
