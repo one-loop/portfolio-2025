@@ -10,7 +10,7 @@ body
 {
     /* overflow-y: auto; */
     background-color: #101010;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     --top: rgba(97,106,115,.12);
     --bottom: transparent;
     scroll-behavior: smooth;
@@ -20,7 +20,9 @@ body
 
 @font-face {
   font-family: 'New Spirit';
-  src: url('fonts/New-Spirit-Regular.otf') format('otf');
+  src: url('fonts/New-Spirit-Regular.woff2') format('woff2'),
+       url('fonts/New-Spirit-Regular.woff') format('woff'),
+       url('fonts/New-Spirit-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -29,7 +31,9 @@ body
 
 @font-face {
   font-family: 'New Spirit';
-  src: url('fonts/New-Spirit-Bold.otf') format('otf');
+  src: url('fonts/New-Spirit-Bold.woff2') format('woff2'),
+       url('fonts/New-Spirit-Bold.woff') format('woff'),
+       url('fonts/New-Spirit-Bold.otf') format('opentype');
   font-weight: semi-bold;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -39,7 +43,9 @@ body
 
 @font-face {
   font-family: 'New Spirit';
-  src: url('fonts/New-Spirit-Medium.otf') format('otf');
+  src: url('fonts/New-Spirit-Medium.woff2') format('woff2'),
+       url('fonts/New-Spirit-Medium.woff') format('woff'),
+       url('fonts/New-Spirit-Medium.otf') format('opentype');
   font-weight: medium;
   font-style: normal;
   -webkit-font-smoothing: antialiased;

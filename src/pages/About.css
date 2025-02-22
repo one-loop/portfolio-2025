@@ -55,7 +55,7 @@ h1 .emphasize {
 .tag-header {
     text-transform: uppercase;
     /* About Me */
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -197,7 +197,7 @@ h1 .emphasize {
 
 .about-grid p {
     /* grid-column: 2 / span 2; */
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -308,6 +308,7 @@ h2 {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure the container stretches to fill the viewport */
+    overflow-x: hidden;
 }
 
 /* Let main content grow to push footer to the bottom */
@@ -571,6 +572,7 @@ main .right .image-container {
 
     .hero-right img {
         max-width: 300px;
+        max-height: 300px;
     }
 
     .about h1 {
@@ -589,10 +591,10 @@ main .right .image-container {
         width: 100%;
     }
 
-    .about main h2 {
+    /* .about main h2 {
         font-size: 25px;
         text-align: center;
-    }
+    } */
     /* Set main container to a column layout */
     main {
         display: flex;
@@ -613,6 +615,13 @@ main .right .image-container {
     .left .computer-3 {
         order: unset;
     }
+
+    #scroll-anim {
+        display: flex;
+        width: 100% !important;
+        flex-direction: column;
+    }    
+
     /* Reorder items so they alternate.
        Assuming:
          - .right div:nth-child(1): Past text
@@ -638,11 +647,17 @@ main .right .image-container {
         display: none;
     }
 
-    #scroll-anim {
+    /* #scroll-anim {
         display: flex;
         justify-content: center;
         width: 100%;
         flex-direction: column;
+    } */
+
+    /* Apply styles only to h2 elements that are NOT the last-of-type */
+    .about main h2:not(:nth-last-child(2)) {
+        font-size: 25px;
+        text-align: center;
     }
 }
 
@@ -723,6 +738,7 @@ main .right .image-container {
 #past-section {
   scroll-margin-top: 150px;
 }
+
 
 .gradient-grid-1 {
     position: absolute;

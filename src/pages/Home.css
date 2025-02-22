@@ -92,4 +92,16 @@ body {
         width: 100%;
         text-align: center;
     }
+
+    /* Disable pointer events on the model so navbar links can be clicked */
+    canvas {
+        pointer-events: none !important;
+        z-index: -1 !important;
+    }
+
+    /* Ensure the navbar stays on top */
+    nav {
+        position: relative;
+        z-index: 1000;
+    }
 }

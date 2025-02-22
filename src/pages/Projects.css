@@ -2,6 +2,11 @@ body {
     overflow-y: scroll;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
 /* Title always fixed at the top by default */
 .projects-title {
     position: fixed !important; /* force fixed positioning */
@@ -15,6 +20,10 @@ body {
 /* Hide title when scrolled past 200px */
 .projects-title.hide {
     opacity: 0;
+}
+
+.projects {
+    overflow-x: clip
 }
 
 .showcase {
@@ -91,5 +100,9 @@ body {
         border-radius: 16px;
     }
 
+    .projects-title {
+        top: 0px;
+        left: 0px;
+    }
     
 }

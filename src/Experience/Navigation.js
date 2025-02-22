@@ -87,6 +87,9 @@ export default class Navigation
          */
         this.view.onMouseDown = (_event) =>
         {
+            // Ignore mouse downs if they originate from the navbar/menu
+            if (_event.target.closest('.navbar')) return;
+
             _event.preventDefault()
 
             this.view.drag.alternative = _event.button === 2 || _event.button === 1 || _event.ctrlKey || _event.shiftKey
@@ -121,6 +124,9 @@ export default class Navigation
          */
         this.view.onTouchStart = (_event) =>
         {
+            // Ignore touch events if the target is inside the navbar/menu
+            if (_event.target.closest('.navbar')) return;
+            
             _event.preventDefault()
 
             this.view.drag.alternative = _event.touches.length > 1

@@ -40,7 +40,7 @@ const Projects = () => {
         </div>
         <FooterMain />
       </div>
-      <h1 className="projects-title">Projects</h1>
+      <h1 className="projects-title animate-title">Projects</h1>
     </div>
   );
 };
