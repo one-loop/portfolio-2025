@@ -1,11 +1,13 @@
 // src/components/ExperienceCanvas.js
 import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import Experience from '../Experience/Experience';
 import { useExperience } from '../context/ExperienceContext';
 
 const ExperienceCanvas = () => {
   const canvasRef = useRef(null);
   const experienceInstance = useExperience(); // global/singleton reference
+  const location = useLocation();
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -21,9 +23,11 @@ const ExperienceCanvas = () => {
       if (experienceInstance.current) {
         // Simply pause, do not destroy so that the model stays loaded
         experienceInstance.current.pause();
+        // experienceInstance.current.setCanvas(null);
       }
     };
   }, []);
+
 
   return (
     <div 
