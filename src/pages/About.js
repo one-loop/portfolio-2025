@@ -59,6 +59,7 @@ const About = () => {
         gradient1.current.style.opacity = op1;
         grid1.current.style.opacity = op1;
 
+        // set opacity for the second and third sections
         comp2Ref.current.style.opacity = op2;
         gradient2.current.style.opacity = op2;
         grid2.current.style.opacity = op2;
