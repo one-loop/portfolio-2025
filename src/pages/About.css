@@ -249,7 +249,8 @@ h2 {
 
 .left img {
     /* max-width: 300px; Ensure the image does not exceed the width of its container */
-    max-width: 350px; /* Ensure the image does not exceed the width of its container */
+    /* max-width: 350px; Ensure the image does not exceed the width of its container */
+    max-width: 400px; /* Ensure the image does not exceed the width of its container */
     height: auto; /* Maintain the aspect ratio */
     object-fit: contain; /* Fit the image within its container */
     /* z-index: 5; */
@@ -463,7 +464,8 @@ main .right .image-container {
 .draw-svg {
     position: absolute;
     /* top: 110px; 380px */
-    top: 100px;
+    /* top: 100px; */
+    top: 120px;
     left: 50%;
     transform: translate(-50%, 0);
     width: 150px;
@@ -552,7 +554,7 @@ main .right .image-container {
 }
 
 .about main {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 

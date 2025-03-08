@@ -70,7 +70,6 @@ const About = () => {
         grid3.current.style.opacity = op3;
         
         // Display hello svg animation once user scrolls down to the past section
-        console.log(pastRef.current.getBoundingClientRect().top);
         if (pastRef.current.getBoundingClientRect().top <= 350) {
           svgRef.current.style.display = 'block';
           svgRef2.current.style.display = 'block';
