@@ -663,6 +663,10 @@ main .right .image-container {
         font-size: 25px;
         text-align: center;
     }
+
+    .about {
+        overflow-x: hidden;
+    }
 }
 
 /* Scroll Down Animation */
