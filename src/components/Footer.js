@@ -8,13 +8,13 @@ const Footer = () => {
   useEffect(() => {
     async function fetchVisitorLocation() {
       try {
-        const response = await fetch('http://ip-api.com/json/');
+        const response = await fetch('https://ipapi.co/json/');
         if (!response.ok) {
           throw new Error('Failed to fetch location');
         }
         const data = await response.json();
         const city = data.city || 'Unknown City';
-        const country = data.country || 'Unknown Country';
+        const country = data.country_name || 'Unknown Country';
         setLocation(`${city}, ${country}`);
       } catch (error) {
         console.error('Error fetching visitor location:', error.message);
