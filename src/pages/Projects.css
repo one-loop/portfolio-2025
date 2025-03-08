@@ -26,6 +26,13 @@ html, body {
     overflow-x: clip
 }
 
+.wip-bnaner {
+    height: 50vh;
+    width: 100vw;
+    text-align: center;
+    margin-top: 250px;
+}
+
 .showcase {
     display: flex;
     flex-direction: row;
@@ -35,6 +42,7 @@ html, body {
     position: relative;
     z-index: 2;
     margin-bottom: 150px;
+    display: none;
 }
 
 .showcase section {

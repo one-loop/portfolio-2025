@@ -21,6 +21,7 @@ const Projects = () => {
   return (
     <div>
       <div className="gradient projects">
+        <div className="wip-bnaner">This page is currently under construction, but please do visit again soon!</div>
         <div className="showcase">
           <section className="col-1">
             <div className="item-one"></div>
