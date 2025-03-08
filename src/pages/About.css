@@ -19,6 +19,10 @@ html, body {
     padding-top: 75px;
 }
 
+.computer-1-mobile-container {
+    display: none;
+}
+
 .about-grid h1 {
     /* grid-column: 2 / span 2; */
     font-weight: semi-bold;
@@ -236,9 +240,11 @@ h2 {
 }
 
 .image-container{
-    position: sticky; /* Changed from relative to sticky */
-    top: 150px;       /* Set desired top offset */
-    height: 400px;    /* (Adjust as needed) */
+    position: -webkit-sticky;  /* for Safari */
+    position: sticky;
+    top: 150px;
+    height: 400px;
+    overflow: visible;         /* allow sticky to work in Safari */
 }
 
 .left img {
@@ -399,6 +405,7 @@ main {
 }
 
 main .right .image-container {
+    /* position: -webkit-sticky; */
     position: sticky;
     top: 150px;
     height: 100%;
@@ -666,6 +673,22 @@ main .right .image-container {
 
     .about {
         overflow-x: hidden;
+    }
+
+    .computer-1-mobile-container {
+        display: block !important;
+        position: relative;
+    }
+
+    .draw-svg.mobile {
+        display: block !important;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 150px;
+        height: 50px;
+        z-index: 6;
     }
 }
 
