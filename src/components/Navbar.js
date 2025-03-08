@@ -1,5 +1,5 @@
 // src/components/Navbar.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'; // Assuming you're using React Router
 import './Navbar.css';
@@ -11,6 +11,18 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [hamburgerOpen, setHamburgerOpen] = useState(false); // new state
   const [isInitialRender, setIsInitialRender] = useState(true); // New flag
+  const navRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      setHamburgerOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     // Set the active link based on the current path
@@ -57,7 +69,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav ref={navRef} className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <Link to="/" className="nav-left">
         <img src="logo.png" width="48px" alt="Profile Picture" />
         <div className="nav-left-text">

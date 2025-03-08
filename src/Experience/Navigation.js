@@ -11,8 +11,8 @@ export default class Navigation
         this.camera = this.experience.camera
         this.config = this.experience.config
         this.time = this.experience.time
-        // New flag for navigation control
-        this.setView();
+
+        this.setView()
     }
 
     setView()
@@ -87,10 +87,10 @@ export default class Navigation
          */
         this.view.onMouseDown = (_event) =>
         {
-            console.log("This is a test message pleas work");
-            if (window.location.pathname != '/') return; // disable if navigation is paused
             // Ignore mouse downs if they originate from the navbar/menu
             if (_event.target.closest('.navbar')) return;
+            // prevent touch events on other pages
+            if (window.location.pathname !== '/') return;
 
             _event.preventDefault()
 
@@ -126,7 +126,8 @@ export default class Navigation
          */
         this.view.onTouchStart = (_event) =>
         {
-            if (window.location.pathname != '/') return; // prevent canvas events on other pages
+            // prevent touch events on other pages
+            if (window.location.pathname !== '/') return;
             // Ignore touch events if the target is inside the navbar/menu
             if (_event.target.closest('.navbar')) return;
             
@@ -136,8 +137,8 @@ export default class Navigation
 
             this.view.down(_event.touches[0].clientX, _event.touches[0].clientY)
 
-            window.addEventListener('touchend', this.view.onTouchEnd)
-            window.addEventListener('touchmove', this.view.onTouchMove)
+            window.addEventListener('touchend', this.view.onTouchEnd, { passive: false })
+            window.addEventListener('touchmove', this.view.onTouchMove, { passive: false })
         }
 
         this.view.onTouchMove = (_event) =>
@@ -157,7 +158,7 @@ export default class Navigation
             window.removeEventListener('touchmove', this.view.onTouchMove)
         }
 
-        window.addEventListener('touchstart', this.view.onTouchStart)
+        window.addEventListener('touchstart', this.view.onTouchStart, { passive: false })
 
         /**
          * Context menu
@@ -194,17 +195,6 @@ export default class Navigation
     enableNavigation() {
         window.addEventListener('mousewheel', this.view.onWheel, { passive: false });
         window.addEventListener('wheel', this.view.onWheel, { passive: false });
-    }
-
-    // New methods to disable/enable navigation functions entirely
-    pauseNavigation() {
-        this.navigationEnabled = false;
-        this.disableNavigation(); // disable wheel events too
-    }
-
-    resumeNavigation() {
-        this.navigationEnabled = true;
-        this.enableNavigation(); // re-enable wheel events
     }
 
     // New method to update target element
