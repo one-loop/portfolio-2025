@@ -76,6 +76,7 @@ export default class Experience {
 
     setDebug()
     {
+        
         if(this.config.debug)
         {
             this.debug = new Pane()

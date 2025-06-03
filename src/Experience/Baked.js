@@ -90,6 +90,39 @@ export default class Baked
         }
 
         this.setModel()
+
+        // Expose uniforms and update method to the window object
+        window.bakedLighting = {
+            setNightMix: (value) => {
+                this.model.material.uniforms.uNightMix.value = value;
+                console.log(`NightMix set to: ${value}`);
+            },
+            setLightStrength: (type, value) => {
+                const uniformKey = `uLight${type}Strength`;
+                if (this.model.material.uniforms[uniformKey]) {
+                    this.model.material.uniforms[uniformKey].value = value;
+                    console.log(`${type} light strength set to: ${value}`);
+                } else {
+                    console.error(`Invalid light type: ${type}`);
+                }
+            },
+            setTime: (hour) => {
+                let nightMix = 0;
+                if (hour < 6) {
+                    nightMix = 1;
+                } else if (hour >= 6 && hour < 7) {
+                    nightMix = 1 - (hour - 6);
+                } else if (hour >= 7 && hour < 17.5) {
+                    nightMix = 0;
+                } else if (hour >= 17.5 && hour < 18.5) {
+                    nightMix = hour - 17.5;
+                } else {
+                    nightMix = 1;
+                }
+                this.model.material.uniforms.uNightMix.value = nightMix;
+                console.log(`Time set to: ${hour}, NightMix updated to: ${nightMix}`);
+            }
+        };
     }
 
     setModel()

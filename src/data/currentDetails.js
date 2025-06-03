@@ -1,6 +1,6 @@
 const currentDetails = {
-    city: "Paris",
-    country: "France"
+    city: "Abu Dhabi",
+    country: "UAE"
 }
 
 export default currentDetails;

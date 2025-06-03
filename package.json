@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
+    "@react-three/drei": "^10.0.4",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -27,6 +28,7 @@
     "eslint-config-react-app": "^7.0.1",
     "eslint-webpack-plugin": "^3.1.1",
     "file-loader": "^6.2.0",
+    "framer-motion": "^12.4.10",
     "fs-extra": "^10.0.0",
     "glsl-blend": "^1.0.3",
     "glslify-loader": "^2.0.0",
@@ -44,10 +46,10 @@
     "postcss-preset-env": "^7.0.1",
     "prompts": "^2.4.2",
     "raw-loader": "^4.0.2",
-    "react": "^18.3.1",
+    "react": "^19.0.0",
     "react-app-polyfill": "^3.0.0",
     "react-dev-utils": "^12.0.1",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.0.0",
     "react-refresh": "^0.11.0",
     "react-router-dom": "^6.23.1",
     "resolve": "^1.20.0",
@@ -102,7 +104,7 @@
     "npx": "^10.2.2",
     "postcss": "^8.5.2",
     "react-app-rewired": "^2.2.1",
-    "tailwindcss": "^4.0.6"
+    "tailwindcss": "^4.0.12"
   },
   "jest": {
     "roots": [
