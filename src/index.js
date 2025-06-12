@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Experience from './Experience/Experience.js'
 import { ExperienceProvider } from './context/ExperienceContext';
+import { Analytics } from '@vercel/analytics/next';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ExperienceProvider>
       <App />
+      <Analytics />
     </ExperienceProvider>
   </React.StrictMode>
 );
