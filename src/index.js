@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Experience from './Experience/Experience.js'
 import { ExperienceProvider } from './context/ExperienceContext';
-import { Analytics } from '@vercel/analytics/next';
+// import { Analytics } from '@vercel/analytics/next';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <ExperienceProvider>
       <App />
-      <Analytics />
+      {/* <Analytics /> */}
     </ExperienceProvider>
   </React.StrictMode>
 );
