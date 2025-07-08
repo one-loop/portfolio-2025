@@ -29,28 +29,29 @@ body
   text-rendering: optimizeLegibility;
 }
 
+/* Remove or comment out the following if you don't have these files:
 @font-face {
-  font-family: 'New Spirit';
-  src: url('fonts/New-Spirit-Bold.woff2') format('woff2'),
-       url('fonts/New-Spirit-Bold.woff') format('woff'),
-       url('fonts/New-Spirit-Bold.otf') format('opentype');
-  font-weight: semi-bold;
+  font-family: 'ITC Garamond Condensed';
+  src: url('fonts/itc-garamond-std-book-condensed-bold.woff2') format('woff2'),
+       url('fonts/itc-garamond-std-book-condensed-bold.woff') format('woff'),
+       url('fonts/itc-garamond-std-book-condensed-bold.otf') format('opentype');
+  font-weight: bold;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-
 @font-face {
-  font-family: 'New Spirit';
-  src: url('fonts/New-Spirit-Medium.woff2') format('woff2'),
-       url('fonts/New-Spirit-Medium.woff') format('woff'),
-       url('fonts/New-Spirit-Medium.otf') format('opentype');
-  font-weight: medium;
+  font-family: 'ITC Garamond Condensed';
+  src: url('fonts/itc-garamond-std-book-condensed-medium.woff2') format('woff2'),
+       url('fonts/itc-garamond-std-book-condensed-medium.woff') format('woff'),
+       url('fonts/itc-garamond-std-book-condensed-medium.otf') format('opentype');
+  font-weight: 500;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+*/
 
 ::selection {
   background-color: rgb(249 224 133) !important;

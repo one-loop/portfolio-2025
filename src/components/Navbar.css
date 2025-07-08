@@ -59,6 +59,7 @@
     /* position: relative; */
     flex: 1;
     position: relative;
+    max-width: 600px;
 }
 
 .nav-center-links {

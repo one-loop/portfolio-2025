@@ -6,7 +6,7 @@ const experienceData = [
       "Contributed to the development and evaluation of Uni-Sign, a state-of-the-art unified framework for Sign Language Understanding (SLU) and Generation (SLG), enhancing the capabilities of AI in understanding and generating sign language.",
       "Collaborated with a multidisciplinary team to integrate computer vision and natural language processing techniques, resulting in a more robust and efficient SLU/SLG system.",
     ],
-    skills: ["Python", "PyTorch", "Data Analysis", "Computer Vision", "Deep Learning", "Scikit-learn"],
+    skills: ["Python", "PyTorch", "Data Analysis", "Computer Vision", "Deep Learning", "Scikit-learn", "MCPs", "AI Agents"],
     date: "Jun. 2025 — Present",
     location: "Abu Dhabi, UAE 🇦🇪"
   },

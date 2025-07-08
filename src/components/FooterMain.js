@@ -84,7 +84,6 @@ const FooterMain = () => {
           <Link to="/contact">Contact</Link>
         </div>
       </div>
-
     </footer>
   );
 };

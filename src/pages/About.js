@@ -90,6 +90,7 @@ const About = () => {
       <div className="gradient about about-grid">
         {/* <h1>About</h1> */}
         <div className="about-gradient"></div>
+        <div className="outer-container">
         <section className="hero">
           <div className="hero-left">
             <div className="header-tag">
@@ -117,7 +118,7 @@ const About = () => {
         <main>
         <div className="right">
         <div ref={pastRef} id="past-section">
-          <h2>The Past: Circuits, Code, and Endless Curiosity.</h2>
+          <h2>The Past: Where It All Started</h2>
 
           <div className="computer-1-mobile-container">
             <img className="computer-1-mobile" src="/computer-1.png" />
@@ -158,21 +159,33 @@ const About = () => {
             </svg>
           </div>
           <p>
-          I’ve always been the kid who took things apart just to see how they worked. Computers? They were my playground. There was magic in fixing a glitch, untangling a problem, or watching lines of code transform into something alive. At 12, I traded Scratch’s blocky simplicity for a dog-eared Python book, and that’s when it clicked: This was my language. Programming became more than a hobby—it was a way to bend logic into creation. I built clunky games, hacked together bots, and stayed up way too late chasing that rush of “It works!”
+            Ever since I was a kid, I’ve been drawn to the inner workings of things. I was the one unscrewing remote controls, tinkering with old laptops, and trying to figure out how to make something do something else. Computers felt like magic—except the kind you could actually learn. Around 12, I stumbled across a dusty Python book and started learning on my own. I’d been playing with Scratch before that, but Python felt like a real language—something with power.
+          </p>
+          <p>
+            From there, it became an obsession. I started making small games, automating random things for fun, building bots that probably broke more than they fixed. I didn’t always know what I was doing, but that didn’t matter—I was hooked on the feeling of solving problems and making things work. That love for building eventually led me to major in Computer Science at NYU Abu Dhabi.
           </p>
         </div>
         <div ref={presentRef} id="present-section">
-          <h2>The Present: Code, Croissants, and Cross-Continental Classes.</h2>
+          <h2>The Present: Learning Across Borders</h2>
           <img className="computer-2-mobile" src="/computer-2.png" />
-          <p>
+          {/* <p>
             Today, I’m a sophomore at NYU Abu Dhabi, studying Computer Science across continents—from the neon buzz of New York to the cobblestone charm of Florence, the tech hubs of Kigali to the art-soaked streets of Paris (where I’m currently eating a croissant at 1:00 AM while the Eiffel tower sparkles outside my dorm window for the last time tonight 🇫🇷). 
+          </p> */}
+          <p>
+            Right now, I’m a Computer Science student at NYU Abu Dhabi, with minors in Economics and Applied Mathematics. My university experience has taken me around the world—from the fast pace of New York to the quiet corners of Kigali, the historic streets of Paris to the hills of Florence. Each city gave me a different lens on how people live, work, and connect—and each one subtly shaped the kind of problems I care about solving.
+          </p>
+          {/* <p>
+            When I’m not knee-deep in coding, you’ll find me devouring novels, playing badminton, or losing myself in RPGs (Elden Ring, anyone?). Travel’s my constant—every new city teaches me how to see the world differently.
+          </p> */}
+          <p>
+            When I’m not working on code, I’m probably reading a novel, playing badminton, or wandering through a new city. I’m also a big fan of RPGs and I’ve recently been building side projects that blend creativity with technology—like a 3D globe-based geography game, or a rhythm-language learning app inspired by Beat Saber and Duolingo.
           </p>
           <p>
-            When I’m not knee-deep in coding, you’ll find me devouring novels, playing badminton, or losing myself in RPGs (Elden Ring, anyone?). Travel’s my constant—every new city teaches me how to see the world differently.
+            And this summer, I’m working as a research assistant in a computer vision and AI lab, exploring the kinds of machine learning that can actually do some good in the world.
           </p>
         </div>
         <div ref={futureRef} id="future-section">
-          <h2>The Future: Problems Waiting to Be Solved.</h2>
+          <h2>The Future: Open Questions, Big Possibilities</h2>
           <img className="computer-3-mobile" src="/computer-3.png" />
           <p>
             I don’t have a 10-year plan. What I do have is a toolkit: curiosity, code, and a stubborn belief that tech should serve people, not the other way around. Maybe I’ll build AI that democratizes education. Maybe I’ll found a startup that rethinks urban mobility. Maybe I’ll write code on a beach in Bali. 
@@ -261,6 +274,7 @@ const About = () => {
           <div className="img-fourteen"></div>
           <div className="img-fifteen"></div>
 
+        </div>
         </div>
         <FooterMain />
       </div>

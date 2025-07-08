@@ -42,10 +42,33 @@ const Navbar = () => {
         setTimeout(() => {
           glow.style.transition = 'left 0.3s ease';
         }, 0);
+        // Reposition after a short delay to catch late layout shifts
+        setTimeout(() => {
+          moveGlow(activeLinkElement);
+        }, 100);
       } else {
         moveGlow(activeLinkElement);
       }
     }
+
+    // Reposition on window resize
+    const handleResize = () => {
+      const activeLinkElement = document.querySelector(`.nav-center-links a[href="${path}"]`);
+      if (activeLinkElement) moveGlow(activeLinkElement);
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Reposition after fonts load (if supported)
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        const activeLinkElement = document.querySelector(`.nav-center-links a[href="${path}"]`);
+        if (activeLinkElement) moveGlow(activeLinkElement);
+      });
+    }
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [location, isInitialRender]);
 
   useEffect(() => {

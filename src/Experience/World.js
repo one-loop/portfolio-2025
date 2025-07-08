@@ -81,7 +81,8 @@ export default class World
         )
         this.macScreen = new Screen(
             this.resources.items.macScreenModel.scene.children[0],
-            '/videoStream.mp4'
+            // '/laptop_screen_2mb_compressed.mp4'
+            '/laptop_screen_2mb_compressed.mov'
         )
     }
 
