@@ -242,6 +242,7 @@ a:hover {
         overflow: hidden; /* ensure content is hidden */
         transition: height 0.3s ease-in-out; /* animate height */
         transform-origin: bottom; /* expand downwards only */
+        max-width: 1000px;
     }
 
     .nav-glow {

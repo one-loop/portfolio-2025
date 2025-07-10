@@ -83,6 +83,7 @@
     width: 100%;
     max-width: 860px; /* match the experience-item width */
     text-align: left;
+    margin-bottom: 96px;
 }
 
 .resume-link {
@@ -96,7 +97,7 @@
     text-underline-offset: 12px; */
     /* Remove underline styling here */
     margin-top: 12px;
-    margin-bottom: 96px;
+    margin-bottom: 4px;
 }
 
 .resume-wrapper svg {
@@ -109,7 +110,7 @@
     transition: transform .24s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 
-.resume-link:hover svg {
+.resume-link:hover .arrow-icon {
     transform: translate(10%, -10%);
 }
 
@@ -151,4 +152,28 @@ li {
     .experience-item {
         flex-direction: column;
     }
+}
+
+.resume-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 96px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resume-underline {
+  width: 0;
+  height: 2px;
+  background: #F2F2F2;
+  margin-top: 4px;
+  border-radius: 1px;
+  box-shadow: 0px -5px 25px 1px #FFFFFF;
+  transition: width 0.3s cubic-bezier(.4,0,.2,1), background 0.3s;
+}
+.resume-link:hover ~ .resume-underline {
+  width: 160px;
+  background: #fff;
 }
