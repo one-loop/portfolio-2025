@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import Navbar from '../components/Navbar';
 import FooterMain from '../components/FooterMain';
 import PhotoItem from './PhotoItem';
 import './Photos.css';
@@ -47,7 +46,6 @@ const Photos = () => {
 
   return (
     <div>
-      <Navbar />
       <main className="photos-main">
         <div className="photos-grid">
           {/* Render PhotoItem for each image, passing location and season */}
