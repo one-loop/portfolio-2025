@@ -124,7 +124,8 @@ const Navbar = () => {
           <Link onClick={() => setHamburgerOpen(false)} to="/about" data-index="1" className={activeLink === '/about' ? 'active' : ''}>About</Link>
           <Link onClick={() => setHamburgerOpen(false)} to="/projects" data-index="2" className={activeLink === '/projects' ? 'active' : ''}>Projects</Link>
           <Link onClick={() => setHamburgerOpen(false)} to="/experience" data-index="3" className={activeLink === '/experience' ? 'active' : ''}>Experience</Link>
-          <Link onClick={() => setHamburgerOpen(false)} to="/contact" data-index="4" className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
+          <Link onClick={() => setHamburgerOpen(false)} to="/photos" data-index="4" className={activeLink === '/photos' ? 'active' : ''}>Photos</Link>
+          <Link onClick={() => setHamburgerOpen(false)} to="/contact" data-index="5" className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
         </div>
         <span className="nav-glow"></span>
         <div className="nav-center-right" onClick={() => setHamburgerOpen(!hamburgerOpen)}>
