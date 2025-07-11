@@ -92,25 +92,8 @@
   opacity: 1;
 }
 
-.photos-grid .photo-item:nth-child(1) {
-    background: url('https://rauno.me/_next/image?url=%2Fstatic%2Fphotos%2F70.jpg&w=1920&q=75') center/cover no-repeat;
-}
-
-.photos-grid .photo-item:nth-child(2) {
-    background: url('https://rauno.me/_next/image?url=%2Fstatic%2Fphotos%2F69.jpg&w=1920&q=75') center/cover no-repeat;
-}
-
-.photos-grid .photo-item:nth-child(3) {
-    background: url('https://rauno.me/_next/image?url=%2Fstatic%2Fphotos%2F63_1.jpg&w=3840&q=75') center/cover no-repeat;
-}
-
-.photos-grid .photo-item:nth-child(4) {
-    background: url('https://rauno.me/_next/image?url=%2Fstatic%2Fphotos%2F67.jpg&w=3840&q=75') center/cover no-repeat;
-}
-
-.photos-grid .photo-item:nth-child(5) {
-    background: url('https://rauno.me/_next/image?url=%2Fstatic%2Fphotos%2F42.jpg&w=1920&q=75') center/cover no-repeat;
-}
-.photos-grid .photo-item:nth-child(6) {
-    background: url('https://rauno.me/_next/image?url=%2Fstatic%2Fphotos%2F5.jpg&w=1920&q=75') center/cover no-repeat;
+@media only screen and (max-width: 768px) {
+  .photos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
 }
