@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PhotoItem = ({ src, alt, placeholder }) => {
+const PhotoItem = ({ src, alt, placeholder, location, season }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -27,6 +27,10 @@ const PhotoItem = ({ src, alt, placeholder }) => {
         decoding="async"
         data-nimg="fill"
       />
+      <div className="after">
+        <span className="photo-location">{location}</span>
+        <span className="photo-time">{season}</span>
+      </div>
     </div>
   );
 };
