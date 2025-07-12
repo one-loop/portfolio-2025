@@ -26,7 +26,7 @@ const FooterMain = () => {
       <p className="right-text">Model by Bruno Simon.</p> */}
       <div className="footer-left">
       <div className="footer-left-profile">
-      <img src="profile.jpeg" width="48px" alt="Profile Picture" />
+      <img src="/images/profile.jpeg" width="48px" alt="Profile Picture" />
       <div className="footer-left-profile-text">
         <h2>Saad Sifar</h2>
         <div>
@@ -68,16 +68,22 @@ const FooterMain = () => {
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/experience">Experience</Link>
+          <Link to="/photos">Photos</Link>
         </div>
         <div className="footer-contact-links">
           <h3>Contact</h3>
           <Link to="https://linkedin.com/in/saad-sifar" target="_blank" className="footer-right-external-link">LinkedIn <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
-</svg>
-</Link>
+          <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
+          </svg>
+          </Link>
           <Link to="/sifar-resume.pdf" target="_blank" className="footer-right-external-link">Resume <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
-</svg></Link>
+          <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
+          </svg>
+          </Link>
+          {/* <Link to="https://github.com/one-loop" target="_blank" className="footer-right-external-link">GitHub <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
+          </svg>
+          </Link> */}
           {/* <Link to="mailto:ss17886 AT nyu DOT edu" target="_blank" className="footer-right-external-link">Mail <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
 </svg></Link> */}

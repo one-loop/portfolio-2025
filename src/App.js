@@ -12,7 +12,7 @@ import ScrollToTop from './ScrollToTop';
 const App = () => {
   return (
     <Router>
-      <ScrollToTop />
+      <ScrollToTop /> {/* Automatically scrolls to top when changing pages */}
       <div className="app">
         <Navbar />
         <Routes>

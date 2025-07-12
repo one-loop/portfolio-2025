@@ -94,7 +94,7 @@ const Navbar = () => {
   return (
     <nav ref={navRef} className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <Link to="/" className="nav-left">
-        <img src="logo.png" width="48px" alt="Profile Picture" />
+        <img src="/icons/logo.png" width="48px" alt="Profile Picture" />
         <div className="nav-left-text">
           <h2>Saad Sifar</h2>
           <h3>CS @ NYU</h3>
@@ -107,7 +107,7 @@ const Navbar = () => {
       </Link>
       <nav className={`nav-center ${hamburgerOpen ? 'mobile-open' : ''}`}>
         <div className="nav-center-left">
-          <img src="logo.png" width="48px" alt="Profile Picture" />
+          <img src="/icons/logo.png" width="48px" alt="Profile Picture" />
 
           <div className="nav-center-text">
             <h2>Saad Sifar</h2>

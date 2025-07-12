@@ -18,7 +18,7 @@ const Photos = () => {
 
   // Fetch gallery.json once on mount
   useEffect(() => {
-    fetch('/gallery copy.json')
+    fetch('/gallery.json')
       .then(res => res.json())
       .then(data => {
         setAllImages(data); // keep all fields for each image
@@ -51,7 +51,7 @@ const Photos = () => {
           {/* Render PhotoItem for each image, passing location and season */}
           {images.map((img, i) => (
             <PhotoItem
-              src={`/gallery 2/${img.filename}`}
+              src={`/gallery/${img.filename}`}
               alt={`Photo ${i + 1}`}
               placeholder={img.placeholder}
               key={i}

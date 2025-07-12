@@ -2,8 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const GALLERY_DIR = path.join(__dirname, '../public/gallery 2');
-const JSON_FILE = path.join(__dirname, '../public/gallery copy.json');
+const GALLERY_DIR = path.join(__dirname, '../public/gallery');
+const JSON_FILE = path.join(__dirname, '../public/gallery.json');
 
 function getExtension(filename) {
   const ext = path.extname(filename).toLowerCase();

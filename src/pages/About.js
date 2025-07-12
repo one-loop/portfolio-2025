@@ -110,7 +110,7 @@ const About = () => {
             </div>
           </div>
           <div className="hero-right">
-            <img className="animate-image" src="profile.jpeg" alt="porfile picture"></img>
+            <img className="animate-image" src="/images/profile.jpeg" alt="porfile picture"></img>
             {/* New Scroll Down Animation */}
           </div>
         </section>
@@ -121,7 +121,7 @@ const About = () => {
           <h2>The Past: Where It All Started</h2>
 
           <div className="computer-1-mobile-container">
-            <img className="computer-1-mobile" src="/computer-1.png" />
+            <img className="computer-1-mobile" src="/computers/computer-1.png" />
             <svg
                 ref={svgRef2}
                 className="draw-svg mobile"
@@ -167,7 +167,7 @@ const About = () => {
         </div>
         <div ref={presentRef} id="present-section">
           <h2>The Present: Learning Across Borders</h2>
-          <img className="computer-2-mobile" src="/computer-2.png" />
+          <img className="computer-2-mobile" src="/computers/computer-2.png" />
           {/* <p>
             Today, I’m a sophomore at NYU Abu Dhabi, studying Computer Science across continents—from the neon buzz of New York to the cobblestone charm of Florence, the tech hubs of Kigali to the art-soaked streets of Paris (where I’m currently eating a croissant at 1:00 AM while the Eiffel tower sparkles outside my dorm window for the last time tonight 🇫🇷). 
           </p> */}
@@ -186,7 +186,7 @@ const About = () => {
         </div>
         <div ref={futureRef} id="future-section">
           <h2>The Future: Open Questions, Big Possibilities</h2>
-          <img className="computer-3-mobile" src="/computer-3.png" />
+          <img className="computer-3-mobile" src="/computers/computer-3.png" />
           <p>
             I don’t have a 10-year plan. What I do have is a toolkit: curiosity, code, and a stubborn belief that tech should serve people, not the other way around. Maybe I’ll build AI that democratizes education. Maybe I’ll found a startup that rethinks urban mobility. Maybe I’ll write code on a beach in Bali. 
           </p>
@@ -199,13 +199,14 @@ const About = () => {
         </div>
         <div>
           <h2>Thanks for stopping by!</h2>
-          <img src="/signature.png" alt="signature"></img>
+          {/* <img src="/images/signature.png" alt="signature" width='150' style={{userSelect: 'none', webkitUserDrag: 'none'}}></img> */}
+          <img src="/images/signature 2.png" alt="signature" width='150' style={{userSelect: 'none', webkitUserDrag: 'none'}}></img>
         </div>
         </div>
 
         <div className="left">
           <div className="image-container">
-            <img ref={comp1Ref} className="computer-1" src="/computer-1.png" />
+            <img ref={comp1Ref} className="computer-1" src="/computers/computer-1.png" />
             <svg
               ref={svgRef}
               className="draw-svg"
@@ -242,8 +243,8 @@ const About = () => {
 </svg> */}
 
             </svg>
-            <img ref={comp2Ref} className="computer-2" src="/computer-2.png" />
-            <img ref={comp3Ref} className="computer-3" src="/computer-3.png" />
+            <img ref={comp2Ref} className="computer-2" src="/computers/computer-2.png" />
+            <img ref={comp3Ref} className="computer-3" src="/computers/computer-3.png" />
             <div className="bg-mask"></div>
             <div ref={gradient1} className="bg-gradient bg-gradient-1"></div>
             <span ref={grid1} className="gradient-grid-1"></span>
