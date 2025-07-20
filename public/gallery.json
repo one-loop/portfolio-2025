@@ -229,6 +229,7 @@
     "filename": "33.jpeg",
     "date": "2024-01-04T07:25:09.000Z",
     "location": "Florence, Italy 🇮🇹",
+    "title": "Studying away in Florence for a course on Mediterranean Foodways",
     "season": "Winter 2024",
     "placeholder": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAACQBACdASogABgAPxFysFAsJqSisAgBgCIJYwC4MBaykMp7xnnrQPHXBH7YWMAA/KuYVkE4/jwKeCFNZxYc4clcbdPM7dfgRBikozAqBYu31BmSpk1KNlDD2IUWqtR1YZjD+c7zU3PFmZnP9pwq2nvzXS17dhwJmEKxSMDOzl41gOlMuPZz/uX1wlAKCwNnbtEmqa4iof8eToIKUz291tsTbmhrs20xcKgSpOha+N5snzeOk+yFZl6BnD0aTLwNsupf/679Oz23mgAA"
   },
@@ -817,6 +818,7 @@
     "filename": "117.jpeg",
     "date": "2024-07-02T10:10:58.000Z",
     "location": "Hatton, Sri Lanka 🇱🇰",
+    "title": "Taking a train ride across my country, Sri Lanka",
     "season": "Summer 2024",
     "placeholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABwBQCdASoYACAAPxFuslAsJiSisBgMAYAiCWQAqPQIcJKpkP4WNIqIq3aYOZHD83lEbLMAAPx3KaIDhvK5XonO2AfuVmx32Y8NIcmPBBoV7t6uMQ3217dl9YS6RxAHfr+XKdeZAINeqzxP8yNn87otsrGXn2ZK3WCFtnz6naVOW2qtFF/b6zleEbstWqPgGiTlJ1IuQxwaGdWgAAA="
   },
@@ -833,13 +835,6 @@
     "location": "Ella, Sri Lanka 🇱🇰",
     "season": "Summer 2024",
     "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADQBACdASoYACAAPxF8sVSsJ6QjKAqpgCIJZQAAHKRjDIeKzh0Rb3c4kHYcshd/YAD+70rBSnTGqmNTmeJJQlXXmfyFCaVX1Il0TrczuHAvevvj7Ria5Ab+pBtV+SjlF2XDnzpn3u3yq+Edaimnas8pMlWcCVkMDi8SFFRCzyFRzyLLJYvZZgsKOxj6EUuaRuGhKB4+y7R+OAAA"
-  },
-  {
-    "filename": "120.jpeg",
-    "date": "2024-07-03T01:30:37.000Z",
-    "location": "Ella, Sri Lanka 🇱🇰",
-    "season": "Summer 2024",
-    "placeholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoYACAAPwluqlArpiOisAwBcCEJQBWAAR0QZ04XoZJmoQ7wAPnWeiQYouJPMZlkZQEZIXcLVOw3AmfnI1UYPK/VzFmPeeF7UrnUZ/ZxvR8br1eQDcAoBmELxwBRhqWy65L0pwr4Qbvpy0AAAAA="
   },
   {
     "filename": "121.jpeg",
@@ -860,6 +855,7 @@
     "date": "2024-07-03T02:20:24.000Z",
     "location": "Ella, Sri Lanka 🇱🇰",
     "season": "Summer 2024",
+    "title": "Experiencing the sunrise after a tiring hike up",
     "placeholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBQCdASoYACAAPxF+tVWsJ6SjKAgBgCIJQBgfpsEAsuECBrP+B8+zu20AWkIu6hi1LgAA95vZXMNYlfDtwKppt4dizFki5oE/PLHXKEJJ5khz9Beak8PTP2pkteUOqs5TT8Eo+OYM+3Yok2PzTPC6vhXZAAAA"
   },
   {
@@ -1034,56 +1030,57 @@
     "filename": "148.jpeg",
     "date": "2025-01-16T13:25:18.000Z",
     "location": "Paris, France 🇫🇷",
-    "season": "Winter 2024",
+    "title": "Starting my semester abroad in Paris",
+    "season": "Spring 2024",
     "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBQCdASogABgAPvFmqFAppaQit+gBMB4JZQDI1zCKivByKDMRSs2ClxCifwr3vxTa10YAAP7qdCMGOdtoC6JxTzqoSyly/THtEFh8owTtqWB5MJrmEb23BY4PM4T7tFYVcZ5rdUzjXTYxvCpH9yUdyD1svbroD6chTtR1yDL4OSjG0Etdk510Pt5nUWgjfbA5DGfYJ5sE6WfW3F4x40XkXRqL8AAA"
   },
   {
     "filename": "149.jpeg",
     "date": "2025-01-16T13:36:50.000Z",
     "location": "Paris, France 🇫🇷",
-    "season": "Winter 2024",
+    "season": "Spring 2024",
     "placeholder": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACwBQCdASoYACAAPxFys1KsJiSisBgIAYAiCWQAsRvUq7QhTy94E1jVSAeIJAzj5AojhwHdXAAA/r57LyphNr7Lxqgd2jwfUcZHZbG+eJh9HBQOoV5AGWtJ49YazHs2s/bAxt4jHCR2CV2RMJUwk/ZwQNnQ9d68bX30eDuckwTkuBqdJBZDC5S47a7XZzYHPnJ7YqPjsmNDPUeY88GfeCGGTsWSGDC0PyswwpVOCNO4VCj/o1KM38vUq76AAA=="
   },
   {
     "filename": "150.jpeg",
     "date": "2025-01-16T13:57:08.000Z",
     "location": "Paris, France 🇫🇷",
-    "season": "Winter 2024",
+    "season": "Spring 2024",
     "placeholder": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABQBQCdASoYACAAPwVurlArpqSisAwBcCCJbACdMuiC/IjrNkLyFm7Enrhug2vRBr/aAtAA/nFdLZGKRLWEpwWOHHvNsqVJIxloBxZgB5RNnJWHvzNY6rqCMstibCTNyv2eZnBgyGToM4jKiGhzMHzpKqn7Iw2uW+VZpfouvDnis2TfYZ2H2FOmeM2rIAOcXte4g218FkzwyC/2pdQ/QAAA"
   },
   {
     "filename": "151.jpeg",
     "date": "2025-01-17T11:56:37.000Z",
     "location": "Paris, France 🇫🇷",
-    "season": "Winter 2024",
+    "season": "Spring 2024",
     "placeholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAQBQCdASogABoAPwVyrVArp6QisAwBcCCJYwClrCHfxzvLr00dQnt5IPy0sq19717GAP7eWhOYleQ4R5uFJgaokWWvvrEnEWdJXlrzB8FvyQ1XXt8jbN+tSYz4gTSzVtMpMZTjRSmsf2nbhhJ7cUj9n7IvOVG0v7VrOW/EyKj165+pkzgH25Er9wdsfoKB3MjTKaca+T+Pib8pbvaEArH+BS7OnjeAAAA="
   },
   {
     "filename": "152.jpeg",
     "date": "2025-01-18T09:35:40.000Z",
     "location": "Versailles, France 🇫🇷",
-    "season": "Winter 2024",
+    "season": "Spring 2024",
     "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABQBQCdASoYACAAPxFys1CsJqSiqA1RgCIJZQDA3ywDd/VeElNva46OgNlCyxYxkC0MN8gA/up0CV/zcj91m/ZBrE47zwn2hhVSvgLvymJ+/sgGwmqbppCojfMoWJksjHgl3hgQtW0xcwkel/rhb/Kni+Q9z1sm5WeqFTAtQDmVngnGVbyWEMo7J/afdYuOFbI04tXQJo/WwtwR2oAAAA=="
   },
   {
     "filename": "153.jpeg",
     "date": "2025-01-18T10:41:11.000Z",
     "location": "Versailles, France 🇫🇷",
-    "season": "Winter 2024",
+    "season": "Spring 2024",
     "placeholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAACQBQCdASoYACAAPxF0tFKsJqUisBgIAYAiCUAWcAaMOZTR8+840CxJxe0yJmk2d5vzPaQ/4AD+uR8CLC/NzBmUrvpkRGaU8HzTBEk4gSxVIOw7ktE9Z5xY6mLbVvDdwEN1ZZL15qDB481HeHXaZtxzt2hGgke7HYL3SSEW6BZv7JjMsgYU2MvEVMRGSD+nGg3RnwbsbmrkVkMvT7uiCPygBDgRo+3hVdbIAA=="
   },
   {
     "filename": "154.jpeg",
     "date": "2025-01-18T11:22:49.000Z",
     "location": "Versailles, France 🇫🇷",
-    "season": "Winter 2024",
+    "season": "Spring 2024",
     "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBQCdASoYACAAPxFyslMsJiQisBgIAYAiCWcAzgGn6NyClnLd/Q+wLdUs5dr47Fv9uDfUAP7Tlm80rzaiEi5mwqMnYTQBLtbZskAa+3OpZ5E5Sep0WMyw/VMVY74Cn5HKBrhS1uSUQtuwHsEuERGYQsyMszAIpqDdIvuOAytHz5bUA2B/mBuYQkwJ7gAA"
   },
   {
     "filename": "155.jpeg",
     "date": "2025-01-18T11:28:37.000Z",
     "location": "Versailles, France 🇫🇷",
-    "season": "Winter 2024",
+    "season": "Spring 2024",
     "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADQBACdASoSACAAPxF2tFKsJyUisBgIAYAiCWMAtsgGS39uzESQkz281/wNmsqogAD+QnEpU6X86xo8KA9X+5IDtCMR9bw8a6NRC6IVM5aPpQn0eZ80nmphtaowr5LALu+vXGaVr1+vNFcoc5n6YmPp1lo0DCFw2jYC3ts9ArK0iB9bDczrV1cVALLTzKKzOlu2GdwtxcioAAAA"
   },
   {
@@ -1328,6 +1325,7 @@
     "filename": "190.jpeg",
     "date": "2025-03-21T12:34:07.000Z",
     "location": "Barcelona, Spain 🇪🇸",
+    "title": "Backpacking with Friends Across Europe during Spring Break",
     "season": "Spring 2025",
     "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAQBQCdASogABgAPv1orVArJiSit/qoAWAfiWUAzfxXb9jIjOmZ/mZW1S1/6zoDNeUAAP7nFagJpVgrAQ2GdDqqbVXEhJzSHNU4o5IK0q9pWKWLkukB3PqcjhN+jLh5CVrTNrusf/n8gi3SGr1043ubSxVwpLVJPrctmbBCjzOP7W+iTdE05HrUevjLyOz5xNlPAAAA"
   },
@@ -1906,13 +1904,6 @@
     "placeholder": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAABQBQCdASogABgAPw1ys1AsJyUisBgMAYAhiWgAsR9MRT3OBux/kPiXWu2qQ80Gv1HMyWAA/ZC1/KeVi7KhgNdrt9+66p4k8g8UMZrVf8NS+xUszNfSdY+saQgNXEqA54xVLhL35F0NWZJbGOCu0tD9dD5dDZu6pHMkKuYkYtkxB5o7BBIf54FJ15CKhA9hfGqoeYzehqjz3uxwxrAPeeo5W+5aRUk1tgkUBVfhQutK+oAdJJoEEAAA"
   },
   {
-    "filename": "273.jpeg",
-    "date": "2025-03-27T12:16:17.000Z",
-    "location": "Milan, Italy 🇮🇹",
-    "season": "Spring 2025",
-    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACQBACdASoYACAAPxF4sFKsJyQiqA1RgCIJZAAAva6rQ1rYrNk+7dIrWHI54UAA/hQK2o9b1Bsm5PfDEx1oFfD3/rXn5x+73+qjpdbmEHxoc1lHYlHpTGidwYvtQepJlAn3XPf+mfETsSnPcj0h43sCD/6CbNRRQtDTz5P0LYJLs2e30GLRoj+om9ARhEzeiAAAAA=="
-  },
-  {
     "filename": "274.jpeg",
     "date": "2025-03-27T12:36:15.000Z",
     "location": "Milan, Italy 🇮🇹",
@@ -2186,13 +2177,6 @@
     "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADwBACdASogABgAPwlwqlArpqOisAwBcCEJQBcVA3T9pw0eldA7MJcr+7vxNR2krmAA/Y0+fWXq4+Juk7KorUZi/rs51AuAviKBMGNAX6bhAQAzJgd1XY2i6ZKGgQehSUsFWtEX26ivzGz/yaqos53DH1suNdbxZu6aw5d80tkI61lmXtkzAqsds7VL3Z9DZ0RsAAAA"
   },
   {
-    "filename": "313.jpeg",
-    "date": "2025-03-30T15:16:08.000Z",
-    "location": "Istanbul, Türkiye 🇹🇷",
-    "season": "Spring 2025",
-    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAQBQCdASoYACAAPxFusFCsJiSisBgMAYAiCUAWcAYd+sC8+0P7UOAisXaen+RZUMLAAMldFmhHsT1qL4oTRPPDSA6zXzVSUhbHdeOtmvS0e9ScQFKLZI5gS1YIs0NSvt1E7zhZ69bUBI9WurbCUTs/M+cZNkPX0h+Jf8jjEsQD7iJ7bYhuXoJ8mNQIv3zIlygM+AAA"
-  },
-  {
     "filename": "314.jpeg",
     "date": "2025-03-30T15:17:30.000Z",
     "location": "Istanbul, Türkiye 🇹🇷",
@@ -2267,6 +2251,7 @@
     "date": "2025-04-02T15:33:21.000Z",
     "location": "Paris, France 🇫🇷",
     "season": "Spring 2025",
+    "title": "Back in Paris after a memorable 14-day trip across Europe",
     "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACwBACdASoYACAAPxF0s1EsJqSiqA1RgCIJYwDE2EKGMT5oig/TUDWn9pfYZwgAAP1nIJ0zbaJnN3CqGlijszn/rqt/pZy54icNgwOmzGnjkmx5zjA5hVrt7NjFKysv5JxIcL+jOXCdnHFXl56lEmxjWtDkuFllulQWu1hnPqbdF5fUde6VwTsYrkjQAA=="
   },
   {
