@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-const PhotoItem = ({ src, alt, placeholder, location, season }) => {
+const PhotoItem = ({ src, alt, placeholder, location, season, title }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="photo-item">
+    <div className="photo-item" title={title ? title : ''}>
       {/* Blurred placeholder */}
       <img
         src={placeholder}

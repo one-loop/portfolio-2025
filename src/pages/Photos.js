@@ -15,6 +15,8 @@ const Photos = () => {
   const [allImages, setAllImages] = useState([]);
   // visibleCount: how many images are currently visible
   const [visibleCount, setVisibleCount] = useState(IMAGES_PER_PAGE);
+  // titleOpacity: controls the opacity of the photos title based on scroll
+  const [titleOpacity, setTitleOpacity] = useState(1);
 
   // Fetch gallery.json once on mount
   useEffect(() => {
@@ -25,8 +27,17 @@ const Photos = () => {
       });
   }, []);
 
-  // Infinite scroll handler: load more images when near bottom
+  // Scroll handler for infinite scroll and title opacity
   const handleScroll = useCallback(() => {
+    const scrollY = window.scrollY;
+    const fadeStart = 0; // Start fading immediately
+    const fadeEnd = 500; // Completely faded out after 500px
+    
+    // Calculate title opacity based on scroll position
+    const opacity = Math.max(0, 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart));
+    setTitleOpacity(opacity);
+
+    // Infinite scroll logic
     if (
       window.innerHeight + window.scrollY >= document.body.offsetHeight - 300 &&
       visibleCount < allImages.length
@@ -46,7 +57,14 @@ const Photos = () => {
 
   return (
     <div>
+      <div className="gradient photos"></div>
       <main className="photos-main">
+        <h1 
+          className="photos-title" 
+          style={{ opacity: titleOpacity }}
+        >
+          Photos
+        </h1>
         <div className="photos-grid">
           {/* Render PhotoItem for each image, passing location and season */}
           {images.map((img, i) => (
@@ -57,6 +75,7 @@ const Photos = () => {
               key={i}
               location={img.location}
               season={img.season}
+              title={img.title}
             />
           ))}
         </div>
