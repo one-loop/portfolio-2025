@@ -2573,12 +2573,14 @@
     "filename": "370.jpeg",
     "date": "2025-05-09T02:30:21.000Z",
     "location": "Paris, France 🇫🇷",
+    "title": "Last morning in Paris",
     "season": "Spring 2025",
     "placeholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACQBACdASoYACAAPxF6sVIsKCSisBgIAYAiCUAY3oHgWZu51EbTDJBgEGe9SW4AypHLWVjDG0SG5jy1Qml037fUTSG8Nu75nHTHOPxrpl1VmBoQ+qSSP3mGbZCLTBLYvtKZ/ryo/H0pHDyPRhopPkD0KsD9JSRTZbTZEPaRAtfOL3QZlbQBwCU4KD61gRMld1ktu10fAoAAAA=="
   },
   {
     "filename": "371.jpeg",
     "date": "2025-05-09T09:46:34.000Z",
+    "title": "Heading home after an eventful semester abroad in Europe",
     "location": "Frankfurt, Germany 🇩🇪",
     "season": "Spring 2025",
     "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwBACdASoYACAAPxFqr1AsJaQit/VYAYAiCWcAxNgwL9KK3KTeJVeuNTSYYvzRMgAAvZ+zD+BDUt8O/bgO3doV7eT9sbA+2/9C2RQx4VuR8mpxY/OMOcmcB0sFRqzy9MlGNPVlm5bmPkjsyh/Ygn3OxGSwbcfX4Y9khzg2svB7EqAAAAA="
@@ -2587,6 +2589,7 @@
     "filename": "372.jpeg",
     "date": "2025-05-19T22:02:44.000Z",
     "location": "Dubai, UAE 🇦🇪",
+    "title": "Heading to Kigali, Rwanda for a summer course",
     "season": "Summer 2025",
     "placeholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwBACdASoYACAAPxFsslAsJaSisBgMAYAiCWcAAQfBgud3gI07gLe6DwAA/vCh7/8irgTdPnpZghWEeZrRqZmiX8HIJNUFmiwrWNvwMLQsTMG5dFdbXaHdNg+f8IHAOAA="
   },
