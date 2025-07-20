@@ -19,7 +19,7 @@
 .photo-item {
   position: relative;
   background: #eaeaea;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   min-height: 220px;
   display: flex;
   align-items: center;
