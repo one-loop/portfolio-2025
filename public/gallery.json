@@ -2102,7 +2102,7 @@
   {
       "filename": "303.jpeg",
       "date": "2025-03-28T14:42:23.000Z",
-      "location": "Istanbul, Türkiye 🇹🇷",
+      "location": "Milan, Italy 🇮🇹",
       "season": "Spring 2025",
       "placeholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAwBACdASoYACAAPwlurlArpiQit/VYAXAhCWVocFeZB0auuTVcs2GRvwAA/g1JE4unU3KbcvY3fsjJO/uJt8jkyTyR2k+xErqwTzrlaLikttOAAAA="
   },
@@ -2861,5 +2861,19 @@
       "location": "Abu Dhabi, UAE 🇦🇪",
       "season": "Summer 2025",
       "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwBACdASoYACAAPxF0rlAsJyQisBgMAYAiCWcAxkBIn6FngB0NnhCD6ngA+dYQKEcs6Allyyj3Tf8rZG/g4vBJ8Se/9qyfSv4UvA/fNzzHJs08ILH8YZgAAAA="
-  }
+  },
+  {
+    "filename": "412.jpeg",
+    "date": "2025-07-12T21:19:29.000Z",
+    "location": "Abu Dhabi, UAE 🇦🇪",
+    "season": "Summer 2025",
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwBACdASoYACAAPxF0rlAsJyQisBgMAYAiCWcAxkBIn6FngB0NnhCD6ngA+dYQKEcs6Allyyj3Tf8rZG/g4vBJ8Se/9qyfSv4UvA/fNzzHJs08ILH8YZgAAAA="
+},
+{
+    "filename": "413.jpeg",
+    "date": "2025-07-16T18:58:29.000Z",
+    "location": "Abu Dhabi, UAE 🇦🇪",
+    "season": "Summer 2025",
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwBACdASoYACAAPxF0rlAsJyQisBgMAYAiCWcAxkBIn6FngB0NnhCD6ngA+dYQKEcs6Allyyj3Tf8rZG/g4vBJ8Se/9qyfSv4UvA/fNzzHJs08ILH8YZgAAAA="
+}
 ]
