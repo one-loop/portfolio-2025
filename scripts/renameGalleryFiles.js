@@ -25,7 +25,7 @@ function main() {
   // Step 1: Rename all files to temporary names to avoid conflicts
   const tempRenameMap = {};
   const missingFiles = [];
-  
+
   data.forEach((item, idx) => {
     const ext = getExtension(item.filename);
     const tempFilename = `temp_${idx + 1}${ext}`;

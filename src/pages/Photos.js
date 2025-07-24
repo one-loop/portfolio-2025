@@ -31,7 +31,7 @@ const Photos = () => {
   const handleScroll = useCallback(() => {
     const scrollY = window.scrollY;
     const fadeStart = 0; // Start fading immediately
-    const fadeEnd = 500; // Completely faded out after 500px
+    const fadeEnd = 300; // Completely faded out after 500px
     
     // Calculate title opacity based on scroll position
     const opacity = Math.max(0, 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart));
@@ -59,12 +59,10 @@ const Photos = () => {
     <div>
       <div className="gradient photos"></div>
       <main className="photos-main">
-        <h1 
-          className="photos-title" 
-          style={{ opacity: titleOpacity }}
-        >
+        <h1 className="photos-title" style={{ opacity: titleOpacity }}>
           Photos
         </h1>
+        <p className="photos-subtitle" style={{ opacity: titleOpacity }}>A snapshot of my life recently</p>
         <div className="photos-grid">
           {/* Render PhotoItem for each image, passing location and season */}
           {images.map((img, i) => (
