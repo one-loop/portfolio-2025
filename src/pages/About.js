@@ -236,6 +236,23 @@ const About = () => {
           {/* <img src="/images/signature.png" alt="signature" width='150' style={{userSelect: 'none', webkitUserDrag: 'none'}}></img> */}
           <img src="/images/signature 2.png" alt="signature" width='150' style={{userSelect: 'none', webkitUserDrag: 'none'}}></img>
         </div>
+        <div>
+          <h1 className="experience-title">Experience</h1>
+          <div className="experience-container">
+            <div className="left">2024 — Present</div>
+            <div className="right">
+              <h2>Research Intern • New York University Abu Dhabi</h2>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+              </p>
+              <div className="skils-tags">
+                <span className="experience-skill">JavaScript</span>
+                <span className="experience-skill">TypeScript</span>
+                <span className="experience-skill">React</span>
+                <span className="experience-skill">Storybook</span>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
 
         <div className="left">

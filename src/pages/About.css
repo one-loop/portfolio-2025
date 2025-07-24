@@ -629,6 +629,38 @@ main .right .image-container {
   transition: transform 0.7s ease;
 }
 
+.about-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.experience-title {
+    font-size: 30px !important;
+}
+
+.experience-container .left {
+    width: 30%;
+    text-align: left;
+    justify-content: start;
+    margin-bottom: 0px;
+}
+
+.experience-container .right {
+    width: 70%;
+}
+
+.experience-skill {
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(16, 16, 16, 0.9);
+    backdrop-filter: blur(20px);
+    border: 2px solid #23252a;
+    color: #F2F2F2;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-right: 10px;
+}
+
 .photos-link svg {
     vertical-align: middle;
 }
