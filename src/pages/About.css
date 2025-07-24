@@ -1014,7 +1014,6 @@ main .right .image-container {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 32px;
 }
 
 .refresh-gallery-btn {
