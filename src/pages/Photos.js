@@ -62,7 +62,7 @@ const Photos = () => {
         <h1 className="photos-title" style={{ opacity: titleOpacity }}>
           Photos
         </h1>
-        <p className="photos-subtitle" style={{ opacity: titleOpacity }}>A snapshot of my life recently</p>
+        {/* <p className="photos-subtitle" style={{ opacity: titleOpacity }}>A snapshot of my life recently</p> */}
         <div className="photos-grid">
           {/* Render PhotoItem for each image, passing location and season */}
           {images.map((img, i) => (

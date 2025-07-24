@@ -35,6 +35,7 @@ html, body {
 
 h1 .emphasize {
     color: #D3A6FF;    
+    color: #b0ecef;    
 }
 
 .hero h2 {
@@ -48,6 +49,7 @@ h1 .emphasize {
     height: 10px;
 
     background: #D9D9D9;
+    background: #b0ecef;
     box-shadow: 0px 0px 20px #FFFFFF;
     margin-right: 12px;
     border-radius: 50px;
@@ -536,11 +538,15 @@ main .right .image-container {
     z-index: -300;
 }
 
+.conclusion-section {
+    margin-bottom: 50px;
+}
+
 .last-section-header {
     margin-bottom: 0px !important;
 }
 
-.computer-1-mobile, .computer-2-mobile, .computer-3-mobile {
+.computer-1-mobile, .computer-1-mobile-container, .computer-2-mobile, .computer-3-mobile {
     display: none;
 }
 
@@ -634,31 +640,101 @@ main .right .image-container {
     flex-direction: row;
 }
 
-.experience-title {
-    font-size: 30px !important;
-}
-
-.experience-container .left {
-    width: 30%;
-    text-align: left;
-    justify-content: start;
+.experience-about-wrapper {
     margin-bottom: 0px;
 }
 
-.experience-container .right {
-    width: 70%;
+
+.experience-about-title {
+    font-size: 30px !important;
 }
 
+.experience-container {
+    display: flex;
+    padding: 24px 16px;
+    border-radius: 12px;
+    transition: background 0.2s;
+    flex-direction: column;
+    box-sizing: content-box;
+    transition: box-shadow background 0.3s;
+    margin-bottom: 16px !important;
+}
+
+
+.experience-container h2 {
+    transition: color 0.24 cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.experience-container .dates {
+    width: 30%;
+    width: 100%;
+    text-align: left;
+    justify-content: start !important;
+    padding-right: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: rgba(242, 242, 242, 0.5);
+}
+
+.experience-container .experience-info {
+    width: 70%;
+    width: 100%;
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+
+.experience-container:hover {
+    background: rgba(20, 20, 20, 0.8);
+    cursor: pointer;
+    backdrop-filter: blur(40px);
+    /* border: 1px solid #23252a; */
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.14);
+}
+
+.experience-container:hover h2 {
+    color: #b0ecef;
+}
+
+.experience-info ul {
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+    margin-bottom: 16px;
+    color: rgba(242, 242, 242, 0.5);
+}
+
+.skills-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0px !important;
+}
+
+
 .experience-skill {
-    padding: 4px 10px;
+    padding: 4px 16px;
     border-radius: 12px;
     background: rgba(16, 16, 16, 0.9);
     backdrop-filter: blur(20px);
-    border: 2px solid #23252a;
+    border: 1px solid #23252a;
     color: #F2F2F2;
-    font-size: 14px;
+    color: #c9b0ef;
+    color: #b0ecef;
     letter-spacing: 0.5px;
-    margin-right: 10px;
+    font-size: 12px;
+}
+
+.resume-wrapper {
+    padding-left: 16px;
+    flex-direction: column;
+    align-items: start !important;
+    margin: 10px 0px !important;
+    margin-top: 30px !important;
+}
+
+.resume-underline {
+    margin: 0px !important;
 }
 
 .photos-link svg {
@@ -670,7 +746,7 @@ main .right .image-container {
   /* mix-blend-mode: screen; */
   left: 0px;
   bottom: 0px;
-  text-align: right;
+  text-align: left;
   left: 10px;
   /* bottom: 10px; */
   /* background: rgba(0,0,0,0.25); */
@@ -810,7 +886,7 @@ main .right .image-container {
         display: none;
     }
 
-    .computer-1-mobile, .computer-2-mobile, .computer-3-mobile {
+    .computer-1-mobile, .computer-1-mobile-container, .computer-2-mobile, .computer-3-mobile {
         display: block;
         margin: 50px auto;
         max-width: 350px;
@@ -931,6 +1007,7 @@ main .right .image-container {
   height: 6.4rem;
   bottom: 0;
   background: linear-gradient(180deg, #d3a6ff 0%, transparent 100%);
+  background: linear-gradient(180deg, #b0ecef 0%, transparent 100%);
   border-radius: 2px;
 }
 
@@ -1061,4 +1138,7 @@ main .right .image-container {
   outline: none;
   box-shadow: none;
   padding: 5px 10px;
+  width: 50px;
+  padding: 10px;
+  padding-bottom: 8px;
 }

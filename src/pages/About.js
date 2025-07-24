@@ -3,6 +3,7 @@ import './About.css';
 import FooterMain from '../components/FooterMain';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import experienceData from '../data/experienceData';
 
 
 const getRandomUnique = (arr, n) => {
@@ -231,27 +232,40 @@ const About = () => {
             The future’s a blank canvas, and I’ve got a lot of paint. Let’s see what we create.
           </p>
         </div>
-        <div>
+        <div className="conclusion-section">
           <h2>Thanks for stopping by!</h2>
           {/* <img src="/images/signature.png" alt="signature" width='150' style={{userSelect: 'none', webkitUserDrag: 'none'}}></img> */}
           <img src="/images/signature 2.png" alt="signature" width='150' style={{userSelect: 'none', webkitUserDrag: 'none'}}></img>
         </div>
-        <div>
-          <h1 className="experience-title">Experience</h1>
-          <div className="experience-container">
-            <div className="left">2024 — Present</div>
-            <div className="right">
-              <h2>Research Intern • New York University Abu Dhabi</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
-              </p>
-              <div className="skils-tags">
-                <span className="experience-skill">JavaScript</span>
-                <span className="experience-skill">TypeScript</span>
-                <span className="experience-skill">React</span>
-                <span className="experience-skill">Storybook</span>
+        <div className="experience-about-wrapper">
+          <h1 className="experience-about-title">Experience</h1>
+          {experienceData.map((exp, index) => (
+            <div key={index} className="experience-container">
+              <div className="dates">{exp.date}</div>
+              <div className="experience-info">
+                <h2>{exp.role} • {exp.company}</h2>
+                <ul className="experience-description">
+                  {exp.description.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+                <div className="skills-tags">
+                  {exp.skills.map((skill, i) => (
+                    <span className="experience-skill" key={i}>{skill}</span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          ))}
+          <div className="resume-wrapper">
+          <a href="/sifar-resume.pdf" target="_blank" className="resume-link">
+            <span className="resume-link-text">View Full Resume</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-icon">
+              <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2"/>
+            </svg>
+          </a>
+          <div className="resume-underline"></div>
+        </div>
         </div>
         </div>
 
