@@ -13,7 +13,9 @@
     position: relative;
     padding: 48px;
     z-index: 10; /* Added to ensure footer stays on top */
-    background: #101010;
+    /* background: #101010; */
+    background: rgba(16, 16, 16, 0.9);
+    backdrop-filter: blur(80px);
 }
 
 
