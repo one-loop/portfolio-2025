@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './Footer.css';
 
 const Footer = () => {
-  const [location, setLocation] = useState('Unknown City, Unknown Country');
+  const [location, setLocation] = useState('New York City, USA');
 
   useEffect(() => {
     async function fetchVisitorLocation() {
@@ -13,8 +13,8 @@ const Footer = () => {
           throw new Error('Failed to fetch location');
         }
         const data = await response.json();
-        const city = data.city || 'Unknown City';
-        const country = data.country_name || 'Unknown Country';
+        const city = data.city || 'New York City';
+        const country = data.country_name || 'USA';
         setLocation(`${city}, ${country}`);
       } catch (error) {
         console.error('Error fetching visitor location:', error.message);

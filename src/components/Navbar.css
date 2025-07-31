@@ -111,6 +111,25 @@ a:hover {
     flex: 1;
 }
 
+.vid-icon-background {
+    position: absolute;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #c3c1b8, #cecdc7);
+    /* backdrop-filter: blur(12px); */
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.14);
+}
+
+.video-icon-container video {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    z-index: 2;
+    top: 1px;
+}
+
 .nav-left h3 {
     text-shadow: 0 1px 2px rgba(0,0,0,.3),0 2px 4px rgba(0,0,0,.2);
 }

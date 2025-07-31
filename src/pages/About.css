@@ -466,8 +466,6 @@ main .right .image-container {
     top: 100px;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 150px;
-    height: 50px;
     z-index: 6; /* Ensure it sits above the computer-1 image */
     /* opacity: 0.5; */
 }
@@ -729,7 +727,7 @@ main .right .image-container {
     padding-left: 16px;
     flex-direction: column;
     align-items: start !important;
-    margin: 10px 0px !important;
+    margin: 10px 0px;
     margin-top: 30px !important;
 }
 

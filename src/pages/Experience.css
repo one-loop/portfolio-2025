@@ -83,7 +83,6 @@
     width: 100%;
     max-width: 860px; /* match the experience-item width */
     text-align: left;
-    margin-bottom: 96px;
 }
 
 .resume-link {
@@ -163,7 +162,6 @@ li {
   width: 100%;
   text-align: center;
   margin-top: 32px;
-  margin-bottom: 96px;
   position: relative;
   display: flex;
   flex-direction: column;

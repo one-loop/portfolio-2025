@@ -58,6 +58,10 @@ body
   color: black;
 }
 
+.vsc-controller, .vsc-controller #controller {
+  display: none !important;
+}
+
 .experience
 {
     position: fixed;

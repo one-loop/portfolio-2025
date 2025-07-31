@@ -35,7 +35,7 @@ const Experience = () => {
             </div>
           </div>
         ))}
-        <div className="resume-wrapper">
+        <div className="resume-wrapper" style={{marginBottom: '96px !important'}}>
           <a href="/sifar-resume.pdf" target="_blank" className="resume-link">
             <span className="resume-link-text">View Full Resume</span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-icon">

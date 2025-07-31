@@ -94,7 +94,11 @@ const Navbar = () => {
   return (
     <nav ref={navRef} className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <Link to="/" className="nav-left">
-        <img src="/icons/logo.png" width="48px" alt="Profile Picture" />
+        {/* <img src="/icons/logo.png" width="48px" alt="Profile Picture" /> */}
+        <div className="video-icon-container" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <div className="vid-icon-background"></div>
+          <video src="/videos/memoji.mov" alt="Profile Picture" autoPlay loop muted />
+        </div>
         <div className="nav-left-text">
           <h2>Saad Sifar</h2>
           <h3>CS @ NYU</h3>
@@ -124,7 +128,7 @@ const Navbar = () => {
           <Link onClick={() => setHamburgerOpen(false)} to="/about" data-index="1" className={activeLink === '/about' ? 'active' : ''}>About</Link>
           <Link onClick={() => setHamburgerOpen(false)} to="/projects" data-index="2" className={activeLink === '/projects' ? 'active' : ''}>Projects</Link>
           <Link onClick={() => setHamburgerOpen(false)} to="/experience" data-index="3" className={activeLink === '/experience' ? 'active' : ''}>Experience</Link>
-          <Link onClick={() => setHamburgerOpen(false)} to="/photos" data-index="4" className={activeLink === '/photos' ? 'active' : ''}>Photos</Link>
+          <Link onClick={() => setHamburgerOpen(false)} to="/photos" data-index="4" className={activeLink === '/photos' ? 'active' : ''}>Gallery</Link>
           <Link onClick={() => setHamburgerOpen(false)} to="/contact" data-index="5" className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
         </div>
         <span className="nav-glow"></span>
