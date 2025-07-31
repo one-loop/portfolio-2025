@@ -41,7 +41,7 @@
 .loading-name {
   display: flex;
   flex-direction: column;
-  font-family: 'New Spirit', serif;
+  font-family: 'New Spirit', 'Garamond', serif;
   font-size: 5.75rem; /* 92px equivalent */
   line-height: 0.8;
   font-weight: normal;
@@ -114,6 +114,8 @@
   width: 100%;
   justify-content: center;
   margin-top: 0px;
+  display: none;
+  
 }
 
 .loading-progress-bar {
@@ -122,7 +124,7 @@
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 2px;
   overflow: hidden;
-  display: none;
+  
 }
 
 .loading-progress-fill {
