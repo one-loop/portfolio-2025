@@ -197,6 +197,15 @@
   .loading-progress-row {
     margin-top: 15px;
   }
+
+  .loading-footer-left, .loading-footer-right {
+    display: none;
+  }
+
+  .loading-footer {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 /* Small mobile styles */
