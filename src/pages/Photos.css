@@ -46,8 +46,10 @@
     display: block;
     color: black;
     background: linear-gradient(0deg, rgba(20, 20, 20, 0.8) 0%, rgba(20, 20, 20, 0) 20%);
+    background: linear-gradient(to bottom, transparent, transparent, 80%, rgba(0, 0, 0, 0.5));
     z-index: 5;
-    display: none;
+    opacity: 0;
+    transition: opacity 0.24s cubic-bezier(.4,0,.2,1)
 }
 
 .photos-title {
@@ -76,7 +78,7 @@
 }
 
 .photo-item:hover .after {
-  display: block;
+  opacity: 1;
 }
 
 .photo-item .photo-location {

@@ -244,16 +244,16 @@ const About = () => {
               <div className="dates">{exp.date}</div>
               <div className="experience-info">
                 <h2>{exp.role} • {exp.company}</h2>
-                <ul className="experience-description">
+                {/* <ul className="experience-description">
                   {exp.description.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
-                </ul>
-                <div className="skills-tags">
+                </ul> */}
+                {/* <div className="skills-tags">
                   {exp.skills.map((skill, i) => (
                     <span className="experience-skill" key={i}>{skill}</span>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

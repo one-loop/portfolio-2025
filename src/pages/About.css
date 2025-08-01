@@ -415,9 +415,6 @@ main .right .image-container {
     z-index: -100;
 }
 
-.right div {
-    margin-bottom: 100px;
-}
 
 /* Add animations for text and hero image */
 @keyframes fadeInUp {
@@ -741,7 +738,6 @@ main .right .image-container {
 
 .about-gallery-season {
   position: absolute;
-  /* mix-blend-mode: screen; */
   left: 0px;
   bottom: 0px;
   text-align: left;
