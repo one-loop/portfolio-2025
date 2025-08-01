@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Experience from '../Experience/Experience';
 import { useExperience } from '../context/ExperienceContext';
 import './ExperienceCanvas.css';
+import currentDetails from '../data/currentDetails';
 
 const ANIMATION_DURATION = 600; // milliseconds
 
@@ -18,6 +19,7 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
   const [loadingDots, setLoadingDots] = useState('.');
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [loadingText, setLoadingText] = useState('Loading');
+  const [currentTime, setCurrentTime] = useState('');
   
   // Animation refs for smooth progress
   const animationRef = useRef(null);
@@ -57,6 +59,26 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
     };
   }, []);
 
+  // Update current time
+  useEffect(() => {
+    const updateTime = () => {
+      const options = {
+        timeZone: currentDetails.timeZone,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      };
+
+      const formatter = new Intl.DateTimeFormat('en-US', options);
+      setCurrentTime(formatter.format(new Date()));
+    };
+
+    updateTime(); // initial call
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, []);
   // Animate loading dots
   useEffect(() => {
     if (!showOverlay) return;
@@ -206,6 +228,23 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
                   className="loading-progress-fill"
                   style={{ width: `${loadingProgress}%` }}
                 />
+              </div>
+            </div>
+          </div>
+          <div className="loading-footer">
+            <div className="loading-footer-left">
+              <div className="loading-footer-left-text">
+                Saad Sifar
+              </div>
+            </div>
+            <div className="loading-footer-center">
+              <div className="loading-footer-center-text">
+                {currentTime}
+              </div>
+            </div>
+            <div className="loading-footer-right">
+              <div className="loading-footer-right-text">
+                {currentDetails.cityLong}, {currentDetails.country}
               </div>
             </div>
           </div>

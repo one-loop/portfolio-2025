@@ -134,6 +134,20 @@
   border-radius: 2px;
 }
 
+.loading-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #4B4B4B;
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .loading-container {

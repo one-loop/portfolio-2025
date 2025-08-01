@@ -151,7 +151,9 @@ a:hover {
 }
 
 .nav-left svg {
-    margin: 0px 3px;
+    margin: 0px 2px;
+    position: relative;
+    top: 1px;
 }
 
 .nav-right-link > a {

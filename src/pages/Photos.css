@@ -14,6 +14,10 @@
   margin-top: 150px;
   position: relative;
   z-index: 10;
+  /* Performance optimizations to prevent navbar flickering */
+  will-change: auto;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .photo-item {
@@ -26,7 +30,11 @@
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   overflow: hidden;
-  height: 700px
+  height: 700px;
+  /* Performance optimizations to prevent navbar flickering */
+  will-change: auto;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .photo-item .after {
