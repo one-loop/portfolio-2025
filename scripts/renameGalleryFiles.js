@@ -1,5 +1,5 @@
 // Node.js script to rename gallery images and update gallery.json accordingly
-// run npm run rename-gallery-files to rename the files
+// run npm run rename-gallery to rename the files
 const fs = require('fs');
 const path = require('path');
 

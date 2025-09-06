@@ -24,7 +24,9 @@ const Photos = () => {
     fetch('/gallery.json')
       .then(res => res.json())
       .then(data => {
-        setAllImages(data); // keep all fields for each image
+        setAllImages(data);
+        // Reverse to show latest images first
+        // setAllImages(data.slice().reverse());
       });
   }, []);
 
