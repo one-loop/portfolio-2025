@@ -1,3 +1,10 @@
-# https://www.robotstxt.org/robotstxt.html
+# Global rules
 User-agent: *
-Disallow:
+Disallow: /gallery/
+Disallow: /gallery.json
+Disallow: /public/gallery/
+
+# Specifically block Google Images
+User-agent: Googlebot-Image
+Disallow: /gallery/
+Disallow: /public/gallery/

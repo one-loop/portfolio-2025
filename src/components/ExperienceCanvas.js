@@ -243,7 +243,7 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
                 <span>
                   LOADING
                   <span className="loading-dots">{loadingDots}</span>
-                </span>
+            </span>
               </div>
               
               {/* Progress Percentage */}

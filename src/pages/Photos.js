@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import FooterMain from '../components/FooterMain';
 import PhotoItem from './PhotoItem';
+import { Helmet } from 'react-helmet';
 import './Photos.css';
 
 // Placeholder image for loading blur effect
@@ -57,6 +58,12 @@ const Photos = () => {
 
   return (
     <div>
+      <Helmet>
+        {/* Prevent indexing of images */}
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
+        <meta name="googlebot-image" content="noindex" />
+      </Helmet>
       <div className="gradient photos"></div>
       <main className="photos-main">
         <h1 className="photos-title" style={{ opacity: titleOpacity }}>

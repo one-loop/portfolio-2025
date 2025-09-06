@@ -1,35 +1,32 @@
 import React, { useState } from 'react';
 
 const PhotoItem = ({ src, alt, placeholder, location, season, title }) => {
-  const [loaded, setLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <div className="photo-item" title={title ? title : ''}>
-      {/* Blurred placeholder */}
+    <div className="photo-item">
+      {/* Blur placeholder */}
       <img
+        className="photo-blur"
         src={placeholder}
         alt=""
         aria-hidden="true"
-        className="photo-blur"
-        draggable={false}
-        loading="lazy"
-        decoding="async"
-        data-nimg="fill"
       />
-      {/* Real image */}
+      
+      {/* Main image */}
       <img
+        className={`photo-img ${imageLoaded ? 'loaded' : ''}`}
         src={src}
         alt={alt}
-        className={`photo-img${loaded ? ' loaded' : ''}`}
-        onLoad={() => setLoaded(true)}
-        draggable={false}
         loading="lazy"
-        decoding="async"
-        data-nimg="fill"
+        referrerPolicy="no-referrer"
+        onLoad={() => setImageLoaded(true)}
       />
+      
+      {/* Overlay with metadata */}
       <div className="after">
-        <span className="photo-location">{location}</span>
-        <span className="photo-time">{season}</span>
+        <div className="photo-location">{location}</div>
+        <div className="photo-time">{season}</div>
       </div>
     </div>
   );

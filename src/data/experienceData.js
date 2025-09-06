@@ -3,11 +3,11 @@ const experienceData = [
     role: "Research Assistant",
     company: "Embodied AI and Robotics Lab, NYU Abu Dhabi",
     description: [
-      "Contributed to the development and evaluation of Uni-Sign, a state-of-the-art unified framework for Sign Language Understanding (SLU) and Generation (SLG), enhancing the capabilities of AI in understanding and generating sign language.",
-      "Collaborated with a multidisciplinary team to integrate computer vision and natural language processing techniques, resulting in a more robust and efficient SLU/SLG system.",
+      "Designed and implemented a local LLM customer service chatbot with integrated ordering and menu-tracking functionality (using Ollama) for ez247, a lab-incubated startup project.",
+      "Optimized and fine-tuned the LLM response pipeline, reducing processing time by 75% while simultaneously improving response accuracy by 50% and minimizing hallucinations, resulting in faster and more reliable customer-facing interactions.",
     ],
-    skills: ["Python", "PyTorch", "Data Analysis", "Computer Vision", "Deep Learning", "Scikit-learn", "MCPs", "AI Agents"],
-    date: "Jun. 2025 — Present",
+    skills: ["Python", "Ollama", "LLM", "MCPs", "Deep Learning", "Scikit-learn", "AI Agents"],
+    date: "Jun. 2025 — Aug. 2025",
     location: "Abu Dhabi, UAE 🇦🇪"
   },
   {

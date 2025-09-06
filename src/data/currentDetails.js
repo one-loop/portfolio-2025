@@ -1,10 +1,10 @@
 const currentDetails = {
-    cityShort: "AD",
-    cityLong: "Abu Dhabi",
-    country: "UAE", 
-    countryLong: "United Arab Emirates",
-    timeZone: "Asia/Dubai",
-    timeZoneShort: "GST"
+    cityShort: "NY",
+    cityLong: "New York City",
+    country: "USA", 
+    countryLong: "United States",
+    timeZone: "America/New_York",
+    timeZoneShort: "EST"
 }
 
 export default currentDetails;

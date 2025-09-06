@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import Photos from './pages/Photos';
+import UnderConstruction from './pages/UnderConstruction';
 import ScrollToTop from './ScrollToTop';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/experience" element={<Experience />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/photos" element={<Photos />} />
+          <Route path="/under-construction" element={<UnderConstruction />} />
         </Routes>
       </div>
     </Router>
