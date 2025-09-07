@@ -946,9 +946,23 @@ main .right .image-container {
     } */
 
     /* Apply styles only to h2 elements that are NOT the last-of-type */
-    .about main h2:not(:nth-last-child(2)) {
+    .about .past-section main h2:not(:nth-last-child(2)),
+    .about .present-section main h2:not(:nth-last-child(2)),
+    .about .future-section main h2:not(:nth-last-child(2)) {
         font-size: 25px;
         text-align: center;
+    }
+
+    .experience-container {
+        padding: 0px;
+    }
+
+    .experience-container:hover {
+        box-shadow: none;
+    }
+
+    .experience-about-wrapper .resume-wrapper {
+        padding-left: 0px;
     }
 
     .about {

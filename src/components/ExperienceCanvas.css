@@ -146,6 +146,7 @@
     font-weight: 500;
     text-transform: uppercase;
     color: #f2f2f25c;
+    z-index: 5;
 }
 
 .loading-footer-left {

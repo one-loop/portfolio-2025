@@ -38,6 +38,8 @@ export default class Experience {
         this.setScene()
         this.setCamera()
         this.setRenderer()
+        // this.setStats()
+        // this.setDebug()
         this.setResources()
         this.setWorld()
         this.setNavigation()

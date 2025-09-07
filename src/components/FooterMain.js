@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './FooterMain.css';
 import { Link } from 'react-router-dom';
 import currentDetails from '../data/currentDetails';
+import MiniClock from './MiniClock';
 
 const FooterMain = () => {
   return (
@@ -30,11 +31,14 @@ const FooterMain = () => {
       <div className="footer-left-profile-text">
         <h2>Saad Sifar</h2>
         <div>
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: "2px", marginTop: "2px", display: "inline-block"}}>
-          <path d="M10 5C10 7.4965 7.2305 10.0965 6.3005 10.8995C6.21386 10.9646 6.1084 10.9999 6 10.9999C5.8916 10.9999 5.78614 10.9646 5.6995 10.8995C4.7695 10.0965 2 7.4965 2 5C2 3.93913 2.42143 2.92172 3.17157 2.17157C3.92172 1.42143 4.93913 1 6 1C7.06087 1 8.07828 1.42143 8.82843 2.17157C9.57857 2.92172 10 3.93913 10 5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M6 6.5C6.82843 6.5 7.5 5.82843 7.5 5C7.5 4.17157 6.82843 3.5 6 3.5C5.17157 3.5 4.5 4.17157 4.5 5C4.5 5.82843 5.17157 6.5 6 6.5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <h3>{currentDetails.cityLong}, {currentDetails.countryLong}</h3>
+          <div>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: "2px", marginTop: "2px", display: "inline-block"}}>
+              <path d="M10 5C10 7.4965 7.2305 10.0965 6.3005 10.8995C6.21386 10.9646 6.1084 10.9999 6 10.9999C5.8916 10.9999 5.78614 10.9646 5.6995 10.8995C4.7695 10.0965 2 7.4965 2 5C2 3.93913 2.42143 2.92172 3.17157 2.17157C3.92172 1.42143 4.93913 1 6 1C7.06087 1 8.07828 1.42143 8.82843 2.17157C9.57857 2.92172 10 3.93913 10 5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M6 6.5C6.82843 6.5 7.5 5.82843 7.5 5C7.5 4.17157 6.82843 3.5 6 3.5C5.17157 3.5 4.5 4.17157 4.5 5C4.5 5.82843 5.17157 6.5 6 6.5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+             <h3>{currentDetails.cityLong}, {currentDetails.countryLong}</h3>
+          </div>
+          {/* <MiniClock /> */}
         </div>
       </div>
       
@@ -56,7 +60,7 @@ const FooterMain = () => {
       </div>
       <div className="copyright-statement">
         <h2>© 2025 Saad Sifar. All Rights Reserved.</h2>
-        <p>Made with lots of love️ and croissants (pure butter)</p>
+        <p>Designed and built with care — fueled by croissants and caffeine.</p>
       </div>
       </div>
 

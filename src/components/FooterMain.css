@@ -192,6 +192,11 @@
         margin-bottom: 65px;
         margin-left: 150px;
     }
+
+    .left-text {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 

@@ -4,6 +4,7 @@ import Experience from '../Experience/Experience';
 import { useExperience } from '../context/ExperienceContext';
 import './ExperienceCanvas.css';
 import currentDetails from '../data/currentDetails';
+import MiniClock from './MiniClock';
 
 const ANIMATION_DURATION = 600; // milliseconds
 
@@ -99,16 +100,6 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
   const getClockHandRotation = (value, maxValue) => {
     return (value / maxValue) * 360;
   };
-
-  const hourRotation = getClockHandRotation(
-    (clockTime.hour || 0) + (clockTime.minute || 0) / 60,
-    12
-  );
-  const minuteRotation = getClockHandRotation(
-    (clockTime.minute || 0) + (clockTime.second || 0) / 60,
-    60
-  );
-  const secondRotation = getClockHandRotation(clockTime.second || 0, 60);
 
   // Animate loading dots
   useEffect(() => {
@@ -278,69 +269,7 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
             </div>
             <div className="loading-footer-center">
               <div className="loading-footer-center-text">
-                <div 
-                  className="footer-clock"
-                  style={{
-                    width: '20px',
-                    height: '20px',
-                    borderRadius: '50%',
-                    border: '1px solid #858584',
-                    position: 'relative',
-                    display: 'inline-block',
-                    marginRight: '8px',
-                    verticalAlign: 'middle',
-                  }}
-                >
-                  {/* Hour Hand */}
-                  <div 
-                    className="footer-hour"
-                    style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      width: '1px',
-                      height: '5px',
-                      backgroundColor: '#858584',
-                      borderRadius: '0.5px',
-                      transformOrigin: 'bottom center',
-                      transform: `translate(-50%, -100%) rotate(${hourRotation}deg)`,
-                      transition: 'transform 0.3s ease'
-                    }}
-                  />
-                  {/* Minute Hand */}
-                  <div 
-                    className="footer-minute"
-                    style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      width: '1px',
-                      height: '7px',
-                      backgroundColor: '#858584',
-                      borderRadius: '0.5px',
-                      transformOrigin: 'bottom center',
-                      transform: `translate(-50%, -100%) rotate(${minuteRotation}deg)`,
-                      transition: 'transform 0.3s ease'
-                    }}
-                  />
-                  {/* Second Hand */}
-                  <div 
-                    className="footer-second"
-                    style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      width: '0.5px',
-                      height: '8px',
-                      backgroundColor: '#858584',
-                      borderRadius: '0.25px',
-                      transformOrigin: 'bottom center',
-                      transform: `translate(-50%, -100%) rotate(${secondRotation}deg)`,
-                      transition: 'transform 0.1s ease'
-                    }}
-                  />
-                </div>
-                {currentTime} {currentDetails.timeZoneShort}
+                <MiniClock />
               </div>
             </div>
             <div className="loading-footer-right">
