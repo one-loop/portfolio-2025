@@ -4,7 +4,7 @@ const currentDetails = {
     country: "USA", 
     countryLong: "United States",
     timeZone: "America/New_York",
-    timeZoneShort: "EST"
+    timeZoneShort: "EDT"
 }
 
 export default currentDetails;
