@@ -1,3 +1,5 @@
+@import '../styles/colors.css';
+
 .main-heading {
     font-family: 'New Spirit';
     font-size: 6em;
@@ -9,7 +11,7 @@
     text-align: center;
     /* top: 80px; */
     opacity: 0;
-    background: -webkit-linear-gradient(#eee, #999);
+    background: -webkit-linear-gradient(var(--color-accent-light-gray-alt), var(--color-gray-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all .6s ease-out;

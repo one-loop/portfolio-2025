@@ -1,0 +1,98 @@
+/* Global Color Variables */
+:root {
+  /* Base Colors */
+  /* --color-bg-primary: #352638; */
+  --color-bg-primary: #1e1922;
+  --color-bg-secondary: #0a0a0a;
+  --color-bg-tertiary: #141414;
+  --color-bg-light: #f2f2f2;
+  --color-bg-white: #ffffff;
+
+  /* Text Colors */
+  --color-text-primary: #f2f2f2;
+  --color-text-secondary: rgba(242, 242, 242, 0.5);
+  --color-text-tertiary: #d9d9d9;
+  --color-text-muted: #929292;
+  --color-text-light-gray: #ededed;
+  --color-text-medium-gray: #a0a0a0;
+  --color-text-dark: #000000;
+  --color-text-inverse: #ffffff;
+  --color-text-with-opacity: #ffffffcc;
+
+  /* Border & Outline Colors */
+  --color-border-light: rgba(255, 255, 255, 0.14);
+  --color-border-medium: rgba(255, 255, 255, 0.5);
+  --color-border-dark: #2c2c2c;
+  --color-border-divider: #373737;
+  --color-border-subtle: #23252a;
+  --color-border-line: #24252a;
+
+  /* Component Background Colors */
+  --color-nav-bg: rgba(10, 10, 10, 0.33);
+  --color-card-bg-dark: rgba(10, 10, 10, 0.3);
+  --color-card-bg-medium: rgba(34, 34, 34, 0.2);
+  --color-card-bg-light: rgba(68, 68, 68, 0.2);
+  --color-input-bg: rgba(20, 20, 20, 0.8);
+  --color-overlay-dark: rgba(16, 16, 16, 0.9);
+  --color-bg-primary-90: color-mix(in srgb, var(--color-bg-primary) 90%, transparent);
+
+  /* Accent Colors */
+  --color-accent-cyan: #b0ecef;
+  --color-accent-purple: #D3A6FF;
+  --color-accent-purple-dark: #c9b0ef;
+  --color-accent-success: #17c964;
+  --color-accent-light-gray: #bdbebe;
+  --color-accent-gray: #cecdc7;
+  --color-accent-light-beige: #c3c1b8;
+  --color-accent-light-gray-alt: #eaeaea;
+
+  /* Gradient Colors - Dark Blue */
+  --color-grad-blue-1: rgba(69, 94, 181, 0.2);
+  --color-grad-blue-2: rgba(86, 67, 204, 0.2);
+  --color-grad-blue-3: rgba(103, 63, 215, 0.2);
+  --color-grad-blue-1-strong: rgba(69, 94, 181, 0.6);
+  --color-grad-blue-2-strong: rgba(86, 67, 204, 0.6);
+  --color-grad-blue-3-strong: rgba(103, 63, 215, 0.6);
+
+  /* Gradient Colors - Cyan/Blue */
+  --color-grad-cyan-green: rgba(70, 227, 183, 0.3);
+  --color-grad-cyan-blue: rgba(47, 122, 208, 0.3);
+  --color-grad-cyan-green-strong: rgba(70, 227, 183, 0.6);
+  --color-grad-cyan-blue-strong: rgba(47, 122, 208, 0.6);
+
+  /* Gradient Colors - Teal/Cyan */
+  --color-grad-teal: rgba(80, 227, 194, 0.2);
+  --color-grad-blue-dark: rgba(0, 112, 243, 0.2);
+
+  /* Gradient Colors - Green */
+  --color-grad-green: rgba(68, 160, 141, 0.2);
+  --color-grad-green-dark: rgba(9, 54, 55, 0.2);
+
+  /* Gradient Colors - Pink/Magenta */
+  --color-grad-pink: rgba(255, 110, 199, 0.2);
+  --color-grad-purple-pink: rgba(245, 55, 249, 0.6);
+  --color-grad-pink-vibrant: #f537f9;
+  --color-grad-yellow: #f7c12b;
+  --color-grad-yellow-alt: rgba(247, 193, 43, 0.6);
+
+  /* Gradient Colors - Blue/Cyan Mix */
+  --color-grad-blue-cyan: rgba(100, 181, 246, 0.2);
+  --color-grad-blue-cyan-alt: rgb(110, 175, 255, 0.2);
+
+  /* Shadow & Overlay Colors */
+  --color-shadow-dark: rgba(0, 0, 0, 0.8);
+  --color-shadow-transparent: rgba(0, 0, 0, 0);
+  --color-shadow-light: rgba(0, 0, 0, 0.04);
+  --color-shadow-medium: rgba(0, 0, 0, 0.08);
+  --color-glow-white: #FFFFFF;
+  --color-glow-shadow: 0px -5px 25px 2px #FFFFFF;
+  --color-box-shadow-light: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  --color-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --color-text-shadow-heavy: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --color-bg-primary-transparent: rgb(0, 0, 0, 0);
+
+  /* Neutral Grays */
+  --color-gray-light: #999;
+  --color-gray-medium: #4B4B4B;
+  --color-gray-dark: #878787;
+}

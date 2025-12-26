@@ -1121,21 +1121,21 @@
     {
         "filename": "160.jpeg",
         "date": "2025-01-18T09:35:40.000Z",
-        "location": "Versailles, France \ud83c\uddeb\ud83c\uddf7",
+        "location": "Paris, France \ud83c\uddeb\ud83c\uddf7",
         "season": "Spring 2025",
         "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABQBQCdASoYACAAPxFys1CsJqSiqA1RgCIJZQDA3ywDd/VeElNva46OgNlCyxYxkC0MN8gA/up0CV/zcj91m/ZBrE47zwn2hhVSvgLvymJ+/sgGwmqbppCojfMoWJksjHgl3hgQtW0xcwkel/rhb/Kni+Q9z1sm5WeqFTAtQDmVngnGVbyWEMo7J/afdYuOFbI04tXQJo/WwtwR2oAAAA=="
     },
     {
         "filename": "161.jpeg",
         "date": "2025-01-18T10:41:11.000Z",
-        "location": "Versailles, France \ud83c\uddeb\ud83c\uddf7",
+        "location": "Paris, France \ud83c\uddeb\ud83c\uddf7",
         "season": "Spring 2025",
         "placeholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAACQBQCdASoYACAAPxF0tFKsJqUisBgIAYAiCUAWcAaMOZTR8+840CxJxe0yJmk2d5vzPaQ/4AD+uR8CLC/NzBmUrvpkRGaU8HzTBEk4gSxVIOw7ktE9Z5xY6mLbVvDdwEN1ZZL15qDB481HeHXaZtxzt2hGgke7HYL3SSEW6BZv7JjMsgYU2MvEVMRGSD+nGg3RnwbsbmrkVkMvT7uiCPygBDgRo+3hVdbIAA=="
     },
     {
         "filename": "162.jpeg",
         "date": "2025-01-18T11:22:49.000Z",
-        "location": "Versailles, France \ud83c\uddeb\ud83c\uddf7",
+        "location": "Paris, France \ud83c\uddeb\ud83c\uddf7",
         "season": "Spring 2025",
         "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBQCdASoYACAAPxFyslMsJiQisBgIAYAiCWcAzgGn6NyClnLd/Q+wLdUs5dr47Fv9uDfUAP7Tlm80rzaiEi5mwqMnYTQBLtbZskAa+3OpZ5E5Sep0WMyw/VMVY74Cn5HKBrhS1uSUQtuwHsEuERGYQsyMszAIpqDdIvuOAytHz5bUA2B/mBuYQkwJ7gAA"
     },
@@ -3415,28 +3415,28 @@
     {
         "filename": "487.jpeg",
         "date": "2025-07-25T17:49:29.000Z",
-        "location": "Warsaw, New York, United States \ud83c\uddfa\ud83c\uddf8",
+        "location": "Warsaw NY, United States \ud83c\uddfa\ud83c\uddf8",
         "season": "Fall 2025",
         "placeholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADQBACdASoYACAAPxF8tFOsJ6SiqAqpgCIJZQAAdVW8DfEXnsewJunw2pxNM1oQAADoe6R9XgbpP5hXIBjkF6VyZjZcKwiKwzVNz5pG8j6xc4U9q5AvkewCUXwHKOpS+S/DxcLQjPr68dw0qCbBjpEECSCTz25t0oJXk+j9ZHGgKTVrasbD4GbM+hlv9CDE2ujPTNt9rEfIAA=="
     },
     {
         "filename": "488.jpeg",
         "date": "2025-07-25T17:49:29.000Z",
-        "location": "Scranton, Pennsylvania, United States \ud83c\uddfa\ud83c\uddf8",
+        "location": "Scranton PA, United States \ud83c\uddfa\ud83c\uddf8",
         "season": "Fall 2025",
         "placeholder": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAAAwBQCdASoYACAAPxF+tlWsJ6SjKAgBgCIJQBBF4eRSakGuLBBLrwOoVJZs7ORyTV0KAAD+ELpWbNT2xZXRj5SmkgQbfZwEpJ/YRw/i0E8jiZ0rArXLet9cqaLb8PFidVWOdo/coFqYCEoWMsVXxNurz+j+wyV3qcEmBfvMmlRemQ31IBpKpM4gDEARbwdlfSRUAMTY272higC7kOBaNcJa0fnTJITTpDE85oXcmDuliFSV/ZcNIFXZZwmHKYtXc2jQ+E1QXAAAAA=="
     },
     {
         "filename": "489.jpeg",
         "date": "2025-07-25T17:49:29.000Z",
-        "location": "Parsippany, New Jersey, United States \ud83c\uddfa\ud83c\uddf8",
+        "location": "Parsippany NJ, United States \ud83c\uddfa\ud83c\uddf8",
         "season": "Fall 2025",
         "placeholder": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACQBQCdASoYACAAPxF2slIsJySisBgIAYAiCWIAwoA0XP2F6dXdJWX4eEei43IpuY++ZHPTgAD+8qhXcBi304XcZ+6icaFUy/I9gEGtj6HTvx2fBNdhKorzb2FWEUPpIVOkuTy0BKfewAW3wVz2e+mwXddVo0SbEhLVpbIbrWx5edNJ3Mz38j9ArSUIkyxMfNFkGNb4zfw/BlQSe6Xv7F2vFLX+VKQwtHf6BM9XZQmxmoMiW1A+zXyAAAA="
     },
     {
         "filename": "490.jpeg",
         "date": "2025-07-25T17:49:29.000Z",
-        "location": "Newark, New Jersey, United States \ud83c\uddfa\ud83c\uddf8",
+        "location": "Newark NJ, United States \ud83c\uddfa\ud83c\uddf8",
         "season": "Fall 2025",
         "placeholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACQBQCdASoYACAAPxFytFKsJiUisBgIAYAiCWIArDNVxNQLPELaDAFjbElKxEqIzT/YwTKd8AD+8rTs5W+h1oLO85zFuzQ7U73jYP5X1wZBCcEUtbab/ybLc1XtvZrtWy17oR0FKP30ulXT+vDe030Xh2rpeXxqCRotzvO+9UkvIq6kBoPsPKItjK5tCxh5KYQLBq5EKAKbqoG48DEa8qlly3OXqDQgAAA="
     },
@@ -4220,7 +4220,7 @@
     {
         "filename": "602.jpeg",
         "date": "2025-07-25T17:49:29.000Z",
-        "location": "Newark, New Jersey United States \ud83c\uddfa\ud83c\uddf8",
+        "location": "Newark NJ, United States \ud83c\uddfa\ud83c\uddf8",
         "season": "Fall 2025",
         "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwBACdASoYACAAPxF2slGsJySiqA1RgCIJYgC3uDfcwJVGZNBTpDhcuQAA5gQZe4ue19Btfi7sRFLxE8s5ve1yzIlPh37iT0UO/A73CM5IhFImNhpp2LfRMVwP9nvjghk/coDB1hxknw6QyJoJsnToxgvQJQa2eFZcncuOQK/9/vklIexEesc1lrS1eJBkDEQ+VoAA"
     },
@@ -4423,14 +4423,14 @@
     {
         "filename": "631.jpeg",
         "date": "2025-07-25T17:49:29.000Z",
-        "location": "Newark, New Jersey, United States \ud83c\uddfa\ud83c\uddf8",
+        "location": "Newark NJ, United States \ud83c\uddfa\ud83c\uddf8",
         "season": "Fall 2025",
         "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACwBACdASoYACAAPxFusFCsJiSisBgMAYAiCWUAxnw6V72g61UINIIzuwuWIBngAP7p0ACX69hPaH8vHJdPMwWsDduuN7xAgkbjQ8ZzCR0NmkTT+plORTlg87xms7ejySbqKQy2I2yZg3vReUG34mx0UlmsHCSL3zjhY8BmsDoKQJLrvNAKsT+E6ektY/44nDAwajuoCz1Tz2AA"
     },
     {
         "filename": "632.jpeg",
         "date": "2025-07-25T17:49:29.000Z",
-        "location": "Newark, New Jersey, United States \ud83c\uddfa\ud83c\uddf8",
+        "location": "Newark NJ, United States \ud83c\uddfa\ud83c\uddf8",
         "season": "Fall 2025",
         "placeholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwBACdASoSACAAPxF0sFAsJqSisAgBgCIJYwCo9B3C17uXVw3PbAlXKPdVIfjQANT3FodFAVlm4YkvCWWU2Y7r+nj3qrZVq977JjEAxBg3o9jJuVAvDNuiBcJJsg6LR5Ux0YH2BdGZ7HDD4AAAAA=="
     },

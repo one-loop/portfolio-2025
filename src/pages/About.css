@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import '../styles/colors.css';
 
 /* body {
     overflow-x: hidden !important;
@@ -27,15 +28,15 @@ html, body {
     font-size: 48px;
     font-family: 'New Spirit';
     /* color: #f2f2f2; */
-    color: #d9d9d9;
+    color: var(--color-text-tertiary);
     text-align: left;
     margin-top: 10px;
     margin-bottom: 50px;
 }
 
 h1 .emphasize {
-    color: #D3A6FF;    
-    color: #b0ecef;    
+    color: var(--color-accent-purple);    
+    color: var(--color-accent-cyan);    
 }
 
 .hero h2 {
@@ -48,9 +49,9 @@ h1 .emphasize {
     width: 10px;
     height: 10px;
 
-    background: #D9D9D9;
-    background: #b0ecef;
-    box-shadow: 0px 0px 20px #FFFFFF;
+    background: var(--color-accent-cyan);
+    background: var(--color-accent-cyan);
+    box-shadow: 0px 0px 20px var(--color-glow-white);
     margin-right: 12px;
     border-radius: 50px;
     display: inline-block;
@@ -68,7 +69,7 @@ h1 .emphasize {
     letter-spacing: 0.1em;
     text-transform: uppercase;
 
-    color: rgba(242, 242, 242, 0.4);
+    color: var(--color-text-secondary);
     margin-bottom: 38px;
 
 }
@@ -89,7 +90,7 @@ h1 .emphasize {
 }
 
 .gallery div {
-    background-color: gray;
+    background-color: var(--color-text-muted);
     border-radius: 4px;
     z-index: 10;
     user-select: none;
@@ -208,7 +209,7 @@ h1 .emphasize {
     margin-bottom: 28px;
     /* or 175% */
 
-    color: #929292;
+    color: var(--color-text-muted);
 }
 
 h2 {
@@ -217,7 +218,7 @@ h2 {
     font-size: 18px;
     margin-bottom: 18px;
     font-family: 'New Spirit';
-    color: rgba(242, 242, 242, 0.9);
+    color: var(--color-text-primary);
 }
 
 .right {
@@ -292,7 +293,7 @@ h2 {
     top: 50%;
     right: 50%;
     transform: translate(62%, -50%);
-    background: linear-gradient(285.49deg,#f537f9 -14.61%,#f7c12b 106.06%);
+    background: linear-gradient(285.49deg, var(--color-grad-pink-vibrant) -14.61%, var(--color-grad-yellow) 106.06%);
     filter: blur(50px);
     opacity: 0.6;
     border-radius: 50%;
@@ -307,7 +308,7 @@ h2 {
     top: 50%;
     right: 50%;
     transform: translate(62%, -50%);
-    background: radial-gradient(rgb(0, 0, 0, 0) 0%, #101010 50%);
+    background: radial-gradient(rgb(0, 0, 0, 0) 0%, var(--color-bg-primary) 50%);
 }
 
 .about { 
@@ -488,7 +489,7 @@ main .right .image-container {
     /* Increase dimensions by 25% using calc() */
     width: clamp(calc(300px * 1.25), calc(40vw * 1.25), calc(700px * 1.25));
     height: clamp(calc(300px * 1.25), calc(40vw * 1.25), calc(700px * 1.25));
-    background: radial-gradient(circle, rgba(16, 16, 16, 0) 0%, #101010 62.5%);
+    background: radial-gradient(circle, var(--color-bg-primary-transparent) 0%, var(--color-bg-primary) 62.5%);
     z-index: -1;
     transition: opacity 0.2s linear;
 }
@@ -528,8 +529,8 @@ main .right .image-container {
     left: 0;
     width: 100%;
     height: 75vh;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101010 100%), 
-                linear-gradient(89.42deg, rgba(69, 94, 181, 0.2) 16.15%, rgba(86, 67, 204, 0.2) 47.6%, rgba(103, 63, 215, 0.2) 72.31%);
+    background: linear-gradient(180deg, var(--color-shadow-transparent) 0%, var(--color-bg-primary) 100%), 
+                linear-gradient(89.42deg, var(--color-grad-blue-1) 16.15%, var(--color-grad-blue-2) 47.6%, var(--color-grad-blue-3) 72.31%);
     z-index: -300;
 }
 

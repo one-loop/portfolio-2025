@@ -1,6 +1,8 @@
+@import '../styles/colors.css';
+
 .home-footer {
     padding: 24px 48px;
-    color: rgba(242, 242, 242, 0.5);
+    color: var(--color-text-secondary);
     display: flex;
     align-items: center;
     justify-content: space-between;

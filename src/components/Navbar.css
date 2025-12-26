@@ -36,7 +36,8 @@
     height: 100px;
     width: 100%;
     inset: 0 0 auto 0;
-    background: #0a0a0acc;
+    background: var(--color-bg-secondary);
+    background: color-mix(in srgb, var(--color-bg-secondary) 80%, transparent);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     -webkit-mask-image: linear-gradient(to bottom, #000 20%, transparent calc(100% - 20%));
@@ -47,8 +48,8 @@
     /* Center Navbar */
     /* width: 468px; */
     height: 48px;
-    background: rgba(10, 10, 10, 0.33);
-    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.14);
+    background: var(--color-nav-bg);
+    box-shadow: 0px 0px 0px 1px var(--color-border-light);
     backdrop-filter: blur(12px);
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 16px;
@@ -72,18 +73,18 @@
 }
 
 a {
-    color: #ffffffcc;
+    color: var(--color-text-with-opacity);
     transition: color .24s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 
 a:hover {
-    color: #fff;
+    color: var(--color-bg-white);
 }
 
 .nav-center-links > a {
     font-size: 14px;
     text-decoration: none;
-    text-shadow: 0 1px 2px rgba(0,0,0,.2),0 2px 4px rgba(0,0,0,.1);
+    text-shadow: var(--color-text-shadow);
     /* position: relative; */
 }
 
@@ -96,8 +97,8 @@ a:hover {
     z-index: 1000;
     left: 40px;
 
-    background: #F2F2F2;
-    box-shadow: 0px -5px 25px 2px #FFFFFF;
+    background: var(--color-bg-light);
+    box-shadow: 0px -5px 25px 2px var(--color-glow-white);
     border-radius: 2px 2px 0px 0px;
     transition: left 0.3s ease;
 
@@ -117,9 +118,9 @@ a:hover {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: linear-gradient(90deg, #c3c1b8, #cecdc7);
+    background: linear-gradient(90deg, var(--color-accent-light-beige), var(--color-accent-gray));
     /* backdrop-filter: blur(12px); */
-    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.14);
+    box-shadow: 0px 0px 0px 1px var(--color-border-light);
 }
 
 .video-icon-container video {
@@ -131,12 +132,12 @@ a:hover {
 }
 
 .nav-left h3 {
-    text-shadow: 0 1px 2px rgba(0,0,0,.3),0 2px 4px rgba(0,0,0,.2);
+    text-shadow: var(--color-text-shadow-heavy);
 }
 
 
 .nav-left-text h2 {
-    color: #F2F2F2;
+    color: var(--color-bg-light);
     font-size: 20px;
     font-weight: 500;
     /* margin-bottom: 4px; */
@@ -144,7 +145,7 @@ a:hover {
 }
 
 .nav-left-text h3 {
-    color: rgba(242, 242, 242, 0.5);
+    color: var(--color-text-secondary);
     font-size: 12px;
     font-weight: 500;
     display: inline;
@@ -159,7 +160,7 @@ a:hover {
 .nav-right-link > a {
     font-size: 14px;
     text-decoration: none;
-    text-shadow: 0 1px 2px rgba(0,0,0,.3),0 2px 4px rgba(0,0,0,.2);
+    text-shadow: var(--color-text-shadow-heavy);
     margin-right: 4px;
     margin-bottom: 2px;
     user-select: none;
@@ -211,7 +212,7 @@ a:hover {
   gap: 13px;
 }
 .hamburger .line {
-  background: #fff;
+  background: var(--color-bg-white);
   height: 1px;
   width: 20px;
   transition: transform 0.3s ease;
@@ -289,7 +290,7 @@ a:hover {
         font-size: 12px;
         font-weight: 500;
         display: inline;
-        color: rgba(242, 242, 242, 0.5);
+        color: var(--color-text-secondary);
     }
 
     .nav-center-right {
