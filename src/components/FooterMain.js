@@ -54,12 +54,12 @@ const FooterMain = () => {
         </span>
       </div>
       <div>
-          <h3 className="copyright-statement">© 2025 Saad Sifar. All Rights Reserved.</h3>
+          <h3 className="copyright-statement">© 2026 Saad Sifar. All Rights Reserved.</h3>
           <p>Made with lots of love️ and croissants (pure butter)</p>
       </div> */}
       </div>
       <div className="copyright-statement">
-        <h2>© 2025 Saad Sifar. All Rights Reserved.</h2>
+        <h2>© 2026 Saad Sifar. All Rights Reserved.</h2>
         <p>Designed and built with care — fueled by croissants and caffeine.</p>
       </div>
       </div>

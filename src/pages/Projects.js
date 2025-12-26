@@ -115,7 +115,7 @@ const Projects = () => {
               style={{ backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.6)), url(${process.env.PUBLIC_URL}/projectthumbnails/portfolio.webp)` }}
             >
               <div className="grid-item-header-overlay">
-                <h1>2025 Port<i>folio</i></h1>
+                <h1>2026 Port<i>folio</i></h1>
                 <img src="projectthumbnails/portfolioroom.webp" alt="Portfolio Room"></img>
               </div>
               <div className="grid-item-overlay">

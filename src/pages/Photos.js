@@ -26,7 +26,7 @@ const Photos = () => {
       .then(data => {
         setAllImages(data);
         // Reverse to show latest images first
-        // setAllImages(data.slice().reverse());
+        setAllImages(data.slice().reverse());
       });
   }, []);
 
