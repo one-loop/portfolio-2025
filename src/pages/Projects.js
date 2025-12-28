@@ -6,6 +6,7 @@ import FooterMain from '../components/FooterMain';
 // Neutral blurred placeholder as a tiny data URI
 const PLACEHOLDER_DATA_URI = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><rect width='10' height='10' fill='%239b9b9b'/></svg>";
 
+
 // Hook to preload a background image and return style + loaded
 const usePreloadedBackground = (url, gradient = null) => {
   const [loaded, setLoaded] = useState(false);

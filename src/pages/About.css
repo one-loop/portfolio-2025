@@ -746,7 +746,8 @@ main .right .image-container {
   /* bottom: 10px; */
   /* background: rgba(0,0,0,0.25); */
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,.3),0 2px 4px rgba(0,0,0,.2);
+  /* text-shadow: 0 1px 2px rgba(0,0,0,.3),0 2px 4px rgba(0,0,0,.2); */
+  text-shadow: 0 1px 2px rgb(0 0 0 / 60%), 0 2px 4px rgb(0 0 0 / 60%);
   font-family: 'Shadows Into Light', cursive;
   font-size: 1rem;
   letter-spacing: 0.5px;
