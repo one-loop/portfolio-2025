@@ -147,6 +147,7 @@
     font-weight: 500;
     text-transform: uppercase;
     color: #f2f2f25c;
+    color: var(--color-text-muted);
     z-index: 5;
 }
 
@@ -156,6 +157,7 @@
   justify-content: center;
   gap: 12px;
 }
+
 
 /* Mobile styles */
 @media (max-width: 768px) {

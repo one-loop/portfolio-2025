@@ -1,7 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
 import FooterMain from '../components/FooterMain';
+
+// Neutral blurred placeholder as a tiny data URI
+const PLACEHOLDER_DATA_URI = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><rect width='10' height='10' fill='%239b9b9b'/></svg>";
+
+// Hook to preload a background image and return style + loaded
+const usePreloadedBackground = (url, gradient = null) => {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    if (!url) return;
+    const img = new Image();
+    img.src = url;
+    const onLoad = () => setLoaded(true);
+    img.addEventListener('load', onLoad);
+    return () => img.removeEventListener('load', onLoad);
+  }, [url]);
+  const style = loaded
+    ? { backgroundImage: gradient ? `${gradient}, url(${url})` : `url(${url})` }
+    : {};
+  return { style, loaded };
+};
 
 const Projects = () => {
 
@@ -19,15 +39,44 @@ const Projects = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Preload all project thumbnail backgrounds
+  const item1Bg = usePreloadedBackground(`${process.env.PUBLIC_URL}/projectthumbnails/focusboost.webp`);
+  const item2Bg = usePreloadedBackground(
+    `${process.env.PUBLIC_URL}/projectthumbnails/storefront.webp`,
+    'linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8))'
+  );
+  const item3Bg = usePreloadedBackground(`${process.env.PUBLIC_URL}/projectthumbnails/redlookit.webp`);
+  const item4Bg = usePreloadedBackground(
+    `${process.env.PUBLIC_URL}/projectthumbnails/portfolio.webp`,
+    'linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.6))'
+  );
+  const item5Bg = usePreloadedBackground(`${process.env.PUBLIC_URL}/projectthumbnails/chatbot.webp`);
+  const item6Bg = usePreloadedBackground(`${process.env.PUBLIC_URL}/projectthumbnails/worldle.webp`);
+  const item7Bg = usePreloadedBackground(`${process.env.PUBLIC_URL}/projectthumbnails/2024portfolio.webp`);
+  const item8Bg = usePreloadedBackground(
+    `${process.env.PUBLIC_URL}/projectthumbnails/ava.webp`,
+    'linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8))'
+  );
+  const item9Bg = usePreloadedBackground(
+    `${process.env.PUBLIC_URL}/projectthumbnails/skystrike.webp`,
+    'linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8))'
+  );
+  const item10Bg = usePreloadedBackground(
+    `${process.env.PUBLIC_URL}/projectthumbnails/lingoslash.webp`,
+    'linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8))'
+  );
+  const item11Bg = usePreloadedBackground(
+    `${process.env.PUBLIC_URL}/projectthumbnails/airaeagency.webp`,
+    'linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8))'
+  );
+
   return (
     <div>
       <div className="gradient projects">
         {/* <div className="wip-bnaner">This page is currently under construction, but please do visit again soon!</div> */}
           <div className="showcase-grid">
-            <div
-              className="grid-item item1"
-              style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/projectthumbnails/focusboost.webp)` }}
-            >
+            <div className="grid-item item1" style={item1Bg.style}>
+              <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item1Bg.loaded ? 0 : 1 }} />
               <div className="grid-item-header-overlay">
                 <h1>FocusBoost.</h1>
                 <p>A VR Learning Platform designed for children with ADHD</p>
@@ -52,10 +101,8 @@ const Projects = () => {
                 </Link>
               </div>
             </div>
-            <div
-              className="grid-item item2"
-              style={{ backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8)), url(${process.env.PUBLIC_URL}/projectthumbnails/storefront.webp)` }}
-            >
+            <div className="grid-item item2" style={item2Bg.style}>
+              <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item2Bg.loaded ? 0 : 1 }} />
               <div className="grid-item-header-overlay">
                 <h1>StoreFront.</h1>
                 <p>A platform that helps small businesses create online stores, showcase products, and reach more customers.</p>
@@ -80,10 +127,8 @@ const Projects = () => {
                 </Link>
               </div>
             </div>
-            <div
-              className="grid-item item3"
-              style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/projectthumbnails/redlookit.webp)` }}
-            >
+            <div className="grid-item item3" style={item3Bg.style}>
+              <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item3Bg.loaded ? 0 : 1 }} />
               <div className="grid-item-header-overlay">
                 <h1>Redlookit.</h1>
                 <p>A Reddit wrapper-client, created to simulate the UI and look of Microsoft Outlook’s mail client</p>
@@ -110,10 +155,8 @@ const Projects = () => {
                 </a>
               </div>
             </div>
-            <div
-              className="grid-item item4"
-              style={{ backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.6)), url(${process.env.PUBLIC_URL}/projectthumbnails/portfolio.webp)` }}
-            >
+            <div className="grid-item item4" style={item4Bg.style}>
+              <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item4Bg.loaded ? 0 : 1 }} />
               <div className="grid-item-header-overlay">
                 <h1>2026 Port<i>folio</i></h1>
                 <img src="projectthumbnails/portfolioroom.webp" alt="Portfolio Room"></img>
@@ -138,10 +181,8 @@ const Projects = () => {
                 </Link>
               </div>
             </div>
-            <div
-              className="grid-item item5"
-              style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/projectthumbnails/chatbot.webp)` }}
-            >
+            <div className="grid-item item5" style={item5Bg.style}>
+            <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item5Bg.loaded ? 0 : 1 }} />
             <div className="grid-item-header-overlay">
               <h1>Local LLM <br /> Chat Assistant.</h1>
               <p>A local LLM chatbot assistant allowing students to place food orders from the NYUAD dining hall.</p>
@@ -166,10 +207,8 @@ const Projects = () => {
                 </Link>
               </div>
             </div>
-            <div
-              className="grid-item item6"
-              style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/projectthumbnails/worldle.webp)` }}
-            >
+            <div className="grid-item item6" style={item6Bg.style}>
+              <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item6Bg.loaded ? 0 : 1 }} />
               <div className="grid-item-header-overlay">
                 <h1>Worldle.</h1>
                 <p>A wordle-inspired geo-guessing game.</p>
@@ -194,10 +233,8 @@ const Projects = () => {
                 </Link>
               </div>
             </div>
-            <div
-              className="grid-item item7"
-              style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/projectthumbnails/2024portfolio.webp)` }}
-            >
+            <div className="grid-item item7" style={item7Bg.style}>
+              <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item7Bg.loaded ? 0 : 1 }} />
               <div className="grid-item-header-overlay">
                 <h1>2024 Port<i>folio</i></h1>
               </div>
@@ -224,10 +261,11 @@ const Projects = () => {
             <div
               className="grid-item item8"
               style={{
-                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8)), url(${process.env.PUBLIC_URL}/projectthumbnails/ava.webp)`,
+                ...item8Bg.style,
                 backgroundPosition: 'center top',
               }}
             >
+              <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item8Bg.loaded ? 0 : 1 }} />
               <div className="grid-item-header-overlay">
               <svg width="70" height="30" viewBox="0 0 70 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2597 24.8327C21.6305 26.7788 25.4026 23.0066 23.4565 19.6358L15.2889 5.48909C13.8246 2.95286 10.1638 2.95285 8.69956 5.48909L0.531979 19.6358C-1.41414 23.0066 2.35803 26.7788 5.72881 24.8327L10.0921 22.3135C11.2692 21.6339 12.7194 21.6339 13.8964 22.3135L18.2597 24.8327Z" fill="#F2F2F2"/>
@@ -257,10 +295,8 @@ const Projects = () => {
                 </Link>
               </div>
             </div>
-            <div
-              className="grid-item item9"
-              style={{ backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8)), url(${process.env.PUBLIC_URL}/projectthumbnails/skystrike.webp)` }}
-            >
+            <div className="grid-item item9" style={item9Bg.style}>
+              <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item9Bg.loaded ? 0 : 1 }} />
               <div className="grid-item-header-overlay">
                 <h1>SkyStrike.</h1>
                 <p>A simple 2D top-down shooter game made for CS 1001 at NYU Abu Dhabi.</p>
@@ -285,10 +321,8 @@ const Projects = () => {
                 </Link>
               </div>
             </div>
-            <div
-              className="grid-item item10"
-              style={{ backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8)), url(${process.env.PUBLIC_URL}/projectthumbnails/lingoslash.webp)` }}
-            >
+            <div className="grid-item item10" style={item10Bg.style}>
+              <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item10Bg.loaded ? 0 : 1 }} />
               <div className="grid-item-header-overlay">
                 <h1>Lingo Slash.</h1>
                 <p>A beat saber-inspired language learning game in VR.</p>
@@ -313,10 +347,8 @@ const Projects = () => {
                 </Link>
               </div>
             </div>
-            <div
-              className="grid-item item11"
-              style={{ backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(22, 22, 22, 0.8)), url(${process.env.PUBLIC_URL}/projectthumbnails/airaeagency.webp)` }}
-            >
+            <div className="grid-item item11" style={item11Bg.style}>
+            <img className="project-blur" src={PLACEHOLDER_DATA_URI} alt="" aria-hidden="true" style={{ opacity: item11Bg.loaded ? 0 : 1 }} />
             <div className="grid-item-header-overlay">
               <h1 style={{fontSize: '32px'}}>Web Development Agency</h1>
               <p>10+ client projects, 100% client satisfaction.</p>

@@ -57,8 +57,11 @@ body
 */
 
 ::selection {
-  background-color: rgb(249 224 133) !important;
-  color: var(--color-text-dark);
+  /* background-color: rgb(249 224 133) !important; */
+  /* background-color: #9696e4 !important;
+  color: var(--color-text-primary); */
+  background-color: rgb(158, 203, 229) !important;
+  color: rgb(16, 17, 24);
 }
 
 .vsc-controller, .vsc-controller #controller {
@@ -97,7 +100,8 @@ body
 }
   
 .gradient.projects {
-  background: linear-gradient(180deg, var(--color-shadow-transparent) 0%, var(--color-bg-primary) 100%), linear-gradient(89.42deg, var(--color-grad-blue-1) 16.15%, var(--color-grad-blue-2) 47.6%, var(--color-grad-blue-3) 72.31%);
+  /* background: linear-gradient(180deg, var(--color-shadow-transparent) 0%, var(--color-bg-primary) 100%), linear-gradient(89.42deg, var(--color-grad-blue-1) 16.15%, var(--color-grad-blue-2) 47.6%, var(--color-grad-blue-3) 72.31%); */
+  background: linear-gradient(180deg, var(--color-shadow-transparent) 0%, var(--color-bg-primary) 100%), linear-gradient(44.78deg, rgb(67 169 255 / 30%) -5.94%, rgb(95 169 255 / 30%) 62.87%);
   pointer-events: none;
 }
 

@@ -96,8 +96,9 @@ const Navbar = () => {
       <Link to="/" className="nav-left">
         {/* <img src="/icons/logo.png" width="48px" alt="Profile Picture" /> */}
         <div className="video-icon-container" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <div className="vid-icon-background"></div>
-          <video src="/videos/memoji.mov" alt="Profile Picture" autoPlay loop muted />
+          <div className="vid-icon-background">
+            <video src="/videos/memoji.mov" alt="Profile Picture" muted autoPlay loop />
+          </div>
         </div>
         <div className="nav-left-text">
           <h2>Saad Sifar</h2>

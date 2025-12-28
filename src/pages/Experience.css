@@ -73,7 +73,7 @@
 
 .experience-skills span {
     /* Rectangle 5 */
-    background: var(--color-nav-bg);
+    background: var(--color-input-bg-hover);
     box-shadow: 0px 0px 0px 1px var(--color-border-light);
     backdrop-filter: blur(12px);
     /* Note: backdrop-filter has minimal browser support */

@@ -29,7 +29,7 @@ export default class World
                 this.setLoupedeckButtons()
                 this.setCoffeeSteam()
                 this.setElgatoLight()
-                // this.setBouncingLogo()
+                this.setBouncingLogo()
                 this.setScreens()
                 this.setTopChair()
                 // Start the animation once the scene is set up

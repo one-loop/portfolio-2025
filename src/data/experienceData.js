@@ -18,7 +18,7 @@ const experienceData = [
       "Developing networking opportunities and aiding student founders in creating their businesses."
     ],
     skills: [],
-    date: "Sep. 2024 — Present",
+    date: "Sep. 2024 — Sep. 2025",
     location: "Abu Dhabi, UAE 🇦🇪"
   },
   {

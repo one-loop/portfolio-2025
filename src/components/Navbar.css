@@ -7,7 +7,7 @@
     top: 0px;
     width: 100vw;
     height: 96px;
-    padding: 24px 48px; 
+    padding: 24px 40px; 
     position: fixed; /* ensure pseudo-element is positioned relative to navbar */
 }
 
@@ -113,14 +113,21 @@ a:hover {
 }
 
 .vid-icon-background {
-    position: absolute;
+    /* position: absolute; */
     z-index: 1;
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: linear-gradient(90deg, var(--color-accent-light-beige), var(--color-accent-gray));
+    /* background: linear-gradient(90deg, var(--color-accent-light-beige), var(--color-accent-gray)); */
+    background: rgb(189, 203, 211);
+    background: rgb();
     /* backdrop-filter: blur(12px); */
-    box-shadow: 0px 0px 0px 1px var(--color-border-light);
+    /* box-shadow: 0px 0px 0px 1px var(--color-border-medium); */
+    outline: 1px solid  var(--color-border-light);
+    margin-left: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .video-icon-container video {

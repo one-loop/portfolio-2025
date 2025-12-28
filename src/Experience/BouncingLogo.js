@@ -39,7 +39,7 @@ export default class BouncingLogo
         this.model.texture = this.resources.items.threejsJourneyLogoTexture
         this.model.texture.colorSpace = THREE.SRGBColorSpace
 
-        this.model.geometry = new THREE.PlaneGeometry(4, 1, 1, 1)
+        this.model.geometry = new THREE.PlaneGeometry(1, 1, 1, 1)
         this.model.geometry.rotateY(- Math.PI * 0.5)
 
         this.model.material = new THREE.MeshBasicMaterial({
@@ -106,7 +106,8 @@ export default class BouncingLogo
         this.animations.y = 0
 
         this.animations.limits = {}
-        this.animations.limits.z = { min: -1.076, max: 1.454 }
+        // this.animations.limits.z = { min: -1.076, max: 1.454 }
+        this.animations.limits.z = { min: -1.72, max: 2.1 }
         this.animations.limits.y = { min: -1.055, max: 0.947 }
 
         this.animations.speed = {}
