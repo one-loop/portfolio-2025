@@ -19,7 +19,7 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
   const [slideUp, setSlideUp] = useState(false);
   const [loadingDots, setLoadingDots] = useState('.');
   const [loadingProgress, setLoadingProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState('Loading');
+  const [loadingText, setLoadingText] = useState('Loading 0%');
   const [currentTime, setCurrentTime] = useState('');
   const [clockTime, setClockTime] = useState(new Date());
   
@@ -112,12 +112,15 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
     return () => clearInterval(interval);
   }, [showOverlay]);
 
-  // Helper to trigger slide up and callback at the same time
+  // Helper to trigger slide up and callback at the same time, with a frame delay
   const triggerSlideUp = useCallback(() => {
     if (!modelLoaded) {
       modelLoaded = true;
-      setSlideUp(true);
-      if (onLoadingDone) onLoadingDone();
+      // Allow one frame for layout before animating to reduce jank
+      requestAnimationFrame(() => {
+        setSlideUp(true);
+        if (onLoadingDone) onLoadingDone();
+      });
     }
   }, [onLoadingDone]);
 
@@ -130,7 +133,6 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
         experienceInstance.current.resources.on('progress', (group, resource, data) => {
           const progress = Math.round((group.loaded / group.toLoad) * 100);
           updateProgress(progress);
-          setLoadingText(`Loading ${Math.round(currentProgressRef.current)}%`);
         });
         
         experienceInstance.current.resources.on('groupEnd', (group) => {
@@ -153,13 +155,11 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
           experienceInstance.current.resources.on('progress', (group, resource, data) => {
             const progress = Math.round((group.loaded / group.toLoad) * 100);
             updateProgress(progress);
-            setLoadingText(`LOADING ${Math.round(currentProgressRef.current)}%`);
           });
           
           experienceInstance.current.resources.on('groupEnd', (group) => {
             if (group.name === 'base') {
               updateProgress(100);
-              setLoadingText('LOADING 100%');
               triggerSlideUp();
             }
           });
@@ -173,6 +173,11 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
     };
     // eslint-disable-next-line
   }, []);
+
+  // Derive loading text from progress to reduce state churn
+  useEffect(() => {
+    setLoadingText(`Loading ${loadingProgress}%`);
+  }, [loadingProgress]);
 
   useEffect(() => {
     if (slideUp && showOverlay && overlayRef.current) {

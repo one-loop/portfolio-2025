@@ -10,12 +10,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--color-bg-primary) 50%, transparent);
-  backdrop-filter: blur(40px);
+  background: color-mix(in srgb, var(--color-bg-primary) 65%, transparent);
+  backdrop-filter: blur(24px);
   z-index: 10;
   color: var(--color-bg-light);
   transform: translateY(0);
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .loading-overlay.slide-up {
@@ -46,6 +47,7 @@
   font-size: 5.75rem; /* 92px equivalent */
   line-height: 0.8;
   font-weight: normal;
+  font-variant-numeric: tabular-nums;
 }
 
 .loading-computer-image {
@@ -95,6 +97,7 @@
   display: inline-block;
   font-weight: bold;
   font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .loading-dots {
@@ -108,6 +111,7 @@
   text-align: right;
   font-weight: bold;
   font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .loading-progress-row {
@@ -131,8 +135,9 @@
 .loading-progress-fill {
   height: 100%;
   background-color: #F2F2F2;
-  transition: width 0.1s ease-out;
+  transition: width 0.25s ease-out;
   border-radius: 2px;
+  will-change: width;
 }
 
 .loading-footer {

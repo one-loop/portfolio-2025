@@ -61,10 +61,19 @@ const Photos = () => {
   return (
     <div>
       <Helmet>
-        {/* Prevent indexing of images */}
-        <meta name="robots" content="noindex, nofollow" />
-        <meta name="googlebot" content="noindex, nofollow" />
-        <meta name="googlebot-image" content="noindex" />
+        <title>Photos • Saad Sifar</title>
+        <meta name="description" content="A visual journey through Saad Sifar's travels and experiences around the world." />
+        <meta property="og:title" content="Photos • Saad Sifar" />
+        <meta property="og:description" content="A visual journey through Saad Sifar's travels and experiences around the world." />
+        <meta property="og:url" content="https://saadsifar.com/photos" />
+        <meta name="twitter:title" content="Photos • Saad Sifar" />
+        <meta name="twitter:description" content="A visual journey through Saad Sifar's travels and experiences around the world." />
+        <link rel="canonical" href="https://saadsifar.com/photos" />
+        {/* Prevent indexing of page and images */}
+        <meta name="robots" content="noindex, nofollow, noimageindex" />
+        <meta name="googlebot" content="noindex, nofollow, noimageindex" />
+        <meta name="googlebot-image" content="noindex, nofollow" />
+        <meta name="bingbot" content="noindex, nofollow, noimageindex" />
       </Helmet>
       <div className="gradient photos"></div>
       <main className="photos-main">

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import './Projects.css';
 import FooterMain from '../components/FooterMain';
+import SEOBreadcrumbs from '../components/SEOBreadcrumbs';
 
 // Neutral blurred placeholder as a tiny data URI
 const PLACEHOLDER_DATA_URI = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><rect width='10' height='10' fill='%239b9b9b'/></svg>";

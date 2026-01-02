@@ -90,7 +90,7 @@
 .resume-link {
     display: inline-flex;
     align-items: center;
-    gap: 4px; /* adjust spacing between text and svg */
+    gap: 6px; /* spacing between icons and text */
     position: relative;
     margin-left: 0;
     text-decoration: none;
@@ -109,6 +109,10 @@
 .resume-wrapper svg {
     transform: translate(0%, 0%);
     transition: transform .24s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.resume-doc-icon {
+    color: var(--color-text-light-gray);
 }
 
 .arrow-icon {
