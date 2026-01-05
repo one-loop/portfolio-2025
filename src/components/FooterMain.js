@@ -75,7 +75,7 @@ const FooterMain = () => {
           <Link to="/photos">Photos</Link>
         </div>
         <div className="footer-contact-links">
-          <h3>Contact</h3>
+          <h3>Connect</h3>
           <Link to="https://linkedin.com/in/saad-sifar" target="_blank" className="footer-right-external-link">LinkedIn <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
           </svg>
