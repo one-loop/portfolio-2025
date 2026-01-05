@@ -62,12 +62,12 @@ const Photos = () => {
     <div>
       <Helmet>
         <title>Photos • Saad Sifar</title>
-        <meta name="description" content="A visual journey through Saad Sifar's travels and experiences around the world." />
+        <meta name="description" content="Some flicks from my travels" />
         <meta property="og:title" content="Photos • Saad Sifar" />
-        <meta property="og:description" content="A visual journey through Saad Sifar's travels and experiences around the world." />
+        <meta property="og:description" content="Some flicks from my travels" />
         <meta property="og:url" content="https://saadsifar.com/photos" />
         <meta name="twitter:title" content="Photos • Saad Sifar" />
-        <meta name="twitter:description" content="A visual journey through Saad Sifar's travels and experiences around the world." />
+        <meta name="twitter:description" content="Some flicks from my travels" />
         <link rel="canonical" href="https://saadsifar.com/photos" />
         {/* Prevent indexing of page and images */}
         <meta name="robots" content="noindex, nofollow, noimageindex" />

@@ -14,12 +14,12 @@ const Experience = () => {
       ]} />
       <Helmet>
         <title>Experience • Saad Sifar</title>
-        <meta name="description" content="View Saad Sifar's professional experience including research positions, software development roles, and academic achievements at NYU Abu Dhabi." />
+        <meta name="description" content="View my professional experience including research positions, software development roles, and academic achievements at NYU Abu Dhabi." />
         <meta property="og:title" content="Experience • Saad Sifar" />
-        <meta property="og:description" content="View Saad Sifar's professional experience including research positions, software development roles, and academic achievements at NYU Abu Dhabi." />
+        <meta property="og:description" content="View my professional experience including research positions, software development roles, and academic achievements at NYU Abu Dhabi." />
         <meta property="og:url" content="https://saadsifar.com/experience" />
         <meta name="twitter:title" content="Experience • Saad Sifar" />
-        <meta name="twitter:description" content="View Saad Sifar's professional experience including research positions, software development roles, and academic achievements at NYU Abu Dhabi." />
+        <meta name="twitter:description" content="View my professional experience including research positions, software development roles, and academic achievements at NYU Abu Dhabi." />
         <link rel="canonical" href="https://saadsifar.com/experience" />
       </Helmet>
       <div className="gradient experiences">

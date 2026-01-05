@@ -61,7 +61,7 @@
   --color-grad-blue-3-strong: rgba(103, 63, 215, 0.6);
 
   /* Gradient Colors - Cyan/Blue */
-  --color-grad-cyan-green: rgba(70, 227, 183, 0.3);
+  --color-grad-cyan-green: rgba(46, 60, 84, 0.3);
   --color-grad-cyan-blue: rgba(47, 122, 208, 0.3);
   --color-grad-cyan-green-strong: rgba(70, 227, 183, 0.6);
   --color-grad-cyan-blue-strong: rgba(47, 122, 208, 0.6);
@@ -71,8 +71,8 @@
   --color-grad-blue-dark: rgba(0, 112, 243, 0.2);
 
   /* Gradient Colors - Green */
-  --color-grad-green: rgba(68, 160, 141, 0.2);
-  --color-grad-green-dark: rgba(9, 54, 55, 0.2);
+  --color-grad-green: rgba(39, 47, 65, 0.8);
+  --color-grad-green-dark: rgba(28, 31, 47, 0.2);
 
   /* Gradient Colors - Pink/Magenta */
   --color-grad-pink: rgba(255, 110, 199, 0.2);

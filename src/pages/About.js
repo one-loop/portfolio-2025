@@ -130,12 +130,12 @@ const About = () => {
       ]} />
       <Helmet>
         <title>About • Saad Sifar</title>
-        <meta name="description" content="Learn about Saad Sifar's journey from a curious kid tinkering with computers to a Computer Science student at NYU Abu Dhabi with experience across multiple continents." />
+        <meta name="description" content="Learn a bit about my life." />
         <meta property="og:title" content="About • Saad Sifar" />
-        <meta property="og:description" content="Learn about Saad Sifar's journey from a curious kid tinkering with computers to a Computer Science student at NYU Abu Dhabi with experience across multiple continents." />
+        <meta property="og:description" content="Learn a bit about my life." />
         <meta property="og:url" content="https://saadsifar.com/about" />
         <meta name="twitter:title" content="About • Saad Sifar" />
-        <meta name="twitter:description" content="Learn about Saad Sifar's journey from a curious kid tinkering with computers to a Computer Science student at NYU Abu Dhabi with experience across multiple continents." />
+        <meta name="twitter:description" content="Learn a bit about my life." />
         <link rel="canonical" href="https://saadsifar.com/about" />
       </Helmet>
       <div className="gradient about about-grid">
