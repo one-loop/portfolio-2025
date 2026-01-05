@@ -11,7 +11,8 @@
     text-align: center;
     /* top: 80px; */
     opacity: 0;
-    background: -webkit-linear-gradient(var(--color-accent-light-gray-alt), var(--color-gray-light));
+    /* background: -webkit-linear-gradient(var(--color-accent-light-gray-alt), var(--color-gray-light)); */
+    background: -webkit-linear-gradient(rgb(209 218 222), rgb(102, 132, 156));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all .6s ease-out;
@@ -50,8 +51,22 @@ h1 {
 }
 
 .gradient.home {
+    position: relative;
     overflow: hidden;
     height: 100vh;
+}
+
+.gradient.home::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--color-border-light) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-border-light) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .home {

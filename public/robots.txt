@@ -1,10 +1,28 @@
 # Global rules
 User-agent: *
+Allow: /
+Disallow: /photos
 Disallow: /gallery/
 Disallow: /gallery.json
 Disallow: /public/gallery/
 
-# Specifically block Google Images
+# Sitemap location
+Sitemap: https://saadsifar.com/sitemap.xml
+
+# Specifically block all image bots from gallery and photos
 User-agent: Googlebot-Image
+Disallow: /
+Disallow: /photos
 Disallow: /gallery/
 Disallow: /public/gallery/
+
+User-agent: Bingbot
+Disallow: /photos
+Disallow: /gallery/
+
+# Block other image crawlers
+User-agent: pinterest
+Disallow: /
+
+User-agent: PinterestBot
+Disallow: /

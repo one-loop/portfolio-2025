@@ -2,7 +2,8 @@
 :root {
   /* Base Colors */
   /* --color-bg-primary: #352638; */
-  --color-bg-primary: #1e1922;
+  /* --color-bg-primary: #1e1922; */
+  --color-bg-primary: rgb(28, 30, 40);
   --color-bg-secondary: #0a0a0a;
   --color-bg-tertiary: #141414;
   --color-bg-light: #f2f2f2;
@@ -12,7 +13,9 @@
   --color-text-primary: #f2f2f2;
   --color-text-secondary: rgba(242, 242, 242, 0.5);
   --color-text-tertiary: #d9d9d9;
-  --color-text-muted: #929292;
+  /* --color-text-muted: #929292; */
+  /* --color-text-muted: #8885a4; */
+  --color-text-muted: rgb(132, 150, 168);
   --color-text-light-gray: #ededed;
   --color-text-medium-gray: #a0a0a0;
   --color-text-dark: #000000;
@@ -33,11 +36,14 @@
   --color-card-bg-medium: rgba(34, 34, 34, 0.2);
   --color-card-bg-light: rgba(68, 68, 68, 0.2);
   --color-input-bg: rgba(20, 20, 20, 0.8);
+  --color-input-bg-hover: rgb(255, 255, 255, 0.03);
   --color-overlay-dark: rgba(16, 16, 16, 0.9);
   --color-bg-primary-90: color-mix(in srgb, var(--color-bg-primary) 90%, transparent);
 
   /* Accent Colors */
-  --color-accent-cyan: #b0ecef;
+  /* --color-accent-cyan: #b0ecef; */
+  /* --color-accent-cyan: #b5b6e4; */
+  --color-accent-cyan: rgb(184, 215, 229);
   --color-accent-purple: #D3A6FF;
   --color-accent-purple-dark: #c9b0ef;
   --color-accent-success: #17c964;
@@ -55,7 +61,7 @@
   --color-grad-blue-3-strong: rgba(103, 63, 215, 0.6);
 
   /* Gradient Colors - Cyan/Blue */
-  --color-grad-cyan-green: rgba(70, 227, 183, 0.3);
+  --color-grad-cyan-green: rgba(46, 60, 84, 0.3);
   --color-grad-cyan-blue: rgba(47, 122, 208, 0.3);
   --color-grad-cyan-green-strong: rgba(70, 227, 183, 0.6);
   --color-grad-cyan-blue-strong: rgba(47, 122, 208, 0.6);
@@ -65,8 +71,8 @@
   --color-grad-blue-dark: rgba(0, 112, 243, 0.2);
 
   /* Gradient Colors - Green */
-  --color-grad-green: rgba(68, 160, 141, 0.2);
-  --color-grad-green-dark: rgba(9, 54, 55, 0.2);
+  --color-grad-green: rgba(39, 47, 65, 0.8);
+  --color-grad-green-dark: rgba(28, 31, 47, 0.2);
 
   /* Gradient Colors - Pink/Magenta */
   --color-grad-pink: rgba(255, 110, 199, 0.2);

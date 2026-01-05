@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import currentDetails from '../data/currentDetails';
 
-const MiniClock = ({ timeZone = currentDetails.timeZone, timeZoneShort = currentDetails.timeZoneShort, size = 20, color = '#858584' }) => {
+const MiniClock = ({ timeZone = currentDetails.timeZone, timeZoneShort = currentDetails.timeZoneShort, size = 20, color = 'var(--color-text-muted)' }) => {
   const [currentTime, setCurrentTime] = useState('');
   const [clockTime, setClockTime] = useState({ hour: 0, minute: 0, second: 0 });
 
@@ -99,7 +99,7 @@ const MiniClock = ({ timeZone = currentDetails.timeZone, timeZoneShort = current
           }}
         />
       </span>
-      <span style={{ color }}>{currentTime} {timeZoneShort}</span>
+      <span>{currentTime} {timeZoneShort}</span>
     </span>
   );
 };

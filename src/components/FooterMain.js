@@ -84,10 +84,11 @@ const FooterMain = () => {
           <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
           </svg>
           </Link>
-          {/* <Link to="https://github.com/one-loop" target="_blank" className="footer-right-external-link">GitHub <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          
+          <Link to="https://github.com/one-loop" target="_blank" className="footer-right-external-link">GitHub <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
           </svg>
-          </Link> */}
+          </Link>
           {/* <Link to="mailto:ss17886 AT nyu DOT edu" target="_blank" className="footer-right-external-link">Mail <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
 </svg></Link> */}
