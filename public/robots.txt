@@ -1,7 +1,6 @@
 # Global rules
 User-agent: *
 Allow: /
-Disallow: /about
 Disallow: /sifar-resume.pdf
 Disallow: /sifar-resume-uae.pdf
 Disallow: /resume.pdf
