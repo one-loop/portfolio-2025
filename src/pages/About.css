@@ -662,7 +662,7 @@ main .right .image-container {
 
 
 .experience-container h2 {
-    transition: color 0.24 cubic-bezier(0.25,0.46,0.45,0.94);
+    transition: color 0.24s cubic-bezier(0.25,0.46,0.45,0.94);
     margin-top: 18px;
     margin-bottom: 6px;
 }
