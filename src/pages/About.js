@@ -264,6 +264,15 @@ const About = () => {
               key={index}
               className={`experience-container ${expandedExperienceIndex === index ? 'expanded' : ''}`}
               onClick={() => setExpandedExperienceIndex(expandedExperienceIndex === index ? null : index)}
+              role="button"
+              tabIndex={0}
+              aria-expanded={expandedExperienceIndex === index}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  setExpandedExperienceIndex(expandedExperienceIndex === index ? null : index);
+                }
+              }}
             >
               <div className="experience-header">
                 <div className="dates">{exp.date}</div>
