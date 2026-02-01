@@ -105,12 +105,12 @@ const Projects = () => {
   return (
     <div>
       <Helmet>
-        <title>Projects • Saad Sifar</title>
+        <title>Saad Sifar – Projects</title>
         <meta name="description" content="Explore Saad Sifar's portfolio of software development projects including VR applications, web platforms, and creative technology solutions." />
-        <meta property="og:title" content="Projects • Saad Sifar" />
+        <meta property="og:title" content="Saad Sifar – Projects" />
         <meta property="og:description" content="Explore Saad Sifar's portfolio of software development projects including VR applications, web platforms, and creative technology solutions." />
         <meta property="og:url" content="https://saadsifar.com/projects" />
-        <meta name="twitter:title" content="Projects • Saad Sifar" />
+        <meta name="twitter:title" content="Saad Sifar – Projects" />
         <meta name="twitter:description" content="Explore Saad Sifar's portfolio of software development projects including VR applications, web platforms, and creative technology solutions." />
         <link rel="canonical" href="https://saadsifar.com/projects" />
       </Helmet>

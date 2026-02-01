@@ -1,6 +1,9 @@
 # Global rules
 User-agent: *
 Allow: /
+Disallow: /sifar-resume.pdf
+Disallow: /sifar-resume-uae.pdf
+Disallow: /resume.pdf
 Disallow: /photos
 Disallow: /gallery/
 Disallow: /gallery.json
