@@ -1,4 +1,4 @@
-export default class
+class EventEmitter
 {
     /**
      * Constructor
@@ -130,8 +130,7 @@ export default class
         }
 
         const that = this
-        let finalResult = null
-        let result = null
+        const state = { finalResult: null }
 
         // Default args
         const args = !(_args instanceof Array) ? [] : _args
@@ -152,11 +151,10 @@ export default class
                 {
                     that.callbacks[ namespace ][ name.value ].forEach(function(callback)
                     {
-                        result = callback.apply(that, args)
-
-                        if(typeof finalResult === 'undefined')
+                        const result = callback.apply(that, args)
+                        if(typeof state.finalResult === 'undefined')
                         {
-                            finalResult = result
+                            state.finalResult = result
                         }
                     })
                 }
@@ -174,14 +172,13 @@ export default class
 
             that.callbacks[ name.namespace ][ name.value ].forEach(function(callback)
             {
-                result = callback.apply(that, args)
-
-                if(typeof finalResult === 'undefined')
-                    finalResult = result
+                const result = callback.apply(that, args)
+                if(typeof state.finalResult === 'undefined')
+                    state.finalResult = result
             })
         }
 
-        return finalResult
+        return state.finalResult
     }
 
     /**
@@ -217,4 +214,6 @@ export default class
 
         return newName
     }
-}
+};
+
+export default EventEmitter;

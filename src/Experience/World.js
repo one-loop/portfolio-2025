@@ -1,4 +1,3 @@
-import * as THREE from 'three'
 import Experience from './Experience.js'
 import Baked from './Baked.js'
 import GoogleLeds from './GoogleLeds.js'
@@ -8,9 +7,6 @@ import TopChair from './TopChair.js'
 import ElgatoLight from './ElgatoLight.js'
 import BouncingLogo from './BouncingLogo.js'
 import Screen from './Screen.js'
-import { gsap } from 'gsap' // Import gsap
-
-
 export default class World
 {
     constructor(_options)

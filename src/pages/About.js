@@ -2,7 +2,6 @@ import React, {useRef, useEffect, useState} from 'react';
 import { Helmet } from 'react-helmet';
 import './About.css';
 import FooterMain from '../components/FooterMain';
-import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import experienceData from '../data/experienceData';
 import SEOBreadcrumbs from '../components/SEOBreadcrumbs';
@@ -22,9 +21,6 @@ const getRandomUnique = (arr, n) => {
 };
 
 const About = () => {
-  const makingItHappenRef = useRef(null);
-  const gradient1Ref = useRef(null);
-
   const pastRef = useRef(null);
   const presentRef = useRef(null);
   const futureRef = useRef(null);

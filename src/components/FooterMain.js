@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './FooterMain.css';
 import { Link } from 'react-router-dom';
 import currentDetails from '../data/currentDetails';
-import MiniClock from './MiniClock';
 
 const FooterMain = () => {
   return (
@@ -27,7 +26,7 @@ const FooterMain = () => {
       <p className="right-text">Model by Bruno Simon.</p> */}
       <div className="footer-left">
       <div className="footer-left-profile">
-      <img src="/images/profile.jpeg" width="48px" alt="Profile Picture" />
+      <img src="/images/profile.jpeg" width="48px" alt="Saad Sifar" />
       <div className="footer-left-profile-text">
         <h2>Saad Sifar</h2>
         <div>
