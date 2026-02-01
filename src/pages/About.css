@@ -1197,8 +1197,17 @@ main .right .image-container {
   align-items: center;
   user-select: none;
   cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
+.refresh-gallery-hint:hover,
+.refresh-gallery-hint:focus-visible {
+  color: rgba(255, 255, 255, 0.8);
+  background: var(--color-input-bg-hover, rgba(0, 0, 0, 0.4));
+  box-shadow: 0px 0px 0px 1px var(--color-border-light), 0 2px 6px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+  outline: none;
+}
 .refresh-gallery-btn {
   color: #222;
   border-radius: 8px;
