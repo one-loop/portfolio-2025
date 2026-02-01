@@ -44,6 +44,9 @@ const About = () => {
   const [galleryImages, setGalleryImages] = useState([]);
   const [allGalleryData, setAllGalleryData] = useState([]);
 
+  // State for expanded experience (index or null)
+  const [expandedExperienceIndex, setExpandedExperienceIndex] = useState(null);
+
   const scrollToFirstSection = () => {
     const pastSection = document.getElementById("past-section");
     if (pastSection) {
@@ -257,20 +260,44 @@ const About = () => {
         <div className="experience-about-wrapper">
           <h1 className="experience-about-title">Experience</h1>
           {experienceData.map((exp, index) => (
-            <div key={index} className="experience-container">
-              <div className="dates">{exp.date}</div>
+            <div
+              key={index}
+              className={`experience-container ${expandedExperienceIndex === index ? 'expanded' : ''}`}
+              onClick={() => setExpandedExperienceIndex(expandedExperienceIndex === index ? null : index)}
+              role="button"
+              tabIndex={0}
+              aria-expanded={expandedExperienceIndex === index}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  setExpandedExperienceIndex(expandedExperienceIndex === index ? null : index);
+                }
+              }}
+            >
+              <div className="experience-header">
+                <div className="dates">{exp.date}</div>
+                <svg className="experience-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
               <div className="experience-info">
                 <h2>{exp.role} • {exp.company}</h2>
-                {/* <ul className="experience-description">
-                  {exp.description.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul> */}
-                {/* <div className="skills-tags">
-                  {exp.skills.map((skill, i) => (
-                    <span className="experience-skill" key={i}>{skill}</span>
-                  ))}
-                </div> */}
+                <div className="experience-details">
+                  {exp.description && exp.description.length > 0 && (
+                    <ul className="experience-description">
+                      {exp.description.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {exp.skills && exp.skills.length > 0 && (
+                    <div className="skills-tags">
+                      {exp.skills.map((skill, i) => (
+                        <span className="experience-skill" key={i}>{skill}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -360,6 +387,7 @@ const About = () => {
             <path d="M45 35C52.732 35 59 41.268 59 49V80C59 87.732 52.732 94 45 94H14C6.26801 94 0 87.732 0 80V49C0 41.268 6.26801 35 14 35H45ZM16.5 72C13.4624 72 11 74.4624 11 77.5C11 80.5376 13.4624 83 16.5 83C19.5376 83 22 80.5376 22 77.5C22 74.4624 19.5376 72 16.5 72ZM42.5 72C39.4624 72 37 74.4624 37 77.5C37 80.5376 39.4624 83 42.5 83C45.5376 83 48 80.5376 48 77.5C48 74.4624 45.5376 72 42.5 72ZM29.5 59C26.4624 59 24 61.4624 24 64.5C24 67.5376 26.4624 70 29.5 70C32.5376 70 35 67.5376 35 64.5C35 61.4624 32.5376 59 29.5 59ZM16.5 46C13.4624 46 11 48.4624 11 51.5C11 54.5376 13.4624 57 16.5 57C19.5376 57 22 54.5376 22 51.5C22 48.4624 19.5376 46 16.5 46ZM42.5 46C39.4624 46 37 48.4624 37 51.5C37 54.5376 39.4624 57 42.5 57C45.5376 57 48 54.5376 48 51.5C48 48.4624 45.5376 46 42.5 46Z" fill="white"></path>
             </svg>
             </button>
+            <span className="refresh-gallery-hint" onClick={handleRefreshGallery}>click me ↑</span>
           </div>
         <div className="about-image-gallery">
             {galleryImages.map((img, i) => (

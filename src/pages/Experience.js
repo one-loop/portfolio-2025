@@ -27,7 +27,11 @@ const Experience = () => {
       <h1 className="experience-title">Experience</h1>
       <div className="experience-list">
         {experienceData.map((exp, index) => (
-          <div key={index} className="experience-item">
+          <div
+            key={index}
+            className="experience-item"
+            style={{ animationDelay: `${index * 0.12}s` }}
+          >
             <div className="experience-left">
               <div>
                 <h3 className="experience-role">{exp.role}</h3>

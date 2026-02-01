@@ -42,17 +42,18 @@ const MiniClock = ({ timeZone = currentDetails.timeZone, timeZoneShort = current
   const secondRotation = getClockHandRotation(clockTime.second || 0, 60);
 
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
       <span
         className="footer-clock"
         style={{
           width: `${size}px`,
           height: `${size}px`,
+          minWidth: `${size}px`,
+          flexShrink: 0,
           borderRadius: '50%',
           border: `1px solid ${color}`,
           position: 'relative',
           display: 'inline-block',
-          marginRight: '8px',
           verticalAlign: 'middle',
         }}
       >
@@ -95,11 +96,17 @@ const MiniClock = ({ timeZone = currentDetails.timeZone, timeZoneShort = current
             borderRadius: '0.25px',
             transformOrigin: 'bottom center',
             transform: `translate(-50%, -100%) rotate(${secondRotation}deg)`,
-            transition: 'transform 0.1s ease'
           }}
         />
       </span>
-      <span>{currentTime} {timeZoneShort}</span>
+      <span
+        style={{
+          minWidth: '16ch',
+          fontVariantNumeric: 'tabular-nums',
+        }}
+      >
+        {currentTime} {timeZoneShort}
+      </span>
     </span>
   );
 };
