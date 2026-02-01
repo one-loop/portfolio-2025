@@ -77,9 +77,9 @@ const Photos = () => {
       </Helmet>
       <div className="gradient photos"></div>
       <main className="photos-main">
-        <h1 className="photos-title" style={{ opacity: titleOpacity }}>
-          Photos
-        </h1>
+        <div className="photos-title-wrapper" style={{ opacity: titleOpacity }}>
+          <h1 className="photos-title">Photos</h1>
+        </div>
         {/* <p className="photos-subtitle" style={{ opacity: titleOpacity }}>A snapshot of my life recently</p> */}
         <div className="photos-grid">
           {/* Render PhotoItem for each image, passing location and season */}

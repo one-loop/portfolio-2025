@@ -12,13 +12,27 @@ html, body {
 .gradient.projects {
     pointer-events: all;
 }
+/* Same fade-in-up as Experience page title (preserves fixed centering) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Title always fixed at the top by default */
 .projects-title {
     position: fixed !important; /* force fixed positioning */
     top: 10px; /* adjust as needed */
-    left: 50%;
+    /* left: 50%; */
     transform: translateX(-50%);
     z-index: 100; /* increased z-index so it remains on top */
+    opacity: 0;
+    animation: fadeInUp 0.6s forwards;
     transition: opacity 0.1s ease;
 }
 

@@ -42,7 +42,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className="contact-page">
       <SEOBreadcrumbs items={[
         { name: 'Home', url: '/' },
         { name: 'Contact', url: '/contact' }
@@ -57,10 +57,11 @@ const Contact = () => {
         <meta name="twitter:description" content="Get in touch with me. Have a question, proposal, or collaboration idea? Send a message!" />
         <link rel="canonical" href="https://saadsifar.com/contact" />
       </Helmet>
-      <div className="gradient contact"></div>
-      {/* <h1 className="contact-title">Contact</h1> */}
-      <h1>Contact</h1>
-      <div className="contact-content">
+      <div className="contact-main">
+        <div className="gradient contact"></div>
+        {/* <h1 className="contact-title">Contact</h1> */}
+        <h1 className="contact-page-title">Contact</h1>
+        <div className="contact-content">
         <div className="form-container">
           <div className="form-instructions">Have a question, proposal, or just want to say hello? Send me a message!</div>
           <form onSubmit={onSubmit} className="contact-form" action="https://formspree.io/f/moqyqzqz" method="POST">
@@ -117,6 +118,7 @@ const Contact = () => {
         <div className="globe-container">
           {/* <GithubGlobe /> */}
         </div>
+      </div>
       </div>
       <FooterMain />
     </div>

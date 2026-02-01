@@ -1,5 +1,47 @@
 @import '../styles/colors.css';
 
+/* Sticky footer: page fills viewport, main content grows to push footer to bottom */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contact-main {
+  flex: 1;
+}
+
+/* Title: fade-in-up, final opacity 0.8 */
+@keyframes fadeInUpTitle {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+/* Form: fade-in-up, full opacity */
+@keyframes fadeInUpForm {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-page-title {
+  z-index: 1;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeInUpTitle 0.6s forwards;
+}
+
 .form-container {
     /* Rectangle 19 */
 
@@ -116,6 +158,10 @@ button:active {
 
 .contact-content {
     display: block;
+    margin-top: 24px;
+    opacity: 0;
+    animation: fadeInUpForm 0.6s ease-out forwards;
+    animation-delay: 0.12s;
 }
 
 .globe-container {

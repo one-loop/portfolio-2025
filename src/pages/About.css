@@ -432,13 +432,13 @@ main .right .image-container {
 .animate-text {
     opacity: 0;
     animation: fadeInUp 1.5s forwards;
-    animation-delay: 0.5s;
+    /* animation-delay: 0.5s; */
 }
 
 .animate-image {
     opacity: 0;
     animation: fadeInUp 1.5s forwards;
-    animation-delay: 1s;
+    animation-delay: 0.3s;
 }
 
 /* New fade-in for glow-circle */
@@ -454,7 +454,7 @@ main .right .image-container {
 .animate-glow {
     opacity: 0;
     animation: fadeIn 1.5s forwards;
-    animation-delay: 0.5s;
+    /* animation-delay: 0.5s; */
 }
 
 /* Animated SVG overlay */
@@ -656,9 +656,39 @@ main .right .image-container {
     margin-bottom: 16px !important;
 }
 
+.experience-container, .experience-container div {
+    margin-bottom: 0px;
+}
+
 
 .experience-container h2 {
     transition: color 0.24 cubic-bezier(0.25,0.46,0.45,0.94);
+    margin-top: 18px;
+    margin-bottom: 6px;
+}
+
+.experience-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.experience-chevron {
+    flex-shrink: 0;
+    color: rgba(242, 242, 242, 0.5);
+    transition: transform 0.25s ease, color 0.2s ease;
+}
+
+
+.experience-container:hover .experience-chevron,
+.experience-container.expanded .experience-chevron {
+    color: var(--color-accent-cyan);
+}
+
+.experience-container.expanded .experience-chevron {
+    transform: rotate(180deg);
 }
 
 .experience-container .dates {
@@ -669,7 +699,7 @@ main .right .image-container {
     padding-right: 10px;
     font-size: 14px;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 0;
     color: rgba(242, 242, 242, 0.5);
 }
 
@@ -692,6 +722,19 @@ main .right .image-container {
     color: var(--color-accent-cyan);
 }
 
+.experience-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease-out, opacity 0.25s ease-out, margin-top 0.25s ease-out;
+}
+
+.experience-container.expanded .experience-details {
+    max-height: 800px;
+    opacity: 1;
+    /* margin-top: 16px; */
+}
+
 .experience-info ul {
     font-size: 0.85rem;
     line-height: 1.5rem;
@@ -700,7 +743,7 @@ main .right .image-container {
 }
 
 .skills-tags {
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
@@ -1132,7 +1175,28 @@ main .right .image-container {
 .refresh-gallery-btn-container {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 4px;
+}
+
+.refresh-gallery-hint {
+  font-size: 0.75rem;
+  color: rgba(242, 242, 242, 0.45);
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  z-index: 1000;
+  background: var(--color-input-bg-hover);
+  backdrop-filter: blur(12px);
+  box-shadow: 0px 0px 0px 1px var(--color-border-light);
+  border-radius: 12px;
+  padding: 2px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
 }
 
 .refresh-gallery-btn {
