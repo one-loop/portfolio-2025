@@ -13,12 +13,12 @@ const Experience = () => {
         { name: 'Experience', url: '/experience' }
       ]} />
       <Helmet>
-        <title>Experience • Saad Sifar</title>
+        <title>Saad Sifar – Experience</title>
         <meta name="description" content="View my professional experience including research positions, software development roles, and academic achievements at NYU Abu Dhabi." />
-        <meta property="og:title" content="Experience • Saad Sifar" />
+        <meta property="og:title" content="Saad Sifar – Experience" />
         <meta property="og:description" content="View my professional experience including research positions, software development roles, and academic achievements at NYU Abu Dhabi." />
         <meta property="og:url" content="https://saadsifar.com/experience" />
-        <meta name="twitter:title" content="Experience • Saad Sifar" />
+        <meta name="twitter:title" content="Saad Sifar – Experience" />
         <meta name="twitter:description" content="View my professional experience including research positions, software development roles, and academic achievements at NYU Abu Dhabi." />
         <link rel="canonical" href="https://saadsifar.com/experience" />
       </Helmet>

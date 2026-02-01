@@ -17,13 +17,13 @@ const Home = () => {
   return (
     <div className="gradient home">
       <Helmet>
-        <title>Saad Sifar • Portfolio</title>
-        <meta name="description" content="Portfolio of Saad Sifar, Computer Science student at NYU Abu Dhabi, showcasing projects in software development, research, and creative technology." />
-        <meta property="og:title" content="Saad Sifar • Portfolio" />
-        <meta property="og:description" content="Portfolio of Saad Sifar, Computer Science student at NYU Abu Dhabi, showcasing projects in software development, research, and creative technology." />
+        <title>Saad Sifar – Portfolio</title>
+        <meta name="description" content="I'm Saad, a Software Engineer and CS student at NYU Abu Dhabi based in Abu Dhabi. Research in AI, ML & full-stack — open to internships and full-time roles." />
+        <meta property="og:title" content="Saad Sifar – Portfolio" />
+        <meta property="og:description" content="I'm Saad, a Software Engineer and CS student at NYU Abu Dhabi based in Abu Dhabi. Research in AI, ML & full-stack — open to internships and full-time roles." />
         <meta property="og:url" content="https://saadsifar.com/" />
-        <meta name="twitter:title" content="Saad Sifar • Portfolio" />
-        <meta name="twitter:description" content="Portfolio of Saad Sifar, Computer Science student at NYU Abu Dhabi, showcasing projects in software development, research, and creative technology." />
+        <meta name="twitter:title" content="Saad Sifar – Portfolio" />
+        <meta name="twitter:description" content="I'm Saad, a Software Engineer and CS student at NYU Abu Dhabi based in Abu Dhabi. Research in AI, ML & full-stack — open to internships and full-time roles." />
         <link rel="canonical" href="https://saadsifar.com/" />
       </Helmet>
       <h1 className="main-heading animate-heading">Saad Sifar</h1>

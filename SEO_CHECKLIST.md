@@ -3,12 +3,12 @@
 ## ✅ Completed
 
 ### Page Titles & Meta Tags
-- [x] Home page - "Saad Sifar • Portfolio"
-- [x] About page - "About • Saad Sifar"
-- [x] Projects page - "Projects • Saad Sifar"
-- [x] Experience page - "Experience • Saad Sifar"
-- [x] Contact page - "Contact • Saad Sifar"
-- [x] Photos page - "Photos • Saad Sifar"
+- [x] Home page - "Saad Sifar – Portfolio"
+- [x] About page - "Saad Sifar – About"
+- [x] Projects page - "Saad Sifar – Projects"
+- [x] Experience page - "Saad Sifar – Experience"
+- [x] Contact page - "Saad Sifar – Contact"
+- [x] Photos page - "Saad Sifar – Photos"
 
 ### Meta Descriptions
 - [x] Custom description for each page
@@ -103,25 +103,25 @@ https://search.google.com/test/mobile-friendly
 ### Search Results Before:
 ```
 saadsifar.com
-Saad Sifar • Portfolio - Untitled
+Saad Sifar – Portfolio - Untitled
 
 saadsifar.com/about
-Saad Sifar • Portfolio - Untitled
+Saad Sifar – Portfolio - Untitled
 
 saadsifar.com/projects
-Saad Sifar • Portfolio - Untitled
+Saad Sifar – Portfolio - Untitled
 ```
 
 ### Search Results After:
 ```
-Saad Sifar • Portfolio
+Saad Sifar – Portfolio
 Home > About > Projects > Experience > Contact
 
-About • Saad Sifar
+Saad Sifar – About
 Home > About
 Learn about Saad Sifar's journey from a curious kid...
 
-Projects • Saad Sifar
+Saad Sifar – Projects
 Home > Projects
 Explore Saad Sifar's portfolio of projects including...
 ```
