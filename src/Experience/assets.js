@@ -1,4 +1,4 @@
-export default [
+const experienceAssets = [
     {
         name: 'base',
         data: {},
@@ -28,4 +28,6 @@ export default [
             { name: 'roomModel', source: '/models/roomModel.glb' }, // err
         ]
     }
-]
+];
+
+export default experienceAssets;

@@ -6,8 +6,6 @@ import './ExperienceCanvas.css';
 import currentDetails from '../data/currentDetails';
 import MiniClock from './MiniClock';
 
-const ANIMATION_DURATION = 600; // milliseconds
-
 // Use a module-level variable to persist loaded state across mounts
 let modelLoaded = false;
 
@@ -19,9 +17,6 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
   const [slideUp, setSlideUp] = useState(false);
   const [loadingDots, setLoadingDots] = useState('.');
   const [loadingProgress, setLoadingProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState('Loading 0%');
-  const [currentTime, setCurrentTime] = useState('');
-  const [clockTime, setClockTime] = useState(new Date());
   
   // Animation refs for smooth progress
   const animationRef = useRef(null);
@@ -61,46 +56,6 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
     };
   }, []);
 
-  // Update current time and clock
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const options = {
-        timeZone: currentDetails.timeZone,
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-      };
-
-      // Format the time string for display
-      const formatter = new Intl.DateTimeFormat('en-US', { ...options, hour12: true });
-      setCurrentTime(formatter.format(now));
-
-      // Extract hour, minute, second in the target timezone for the clock hands
-      const parts = new Intl.DateTimeFormat('en-US', options).formatToParts(now);
-      let hour = 0, minute = 0, second = 0;
-      for (const part of parts) {
-        if (part.type === 'hour') hour = parseInt(part.value, 10);
-        if (part.type === 'minute') minute = parseInt(part.value, 10);
-        if (part.type === 'second') second = parseInt(part.value, 10);
-      }
-      // For 24-hour clocks, convert hour to 12-hour format for the clock face
-      if (hour >= 12) hour = hour - 12;
-      setClockTime({ hour, minute, second });
-    };
-
-    updateTime(); // initial call
-    const interval = setInterval(updateTime, 1000);
-
-    return () => clearInterval(interval); // cleanup on unmount
-  }, []);
-
-  // Calculate clock hand rotations
-  const getClockHandRotation = (value, maxValue) => {
-    return (value / maxValue) * 360;
-  };
-
   // Animate loading dots
   useEffect(() => {
     if (!showOverlay) return;
@@ -138,7 +93,6 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
         experienceInstance.current.resources.on('groupEnd', (group) => {
           if (group.name === 'base') {
             updateProgress(100);
-            setLoadingText('Loading 100%');
             triggerSlideUp();
           }
         });
@@ -173,11 +127,6 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
     };
     // eslint-disable-next-line
   }, []);
-
-  // Derive loading text from progress to reduce state churn
-  useEffect(() => {
-    setLoadingText(`Loading ${loadingProgress}%`);
-  }, [loadingProgress]);
 
   useEffect(() => {
     if (slideUp && showOverlay && overlayRef.current) {

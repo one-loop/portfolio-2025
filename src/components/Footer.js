@@ -1,5 +1,5 @@
 // src/components/Footer.js
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Footer.css';
 import MiniClock from './MiniClock';
 import currentDetails from '../data/currentDetails';

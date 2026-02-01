@@ -28,7 +28,6 @@ html, body {
 .projects-title {
     position: fixed !important; /* force fixed positioning */
     top: 10px; /* adjust as needed */
-    left: 50%;
     transform: translateX(-50%);
     z-index: 100; /* increased z-index so it remains on top */
     opacity: 0;

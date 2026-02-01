@@ -112,7 +112,7 @@ const Navbar = () => {
       </Link>
       <nav className={`nav-center ${hamburgerOpen ? 'mobile-open' : ''}`}>
         <div className="nav-center-left">
-          <img src="/icons/logo.png" width="48px" alt="Profile Picture" />
+          <img src="/icons/logo.png" width="48px" alt="Saad Sifar" />
 
           <div className="nav-center-text">
             <h2>Saad Sifar</h2>
@@ -142,13 +142,13 @@ const Navbar = () => {
       </nav>
       <div className="nav-right">
         <div className="nav-right-link">
-          <a href="https://www.linkedin.com/in/saad-sifar" target="_blank">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/saad-sifar" target="_blank" rel="noreferrer">LinkedIn</a>
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2"/>
           </svg>
         </div>
         <div className="nav-right-link">
-          <a href="/sifar-resume.pdf" target="_blank">Resume</a>
+          <a href="/sifar-resume.pdf" target="_blank" rel="noreferrer">Resume</a>
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2"/>
           </svg>
