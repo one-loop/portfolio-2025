@@ -212,6 +212,22 @@ h1 .emphasize {
     color: var(--color-text-muted);
 }
 
+/* Emphasis in about section body text */
+.about-grid main .right p .about-accent {
+    color: var(--color-accent-cyan);
+    font-weight: 500;
+}
+
+.about-grid main .right p .about-phrase {
+    font-style: italic;
+    color: var(--color-text-tertiary);
+}
+
+.about-grid main .right p .about-underline {
+    border-bottom: 1px solid var(--color-accent-cyan);
+    padding-bottom: 1px;
+}
+
 h2 {
     /* grid-column: 2 / span 2; */
     font-weight: bold;
