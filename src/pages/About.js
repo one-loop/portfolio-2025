@@ -150,7 +150,7 @@ const About = () => {
             <h1 className="animate-text">
               I love  <span className="emphasize">building</span> things and <span className="emphasize">solving problems.</span>
             </h1>
-            <h2 className="animate-text">This is my story — along with some flicks from my travels</h2>
+            <h2 className="animate-text">This is my story, along with some flicks from my travels</h2>
             <div id="scroll-anim" onClick={scrollToFirstSection}>
               <p>Scroll Down</p>
               <div>
@@ -168,7 +168,7 @@ const About = () => {
         <main>
         <div className="right">
         <div ref={pastRef} id="past-section">
-          <h2>The Past: Where It All Started</h2>
+          <h2>The Past: Curiosity, Frustration, and Stubborn Persistence</h2>
 
           <div className="computer-1-mobile-container">
             <img className="computer-1-mobile" src="/computers/computer-1.webp" alt="" />
@@ -210,42 +210,53 @@ const About = () => {
             </svg>
           </div>
           <p>
-            Ever since I was a kid, I’ve been drawn to the inner workings of things. I was the one unscrewing remote controls, tinkering with old laptops, and trying to figure out how to make something do something else. Computers felt like magic—except the kind you could actually learn. Around 12, I stumbled across a dusty Python book and started learning on my own. I’d been playing with Scratch before that, but Python felt like a real language—something with power.
+            I’ve been <span className="about-accent">curious about how things work</span> for as long as I can remember. As a kid, that curiosity usually looked like unscrewing remote controls, tinkering with old laptops, and <span className="about-accent">breaking computers just to see if I could fix them again</span>. Computers felt like magic, but the kind of magic that rewarded <span className="about-accent">patience and persistence</span>.          
           </p>
           <p>
-            From there, it became an obsession. I started making small games, automating random things for fun, building bots that probably broke more than they fixed. I didn’t always know what I was doing, but that didn’t matter—I was hooked on the feeling of solving problems and making things work. That love for building eventually led me to major in Computer Science at NYU Abu Dhabi.
+            Around the age of 12, I picked up a dusty <span className="about-accent">Python</span> book and started teaching myself how to code. I’d played with Scratch before, but Python felt different. <span className="about-accent">Real. Powerful.</span> I started small: tiny programs to automate parts of my life, simple games, and even a website that (questionably) unblocked games on school computers. Most of what I built barely worked at first, but <span className="about-accent">the feeling of finally seeing something run</span> kept me going.               
+          </p>
+          <p>
+            That persistence wasn’t limited to code. I was never “naturally good” at math. In fact, I failed my first math exam in high school. But instead of accepting that as a limitation, I doubled down. I practiced relentlessly, asked questions, and refused to give up. That mindset paid off: by the end of high school, I achieved <span className="about-accent">the highest mark in the world</span> in not only A-Level Mathematics, but also Physics.
+          </p>
+          <p>
+            That experience shaped how I approach everything I do. I learned that <span className="about-accent">talent matters far less than effort, consistency, and a willingness to sit with frustration</span>. Whether I’m debugging code or learning something entirely new, I believe in putting in the work and taking pride in the craft.
           </p>
         </div>
         <div ref={presentRef} id="present-section">
-          <h2>The Present: Learning Across Borders</h2>
+          <h2>The Present: Learning Across Borders and Disciplines</h2>
           <img className="computer-2-mobile" src="/computers/computer-2.webp" alt="" />
           {/* <p>
-            Today, I’m a sophomore at NYU Abu Dhabi, studying Computer Science across continents—from the neon buzz of New York to the cobblestone charm of Florence, the tech hubs of Kigali to the art-soaked streets of Paris (where I’m currently eating a croissant at 1:00 AM while the Eiffel tower sparkles outside my dorm window for the last time tonight 🇫🇷). 
+            Today, I’m a sophomore at NYU Abu Dhabi, studying Computer Science across continents, from the neon buzz of New York to the cobblestone charm of Florence, the tech hubs of Kigali to the art-soaked streets of Paris (where I’m currently eating a croissant at 1:00 AM while the Eiffel tower sparkles outside my dorm window for the last time tonight 🇫🇷). 
           </p> */}
           <p>
-            Right now, I’m a Computer Science student at NYU Abu Dhabi, with minors in Economics and Applied Mathematics. My university experience has taken me around the world—from the fast pace of New York to the quiet corners of Kigali, the historic streets of Paris to the hills of Florence. Each city gave me a different lens on how people live, work, and connect—and each one subtly shaped the kind of problems I care about solving.
+            Today, I’m a <span className="about-accent">Computer Science junior at NYU Abu Dhabi</span>, with minors in <span className="about-accent">Economics and Applied Mathematics</span>. Over the past three years, my education has taken me to <span className="about-accent">more than 30 cities</span> across the world. Each one left a quiet but lasting mark on how I think.
           </p>
           {/* <p>
-            When I’m not knee-deep in coding, you’ll find me devouring novels, playing badminton, or losing myself in RPGs (Elden Ring, anyone?). Travel’s my constant—every new city teaches me how to see the world differently.
+            When I’m not knee-deep in coding, you’ll find me devouring novels, playing badminton, or losing myself in RPGs (Elden Ring, anyone?). Travel’s my constant. Every new city teaches me how to see the world differently.
           </p> */}
           <p>
-            When I’m not working on code, I’m probably reading a novel, playing badminton, or wandering through a new city. I’m also a big fan of RPGs and I’ve recently been building side projects that blend creativity with technology—like a 3D globe-based geography game, or a rhythm-language learning app inspired by Beat Saber and Duolingo.
+            I’ve studied business and technology in <span className="about-accent">New York</span>, struggled my way through learning French in <span className="about-accent">Paris</span>, learned from inspiring young entrepreneurs in <span className="about-accent">Kigali</span>, explored Mediterranean foodways across <span className="about-accent">Italy</span>, and even tried <span className="about-accent">building a startup in San Francisco</span>. Each place taught me something different about people, systems, and the problems worth solving.
           </p>
           <p>
-            And this summer, I’m working as a research assistant in a computer vision and AI lab, exploring the kinds of machine learning that can actually do some good in the world.
+            Academically, I’m deeply interested in <span className="about-accent">AI and machine learning</span>. I currently work as a research assistant focusing on <span className="about-accent">large language models</span>, particularly protein LLMs for drug discovery, and on fine-tuning models for real-world industrial and biological applications. Alongside research, I love building <span className="about-accent">clean, pixel-perfect interfaces</span> and thinking deeply about <span className="about-accent">human-computer interaction</span>: how technology feels, not just how it functions.
+          </p>
+          <p>
+            Outside of work, you’ll probably find me playing <span className="about-accent">badminton, backpacking through a new city</span> with nothing but a camera and some friends, discovering new foods, or reading fiction. I’m also trying (and mostly succeeding) to maintain a <span className="about-accent">400+ day Duolingo streak</span> in French.
           </p>
         </div>
         <div ref={futureRef} id="future-section">
-          <h2>The Future: Open Questions, Big Possibilities</h2>
+          <h2>The Future: Open Questions, Grounded Principles</h2>
           <img className="computer-3-mobile" src="/computers/computer-3.webp" alt="" />
           <p>
-            I don’t have a 10-year plan. What I do have is a toolkit: curiosity, code, and a stubborn belief that tech should serve people, not the other way around. Maybe I’ll build AI that democratizes education. Maybe I’ll found a startup that rethinks urban mobility. Maybe I’ll write code on a beach in Bali. 
+            I don’t have a rigid 10-year plan, and I’m okay with that. What I do have are principles I trust: <span className="about-accent">curiosity, discipline</span>, and a belief that <span className="about-accent">technology should serve people, not the other way around</span>.          </p>
+          <p>
+            Maybe I’ll join industry and build meaningful software. Maybe I’ll continue my <span className="about-accent">LLM research</span> into graduate school. Maybe I’ll found a startup. What I know for sure is that I want to use my skills to help others and keep adding countries to <span className="about-accent">a very long bucket list</span> along the way.
           </p>
           <p>
-            Whatever the future holds, I know this: I'll keep chasing that rush of "It works!" What's certain? I'll keep chasing that 12-year-old's thrill: the gasp of a solved puzzle, the itch to remake something better, the quiet pride of leaving a system smarter than I found it.
+            Whatever the future holds, I’ll keep chasing that familiar rush: <span className="about-accent">the moment when something finally works</span>. The quiet pride of learning something new. The satisfaction of leaving a system just a little better than I found it.
           </p>
           <p>
-            The future’s a blank canvas, and I’ve got a lot of paint. Let’s see what we create.
+            The future’s <span className="about-accent">a blank canvas</span>, and I’ve still got a lot of paint left.
           </p>
         </div>
         <div className="conclusion-section">
