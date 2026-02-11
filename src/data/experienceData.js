@@ -3,11 +3,11 @@ const experienceData = [
     role: "Research Assistant",
     company: "eBrain Lab, NYU Abu Dhabi",
     description: [
-      "Conduct research on parameter-efficient fine-tuning (PEFT) methods for transformer models using Hugging Face Transformers and PEFT libraries.",
-      "Explore biologically informed initialization strategies for LoRA adapters to improve convergence and generalization in few-shot settings.",
-      "Implement and evaluate fine-tuning pipelines for protein-related downstream tasks using pretrained transformer models."
+      "Research parameter-efficient fine-tuning (PEFT) of protein LLMs under Prof. Muhammad Shafique, focusing on genetic mutation detection.",
+      "Design and implement LoRA-based fine-tuning pipelines using Hugging Face Transformers, with biologically informed initialization strategies (e.g., BLOSUM matrices) for few-shot learning.",
+      "Evaluate PEFT approaches on protein downstream tasks, analyzing convergence, generalization, and parameter efficiency."
     ],
-    skills: ["Python", "Ollama", "LLM", "Deep Learning", "Scikit-learn", "AI Agents"],
+    skills: ["Python", "Pytorch", "LLMs", "Protein LLM", "Deep Learning", "Fine-tuning", "PEFT", "LoRA", "HPC"],
     date: "Jan. 2026 — Present",
     location: "Abu Dhabi, UAE 🇦🇪"
   },
