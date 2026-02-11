@@ -4,7 +4,7 @@ const experienceData = [
     company: "eBrain Lab, NYU Abu Dhabi",
     description: [
       "Research parameter-efficient fine-tuning (PEFT) of protein LLMs under Prof. Muhammad Shafique, focusing on genetic mutation detection.",
-      "Design and implement LoRA-based fine-tuning pipelines using Hugging Face Transformers, with biologically informed initialization strategies (e.g., BLOSUM matrices) for few-shot learning.",
+      "Design and implement LoRA-based fine-tuning pipelines using Hugging Face Transformers, with biologically informed initialization strategies for few-shot learning.",
       "Evaluate PEFT approaches on protein downstream tasks, analyzing convergence, generalization, and parameter efficiency."
     ],
     skills: ["Python", "Pytorch", "LLMs", "Protein LLM", "Deep Learning", "Fine-tuning", "PEFT", "LoRA", "HPC"],
