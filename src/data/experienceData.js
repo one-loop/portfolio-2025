@@ -5,7 +5,7 @@ const experienceData = [
     description: [
       "Research parameter-efficient fine-tuning (PEFT) of protein LLMs under Prof. Muhammad Shafique, focusing on genetic mutation detection.",
       "Design and implement LoRA-based fine-tuning pipelines using Hugging Face Transformers, with biologically informed initialization strategies for few-shot learning.",
-      "Evaluate PEFT approaches on protein downstream tasks, analyzing convergence, generalization, and parameter efficiency."
+      "Fine-tuned Meta’s ESM-2 650M protein language model using LoRA on NVIDIA A100 GPUs, reducing training time by 30% and validation loss by 50% compared to full fine-tuning benchmarks."
     ],
     skills: ["Python", "Pytorch", "LLMs", "Protein LLM", "Deep Learning", "Fine-tuning", "PEFT", "LoRA", "HPC"],
     date: "Jan. 2026 — Present",
@@ -15,7 +15,7 @@ const experienceData = [
     role: "Research Assistant",
     company: "Web Development, NYU Abu Dhabi",
     description: [
-      "Designed and implemented a randomized experimental survey to study perceived authorship contribution using the CRediT taxonomy across multiple experimental conditions.",
+      "Engineered a scalable survey platform supporting 500k+ research papers to analyze perceived author contributions.",
       "Built survey logic to anonymize author identities, randomize experimental exposure (A/B/C), and ensure minimum respondent coverage per article.",
     ],
     skills: ["Full-Stack Development", "NextJS", "Supabase", "MongoDB", "React"],
