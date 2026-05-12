@@ -166,7 +166,7 @@ const About = () => {
             <img
               className={`animate-image ${heroProfileLoaded ? 'hero-profile-loaded' : ''}`}
               style={{ objectFit: 'cover', objectPosition: '0px -150px' }}
-              src="/images/profile3.png"
+              src="/images/profilev3.webp"
               alt="Saad Sifar"
               onLoad={() => setHeroProfileLoaded(true)}
               onError={() => setHeroProfileLoaded(true)}
