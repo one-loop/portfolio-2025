@@ -43,6 +43,8 @@ const About = () => {
   // State for expanded experience (index or null)
   const [expandedExperienceIndex, setExpandedExperienceIndex] = useState(null);
 
+  const [heroProfileLoaded, setHeroProfileLoaded] = useState(false);
+
   const scrollToFirstSection = () => {
     const pastSection = document.getElementById("past-section");
     if (pastSection) {
@@ -161,7 +163,14 @@ const About = () => {
           </div>
           <div className="hero-right">
             {/* <img className="animate-image" src="/images/profile.jpeg" alt="Saad Sifar"></img> */}
-            <img className="animate-image" style={{ objectFit: 'cover', objectPosition: '0px -150px' }} src="/images/profile3.png" alt="Saad Sifar"></img>
+            <img
+              className={`animate-image ${heroProfileLoaded ? 'hero-profile-loaded' : ''}`}
+              style={{ objectFit: 'cover', objectPosition: '0px -150px' }}
+              src="/images/profile3.png"
+              alt="Saad Sifar"
+              onLoad={() => setHeroProfileLoaded(true)}
+              onError={() => setHeroProfileLoaded(true)}
+            />
             {/* New Scroll Down Animation */}
           </div>
         </section>
