@@ -27,7 +27,7 @@ const experienceData = [
     company: "Embodied AI & Robotics Lab, NYU Abu Dhabi",
     description: [
       "Built a locally-hosted conversational AI agent using Ollama on macOS for a food supplier organization, enabling customers to check real-time menu availability and place orders through natural language with tool-calling integrations.",
-      "Reduced LLM response latency by 75% through prompt and parameter tuning, cutting hallucinations and boosting factual accuracy by 50% across a live multi-turn ordering pipeline",
+      "Reduced LLM response latency by 75% through prompt and parameter tuning, cutting hallucinations and boosting factual accuracy by 50% across a live multi-turn ordering pipeline.",
     ],
     skills: ["Python", "Ollama", "LLM", "MCPs", "Deep Learning", "Scikit-learn", "AI Agents"],
     date: "Jun. 2025 — Aug. 2025",
