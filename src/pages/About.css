@@ -369,8 +369,11 @@ h2 {
     max-height: 380px;
     object-fit: cover;
     aspect-ratio: 1;
-    outline: 7px solid white;
-    outline: 7px solid var(--color-accent-cyan);
+    /* Outline only after image loads — avoids empty circle ring before bitmap paints */
+    outline: none;
+}
+
+.hero-right img.hero-profile-loaded {
     outline: 7px solid white;
 }
 
@@ -455,6 +458,10 @@ main .right .image-container {
 
 .animate-image {
     opacity: 0;
+}
+
+/* Fade-in only after load — keeps outline + photo in sync */
+.animate-image.hero-profile-loaded {
     animation: fadeInUp 1.5s forwards;
     animation-delay: 0.3s;
 }
