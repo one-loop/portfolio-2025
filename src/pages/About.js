@@ -160,8 +160,8 @@ const About = () => {
             </div>
           </div>
           <div className="hero-right">
-            <img className="animate-image" src="/images/profile.jpeg" alt="Saad Sifar"></img>
-            {/* <img className="animate-image object-[0px_-200px]" src="/images/profile3.png" alt="Saad Sifar"></img> */}
+            {/* <img className="animate-image" src="/images/profile.jpeg" alt="Saad Sifar"></img> */}
+            <img className="animate-image" style={{ objectFit: 'cover', objectPosition: '0px -150px' }} src="/images/profile3.png" alt="Saad Sifar"></img>
             {/* New Scroll Down Animation */}
           </div>
         </section>

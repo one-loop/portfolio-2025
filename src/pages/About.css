@@ -369,7 +369,11 @@ h2 {
     max-height: 380px;
     object-fit: cover;
     aspect-ratio: 1;
+    outline: 7px solid white;
+    outline: 7px solid var(--color-accent-cyan);
+    outline: 7px solid white;
 }
+
 
 .hero h1 {
     font-size: 40px;
