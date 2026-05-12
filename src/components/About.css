@@ -353,6 +353,10 @@ h2 {
     border-radius: 50%;
     user-select: none;
     pointer-events: none;
+    max-height: 380px;
+    object-fit: cover;
+    aspect-ratio: 1;
+    object-position: 0px -150px;
 }
 
 .hero h1 {
