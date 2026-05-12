@@ -15,7 +15,7 @@ const experienceData = [
     role: "Research Assistant",
     company: "Web Development, NYU Abu Dhabi",
     description: [
-      "Engineering a scalable survey platform supporting 250k+ research papers to analyze perceived author contributions.",
+      "Engineered a scalable survey platform supporting 250k+ research papers to analyze perceived author contributions.",
       "Built survey logic to anonymize author identities, randomize exposure (A/B testing), and ensure respondent coverage.",
     ],
     skills: ["Full-Stack Development", "NextJS", "Supabase", "MongoDB", "React"],
