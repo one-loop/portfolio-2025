@@ -45,7 +45,7 @@ const experienceData = [
     location: "Abu Dhabi, UAE 🇦🇪"
   },
   {
-    role: "Web Developer Developer",
+    role: "Web Developer",
     company: "Airae Agency",
     description: [
       "Partnered with 10+ clients to gather project requirements, transforming their vision into functional and visually appealing web solutions. Delivered projects on schedule.",
