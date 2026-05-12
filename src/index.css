@@ -27,7 +27,8 @@ body
        url('fonts/New-Spirit-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  /* block: avoid FOUT (fallback font flash). With woff2 preloaded in index.html, wait is usually minimal. */
+  font-display: block;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
