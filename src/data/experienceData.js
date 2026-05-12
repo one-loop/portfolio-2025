@@ -53,7 +53,7 @@ const experienceData = [
     ],
     skills: ["HTML", "CSS", "JavaScript", "React", "CMS", "WordPress", "Shopify", "Vercel", "Figma"],
     date: "Jun. 2022 — Dec. 2022",
-    locaton: "Colombo, Sri Lanka 🇱🇰"
+    location: "Colombo, Sri Lanka 🇱🇰"
   }
 ];
 
