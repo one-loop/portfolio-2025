@@ -51,7 +51,7 @@ const experienceData = [
       "Partnered with 10+ clients to gather project requirements, transforming their vision into functional and visually appealing web solutions. Delivered projects on schedule.",
       "Customized CMS (WordPress, GraphCMS) for client updates, reducing maintenance requests by 60%."
     ],
-    skills: ["HTML", "CSS", "JavaScript", "React", "CMS", "Wordpress", "Shopify", "Vercel", "Figma"],
+    skills: ["HTML", "CSS", "JavaScript", "React", "CMS", "WordPress", "Shopify", "Vercel", "Figma"],
     date: "Jun. 2022 — Dec. 2022",
     locaton: "Colombo, Sri Lanka 🇱🇰"
   }
