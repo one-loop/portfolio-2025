@@ -251,7 +251,7 @@ const About = () => {
             Academically, I’m deeply interested in <span className="about-accent">AI and machine learning</span>. I currently work as a research assistant focusing on <span className="about-accent">large language models</span>, particularly protein LLMs for drug discovery, and on fine-tuning models for real-world industrial and biological applications. Alongside research, I love building <span className="about-accent">clean, pixel-perfect interfaces</span> and thinking deeply about <span className="about-accent">human-computer interaction</span>: how technology feels, not just how it functions.
           </p>
           <p>
-            Outside of work, you’ll probably find me playing <span className="about-accent">badminton, backpacking through a new city</span> with nothing but a camera and some friends, discovering new foods, or reading fiction. I’m also trying (and mostly succeeding) to maintain a <span className="about-accent">400+ day Duolingo streak</span> in French.
+            Outside of work, you’ll probably find me playing <span className="about-accent">badminton, backpacking through a new city</span> with nothing but a camera and some friends, discovering new foods, or reading fiction. I’m also trying (and mostly succeeding) to maintain a <span className="about-accent">500+ day Duolingo streak</span> in French.
           </p>
         </div>
         <div ref={futureRef} id="future-section">
