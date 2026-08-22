@@ -1,5 +1,5 @@
+'use client';
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import FooterMain from '../components/FooterMain';
 import SEOBreadcrumbs from '../components/SEOBreadcrumbs';
 // import { World as GithubGlobe } from '../components/GithubGlobe';
@@ -47,16 +47,7 @@ const Contact = () => {
         { name: 'Home', url: '/' },
         { name: 'Contact', url: '/contact' }
       ]} />
-      <Helmet>
-        <title>Saad Sifar – Contact</title>
-        <meta name="description" content="Get in touch with me. Have a question, proposal, or collaboration idea? Send a message!" />
-        <meta property="og:title" content="Saad Sifar – Contact" />
-        <meta property="og:description" content="Get in touch with me. Have a question, proposal, or collaboration idea? Send a message!" />
-        <meta property="og:url" content="https://saadsifar.com/contact" />
-        <meta name="twitter:title" content="Saad Sifar – Contact" />
-        <meta name="twitter:description" content="Get in touch with me. Have a question, proposal, or collaboration idea? Send a message!" />
-        <link rel="canonical" href="https://saadsifar.com/contact" />
-      </Helmet>
+      
       <div className="contact-main">
         <div className="gradient contact"></div>
         {/* <h1 className="contact-title">Contact</h1> */}

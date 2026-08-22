@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import FooterMain from '../components/FooterMain';
 import './UnderConstruction.css';

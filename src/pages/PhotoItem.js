@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 
 const PhotoItem = ({ src, alt, placeholder, location, season, title }) => {

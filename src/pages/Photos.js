@@ -1,7 +1,7 @@
+'use client';
 import React, { useEffect, useState, useCallback } from 'react';
 import FooterMain from '../components/FooterMain';
 import PhotoItem from './PhotoItem';
-import { Helmet } from 'react-helmet';
 import './Photos.css';
 
 // Placeholder image for loading blur effect
@@ -60,21 +60,7 @@ const Photos = () => {
 
   return (
     <div>
-      <Helmet>
-        <title>Saad Sifar – Photos</title>
-        <meta name="description" content="Some flicks from my travels" />
-        <meta property="og:title" content="Saad Sifar – Photos" />
-        <meta property="og:description" content="Some flicks from my travels" />
-        <meta property="og:url" content="https://saadsifar.com/photos" />
-        <meta name="twitter:title" content="Saad Sifar – Photos" />
-        <meta name="twitter:description" content="Some flicks from my travels" />
-        <link rel="canonical" href="https://saadsifar.com/photos" />
-        {/* Prevent indexing of page and images */}
-        <meta name="robots" content="noindex, nofollow, noimageindex" />
-        <meta name="googlebot" content="noindex, nofollow, noimageindex" />
-        <meta name="googlebot-image" content="noindex, nofollow" />
-        <meta name="bingbot" content="noindex, nofollow, noimageindex" />
-      </Helmet>
+      
       <div className="gradient photos"></div>
       <main className="photos-main">
         <div className="photos-title-wrapper" style={{ opacity: titleOpacity }}>

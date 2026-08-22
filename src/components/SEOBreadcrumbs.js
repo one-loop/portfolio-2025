@@ -1,5 +1,5 @@
+'use client';
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 /**
  * SEO Breadcrumbs Component
@@ -21,11 +21,10 @@ const SEOBreadcrumbs = ({ items }) => {
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(breadcrumbList)}
-      </script>
-    </Helmet>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }}
+    />
   );
 };
 

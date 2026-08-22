@@ -1,12 +1,12 @@
 // src/components/Navbar.js
 import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom'; // Assuming you're using React Router
+import Link from 'next/link';
+import { usePathname } from 'next/navigation'; // Assuming you're using React Router
 import './Navbar.css';
 import currentDetails from '../data/currentDetails';
 
 const Navbar = () => {
-  const location = useLocation();
+  const pathname = usePathname();
   const [activeLink, setActiveLink] = useState('');
   const [scrolled, setScrolled] = useState(false);
   const [hamburgerOpen, setHamburgerOpen] = useState(false); // new state
@@ -26,7 +26,7 @@ const Navbar = () => {
 
   useEffect(() => {
     // Set the active link based on the current path
-    const path = location.pathname;
+    const path = pathname;
     setActiveLink(path);
 
     // Only consider links inside .nav-center-links
@@ -69,7 +69,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [location, isInitialRender]);
+  }, [pathname, isInitialRender]);
 
   useEffect(() => {
     // Add scroll event listener to toggle blur
@@ -93,7 +93,7 @@ const Navbar = () => {
 
   return (
     <nav ref={navRef} className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <Link to="/" className="nav-left">
+      <Link href="/" className="nav-left">
         {/* <img src="/icons/logo.png" width="48px" alt="Profile Picture" /> */}
         <div className="video-icon-container" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
           <div className="vid-icon-background">
@@ -125,12 +125,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="nav-center-links">
-          <Link onClick={() => setHamburgerOpen(false)} to="/" data-index="0" className={activeLink === '/' ? 'active' : ''}>Home</Link>
-          <Link onClick={() => setHamburgerOpen(false)} to="/about" data-index="1" className={activeLink === '/about' ? 'active' : ''}>About</Link>
-          <Link onClick={() => setHamburgerOpen(false)} to="/projects" data-index="2" className={activeLink === '/projects' ? 'active' : ''}>Projects</Link>
-          <Link onClick={() => setHamburgerOpen(false)} to="/experience" data-index="3" className={activeLink === '/experience' ? 'active' : ''}>Experience</Link>
-          <Link onClick={() => setHamburgerOpen(false)} to="/photos" data-index="4" className={activeLink === '/photos' ? 'active' : ''}>Gallery</Link>
-          <Link onClick={() => setHamburgerOpen(false)} to="/contact" data-index="5" className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
+          <Link onClick={() => setHamburgerOpen(false)} href="/" data-index="0" className={activeLink === '/' ? 'active' : ''}>Home</Link>
+          <Link onClick={() => setHamburgerOpen(false)} href="/about" data-index="1" className={activeLink === '/about' ? 'active' : ''}>About</Link>
+          <Link onClick={() => setHamburgerOpen(false)} href="/projects" data-index="2" className={activeLink === '/projects' ? 'active' : ''}>Projects</Link>
+          <Link onClick={() => setHamburgerOpen(false)} href="/experience" data-index="3" className={activeLink === '/experience' ? 'active' : ''}>Experience</Link>
+          <Link onClick={() => setHamburgerOpen(false)} href="/photos" data-index="4" className={activeLink === '/photos' ? 'active' : ''}>Gallery</Link>
+          <Link onClick={() => setHamburgerOpen(false)} href="/contact" data-index="5" className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
         </div>
         <span className="nav-glow"></span>
         <div className="nav-center-right" onClick={() => setHamburgerOpen(!hamburgerOpen)}>

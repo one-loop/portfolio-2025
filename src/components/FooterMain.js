@@ -1,6 +1,6 @@
 import React from 'react';
 import './FooterMain.css';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import currentDetails from '../data/currentDetails';
 
 const FooterMain = () => {
@@ -67,31 +67,31 @@ const FooterMain = () => {
       <div className="footer-right">
         <div className="footer-main-links">
           <h3>Main</h3>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/experience">Experience</Link>
-          <Link to="/photos">Photos</Link>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/experience">Experience</Link>
+          <Link href="/photos">Photos</Link>
         </div>
         <div className="footer-contact-links">
           <h3>Connect</h3>
-          <Link to="https://linkedin.com/in/saad-sifar" target="_blank" className="footer-right-external-link">LinkedIn <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Link href="https://linkedin.com/in/saad-sifar" target="_blank" className="footer-right-external-link">LinkedIn <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
           </svg>
           </Link>
-          <Link to="/sifar-resume.pdf" target="_blank" className="footer-right-external-link">Resume <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Link href="/sifar-resume.pdf" target="_blank" className="footer-right-external-link">Resume <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
           </svg>
           </Link>
           
-          <Link to="https://github.com/one-loop" target="_blank" className="footer-right-external-link">GitHub <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Link href="https://github.com/one-loop" target="_blank" className="footer-right-external-link">GitHub <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
           </svg>
           </Link>
-          {/* <Link to="mailto:ss17886 AT nyu DOT edu" target="_blank" className="footer-right-external-link">Mail <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* <Link href="mailto:ss17886 AT nyu DOT edu" target="_blank" className="footer-right-external-link">Mail <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
 </svg></Link> */}
-          <Link to="/contact">Contact</Link>
+          <Link href="/contact">Contact</Link>
         </div>
       </div>
     </footer>
