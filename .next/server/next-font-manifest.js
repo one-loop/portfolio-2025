@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{},\"appUsingSizeAdjust\":false,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/saadsifar/Documents/portfolio-react/app/layout":["static/media/dfd06bd0f29a244b-s.p.woff2","static/media/76611b6a0cdd73a1-s.p.woff2","static/media/e5b509cbe5ab0a2a-s.p.woff2","static/media/bdb9e12df486780f-s.p.woff2","static/media/a4de186fa95cceb1-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

@@ -350,8 +350,8 @@ const Projects = () => {
           <div className="grid-item item9" style={item9Bg.style}>
             <img className="project-blur" src={item9Bg.placeholder} alt="" aria-hidden="true" style={{ opacity: item9Bg.loaded ? 0 : 1 }} />
             <div className="grid-item-header-overlay">
-              <h1>Local LLM Chatbot LLM.</h1>
-              <p>A local Ollama LLM chatbot assistant allowing students to place food orders from the NYUAD dining hall.</p>
+              <h1>Local LLM Chatbot.</h1>
+              <p>A local Ollama LLM chatbot assistant with support of external tool calling for food ordering.</p>
             </div>
             <div className="grid-item-overlay">
               <Link href="/under-construction" className="read-more-button">Read More
