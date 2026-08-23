@@ -127,12 +127,12 @@ html, body {
   
 
 /* Example grid placements and spans for a collage look */
-.item1  { grid-column: 1 / 4; grid-row: 1 / 6; }
+.item1  { grid-column: 1 / 4; grid-row: 1 / 7; }
 .item2  { grid-column: 4 / 8; grid-row: 1 / 4; }
 .item3  { grid-column: 8 / 13; grid-row: 1 / 4; }
 .item4  { grid-column: 4 / 10; grid-row: 4 / 7; }
 .item5  { grid-column: 10 / 13; grid-row: 4 / 7; }
-.item6  { grid-column: 1 / 4; grid-row: 6 / 10; }
+.item6  { grid-column: 1 / 4; grid-row: 7 / 10; }
 .item7  { grid-column: 4 / 7; grid-row: 7 / 10; }
 .item8  { grid-column: 1 / 6; grid-row: 10 / 13; }
 .item9 { grid-column: 7 / 10; grid-row: 7 / 10; }
