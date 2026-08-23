@@ -1,5 +1,5 @@
 
-import Projects from '../../src/pages/Projects';
+import Projects from '../../src/views/Projects';
 
 export const metadata = {
   title: 'Projects | Saad Sifar',

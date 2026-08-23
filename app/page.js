@@ -1,5 +1,5 @@
 
-import Home from '../src/pages/Home';
+import Home from '../src/views/Home';
 
 export const metadata = {
   title: 'Saad Sifar – Portfolio',

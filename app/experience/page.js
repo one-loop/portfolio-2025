@@ -1,5 +1,5 @@
 
-import Experience from '../../src/pages/Experience';
+import Experience from '../../src/views/Experience';
 
 export const metadata = {
   title: 'Experience | Saad Sifar',

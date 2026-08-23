@@ -1,5 +1,5 @@
 
-import UnderConstruction from '../../src/pages/UnderConstruction';
+import UnderConstruction from '../../src/views/UnderConstruction';
 
 export const metadata = {
   title: 'Coming Soon | Saad Sifar',

@@ -1,5 +1,5 @@
 
-import Photos from '../../src/pages/Photos';
+import Photos from '../../src/views/Photos';
 
 export const metadata = {
   title: 'Gallery | Saad Sifar',
