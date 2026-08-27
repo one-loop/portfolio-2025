@@ -1,31 +1,51 @@
-# Global rules
+# Global rules for search crawlers
 User-agent: *
 Allow: /
-Disallow: /sifar-resume.pdf
-Disallow: /sifar-resume-uae.pdf
-Disallow: /resume.pdf
+Allow: /about
+Allow: /projects
+Allow: /experience
+Allow: /contact
+
+# Disallow private pages, admin, and dynamic APIs
 Disallow: /photos
+Disallow: /photos/
 Disallow: /gallery/
 Disallow: /gallery.json
-Disallow: /public/gallery/
+Disallow: /gallery.backup.json
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api
+Disallow: /api/
+Disallow: /under-construction
+Disallow: /under-construction/
 
-# Sitemap location
-Sitemap: https://saadsifar.com/sitemap.xml
+# Disallow all PDF resume files
+Disallow: /*.pdf$
+Disallow: /*.pdf
+Disallow: /sifar-resume*.pdf
+Disallow: /resume*.pdf
 
-# Specifically block all image bots from gallery and photos
+# Disallow indexing of image file extensions
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.webp$
+Disallow: /*.gif$
+Disallow: /*.svg$
+Disallow: /images/
+Disallow: /projectthumbnails/
+Disallow: /gallery/
+
+# Completely block Google Image Crawler from indexing ANY images on this domain
 User-agent: Googlebot-Image
 Disallow: /
-Disallow: /photos
-Disallow: /gallery/
-Disallow: /public/gallery/
 
-User-agent: Bingbot
-Disallow: /photos
-Disallow: /gallery/
-
-# Block other image crawlers
-User-agent: pinterest
-Disallow: /
-
+# Block other image-specific crawlers
 User-agent: PinterestBot
 Disallow: /
+
+User-agent: Pinterest
+Disallow: /
+
+# Canonical Sitemap location
+Sitemap: https://saadsifar.com/sitemap.xml

@@ -51,7 +51,7 @@ const Experience = () => {
           </FadeIn>
         ))}
         <div className="resume-wrapper">
-          <a href="/sifar-resume.pdf" target="_blank" className="resume-link">
+          <a href="/sifar-resume.pdf" target="_blank" rel="nofollow noreferrer" className="resume-link">
             <svg
               className="resume-doc-icon"
               width="16"

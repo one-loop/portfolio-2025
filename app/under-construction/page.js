@@ -1,17 +1,16 @@
-
 import UnderConstruction from '../../src/views/UnderConstruction';
 
 export const metadata = {
-  title: 'Coming Soon | Saad Sifar',
-  description: 'Under Construction',
-  alternates: {
-    canonical: 'https://saadsifar.com/under-construction',
-  },
-  openGraph: {
-    title: 'Coming Soon | Saad Sifar',
-    description: 'Under Construction',
-    url: 'https://saadsifar.com/under-construction',
-    type: 'website',
+  title: 'Coming Soon',
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
   },
 };
 
