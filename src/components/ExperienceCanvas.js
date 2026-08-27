@@ -22,26 +22,49 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
   const animationRef = useRef(null);
   const targetProgressRef = useRef(0);
   const currentProgressRef = useRef(0);
+  const resourcesReadyRef = useRef(false);
+  const hasFinishedRef = useRef(false);
+
+  // Helper to trigger slide up smoothly
+  const finishLoading = useCallback(() => {
+    if (hasFinishedRef.current) return;
+    hasFinishedRef.current = true;
+    modelLoaded = true;
+
+    // Brief hold at 100% so the user sees the completed "hello" and 100% before sliding up
+    setTimeout(() => {
+      setSlideUp(true);
+      if (onLoadingDone) onLoadingDone();
+    }, 450);
+  }, [onLoadingDone]);
 
   // Smooth progress animation function
   const animateProgress = useCallback(() => {
     const target = targetProgressRef.current;
     const current = currentProgressRef.current;
-    
-    if (Math.abs(target - current) < 0.1) {
+
+    if (Math.abs(target - current) < 0.5) {
       currentProgressRef.current = target;
       setLoadingProgress(Math.round(target));
+      if (target >= 100 && resourcesReadyRef.current) {
+        finishLoading();
+      }
     } else {
       // Smooth easing towards target
-      currentProgressRef.current += (target - current) * 0.1;
-      setLoadingProgress(Math.round(currentProgressRef.current));
-      animationRef.current = requestAnimationFrame(animateProgress);
+      currentProgressRef.current += (target - current) * 0.08;
+      const rounded = Math.round(currentProgressRef.current);
+      setLoadingProgress(rounded);
+      if (rounded >= 100 && resourcesReadyRef.current) {
+        finishLoading();
+      } else {
+        animationRef.current = requestAnimationFrame(animateProgress);
+      }
     }
-  }, []);
+  }, [finishLoading]);
 
   // Update target progress and start animation
   const updateProgress = useCallback((newProgress) => {
-    targetProgressRef.current = newProgress;
+    targetProgressRef.current = Math.max(targetProgressRef.current, newProgress);
     if (!animationRef.current) {
       animationRef.current = requestAnimationFrame(animateProgress);
     }
@@ -67,66 +90,61 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
     return () => clearInterval(interval);
   }, [showOverlay]);
 
-  // Helper to trigger slide up and callback at the same time, with a frame delay
-  const triggerSlideUp = useCallback(() => {
-    if (!modelLoaded) {
-      modelLoaded = true;
-      // Allow one frame for layout before animating to reduce jank
-      requestAnimationFrame(() => {
-        setSlideUp(true);
-        if (onLoadingDone) onLoadingDone();
-      });
-    }
-  }, [onLoadingDone]);
+  // Gradually tick progress while loading so progress is visible even on fast networks
+  useEffect(() => {
+    if (!showOverlay) return;
+
+    const tickInterval = setInterval(() => {
+      if (targetProgressRef.current < 90) {
+        updateProgress(Math.min(90, targetProgressRef.current + Math.floor(Math.random() * 12 + 6)));
+      }
+    }, 120);
+
+    return () => clearInterval(tickInterval);
+  }, [showOverlay, updateProgress]);
 
   useEffect(() => {
-    if (canvasRef.current) {
-      if (!experienceInstance.current) {
-        experienceInstance.current = new Experience({ targetElement: canvasRef.current });
-        
-        // Listen for progress events
-        experienceInstance.current.resources.on('progress', (group, resource, data) => {
-          const progress = Math.round((group.loaded / group.toLoad) * 100);
-          updateProgress(progress);
-        });
-        
-        experienceInstance.current.resources.on('groupEnd', (group) => {
-          if (group.name === 'base') {
-            updateProgress(100);
-            triggerSlideUp();
-          }
-        });
-        
-        experienceInstance.current.resume();
-      } else {
-        experienceInstance.current.setCanvas(canvasRef.current);
-        experienceInstance.current.resume();
-        if (modelLoaded) {
-          setSlideUp(true);
-          if (onLoadingDone) onLoadingDone();
-        } else if (experienceInstance.current.resources?.on) {
-          // Re-attach progress listeners
-          experienceInstance.current.resources.on('progress', (group, resource, data) => {
-            const progress = Math.round((group.loaded / group.toLoad) * 100);
-            updateProgress(progress);
-          });
-          
-          experienceInstance.current.resources.on('groupEnd', (group) => {
-            if (group.name === 'base') {
-              updateProgress(100);
-              triggerSlideUp();
-            }
-          });
-        }
+    if (!canvasRef.current) return;
+
+    const onProgress = (group) => {
+      if (group && group.toLoad > 0) {
+        const progress = Math.round((group.loaded / group.toLoad) * 100);
+        updateProgress(progress);
+      }
+    };
+
+    const onGroupEnd = (group) => {
+      if (!group || group.name === 'base') {
+        resourcesReadyRef.current = true;
+        updateProgress(100);
+      }
+    };
+
+    if (!experienceInstance.current) {
+      experienceInstance.current = new Experience({ targetElement: canvasRef.current });
+      
+      // Listen for progress events
+      experienceInstance.current.resources.on('progress', onProgress);
+      experienceInstance.current.resources.on('groupEnd', onGroupEnd);
+      experienceInstance.current.resume();
+    } else {
+      experienceInstance.current.setCanvas(canvasRef.current);
+      experienceInstance.current.resume();
+      if (modelLoaded) {
+        resourcesReadyRef.current = true;
+        updateProgress(100);
+      } else if (experienceInstance.current.resources?.on) {
+        experienceInstance.current.resources.on('progress', onProgress);
+        experienceInstance.current.resources.on('groupEnd', onGroupEnd);
       }
     }
+
     return () => {
       if (experienceInstance.current) {
         experienceInstance.current.pause();
       }
     };
-    // eslint-disable-next-line
-  }, []);
+  }, [experienceInstance, updateProgress]);
 
   useEffect(() => {
     if (slideUp && showOverlay && overlayRef.current) {

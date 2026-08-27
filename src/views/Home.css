@@ -54,6 +54,38 @@ h1 {
     position: relative;
     overflow: hidden;
     height: 100vh;
+    background-color: var(--color-bg-primary);
+    background: 
+        linear-gradient(180deg, var(--color-shadow-transparent) 0%, var(--color-bg-primary) 100%),
+        linear-gradient(
+            -45deg,
+            rgba(46, 60, 84, 0.45),
+            rgba(47, 122, 208, 0.38),
+            rgba(90, 65, 185, 0.34),
+            rgba(160, 55, 130, 0.30),
+            rgba(38, 125, 120, 0.32),
+            rgba(46, 60, 84, 0.45)
+        );
+    background-size: 100% 100%, 400% 400%;
+    animation: homeGradientCycle 20s ease-in-out infinite;
+}
+
+@keyframes homeGradientCycle {
+    0% {
+        background-position: 0% 0%, 0% 50%;
+    }
+    25% {
+        background-position: 0% 0%, 50% 100%;
+    }
+    50% {
+        background-position: 0% 0%, 100% 50%;
+    }
+    75% {
+        background-position: 0% 0%, 50% 0%;
+    }
+    100% {
+        background-position: 0% 0%, 0% 50%;
+    }
 }
 
 .gradient.home::before {

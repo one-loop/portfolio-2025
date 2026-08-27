@@ -228,12 +228,13 @@ h1 .emphasize {
     padding-bottom: 1px;
 }
 
-h2 {
+.about-grid h2,
+.about h2 {
     /* grid-column: 2 / span 2; */
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 18px;
-    font-family: 'New Spirit';
+    font-family: 'New Spirit', serif;
     color: var(--color-text-primary);
 }
 
@@ -573,7 +574,7 @@ main .right .image-container {
 
 .about main .left {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     position: sticky;
     top: calc((100vh - 400px)/2); /* Center the image vertically */
 }

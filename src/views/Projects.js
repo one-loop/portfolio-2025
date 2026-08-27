@@ -124,6 +124,7 @@ const Projects = () => {
     <div>
 
       <SEOBreadcrumbs items={[{ name: 'Projects', url: '/projects' }]} />
+      <h1 className="projects-title">Projects</h1>
       <div className="gradient projects">
         {/* <div className="wip-bnaner">This page is currently under construction, but please do visit again soon!</div> */}
         <div className="showcase-grid">
@@ -440,7 +441,6 @@ const Projects = () => {
         </div>
         <FooterMain />
       </div>
-      <h1 className="projects-title">Projects</h1>
     </div>
   );
 };

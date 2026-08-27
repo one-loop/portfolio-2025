@@ -15,7 +15,8 @@
     font-size: 12px;
     position: relative;
     padding: 48px;
-    z-index: 10; /* Added to ensure footer stays on top */
+    z-index: 10;
+    /* Added to ensure footer stays on top */
     /* background: #101010; */
     background: var(--color-bg-primary-90);
     backdrop-filter: blur(80px);
@@ -25,7 +26,7 @@
 .footer-left {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 12px;
     flex: 1;
 }
@@ -37,9 +38,11 @@
 }
 
 .footer-left-profile-text h2 {
+    font-family: 'New Spirit', serif;
     font-weight: 400;
     font-size: 20px;
     margin-bottom: 0px;
+    color: white;
 }
 
 .footer-left-profile-text h3 {
@@ -52,8 +55,8 @@
 .footer-left {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex: 1;
 }
 
@@ -91,6 +94,7 @@
 }
 
 .footer-left-text h2 {
+    font-family: 'New Spirit', serif;
     color: #F2F2F2;
     font-size: 20px;
     font-weight: 500;
@@ -105,7 +109,7 @@
 
 .footer-right {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     font-size: 14px;
     flex: 1;
 }
@@ -133,6 +137,7 @@
 .footer-main-links {
     flex: 1;
 }
+
 .footer-contact-links {
     flex: 1;
 }
@@ -154,8 +159,8 @@
 
 .footer-right-external-link svg {
     transform: translate(-10%, 10%);
-    transition: transform .24s cubic-bezier(0.25,0.46,0.45,0.94);
-    transitiion: fill-opacity 0.24s cubic-bezier(0.25,0.46,0.45,0.94);
+    transition: transform .24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transitiion: fill-opacity 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .footer-right a,
@@ -201,5 +206,3 @@
         justify-content: center;
     }
 }
-
-
