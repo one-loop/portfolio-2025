@@ -19,7 +19,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(jpg|jpeg|png|webp|gif|svg|ico)",
+      "source": "/projectthumbnails/(.*)",
       "headers": [
         {
           "key": "X-Robots-Tag",

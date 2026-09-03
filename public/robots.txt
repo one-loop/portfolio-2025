@@ -5,6 +5,10 @@ Allow: /about
 Allow: /projects
 Allow: /experience
 Allow: /contact
+Allow: /favicon.ico
+Allow: /icon.png
+Allow: /apple-touch-icon.png
+Allow: /icons/
 
 # Disallow private pages, admin, and dynamic APIs
 Disallow: /photos
@@ -25,22 +29,23 @@ Disallow: /*.pdf
 Disallow: /sifar-resume*.pdf
 Disallow: /resume*.pdf
 
-# Disallow indexing of image file extensions
-Disallow: /*.jpg$
-Disallow: /*.jpeg$
-Disallow: /*.png$
-Disallow: /*.webp$
-Disallow: /*.gif$
-Disallow: /*.svg$
+# Disallow indexing of private media directories
 Disallow: /images/
 Disallow: /projectthumbnails/
 Disallow: /gallery/
 
-# Completely block Google Image Crawler from indexing ANY images on this domain
+# Allow Googlebot-Image to index site icons and favicons for search snippets
 User-agent: Googlebot-Image
-Disallow: /
+Allow: /favicon.ico
+Allow: /icon.png
+Allow: /apple-touch-icon.png
+Allow: /icons/
+Disallow: /gallery/
+Disallow: /photos/
+Disallow: /images/
+Disallow: /projectthumbnails/
 
-# Block other image-specific crawlers
+# Block other image-specific scrapers
 User-agent: PinterestBot
 Disallow: /
 

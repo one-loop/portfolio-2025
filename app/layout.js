@@ -57,6 +57,17 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', sizes: '96x96', type: 'image/png' },
+      { url: '/icons/favicon/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     title: 'Saad Sifar – Portfolio',
     description: 'Saad Sifar is a Software Engineer and CS student at NYU Abu Dhabi specializing in AI, machine learning, and full-stack engineering.',
