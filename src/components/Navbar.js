@@ -106,9 +106,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav ref={navRef} className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      {/* Desktop Left Brand */}
-      <Link href="/" className="nav-left">
+    <>
+      {pathname !== '/' && (
+        <div
+          className={`top-blur-gradient-mask ${scrolled ? 'visible' : ''}`}
+          aria-hidden="true"
+        />
+      )}
+      <nav ref={navRef} className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        {/* Desktop Left Brand */}
+        <Link href="/" className="nav-left">
         <div className="video-icon-container" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
           <div className="vid-icon-background">
             <video src="/videos/memoji.mov" alt="Profile Picture" muted autoPlay loop playsInline />
@@ -241,6 +248,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 

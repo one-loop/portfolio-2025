@@ -31,18 +31,22 @@
   --color-border-line: #24252a;
 
   /* Component Background Colors */
-  --color-nav-bg: rgba(10, 10, 10, 0.33);
-  --color-card-bg-dark: rgba(10, 10, 10, 0.3);
-  --color-card-bg-medium: rgba(34, 34, 34, 0.2);
-  --color-card-bg-light: rgba(68, 68, 68, 0.2);
-  --color-input-bg: rgba(20, 20, 20, 0.8);
-  --color-input-bg-hover: rgb(255, 255, 255, 0.03);
-  --color-overlay-dark: rgba(16, 16, 16, 0.9);
+  --color-nav-bg: rgba(18, 20, 28, 0.65);
+  --color-card-bg-dark: rgba(18, 20, 28, 0.45);
+  --color-card-bg-medium: rgba(30, 34, 46, 0.35);
+  --color-card-bg-light: rgba(50, 56, 72, 0.3);
+  --color-input-bg: rgba(14, 16, 22, 0.7);
+  --color-input-bg-hover: rgba(255, 255, 255, 0.04);
+  --color-overlay-dark: rgba(10, 11, 15, 0.85);
   --color-bg-primary-90: color-mix(in srgb, var(--color-bg-primary) 90%, transparent);
 
+  /* Glassmorphism Tokens */
+  --color-glass-bg: rgba(18, 20, 28, 0.65);
+  --color-glass-border: rgba(255, 255, 255, 0.09);
+  --color-glass-border-hover: rgba(255, 255, 255, 0.18);
+  --color-glass-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+
   /* Accent Colors */
-  /* --color-accent-cyan: #b0ecef; */
-  /* --color-accent-cyan: #b5b6e4; */
   --color-accent-cyan: rgb(184, 215, 229);
   --color-accent-purple: #D3A6FF;
   --color-accent-purple-dark: #c9b0ef;

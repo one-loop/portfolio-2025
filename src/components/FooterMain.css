@@ -1,27 +1,20 @@
 @import '../styles/colors.css';
 
 .main-footer {
-    /* width: 100vw; */
     grid-column: span 4 / 6;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* border-top: 2px solid var(--color-border-subtle); */
     border-top: 2px solid var(--color-border-subtle);
-    padding: 30px 0px;
-    /* padding: 24px 48px; */
+    padding: 48px;
     color: var(--color-text-secondary);
     align-items: center;
     font-size: 12px;
     position: relative;
-    padding: 48px;
     z-index: 50;
-    /* Added to ensure footer stays on top */
-    /* background: #101010; */
     background: var(--color-bg-primary-90);
     backdrop-filter: blur(80px);
 }
-
 
 .footer-left {
     display: flex;
@@ -50,7 +43,6 @@
     font-size: 14px;
     display: inline;
 }
-
 
 .footer-left {
     display: flex;
@@ -86,7 +78,6 @@
     height: 48px;
     margin-right: 24px;
     border-radius: 100%;
-
 }
 
 .footer-left svg {
@@ -113,7 +104,6 @@
     font-size: 14px;
     flex: 1;
 }
-
 
 .footer-right h3 {
     color: #f2f2f2;
@@ -142,11 +132,6 @@
     flex: 1;
 }
 
-.footer-right-external-link {
-    /* height: 17px; */
-    /* margin-bottom: 10.5px; */
-}
-
 .footer-right-external-link:hover svg {
     transform: translate(0%, 0%);
 }
@@ -160,7 +145,7 @@
 .footer-right-external-link svg {
     transform: translate(-10%, 10%);
     transition: transform .24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transitiion: fill-opacity 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: fill-opacity 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .footer-right a,
@@ -169,7 +154,6 @@
 .footer-right,
 .footer-left {
     pointer-events: auto;
-    /* cursor: pointer; */
 }
 
 /* Mobile Screens */

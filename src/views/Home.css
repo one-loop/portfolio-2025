@@ -1,28 +1,19 @@
 @import '../styles/colors.css';
 
 .main-heading {
-    font-family: 'New Spirit';
-    font-size: 6em;
+    font-family: 'New Spirit', serif;
+    font-size: clamp(3.2rem, 8vw, 6.2rem);
+    letter-spacing: -0.02em;
     position: absolute;
-    top: 150px; /* Start hidden below the canvas */
+    top: 80px;
     z-index: 1;
-    font-weight: normal;
+    font-weight: 400;
     width: 100%;
     text-align: center;
-    /* top: 80px; */
-    opacity: 0;
-    /* background: -webkit-linear-gradient(var(--color-accent-light-gray-alt), var(--color-gray-light)); */
-    background: -webkit-linear-gradient(rgb(209 218 222), rgb(102, 132, 156));
+    background: -webkit-linear-gradient(rgb(218, 226, 230), rgb(112, 142, 166));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all .6s ease-out;
-    
-    top: 80px;
-    opacity: 1;
-}
-
-.main-heading.animate {
-    top: 80px; /* Move up into view */
     opacity: 1;
 }
 

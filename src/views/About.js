@@ -39,6 +39,9 @@ const About = () => {
   // State for random gallery images
   const [galleryImages, setGalleryImages] = useState([]);
   const [allGalleryData, setAllGalleryData] = useState([]);
+  // State for focused/enlarged polaroid photo modal (index in galleryImages, or null)
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
+  const [isClosing, setIsClosing] = useState(false);
 
   // State for expanded experience (index or null)
   const [expandedExperienceIndex, setExpandedExperienceIndex] = useState(null);
@@ -65,7 +68,50 @@ const About = () => {
   // Handler to refresh random images
   const handleRefreshGallery = () => {
     setGalleryImages(getRandomUnique(allGalleryData, 6));
+    setSelectedPhotoIndex(null);
+    setIsClosing(false);
   };
+
+  const handleOpenPhoto = (index) => {
+    setIsClosing(false);
+    setSelectedPhotoIndex(index);
+  };
+
+  const handleClosePhoto = () => {
+    if (isClosing) return;
+    setIsClosing(true);
+    setTimeout(() => {
+      setSelectedPhotoIndex(null);
+      setIsClosing(false);
+    }, 260);
+  };
+
+  const handleNextPhoto = (e) => {
+    if (e) e.stopPropagation();
+    setSelectedPhotoIndex((prev) => (prev !== null ? (prev + 1) % galleryImages.length : 0));
+  };
+
+  const handlePrevPhoto = (e) => {
+    if (e) e.stopPropagation();
+    setSelectedPhotoIndex((prev) => (prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : 0));
+  };
+
+  // Keyboard navigation & body scroll lock when photo is enlarged
+  useEffect(() => {
+    if (selectedPhotoIndex === null) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') handleClosePhoto();
+      if (e.key === 'ArrowRight') setSelectedPhotoIndex((prev) => (prev + 1) % galleryImages.length);
+      if (e.key === 'ArrowLeft') setSelectedPhotoIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [selectedPhotoIndex, galleryImages.length]);
 
   // Add a new useEffect to log the distance of each section title from the top
   useEffect(() => {
@@ -262,8 +308,8 @@ const About = () => {
               </div>
               <div className="conclusion-section">
                 <h2>Thanks for stopping by!</h2>
-                {/* <img src="/images/signature.png" alt="signature" width='150' style={{userSelect: 'none', webkitUserDrag: 'none'}}></img> */}
-                <img src="/images/signature 2.png" alt="signature" width='150' style={{ userSelect: 'none', webkitUserDrag: 'none' }}></img>
+                {/* <img src="/images/signature.png" alt="signature" width='150' style={{userSelect: 'none', WebkitUserDrag: 'none'}}></img> */}
+                <img src="/images/signature 2.png" alt="signature" width='150' style={{ userSelect: 'none', WebkitUserDrag: 'none' }}></img>
               </div>
               <div className="experience-about-wrapper">
                 <h1 className="experience-about-title">Experience</h1>
@@ -427,14 +473,32 @@ const About = () => {
             </div>
             <div className="about-image-gallery">
               {galleryImages.map((img, i) => (
-                <div className="about-image-container" key={i}>
-                  <img src={`/gallery/${img.filename}`} alt={img.title || `Gallery ${i + 1}`} />
-                  {img.season && (
-                    <span className="about-gallery-caption text-shadow-lg/20">{img.season}</span>
-                  )}
-                  {img.location && (
-                    <span className="about-gallery-season">{img.location}</span>
-                  )}
+                <div
+                  className="about-image-container"
+                  key={i}
+                  onClick={() => handleOpenPhoto(i)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Enlarge photo from ${img.location || 'gallery'}`}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleOpenPhoto(i);
+                    }
+                  }}
+                >
+                  <div className="about-image-inner">
+                    <img src={`/gallery/${img.filename}`} alt={img.title || img.location || `Gallery ${i + 1}`} />
+                    <div className="about-image-glare"></div>
+                  </div>
+                  <div className="about-polaroid-footer">
+                    {img.location && (
+                      <span className="about-gallery-location">{img.location}</span>
+                    )}
+                    {img.season && (
+                      <span className="about-gallery-season">{img.season}</span>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -442,6 +506,86 @@ const About = () => {
         </div>
         <FooterMain />
       </div>
+
+      {selectedPhotoIndex !== null && galleryImages[selectedPhotoIndex] && (
+        <div
+          className={`polaroid-modal-backdrop ${isClosing ? 'is-closing' : ''}`}
+          onClick={handleClosePhoto}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Enlarged photo view"
+        >
+          <button
+            type="button"
+            className="polaroid-modal-close"
+            onClick={handleClosePhoto}
+            aria-label="Close enlarged photo"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          {galleryImages.length > 1 && (
+            <>
+              <button
+                type="button"
+                className="polaroid-modal-nav polaroid-modal-prev"
+                onClick={handlePrevPhoto}
+                aria-label="Previous photo"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button
+                type="button"
+                className="polaroid-modal-nav polaroid-modal-next"
+                onClick={handleNextPhoto}
+                aria-label="Next photo"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </>
+          )}
+
+          <div
+            key={selectedPhotoIndex}
+            className={`polaroid-modal-container ${isClosing ? 'is-closing' : ''}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="polaroid-modal-card">
+              <div className="polaroid-modal-image-inner">
+                <img
+                  src={`/gallery/${galleryImages[selectedPhotoIndex].filename}`}
+                  alt={galleryImages[selectedPhotoIndex].title || galleryImages[selectedPhotoIndex].location || 'Enlarged photo'}
+                />
+                <div className="about-image-glare"></div>
+              </div>
+              <div className="about-polaroid-footer modal-polaroid-footer">
+                {galleryImages[selectedPhotoIndex].location && (
+                  <span className="about-gallery-location modal-location">
+                    {galleryImages[selectedPhotoIndex].location}
+                  </span>
+                )}
+                {galleryImages[selectedPhotoIndex].season && (
+                  <span className="about-gallery-season modal-season">
+                    {galleryImages[selectedPhotoIndex].season}
+                  </span>
+                )}
+              </div>
+              {galleryImages[selectedPhotoIndex].title && (
+                <p className="modal-polaroid-title">
+                  {galleryImages[selectedPhotoIndex].title}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

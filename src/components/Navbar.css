@@ -10,34 +10,48 @@
     padding: 24px 40px; 
 }
 
-.nav-wrapper {
+.top-blur-gradient-mask {
     position: fixed;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100px;
-    width: 100%;
-    inset: 0 0 auto 0;
-    background: var(--color-bg-secondary);
-    background: color-mix(in srgb, var(--color-bg-secondary) 80%, transparent);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    -webkit-mask-image: linear-gradient(to bottom, #000 20%, transparent calc(100% - 20%));
-    mask-image: linear-gradient(to bottom, #000 20%, transparent calc(100% - 20%));
+    pointer-events: none;
+    z-index: 900;
+    opacity: 0;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    background: linear-gradient(
+        to bottom,
+        var(--color-bg-primary) 0%,
+        color-mix(in srgb, var(--color-bg-primary) 85%, transparent) 40%,
+        color-mix(in srgb, var(--color-bg-primary) 40%, transparent) 75%,
+        transparent 100%
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 45%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 45%, transparent 100%);
+}
+
+.top-blur-gradient-mask.visible {
+    opacity: 1;
 }
 
 .nav-center {
     height: 48px;
-    background: var(--color-nav-bg);
-    box-shadow: 0px 0px 0px 1px var(--color-border-light);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 16px;
-    padding: 0px 40px;
+    background: rgba(18, 20, 28, 0.65);
+    box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border-radius: 24px;
+    padding: 0px 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
     position: relative;
-    max-width: 700px;
+    max-width: 680px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .nav-center-links {
@@ -45,7 +59,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
     user-select: none;
 }
 
@@ -60,9 +74,13 @@ a:hover {
 
 .nav-center-links > a,
 .nav-link-item {
-    font-size: 14px;
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
     text-decoration: none;
-    text-shadow: var(--color-text-shadow);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    padding: 4px 2px;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .nav-link-indicator {
@@ -84,32 +102,42 @@ a:hover {
     bottom: 0px;
     z-index: 1000;
     left: 40px;
-    background: var(--color-bg-light);
-    box-shadow: 0px -5px 25px 2px var(--color-glow-white);
+    background: #FFFFFF;
+    box-shadow: 0px -4px 18px 2px rgba(255, 255, 255, 0.85);
     border-radius: 2px 2px 0px 0px;
-    transition: left 0.3s ease, width 0.3s ease;
+    transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .nav-left {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 16px;
+    gap: 14px;
     flex: 1;
     text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.nav-left:hover {
+    opacity: 0.92;
 }
 
 .vid-icon-background {
     z-index: 1;
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     background: rgb(189, 203, 211);
-    outline: 1px solid var(--color-border-light);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 4px 12px rgba(0, 0, 0, 0.2);
     margin-left: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-left:hover .vid-icon-background {
+    transform: scale(1.05);
 }
 
 .video-icon-container video {
@@ -183,6 +211,10 @@ a:hover {
 
 /* Mobile Screens */
 @media only screen and (max-width: 768px) {
+    .top-blur-gradient-mask {
+        height: 84px;
+    }
+
     .nav-right, .nav-left, .nav-glow {
         display: none !important;
     }

@@ -1,5 +1,16 @@
 const experienceData = [
   {
+    role: "AI/ML Security Engineering Intern",
+    company: "MoMA Lab, NYU Abu Dhabi",
+    description: [
+      "Engineered an adversarial machine learning framework in Python and PyTorch to expose vulnerabilities in model unlearning pipelines, analyzing AI planning and model boundaries.",
+      "Designed robust testing suites and experimented with emerging AI techniques to profile system performance, demonstrating an 80\% increase in backdoor activation rates while preserving 90\% baseline accuracy."
+    ],
+    skills: ["Python", "PyTorch", "Machine Learning", "Deep Learning", "Adversarial Attacks", "ML Security", "Adversarial ML", "Model Unlearning"],
+    date: "May 2026 — Jul. 2026",
+    location: "Abu Dhabi, UAE 🇦🇪"
+  },
+  {
     role: "Research Assistant",
     company: "eBrain Lab, NYU Abu Dhabi",
     description: [

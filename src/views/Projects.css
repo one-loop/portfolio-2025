@@ -197,14 +197,19 @@ html, body {
 
 /* Add background images or content as needed */
 .grid-item {
-    border-radius: 10px;
-    box-shadow: 0 2px 12px var(--color-shadow-light);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
     background-size: cover;
     background-position: center;
-    min-height: 120px;
-    outline: 1px solid var(--color-border-light);
+    min-height: 140px;
     position: relative;
     z-index: 10;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
 
 .all-projects-link {
@@ -261,7 +266,7 @@ html, body {
 }
 
 .grid-item {
-  padding: 12px;
+  padding: 16px;
   overflow: hidden;
 }
 
@@ -287,51 +292,62 @@ html, body {
   justify-content: space-between;
   position: relative;
   bottom: -60px;
-  transition: all 0.2s ease;
+  transition: bottom 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 8px;
+  z-index: 5;
 }
-
 
 .grid-item:hover .grid-item-overlay {
   bottom: 0px;
 }
 
 .grid-item h1 {
-  font-size: 38px;
+  font-family: 'New Spirit', serif;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  letter-spacing: -0.01em;
 }
 
 .grid-item-overlay button {
   width: auto;
-  height: 30px;
-  padding: 7px;
-  font-family: 'New Spirit', 'Inter', 'sans-serif';
-  border-radius: 7px;
+  height: 32px;
+  padding: 6px 14px;
+  font-family: 'Inter', sans-serif;
+  border-radius: 9999px;
 }
 
 /* Make anchor buttons look identical to real buttons */
 .grid-item-overlay a.visit-site-button,
 .grid-item-overlay a.read-more-button,
 .grid-item-overlay a.github-button {
-  /* Match Contact page button styling */
-  background: rgba(68, 68, 68, 0.2);
-  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(10px);
-  border-radius: 7px;
+  background: rgba(14, 16, 24, 0.75);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 9999px;
   width: auto;
-  height: 30px;
-  padding: 7px;
+  height: 34px;
+  padding: 6px 14px;
   outline: none;
-  color: #ededed;
+  color: #f2f2f2;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'New Spirit', 'Inter', 'sans-serif';
-  display: flex;
-  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.grid-item-overlay a.visit-site-button:hover,
+.grid-item-overlay a.read-more-button:hover,
+.grid-item-overlay a.github-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.24), 0 6px 16px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
 }
 
 .grid-item-overlay a.read-more-button,
@@ -343,19 +359,16 @@ html, body {
 .grid-item-overlay a.visit-site-button:active,
 .grid-item-overlay a.read-more-button:active,
 .grid-item-overlay a.github-button:active {
-  transform: scale(0.95);
-  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.5);
+  transform: scale(0.96);
 }
 
 .grid-item-overlay .read-more-button, .grid-item-overlay .visit-site-button {
-  padding-left: 16px;
-  padding-right: 16px;
   display: flex;
   align-items: center;
 }
 
 .grid-item-overlay .read-more-button svg, .grid-item-overlay .visit-site-button svg {
-  margin-left: 10px;
+  margin-left: 8px;
   transition: transform 0.2s ease;
 }
 
