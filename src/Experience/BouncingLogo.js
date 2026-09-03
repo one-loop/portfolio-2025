@@ -12,186 +12,86 @@ export default class BouncingLogo
         this.scene = this.experience.scene
         this.world = this.experience.world
         this.time = this.experience.time
-
-        // Debug
-        if(this.debug)
-        {
-            this.debugFolder = this.debug.addFolder({
-                title: 'bouncingLogo',
-                expanded: false
-            })
-        }
+        this.sourcePath = '/videos/codescroll.mp4'
 
         this.setModel()
-        this.setAnimation()
     }
 
     setModel()
     {
         this.model = {}
 
-        this.model.group = new THREE.Group()
-        this.model.group.position.x = 4.2
-        this.model.group.position.y = 2.717
-        this.model.group.position.z = 1.630
-        this.scene.add(this.model.group)
+        // Video Element (displays the same video as the PC monitor)
+        this.model.element = document.createElement('video')
+        this.model.element.muted = true
+        this.model.element.loop = true
+        this.model.element.controls = false
+        this.model.element.playsInline = true
+        this.model.element.autoplay = true
+        this.model.element.src = this.sourcePath
+        this.model.element.play()
 
-        this.model.texture = this.resources.items.threejsJourneyLogoTexture
+        // Video Texture
+        this.model.texture = new THREE.VideoTexture(this.model.element)
         this.model.texture.colorSpace = THREE.SRGBColorSpace
+        this.model.texture.minFilter = THREE.LinearFilter
+        this.model.texture.magFilter = THREE.LinearFilter
+        this.model.texture.generateMipmaps = false
 
-        this.model.geometry = new THREE.PlaneGeometry(4, 1, 1, 1)
-        this.model.geometry.rotateY(- Math.PI * 0.5)
+        // Geometry
+        this.model.geometry = new THREE.PlaneGeometry(1, 1)
 
+        // Material
         this.model.material = new THREE.MeshBasicMaterial({
-            transparent: true,
-            premultipliedAlpha: true,
-            map: this.model.texture
+            map: this.model.texture,
+            side: THREE.FrontSide
         })
 
+        // Mesh (rotated to face the room from the right wall)
         this.model.mesh = new THREE.Mesh(this.model.geometry, this.model.material)
-        this.model.mesh.scale.y = 0.359
-        this.model.mesh.scale.z = 0.424
-        this.model.group.add(this.model.mesh)
+        this.model.mesh.rotation.y = - Math.PI * 0.5
+        this.model.mesh.position.set(4.195, 2.663, 1.82)
+        this.model.mesh.scale.set(4.24, 2.38, 1)
+
+        this.scene.add(this.model.mesh)
 
         // Debug
         if(this.debug)
         {
+            this.debugFolder = this.debug.addFolder({
+                title: 'tvScreen',
+                expanded: false
+            })
+
             this.debugFolder.addInput(
-                this.model.group.position,
+                this.model.mesh.position,
                 'x',
-                {
-                    label: 'positionX', min: - 5, max: 5, step: 0.001
-                }
+                { label: 'positionX', min: 0, max: 6, step: 0.001 }
             )
-
             this.debugFolder.addInput(
-                this.model.group.position,
+                this.model.mesh.position,
                 'y',
-                {
-                    label: 'positionY', min: - 5, max: 5, step: 0.001
-                }
+                { label: 'positionY', min: 0, max: 5, step: 0.001 }
             )
-
             this.debugFolder.addInput(
-                this.model.group.position,
+                this.model.mesh.position,
                 'z',
-                {
-                    label: 'positionZ', min: - 5, max: 5, step: 0.001
-                }
+                { label: 'positionZ', min: -2, max: 5, step: 0.001 }
             )
-
             this.debugFolder.addInput(
                 this.model.mesh.scale,
-                'z',
-                {
-                    label: 'scaleZ', min: 0.001, max: 1, step: 0.001
-                }
+                'x',
+                { label: 'scaleWidth', min: 0.5, max: 8, step: 0.01 }
             )
-
             this.debugFolder.addInput(
                 this.model.mesh.scale,
                 'y',
-                {
-                    label: 'scaleY', min: 0.001, max: 1, step: 0.001
-                }
-            )
-        }
-    }
-
-    setAnimation()
-    {
-        this.animations = {}
-
-        this.animations.z = 0
-        this.animations.y = 0
-
-        this.animations.limits = {}
-        this.animations.limits.z = { min: -1.076, max: 1.454 }
-        this.animations.limits.y = { min: -1.055, max: 0.947 }
-
-        this.animations.speed = {}
-        this.animations.speed.z = 0.00061
-        this.animations.speed.y = 0.00037
-
-        if(this.debug)
-        {
-            this.debugFolder.addInput(
-                this.animations.limits.z,
-                'min',
-                {
-                    label: 'limitZMin', min: - 3, max: 0, step: 0.001
-                }
-            )
-
-            this.debugFolder.addInput(
-                this.animations.limits.z,
-                'max',
-                {
-                    label: 'limitZMax', min: 0, max: 3, step: 0.001
-                }
-            )
-
-            this.debugFolder.addInput(
-                this.animations.limits.y,
-                'min',
-                {
-                    label: 'limitYMin', min: - 3, max: 0, step: 0.001
-                }
-            )
-
-            this.debugFolder.addInput(
-                this.animations.limits.y,
-                'max',
-                {
-                    label: 'limitYMax', min: 0, max: 3, step: 0.001
-                }
-            )
-
-            this.debugFolder.addInput(
-                this.animations.speed,
-                'z',
-                {
-                    label: 'speedZ', min: 0, max: 0.001, step: 0.00001
-                }
-            )
-
-            this.debugFolder.addInput(
-                this.animations.speed,
-                'y',
-                {
-                    label: 'speedY', min: 0, max: 0.001, step: 0.00001
-                }
+                { label: 'scaleHeight', min: 0.5, max: 5, step: 0.01 }
             )
         }
     }
 
     update()
     {
-        this.animations.z += this.animations.speed.z * this.time.delta
-        this.animations.y += this.animations.speed.y * this.time.delta
-
-        if(this.animations.z > this.animations.limits.z.max)
-        {
-            this.animations.z = this.animations.limits.z.max
-            this.animations.speed.z *= -1
-        }
-        if(this.animations.z < this.animations.limits.z.min)
-        {
-            this.animations.z = this.animations.limits.z.min
-            this.animations.speed.z *= -1
-        }
-        if(this.animations.y > this.animations.limits.y.max)
-        {
-            this.animations.y = this.animations.limits.y.max
-            this.animations.speed.y *= -1
-        }
-        if(this.animations.y < this.animations.limits.y.min)
-        {
-            this.animations.y = this.animations.limits.y.min
-            this.animations.speed.y *= -1
-        }
-
-        this.model.mesh.position.z = this.animations.z
-        this.model.mesh.position.y = this.animations.y
     }
 }

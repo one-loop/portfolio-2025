@@ -1,3 +1,5 @@
+@import './styles/colors.css';
+
 *
 {
     margin: 0;
@@ -8,53 +10,60 @@
 html,
 body
 {
-    /* overflow-y: auto; */
-    background-color: #101010;
-    font-family: Inter, sans-serif;
+    background-color: var(--color-bg-primary);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --top: rgba(97,106,115,.12);
     --bottom: transparent;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    /* height: 300vh; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Modern Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
 }
 
 @font-face {
   font-family: 'New Spirit';
-  src: url('fonts/New-Spirit-Regular.woff2') format('woff2'),
-       url('fonts/New-Spirit-Regular.woff') format('woff'),
-       url('fonts/New-Spirit-Regular.otf') format('opentype');
+  src: url('/fonts/New-Spirit-Regular.woff2') format('woff2'),
+       url('/fonts/New-Spirit-Regular.woff') format('woff'),
+       url('/fonts/New-Spirit-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'New Spirit';
-  src: url('fonts/New-Spirit-Bold.woff2') format('woff2'),
-       url('fonts/New-Spirit-Bold.woff') format('woff'),
-       url('fonts/New-Spirit-Bold.otf') format('opentype');
-  font-weight: semi-bold;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-
-@font-face {
-  font-family: 'New Spirit';
-  src: url('fonts/New-Spirit-Medium.woff2') format('woff2'),
-       url('fonts/New-Spirit-Medium.woff') format('woff'),
-       url('fonts/New-Spirit-Medium.otf') format('opentype');
-  font-weight: medium;
-  font-style: normal;
+  font-display: swap;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background-color: rgb(249 224 133) !important;
-  color: black;
+  background-color: rgb(158, 203, 229) !important;
+  color: rgb(16, 17, 24);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-cyan);
+  outline-offset: 2px;
+}
+
+.vsc-controller, .vsc-controller #controller {
+  display: none !important;
 }
 
 .experience
@@ -67,58 +76,45 @@ body
 .gradient {
   position: absolute;
   width: 100vw;
-  /* height: 832px; */
   height: 70vh;
   left: 0px;
   top: 0px;
 }
 
-
 .gradient.home {
-  /* background: linear-gradient(180deg, rgba(97, 160, 255, 0.2) 0%, rgba(16, 16, 16, 0) 100%); */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101010 100%), linear-gradient(44.78deg, rgba(70, 227, 183, 0.3) -5.94%, rgba(47, 122, 208, 0.3) 62.87%);
+  background: linear-gradient(180deg, var(--color-shadow-transparent) 0%, var(--color-bg-primary) 100%), linear-gradient(44.78deg, var(--color-grad-cyan-green) -5.94%, var(--color-grad-cyan-blue) 62.87%);
 }
 
-.gradient {
-  /* background: linear-gradient(180deg, rgba(148, 56, 156, 0.3) 0%, rgba(16, 16, 16, 0) 100%); */
-  /* background: linear-gradient(180deg, rgba(131, 103, 167, 0.3) 0%, rgba(16, 16, 16, 0) 80%); */
-  /* background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101010 100%),  */
-              /* linear-gradient(90deg, rgba(69, 94, 181, 0.2) 16%, rgba(86, 67, 204, 0.2) 48%, rgba(103, 63, 215, 0.2) 72%); */
-            /* linear-gradient(90deg, rgba(69, 94, 181, 0.2) 9%, rgba(86, 67, 204, 0.2) 44%, rgba(103, 63, 213, 0.2) 71%); */
-        /* Gradient */
-}
-  
 .gradient.projects {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101010 100%), linear-gradient(89.42deg, rgba(69, 94, 181, 0.2) 16.15%, rgba(86, 67, 204, 0.2) 47.6%, rgba(103, 63, 215, 0.2) 72.31%);
   pointer-events: none;
 }
 
 .gradient.experiences {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101010 100%), linear-gradient(270deg, rgba(80, 227, 194, 0.2) 0%, rgba(0, 112, 243, 0.2) 100%);
+  background: linear-gradient(180deg, var(--color-shadow-transparent) 0%, var(--color-bg-primary) 100%), linear-gradient(270deg, var(--color-grad-teal) 0%, var(--color-grad-blue-dark) 100%);
   pointer-events: none;
-  /* position: absolute; */
-  /* z-index: -1; */
 }
 
 .gradient.contact {
-  /* background: linear-gradient(180deg, rgba(40, 12, 100, 0.3) 0%, rgba(16, 16, 16, 0) 100%); */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101010 100%), linear-gradient(90deg, rgba(68, 160, 141, 0.2) 0%, rgba(9, 54, 55, 0.2) 100%);
-
+  background: linear-gradient(180deg, var(--color-shadow-transparent) 0%, var(--color-bg-primary) 100%), linear-gradient(90deg, var(--color-grad-green) 0%, var(--color-grad-green-dark) 100%);
   pointer-events: none;
-  /* position: absolute;
-  z-index: -1; */
 }
 
-.gradient.experiences + h1, .gradient.contact + h1, .gradient.projects + h1 {
-  /* text-transform: uppercase; */
-  font-size: 80px;
-  font-weight: 800;
-  /* position: absolute; */
+.gradient.photos {
+  background: linear-gradient(180deg, var(--color-shadow-transparent) 0%, var(--color-bg-primary) 100%), linear-gradient(135deg, var(--color-grad-blue-cyan-alt) 0%, var(--color-grad-blue-cyan) 100%);
+  z-index: 10;
+}
+
+.gradient.experiences + h1, .gradient.contact + h1, .gradient.projects + h1, .gradient.photos + h1, .experience-title, .contact-page-title, .photos-title, .projects-title {
+  font-family: 'New Spirit', serif;
+  font-size: clamp(3.2rem, 7vw, 5.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
   width: 100%;
   padding-top: 100px;
   margin: auto;
   z-index: -100;
-  color: white;
+  color: var(--color-bg-white);
+  text-align: center;
 }
 
 .credits
@@ -126,7 +122,7 @@ body
   position: absolute;
   bottom: 20px;
   right: 20px;
-  color: #ffffff;
+  color: var(--color-bg-white);
   text-align: right;
   font-family: 'Roboto', sans-serif;
 }
@@ -138,16 +134,12 @@ body
 
 .about, .experiences, .projects, .contact {
   padding-top: 100px;
-  color: #f2f2f2;
+  color: var(--color-text-primary);
   width: 100%;
   height: 100%;
-  /* min-height: 100vh; */
-  /* overflow-y: auto; */
 }
 
-
 .experiences-container {
-  /* height: 200vh !important; */
   max-width: 720px;
   margin: 50px auto 50px; 
   margin-bottom: 400px;
@@ -155,11 +147,13 @@ body
 
 h1 {
   text-align: center;
+  font-family: 'New Spirit', serif;
+  font-weight: 400;
   font-size: 50px;
 }
 
 .last-section-header {
-  marign-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 @keyframes fadeInUp {

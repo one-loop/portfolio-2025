@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './FooterMain.css';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import currentDetails from '../data/currentDetails';
 
 const FooterMain = () => {
   return (
@@ -25,37 +26,23 @@ const FooterMain = () => {
       <p className="right-text">Model by Bruno Simon.</p> */}
       <div className="footer-left">
       <div className="footer-left-profile">
-      <img src="profile.jpeg" width="48px" alt="Profile Picture" />
+      <img src="/images/profile.jpeg" width="48px" alt="Saad Sifar" />
       <div className="footer-left-profile-text">
         <h2>Saad Sifar</h2>
         <div>
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: "2px", marginTop: "2px", display: "inline-block"}}>
-          <path d="M10 5C10 7.4965 7.2305 10.0965 6.3005 10.8995C6.21386 10.9646 6.1084 10.9999 6 10.9999C5.8916 10.9999 5.78614 10.9646 5.6995 10.8995C4.7695 10.0965 2 7.4965 2 5C2 3.93913 2.42143 2.92172 3.17157 2.17157C3.92172 1.42143 4.93913 1 6 1C7.06087 1 8.07828 1.42143 8.82843 2.17157C9.57857 2.92172 10 3.93913 10 5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M6 6.5C6.82843 6.5 7.5 5.82843 7.5 5C7.5 4.17157 6.82843 3.5 6 3.5C5.17157 3.5 4.5 4.17157 4.5 5C4.5 5.82843 5.17157 6.5 6 6.5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <h3>Paris, France</h3>
+          <div>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: "2px", marginTop: "2px", display: "inline-block"}}>
+              <path d="M10 5C10 7.4965 7.2305 10.0965 6.3005 10.8995C6.21386 10.9646 6.1084 10.9999 6 10.9999C5.8916 10.9999 5.78614 10.9646 5.6995 10.8995C4.7695 10.0965 2 7.4965 2 5C2 3.93913 2.42143 2.92172 3.17157 2.17157C3.92172 1.42143 4.93913 1 6 1C7.06087 1 8.07828 1.42143 8.82843 2.17157C9.57857 2.92172 10 3.93913 10 5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M6 6.5C6.82843 6.5 7.5 5.82843 7.5 5C7.5 4.17157 6.82843 3.5 6 3.5C5.17157 3.5 4.5 4.17157 4.5 5C4.5 5.82843 5.17157 6.5 6 6.5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+             <h3>{currentDetails.cityLong}, {currentDetails.countryLong}</h3>
+          </div>
         </div>
       </div>
-      
-
-      {/* <div className="footer-left-text">
-        <h2>Saad Sifar</h2>
-        <span>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: "2px", marginTop: "2px", display: "inline-block"}}>
-          <path d="M10 5C10 7.4965 7.2305 10.0965 6.3005 10.8995C6.21386 10.9646 6.1084 10.9999 6 10.9999C5.8916 10.9999 5.78614 10.9646 5.6995 10.8995C4.7695 10.0965 2 7.4965 2 5C2 3.93913 2.42143 2.92172 3.17157 2.17157C3.92172 1.42143 4.93913 1 6 1C7.06087 1 8.07828 1.42143 8.82843 2.17157C9.57857 2.92172 10 3.93913 10 5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M6 6.5C6.82843 6.5 7.5 5.82843 7.5 5C7.5 4.17157 6.82843 3.5 6 3.5C5.17157 3.5 4.5 4.17157 4.5 5C4.5 5.82843 5.17157 6.5 6 6.5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <h3>Paris, France</h3>
-        </span>
-      </div>
-      <div>
-          <h3 className="copyright-statement">© 2025 Saad Sifar. All Rights Reserved.</h3>
-          <p>Made with lots of love️ and croissants (pure butter)</p>
-      </div> */}
       </div>
       <div className="copyright-statement">
-        <h2>© 2025 Saad Sifar. All Rights Reserved.</h2>
-        <p>Made with lots of love️ and croissants (pure butter)</p>
+        <h2>© 2026 Saad Sifar. All Rights Reserved.</h2>
+        <p>Designed and built with care — fueled by croissants and caffeine.</p>
       </div>
       </div>
 
@@ -63,27 +50,33 @@ const FooterMain = () => {
       <div className="footer-right">
         <div className="footer-main-links">
           <h3>Main</h3>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/experience">Experience</Link>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/experience">Experience</Link>
+          <Link href="/photos">Photos</Link>
         </div>
         <div className="footer-contact-links">
-          <h3>Contact</h3>
-          <Link to="https://linkedin.com/in/saad-sifar" target="_blank" className="footer-right-external-link">LinkedIn <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
-</svg>
-</Link>
-          <Link to="/resume.pdf" target="_blank" className="footer-right-external-link">Resume <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
-</svg></Link>
-          {/* <Link to="mailto:ss17886 AT nyu DOT edu" target="_blank" className="footer-right-external-link">Mail <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <h3>Connect</h3>
+          <Link href="https://linkedin.com/in/saad-sifar" target="_blank" className="footer-right-external-link">LinkedIn <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
+          </svg>
+          </Link>
+          <Link href="/sifar-resume.pdf" target="_blank" rel="nofollow noreferrer" className="footer-right-external-link">Resume <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
+          </svg>
+          </Link>
+          
+          <Link href="https://github.com/one-loop" target="_blank" className="footer-right-external-link">GitHub <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
+          </svg>
+          </Link>
+          {/* <Link href="mailto:ss17886 AT nyu DOT edu" target="_blank" className="footer-right-external-link">Mail <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" fillOpacity="0.5"/>
 </svg></Link> */}
-          <Link to="/contact">Contact</Link>
+          <Link href="/contact">Contact</Link>
         </div>
       </div>
-
     </footer>
   );
 };

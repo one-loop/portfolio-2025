@@ -38,6 +38,8 @@ export default class Experience {
         this.setScene()
         this.setCamera()
         this.setRenderer()
+        // this.setStats()
+        // this.setDebug()
         this.setResources()
         this.setWorld()
         this.setNavigation()
@@ -76,6 +78,7 @@ export default class Experience {
 
     setDebug()
     {
+        
         if(this.config.debug)
         {
             this.debug = new Pane()

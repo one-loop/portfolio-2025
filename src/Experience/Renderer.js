@@ -72,18 +72,6 @@ export default class Renderer
         /**
          * Effect composer
          */
-        
-        let RenderTargetClass;
-        if (this.config.pixelRatio >= 2) {
-            RenderTargetClass = THREE.WebGLRenderTarget;
-        } else {
-            const target = new THREE.WebGLRenderTarget();
-            target.samples = 4; // Set the number of samples for MSAA
-            RenderTargetClass = target;
-        }
-
-        // const RenderTargetClass = this.config.pixelRatio >= 2 ? THREE.WebGLRenderTarget : THREE.WebGLMultisampleRenderTarget
-        // const RenderTargetClass = THREE.WebGLMultisampleRenderTarget // (deprecated)
         this.renderTarget = new THREE.RenderTarget( // changed from RenderTargetClass() due to issues on bigger screens
             this.config.width,
             this.config.height,

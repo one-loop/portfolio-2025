@@ -89,6 +89,8 @@ export default class Navigation
         {
             // Ignore mouse downs if they originate from the navbar/menu
             if (_event.target.closest('.navbar')) return;
+            // prevent touch events on other pages
+            if (window.location.pathname !== '/') return;
 
             _event.preventDefault()
 
@@ -124,6 +126,8 @@ export default class Navigation
          */
         this.view.onTouchStart = (_event) =>
         {
+            // prevent touch events on other pages
+            if (window.location.pathname !== '/') return;
             // Ignore touch events if the target is inside the navbar/menu
             if (_event.target.closest('.navbar')) return;
             
@@ -133,8 +137,8 @@ export default class Navigation
 
             this.view.down(_event.touches[0].clientX, _event.touches[0].clientY)
 
-            window.addEventListener('touchend', this.view.onTouchEnd)
-            window.addEventListener('touchmove', this.view.onTouchMove)
+            window.addEventListener('touchend', this.view.onTouchEnd, { passive: false })
+            window.addEventListener('touchmove', this.view.onTouchMove, { passive: false })
         }
 
         this.view.onTouchMove = (_event) =>
@@ -154,7 +158,7 @@ export default class Navigation
             window.removeEventListener('touchmove', this.view.onTouchMove)
         }
 
-        window.addEventListener('touchstart', this.view.onTouchStart)
+        window.addEventListener('touchstart', this.view.onTouchStart, { passive: false })
 
         /**
          * Context menu

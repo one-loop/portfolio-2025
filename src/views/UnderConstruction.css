@@ -1,0 +1,67 @@
+@import '../styles/colors.css';
+
+.under-construction {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.under-construction::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(var(--color-border-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border-light) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.under-construction-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--color-text-primary);
+  max-width: 760px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.computer-container {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.under-construction-content img {
+    max-width: 200px;
+    display: block;
+}
+
+.sad-face-overlay {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 72px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+.under-construction-text {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 300px;
+}

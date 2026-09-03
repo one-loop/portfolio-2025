@@ -1,4 +1,4 @@
-export default [
+const experienceAssets = [
     {
         name: 'base',
         data: {},
@@ -16,7 +16,7 @@ export default [
             
             { name: 'elgatoLightModel', source: '/models/elgatoLightModel.glb', type: 'model' }, // working
             
-            { name: 'threejsJourneyLogoTexture', source: '/textures/threejsJourneyLogo.png', type: 'texture' }, // working (texture)
+            { name: 'threejsJourneyLogoTexture', source: '/icons/logo.png', type: 'texture' }, // working (texture)
             
             { name: 'pcScreenModel', source: '/models/pcScreenModel.glb', type: 'model' }, // err
             { name: 'macScreenModel', source: '/models/macScreenModel.glb', type: 'model' }, // working
@@ -28,4 +28,6 @@ export default [
             { name: 'roomModel', source: '/models/roomModel.glb' }, // err
         ]
     }
-]
+];
+
+export default experienceAssets;
