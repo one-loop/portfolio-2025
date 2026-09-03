@@ -310,10 +310,34 @@ const About = () => {
                   </div>
                 ))}
                 <div className="resume-wrapper">
-                  <a href="/sifar-resume.pdf" target="_blank" rel="nofollow noopener noreferrer" className="resume-link">
+                  <a
+                    href="/sifar-resume.pdf"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="resume-link"
+                    style={{ fontWeight: 500, fontSize: "1.2rem" }}
+                  >
+                    <svg
+                      className="resume-doc-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M7 2h7l5 5v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinejoin="round"
+                      />
+                      <path d="M14 2v5h5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M9 13h6M9 17h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                    </svg>
                     <span className="resume-link-text">View Full Resume</span>
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-icon">
-                      <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="#F2F2F2" />
+                      <path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="currentColor" />
                     </svg>
                   </a>
                   <div className="resume-underline"></div>
@@ -388,7 +412,12 @@ const About = () => {
               <div className="all-photos-underline"></div>
             </div>
             <div className="refresh-gallery-btn-container">
-              <button className="refresh-gallery-btn" onClick={handleRefreshGallery}>
+              <button
+                type="button"
+                className="refresh-gallery-btn"
+                onClick={handleRefreshGallery}
+                aria-label="Randomize gallery photos"
+              >
                 <svg width="24" height="24" viewBox="0 0 102 94" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M44.7891 9.40894C46.9798 2.5719 54.2986 -1.19548 61.1357 0.994873L92.5625 11.0642C99.3998 13.2549 103.166 20.5746 100.976 27.4119L91.2119 57.8855C89.0212 64.7227 81.7024 68.4891 74.8652 66.2986L62 62.1755V46.9998C61.9998 38.7157 55.2841 31.9998 47 31.9998H37.5508L44.7891 9.40894ZM77.6768 45.2937C75.0094 44.579 72.2674 46.1625 71.5527 48.8298C70.8382 51.4971 72.4216 54.2382 75.0889 54.9529C77.7561 55.6674 80.4972 54.085 81.2119 51.4177C81.9266 48.7504 80.3441 46.0084 77.6768 45.2937ZM68.418 29.2937C65.7506 28.579 63.0087 30.1625 62.2939 32.8298C61.5795 35.4969 63.1622 38.238 65.8291 38.9529C68.4964 39.6676 71.2384 38.0851 71.9531 35.4177C72.6678 32.7504 71.0852 30.0085 68.418 29.2937ZM60.6768 13.2937C58.0094 12.579 55.2674 14.1625 54.5527 16.8298C53.8382 19.4971 55.4216 22.2382 58.0889 22.9529C60.7561 23.6674 63.4972 22.085 64.2119 19.4177C64.9266 16.7504 63.3441 14.0084 60.6768 13.2937Z" fill="white"></path>
                   <path d="M45 35C52.732 35 59 41.268 59 49V80C59 87.732 52.732 94 45 94H14C6.26801 94 0 87.732 0 80V49C0 41.268 6.26801 35 14 35H45ZM16.5 72C13.4624 72 11 74.4624 11 77.5C11 80.5376 13.4624 83 16.5 83C19.5376 83 22 80.5376 22 77.5C22 74.4624 19.5376 72 16.5 72ZM42.5 72C39.4624 72 37 74.4624 37 77.5C37 80.5376 39.4624 83 42.5 83C45.5376 83 48 80.5376 48 77.5C48 74.4624 45.5376 72 42.5 72ZM29.5 59C26.4624 59 24 61.4624 24 64.5C24 67.5376 26.4624 70 29.5 70C32.5376 70 35 67.5376 35 64.5C35 61.4624 32.5376 59 29.5 59ZM16.5 46C13.4624 46 11 48.4624 11 51.5C11 54.5376 13.4624 57 16.5 57C19.5376 57 22 54.5376 22 51.5C22 48.4624 19.5376 46 16.5 46ZM42.5 46C39.4624 46 37 48.4624 37 51.5C37 54.5376 39.4624 57 42.5 57C45.5376 57 48 54.5376 48 51.5C48 48.4624 45.5376 46 42.5 46Z" fill="white"></path>
