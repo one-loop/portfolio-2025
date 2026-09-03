@@ -13,16 +13,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Prevent all images from being indexed in Google Search / Google Images
-        source: '/:path*\\.(jpg|jpeg|png|webp|gif|svg|ico)',
-        headers: [
-          {
-            key: 'X-Robots-Tag',
-            value: 'noindex, noimageindex',
-          },
-        ],
-      },
-      {
         source: '/images/:path*',
         headers: [
           {
