@@ -176,7 +176,7 @@ const About = () => {
         { name: 'About', url: '/about' }
       ]} />
 
-      <div className="gradient about about-grid">
+      <div className="gradient about">
         {/* <h1>About</h1> */}
         <div className="about-gradient"></div>
         <div className="outer-container">

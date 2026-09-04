@@ -73,8 +73,22 @@ export const metadata = {
     description: 'Saad Sifar is a Software Engineer and CS student at NYU Abu Dhabi specializing in AI, machine learning, and full-stack engineering.',
     url: 'https://saadsifar.com',
     siteName: 'Saad Sifar Portfolio',
+    images: [
+      {
+        url: '/images/thumbnail-2.jpg',
+        width: 1600,
+        height: 960,
+        alt: 'Saad Sifar – Portfolio',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Saad Sifar – Portfolio',
+    description: 'Saad Sifar is a Software Engineer and CS student at NYU Abu Dhabi specializing in AI, machine learning, and full-stack engineering.',
+    images: ['/images/thumbnail-2.jpg'],
   },
 };
 

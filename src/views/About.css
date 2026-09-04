@@ -200,7 +200,8 @@ h1 .emphasize {
 
 }
 
-.about-grid p {
+.about main p,
+.about-grid main p {
     /* grid-column: 2 / span 2; */
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -213,23 +214,27 @@ h1 .emphasize {
 }
 
 /* Emphasis in about section body text */
+.about main .right p .about-accent,
 .about-grid main .right p .about-accent {
     color: var(--color-accent-cyan);
     font-weight: 500;
 }
 
+.about main .right p .about-phrase,
 .about-grid main .right p .about-phrase {
     font-style: italic;
     color: var(--color-text-tertiary);
 }
 
+.about main .right p .about-underline,
 .about-grid main .right p .about-underline {
     border-bottom: 1px solid var(--color-accent-cyan);
     padding-bottom: 1px;
 }
 
-.about-grid h2,
-.about h2 {
+.about main .right h2,
+.about-grid main .right h2,
+.about .conclusion-section h2 {
     /* grid-column: 2 / span 2; */
     font-weight: bold;
     font-size: 18px;

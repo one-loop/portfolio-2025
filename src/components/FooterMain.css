@@ -1,7 +1,8 @@
 @import '../styles/colors.css';
 
 .main-footer {
-    grid-column: span 4 / 6;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,146 +15,138 @@
     z-index: 50;
     background: var(--color-bg-primary-90);
     backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
 }
 
-.footer-left {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 12px;
-    flex: 1;
-}
-
-.footer-left p {
-    font-size: 12px;
-    margin: 0px;
-    line-height: 1em;
-}
-
-.footer-left-profile-text h2 {
-    font-family: 'New Spirit', serif;
-    font-weight: 400;
-    font-size: 20px;
-    margin-bottom: 0px;
-    color: white;
-}
-
-.footer-left-profile-text h3 {
-    font-weight: 400;
-    font-size: 14px;
-    display: inline;
-}
-
-.footer-left {
+.main-footer .footer-left {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     flex: 1;
+    pointer-events: auto;
 }
 
-.copyright-statement {
-    margin-left: 72px;
-    margin-top: 64px;
-}
-
-.copyright-statement h2 {
-    font-size: 16px;
-    font-family: 'New Spirit';
-    font-weight: 400;
-    color: #F2F2F2;
-    margin-bottom: 5px;
-}
-
-.footer-left-profile {
+.main-footer .footer-left-profile {
     display: flex;
+    align-items: center;
 }
 
-.footer-left-profile-text {
-    margin: auto;
-}
-
-.footer-left img {
+.main-footer .footer-left-profile img {
     width: 48px;
     height: 48px;
     margin-right: 24px;
     border-radius: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.footer-left svg {
-    display: inline;
+.main-footer .footer-left-profile-text {
+    margin: auto 0;
 }
 
-.footer-left-text h2 {
-    font-family: 'New Spirit', serif;
-    color: #F2F2F2;
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 4px;
+.main-footer .footer-left-profile-text h2 {
+    font-family: 'New Spirit', serif !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    margin: 0 0 2px 0 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
 }
 
-.footer-left-text h3 {
-    color: rgba(242, 242, 242, 0.5);
-    font-size: 12px;
-    font-weight: 500;
+.main-footer .footer-left-profile-text h3 {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    display: inline !important;
+    color: rgba(242, 242, 242, 0.7) !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
 }
 
-.footer-right {
+.main-footer .copyright-statement {
+    margin-left: 72px;
+    margin-top: 64px;
+}
+
+.main-footer .copyright-statement h2 {
+    font-size: 16px !important;
+    font-family: 'New Spirit', serif !important;
+    font-weight: 400 !important;
+    color: #F2F2F2 !important;
+    margin: 0 0 5px 0 !important;
+    line-height: 1.3 !important;
+}
+
+.main-footer .copyright-statement p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+    color: var(--color-text-secondary) !important;
+}
+
+.main-footer .footer-right {
     display: flex;
     justify-content: flex-end;
     font-size: 14px;
     flex: 1;
+    pointer-events: auto;
 }
 
-.footer-right h3 {
-    color: #f2f2f2;
-    font-family: 'New Spirit';
-    font-weight: 400;
-    margin-bottom: 15px;
-    font-size: 14px;
+.main-footer .footer-main-links,
+.main-footer .footer-contact-links {
+    flex: 1;
 }
 
-.footer-right a {
-    color: rgb(242, 242, 242, 0.5);
+.main-footer .footer-right h3 {
+    color: #f2f2f2 !important;
+    font-family: 'New Spirit', serif !important;
+    font-weight: 400 !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+}
+
+.main-footer .footer-right a {
+    color: rgba(242, 242, 242, 0.5) !important;
     text-decoration: none;
     display: block;
-    margin-bottom: 15px;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    pointer-events: auto;
+    transition: color 0.2s ease;
 }
 
-.footer-right a:hover {
-    color: #f2f2f2;
+.main-footer .footer-right a:hover {
+    color: #f2f2f2 !important;
 }
 
-.footer-main-links {
-    flex: 1;
+.main-footer .footer-right-external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
-.footer-contact-links {
-    flex: 1;
-}
-
-.footer-right-external-link:hover svg {
-    transform: translate(0%, 0%);
-}
-
-/* Add this rule to update the svg arrow color */
-.footer-right-external-link:hover svg path {
-    fill: #f2f2f2;
-    fill-opacity: 1;
-}
-
-.footer-right-external-link svg {
+.main-footer .footer-right-external-link svg {
     transform: translate(-10%, 10%);
     transition: transform .24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: fill-opacity 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.footer-right a,
-.footer-main-links a,
-.footer-contact-links a,
-.footer-right,
-.footer-left {
-    pointer-events: auto;
+.main-footer .footer-right-external-link:hover svg {
+    transform: translate(0%, 0%);
+}
+
+.main-footer .footer-right-external-link:hover svg path {
+    fill: #f2f2f2;
+    fill-opacity: 1;
 }
 
 /* Mobile Screens */
@@ -163,7 +156,7 @@
         padding: 26px;
     }
 
-    .copyright-statement {
+    .main-footer .copyright-statement {
         margin: 0px;
         position: absolute;
         bottom: 20px;
@@ -171,22 +164,18 @@
         margin: auto;
         width: 100vw;
         right: 0px;
+        left: 0px;
     }
 
-    .footer-left {
+    .main-footer .footer-left {
         width: 100%;
         margin-bottom: 26px;
     }
 
-    .footer-right {
+    .main-footer .footer-right {
         width: 100%;
         justify-content: space-evenly;
         margin-bottom: 65px;
         margin-left: 150px;
-    }
-
-    .left-text {
-        width: 100%;
-        justify-content: center;
     }
 }
