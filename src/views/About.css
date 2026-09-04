@@ -641,11 +641,12 @@ main .right .image-container {
     min-height: 0;
     overflow: hidden;
     border-radius: 3px;
-    background: #181818;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    background: #0d1117;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.35);
 }
 
-.about-image-inner img {
+.about-image-inner img,
+.about-image-inner .about-polaroid-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -657,6 +658,76 @@ main .right .image-container {
     -webkit-user-drag: none;
     filter: contrast(1.03) saturate(1.05);
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+    animation: polaroidDevelopImage 2.2s cubic-bezier(0.2, 0.85, 0.25, 1) both;
+    animation-delay: var(--stagger-delay, 0s);
+    will-change: filter, opacity, transform;
+}
+
+/* Chemical Emulsion Fog Overlay */
+.polaroid-develop-emulsion {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 48% 45%, rgba(16, 22, 28, 0.96) 0%, rgba(8, 12, 16, 0.98) 100%);
+    mix-blend-mode: multiply;
+    animation: polaroidEmulsionClear 2.2s cubic-bezier(0.2, 0.85, 0.25, 1) forwards;
+    animation-delay: var(--stagger-delay, 0s);
+    z-index: 2;
+    will-change: opacity;
+}
+
+@keyframes polaroidDevelopImage {
+    0% {
+        opacity: 0.1;
+        filter: brightness(0.12) contrast(1.8) grayscale(0.95) sepia(0.35) hue-rotate(140deg) blur(5px);
+        transform: scale(0.975);
+    }
+    18% {
+        opacity: 0.3;
+        filter: brightness(0.3) contrast(1.6) grayscale(0.85) sepia(0.3) hue-rotate(100deg) blur(3.5px);
+        transform: scale(0.985);
+    }
+    42% {
+        opacity: 0.62;
+        filter: brightness(0.62) contrast(1.4) grayscale(0.5) sepia(0.22) hue-rotate(40deg) blur(2px);
+    }
+    68% {
+        opacity: 0.88;
+        filter: brightness(0.9) contrast(1.18) grayscale(0.15) sepia(0.08) hue-rotate(10deg) blur(0.6px);
+        transform: scale(1);
+    }
+    86% {
+        opacity: 1;
+        filter: brightness(1.04) contrast(1.08) saturate(1.12) blur(0px);
+    }
+    100% {
+        opacity: 1;
+        filter: contrast(1.03) saturate(1.05) blur(0px);
+        transform: scale(1);
+    }
+}
+
+@keyframes polaroidEmulsionClear {
+    0% {
+        opacity: 0.98;
+        background: radial-gradient(circle at 50% 50%, rgba(20, 28, 32, 0.96) 0%, rgba(10, 14, 18, 0.99) 100%);
+    }
+    22% {
+        opacity: 0.88;
+        background: radial-gradient(circle at 50% 50%, rgba(45, 58, 62, 0.88) 0%, rgba(18, 24, 28, 0.96) 100%);
+    }
+    48% {
+        opacity: 0.55;
+        background: radial-gradient(circle at 50% 50%, rgba(85, 92, 88, 0.55) 0%, rgba(32, 40, 44, 0.75) 100%);
+    }
+    72% {
+        opacity: 0.2;
+        background: radial-gradient(circle at 50% 50%, rgba(130, 125, 110, 0.2) 0%, rgba(50, 55, 60, 0.35) 100%);
+    }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 .about-image-glare {
@@ -666,6 +737,7 @@ main .right .image-container {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 40%, rgba(255, 255, 255, 0) 65%);
     border-radius: 3px;
     transition: opacity 0.4s ease;
+    z-index: 3;
 }
 
 .about-polaroid-footer {
@@ -676,6 +748,22 @@ main .right .image-container {
     padding: 6px 4px 0 4px;
     overflow: hidden;
     gap: 8px;
+    animation: polaroidFooterFadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--stagger-delay, 0s) + 0.35s);
+}
+
+@keyframes polaroidFooterFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    40% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-gallery-location {
@@ -1460,6 +1548,16 @@ main .right .image-container {
 
 .refresh-gallery-btn:active {
   transform: rotate(-10deg) scale(0.95);
+}
+
+.refresh-gallery-btn.is-spinning svg {
+  animation: diceSpin 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes diceSpin {
+  0% { transform: rotate(0deg) scale(0.88); }
+  50% { transform: rotate(180deg) scale(1.22); }
+  100% { transform: rotate(360deg) scale(1); }
 }
 
 /* Focused / Enlarged Polaroid Modal */
