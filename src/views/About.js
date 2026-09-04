@@ -35,6 +35,7 @@ const About = () => {
   const grid3 = useRef(null);
   const svgRef = useRef(null);
   const svgRef2 = useRef(null);
+  const profileImgRef = useRef(null);
 
   // State for random gallery images
   const [galleryImages, setGalleryImages] = useState([]);
@@ -47,6 +48,13 @@ const About = () => {
   const [expandedExperienceIndex, setExpandedExperienceIndex] = useState(null);
 
   const [heroProfileLoaded, setHeroProfileLoaded] = useState(false);
+
+  // Check if profile image is already cached/complete on mount
+  useEffect(() => {
+    if (profileImgRef.current && profileImgRef.current.complete) {
+      setHeroProfileLoaded(true);
+    }
+  }, []);
 
   const scrollToFirstSection = () => {
     const pastSection = document.getElementById("past-section");
@@ -201,6 +209,7 @@ const About = () => {
             <div className="hero-right">
               {/* <img className="animate-image" src="/images/profile.jpeg" alt="Saad Sifar"></img> */}
               <img
+                ref={profileImgRef}
                 className={`animate-image ${heroProfileLoaded ? 'hero-profile-loaded' : ''}`}
                 style={{ objectFit: 'cover', objectPosition: '0px -150px' }}
                 src="/images/profilev3.webp"
