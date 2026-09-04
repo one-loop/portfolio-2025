@@ -14,34 +14,8 @@ html, body {
 }
 
 
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 4px;
-    padding: 0 0px; /* Add padding only to the left and right */
-    padding-top: 75px;
-}
-
-.about-grid h1 {
-    /* grid-column: 2 / span 2; */
-    font-weight: semi-bold;
-    font-size: 48px;
-    font-family: 'New Spirit';
-    /* color: #f2f2f2; */
-    color: var(--color-text-tertiary);
-    text-align: left;
-    margin-top: 10px;
-    margin-bottom: 50px;
-}
-
 h1 .emphasize {
-    color: var(--color-accent-purple);    
     color: var(--color-accent-cyan);    
-}
-
-.hero h2 {
-    /* width: 50%; */
-    font-weight: 400;
 }
 
 .glow-circle {
@@ -280,26 +254,6 @@ h1 .emphasize {
 
 
 
-.hero {
-    grid-column: span 4 / 6;
-    display: flex;
-    flex-direction: row; /* Change to row to align items horizontally */
-    justify-content: space-between; /* Space out the children */
-    align-items: center; /* Center items vertically */
-    gap: 48px; /* Add some space between text and image */
-}
-
-.hero-left {
-    flex: 1;
-    text-align: left; /* Align text to the left */
-}
-
-.hero-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end; /* Align image to the right */
-}
-
 .gradient1 {
     position: absolute;
     width: 800px;
@@ -330,7 +284,6 @@ h1 .emphasize {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure the container stretches to fill the viewport */
-    /* overflow-x: hidden; */ /* This line breaks the styles of the page */
 }
 
 /* Let main content grow to push footer to the bottom */
@@ -338,13 +291,11 @@ h1 .emphasize {
     flex: 1;
 }
 
-
 .hero {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
     padding: 0 200px;
     position: relative;
     z-index: 100;
@@ -352,17 +303,52 @@ h1 .emphasize {
     padding-top: 100px;
     margin-bottom: 0px;
     padding-bottom: 150px;
+    gap: 48px;
+    box-sizing: border-box;
 }
 
 .hero-left {
     flex: 1;
+    text-align: left;
+}
+
+.hero-left .header-tag {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.hero-left h1 {
+    font-family: 'New Spirit', serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.25;
+    color: var(--color-text-tertiary);
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 24px;
+}
+
+.hero-left h1 .emphasize {
+    color: var(--color-accent-cyan);
+}
+
+.hero-left h2 {
+    font-family: 'New Spirit', serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 40px;
 }
 
 .hero-right {
     flex: 1;
-    align-content: center;
-    /* justify-content: center; */
-    justify-content: end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .hero-right img {
@@ -381,11 +367,6 @@ h1 .emphasize {
 
 .hero-right img.hero-profile-loaded {
     outline: 7px solid white;
-}
-
-
-.hero h1 {
-    font-size: 40px;
 }
 
 .computer-1, .computer-2, .computer-3 {
@@ -1194,22 +1175,19 @@ main .right .image-container {
     .about .hero {
         flex-direction: column;
         padding: 0px 26px;
-        margin-top: 100px;
-        margin-bottom: 100px;
+        margin-top: 40px;
+        margin-bottom: 60px;
+        gap: 40px;
     }
 
-    .about .hero, .about main {
-        padding: 0 26px;
+    .about .hero-left h1 {
+        font-size: 32px;
+        margin-bottom: 18px;
     }
 
-    .hero-right img {
-        max-width: 300px;
-        max-height: 300px;
-    }
-
-    .about h1 {
-        font-size: 30px;
-        margin-bottom: 25px;
+    .about .hero-left h2 {
+        font-size: 16px;
+        margin-bottom: 24px;
     }
 
     .about main .left {
