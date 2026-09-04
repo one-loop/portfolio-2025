@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './FooterMain.css';
 import Link from 'next/link';
+import MiniClock from './MiniClock';
 import currentDetails from '../data/currentDetails';
 
 const getIsGSTAvailable = () => {
@@ -34,30 +35,36 @@ const FooterMain = () => {
   return (
     <footer className="main-footer">
       <div className="footer-left">
-      <div className="footer-left-profile">
-      <img src="/images/profile.jpeg" width="48px" alt="Saad Sifar" />
-      <div className="footer-left-profile-text">
-        <div className="footer-name-row">
-          <h2>Saad Sifar</h2>
-          <div 
-            className={`glow-circle ${isAvailable ? 'glow-available' : 'glow-away'}`}
-            title={isAvailable ? "Available (9 AM – 9 PM GST)" : "Away (Outside 9 AM – 9 PM GST)"}
-            aria-label={isAvailable ? "Available (9 AM – 9 PM GST)" : "Away (Outside 9 AM – 9 PM GST)"}
-          />
+        <div className="footer-left-profile">
+          <img src="/images/profile.jpeg" width="48px" height="48px" alt="Saad Sifar" className="footer-avatar" />
+          <div className="footer-left-profile-text">
+            <div className="footer-name-row">
+              <h2>Saad Sifar</h2>
+              <div 
+                className={`glow-circle ${isAvailable ? 'glow-available' : 'glow-away'}`}
+                title={isAvailable ? "Available (9 AM – 9 PM GST)" : "Away (Outside 9 AM – 9 PM GST)"}
+                aria-label={isAvailable ? "Available (9 AM – 9 PM GST)" : "Away (Outside 9 AM – 9 PM GST)"}
+              />
+            </div>
+            <div className="footer-meta-row">
+              <span className="footer-location-item">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 5C10 7.4965 7.2305 10.0965 6.3005 10.8995C6.21386 10.9646 6.1084 10.9999 6 10.9999C5.8916 10.9999 5.78614 10.9646 5.6995 10.8995C4.7695 10.0965 2 7.4965 2 5C2 3.93913 2.42143 2.92172 3.17157 2.17157C3.92172 1.42143 4.93913 1 6 1C7.06087 1 8.07828 1.42143 8.82843 2.17157C9.57857 2.92172 10 3.93913 10 5Z" stroke="#F2F2F2" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M6 6.5C6.82843 6.5 7.5 5.82843 7.5 5C7.5 4.17157 6.82843 3.5 6 3.5C5.17157 3.5 4.5 4.17157 4.5 5C4.5 5.82843 5.17157 6.5 6 6.5Z" stroke="#F2F2F2" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <h3>{currentDetails.cityLong}, {currentDetails.countryLong}</h3>
+              </span>
+              <span className="footer-meta-divider">•</span>
+              <span className="footer-clock-item">
+                <MiniClock size={13} color="rgba(242, 242, 242, 0.65)" />
+              </span>
+            </div>
+          </div>
         </div>
-        <div className="footer-location-row">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: "2px", marginTop: "2px", display: "inline-block"}}>
-            <path d="M10 5C10 7.4965 7.2305 10.0965 6.3005 10.8995C6.21386 10.9646 6.1084 10.9999 6 10.9999C5.8916 10.9999 5.78614 10.9646 5.6995 10.8995C4.7695 10.0965 2 7.4965 2 5C2 3.93913 2.42143 2.92172 3.17157 2.17157C3.92172 1.42143 4.93913 1 6 1C7.06087 1 8.07828 1.42143 8.82843 2.17157C9.57857 2.92172 10 3.93913 10 5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M6 6.5C6.82843 6.5 7.5 5.82843 7.5 5C7.5 4.17157 6.82843 3.5 6 3.5C5.17157 3.5 4.5 4.17157 4.5 5C4.5 5.82843 5.17157 6.5 6 6.5Z" stroke="#F2F2F2" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <h3>{currentDetails.cityLong}, {currentDetails.countryLong}</h3>
+        <div className="copyright-statement">
+          <h2>© 2026 Saad Sifar. All Rights Reserved.</h2>
+          <p>Designed and built with care — fueled by croissants and caffeine.</p>
         </div>
-      </div>
-      </div>
-      <div className="copyright-statement">
-        <h2>© 2026 Saad Sifar. All Rights Reserved.</h2>
-        <p>Designed and built with care — fueled by croissants and caffeine.</p>
-      </div>
       </div>
 
 
