@@ -39,8 +39,6 @@ const About = () => {
   // State for random gallery images
   const [galleryImages, setGalleryImages] = useState([]);
   const [allGalleryData, setAllGalleryData] = useState([]);
-  const [refreshCount, setRefreshCount] = useState(0);
-  const [isDeveloping, setIsDeveloping] = useState(false);
   // State for focused/enlarged polaroid photo modal (index in galleryImages, or null)
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
@@ -64,21 +62,14 @@ const About = () => {
       .then(data => {
         setAllGalleryData(data);
         setGalleryImages(getRandomUnique(data, 6));
-        setIsDeveloping(true);
-        setTimeout(() => setIsDeveloping(false), 2400);
       });
   }, []);
 
-  // Handler to refresh random images with realistic film developing reveal
+  // Handler to refresh random images
   const handleRefreshGallery = () => {
-    setIsDeveloping(true);
-    setRefreshCount((prev) => prev + 1);
     setGalleryImages(getRandomUnique(allGalleryData, 6));
     setSelectedPhotoIndex(null);
     setIsClosing(false);
-    setTimeout(() => {
-      setIsDeveloping(false);
-    }, 2400);
   };
 
   const handleOpenPhoto = (index) => {
@@ -469,7 +460,7 @@ const About = () => {
             <div className="refresh-gallery-btn-container">
               <button
                 type="button"
-                className={`refresh-gallery-btn ${isDeveloping ? 'is-spinning' : ''}`}
+                className="refresh-gallery-btn"
                 onClick={handleRefreshGallery}
                 aria-label="Randomize gallery photos"
               >
@@ -483,9 +474,8 @@ const About = () => {
             <div className="about-image-gallery">
               {galleryImages.map((img, i) => (
                 <div
-                  className={`about-image-container ${isDeveloping ? 'is-developing' : ''}`}
-                  key={`${img.filename}-${refreshCount}`}
-                  style={{ '--stagger-delay': `${(i * 0.08).toFixed(2)}s` }}
+                  className="about-image-container"
+                  key={i}
                   onClick={() => handleOpenPhoto(i)}
                   role="button"
                   tabIndex={0}
@@ -498,12 +488,7 @@ const About = () => {
                   }}
                 >
                   <div className="about-image-inner">
-                    <img
-                      className="about-polaroid-img"
-                      src={`/gallery/${img.filename}`}
-                      alt={img.title || img.location || `Gallery ${i + 1}`}
-                    />
-                    <div className="polaroid-develop-emulsion" aria-hidden="true"></div>
+                    <img src={`/gallery/${img.filename}`} alt={img.title || img.location || `Gallery ${i + 1}`} />
                     <div className="about-image-glare"></div>
                   </div>
                   <div className="about-polaroid-footer">
