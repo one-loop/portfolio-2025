@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 import '../src/index.css';
 import ClientLayout from '../src/components/ClientLayout';
+import GoogleAnalytics from '../src/components/GoogleAnalytics';
 
 const newSpirit = localFont({
   src: [
@@ -177,6 +178,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <GoogleAnalytics />
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
