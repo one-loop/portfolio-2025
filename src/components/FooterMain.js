@@ -40,13 +40,10 @@ const FooterMain = () => {
         <div className="footer-name-row">
           <h2>Saad Sifar</h2>
           <div 
-            className={`footer-status-indicator ${isAvailable ? 'available' : 'away'}`}
+            className={`glow-circle ${isAvailable ? 'glow-available' : 'glow-away'}`}
             title={isAvailable ? "Available (9 AM – 9 PM GST)" : "Away (Outside 9 AM – 9 PM GST)"}
             aria-label={isAvailable ? "Available (9 AM – 9 PM GST)" : "Away (Outside 9 AM – 9 PM GST)"}
-          >
-            <span className="status-dot-ping" />
-            <span className="status-dot-core" />
-          </div>
+          />
         </div>
         <div className="footer-location-row">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: "2px", marginTop: "2px", display: "inline-block"}}>
