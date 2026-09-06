@@ -1,7 +1,21 @@
 import localFont from 'next/font/local';
+import { Inter, Shadows_Into_Light } from 'next/font/google';
 import '../src/index.css';
 import ClientLayout from '../src/components/ClientLayout';
 import GoogleAnalytics from '../src/components/GoogleAnalytics';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const shadowsIntoLight = Shadows_Into_Light({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-shadows-into-light',
+  display: 'swap',
+});
 
 const newSpirit = localFont({
   src: [
@@ -170,7 +184,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={newSpirit.variable}>
+    <html lang="en" className={`${newSpirit.variable} ${inter.variable} ${shadowsIntoLight.variable}`}>
       <head>
         <script
           type="application/ld+json"

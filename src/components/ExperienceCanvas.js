@@ -46,6 +46,7 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
     if (Math.abs(target - current) < 0.5) {
       currentProgressRef.current = target;
       setLoadingProgress(Math.round(target));
+      animationRef.current = null;
       if (target >= 100 && resourcesReadyRef.current) {
         finishLoading();
       }
@@ -55,6 +56,7 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
       const rounded = Math.round(currentProgressRef.current);
       setLoadingProgress(rounded);
       if (rounded >= 100 && resourcesReadyRef.current) {
+        animationRef.current = null;
         finishLoading();
       } else {
         animationRef.current = requestAnimationFrame(animateProgress);
@@ -65,16 +67,24 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
   // Update target progress and start animation
   const updateProgress = useCallback((newProgress) => {
     targetProgressRef.current = Math.max(targetProgressRef.current, newProgress);
+    if (targetProgressRef.current >= 100 && resourcesReadyRef.current) {
+      if (Math.abs(targetProgressRef.current - currentProgressRef.current) < 0.5) {
+        setLoadingProgress(100);
+        finishLoading();
+        return;
+      }
+    }
     if (!animationRef.current) {
       animationRef.current = requestAnimationFrame(animateProgress);
     }
-  }, [animateProgress]);
+  }, [animateProgress, finishLoading]);
 
   // Cleanup animation on unmount
   useEffect(() => {
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
       }
     };
   }, []);
@@ -114,10 +124,15 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
     };
 
     const onGroupEnd = (group) => {
-      if (!group || group.name === 'base') {
+      if (!group || group.name === 'base' || experienceInstance.current?.resources?.groups?.assets?.length === 0) {
         resourcesReadyRef.current = true;
         updateProgress(100);
       }
+    };
+
+    const onEnd = () => {
+      resourcesReadyRef.current = true;
+      updateProgress(100);
     };
 
     if (!experienceInstance.current) {
@@ -126,6 +141,7 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
       // Listen for progress events
       experienceInstance.current.resources.on('progress', onProgress);
       experienceInstance.current.resources.on('groupEnd', onGroupEnd);
+      experienceInstance.current.resources.on('end', onEnd);
       experienceInstance.current.resume();
     } else {
       experienceInstance.current.setCanvas(canvasRef.current);
@@ -136,15 +152,39 @@ const ExperienceCanvas = ({ onLoadingDone }) => {
       } else if (experienceInstance.current.resources?.on) {
         experienceInstance.current.resources.on('progress', onProgress);
         experienceInstance.current.resources.on('groupEnd', onGroupEnd);
+        experienceInstance.current.resources.on('end', onEnd);
       }
     }
 
+    // Check if resources are already loaded/cached
+    const res = experienceInstance.current?.resources;
+    if (res) {
+      const isAlreadyLoaded =
+        (res.groups?.loaded && res.groups.loaded.length > 0) ||
+        (res.loaded > 0 && res.loaded >= res.toLoad) ||
+        (res.groups?.current && res.groups.current.loaded >= res.groups.current.toLoad);
+      if (isAlreadyLoaded) {
+        resourcesReadyRef.current = true;
+        updateProgress(100);
+      }
+    }
+
+    // Safety timeout fallback: ensures loading screen always exits smoothly even if an asset stalls
+    const safetyTimeout = setTimeout(() => {
+      if (!hasFinishedRef.current) {
+        resourcesReadyRef.current = true;
+        updateProgress(100);
+        finishLoading();
+      }
+    }, 4000);
+
     return () => {
+      clearTimeout(safetyTimeout);
       if (experienceInstance.current) {
         experienceInstance.current.pause();
       }
     };
-  }, [experienceInstance, updateProgress]);
+  }, [experienceInstance, updateProgress, finishLoading]);
 
   useEffect(() => {
     if (slideUp && showOverlay && overlayRef.current) {

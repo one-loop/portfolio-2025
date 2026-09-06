@@ -64,10 +64,19 @@ export default class Resources extends EventEmitter
             extensions: ['basis'],
             action: (_resource) =>
             {
-                basisLoader.load(_resource.source, (_data) =>
-                {
-                    this.fileLoadEnd(_resource, _data)
-                })
+                basisLoader.load(
+                    _resource.source,
+                    (_data) =>
+                    {
+                        this.fileLoadEnd(_resource, _data)
+                    },
+                    undefined,
+                    (error) =>
+                    {
+                        console.error('An error occurred while loading basis texture:', error, _resource.source)
+                        this.fileLoadEnd(_resource, null)
+                    }
+                )
             }
         })
 
@@ -80,12 +89,21 @@ export default class Resources extends EventEmitter
             extensions: ['drc'],
             action: (_resource) =>
             {
-                dracoLoader.load(_resource.source, (_data) =>
-                {
-                    this.fileLoadEnd(_resource, _data)
-
-                    DRACOLoader.releaseDecoderModule()
-                })
+                dracoLoader.load(
+                    _resource.source,
+                    (_data) =>
+                    {
+                        this.fileLoadEnd(_resource, _data)
+                        DRACOLoader.releaseDecoderModule()
+                    },
+                    undefined,
+                    (error) =>
+                    {
+                        console.error('An error occurred while loading Draco geometry:', error, _resource.source)
+                        this.fileLoadEnd(_resource, null)
+                        DRACOLoader.releaseDecoderModule()
+                    }
+                )
             }
         })
 
@@ -107,6 +125,7 @@ export default class Resources extends EventEmitter
                     undefined,
                     (error) => {
                         console.error('An error occurred while loading the GLTF model:', error, _resource.source);
+                        this.fileLoadEnd(_resource, null);
                     }
                 );
             }
@@ -119,10 +138,19 @@ export default class Resources extends EventEmitter
             extensions: ['fbx'],
             action: (_resource) =>
             {
-                fbxLoader.load(_resource.source, (_data) =>
-                {
-                    this.fileLoadEnd(_resource, _data)
-                })
+                fbxLoader.load(
+                    _resource.source,
+                    (_data) =>
+                    {
+                        this.fileLoadEnd(_resource, _data)
+                    },
+                    undefined,
+                    (error) =>
+                    {
+                        console.error('An error occurred while loading FBX model:', error, _resource.source)
+                        this.fileLoadEnd(_resource, null)
+                    }
+                )
             }
         })
 
@@ -133,10 +161,19 @@ export default class Resources extends EventEmitter
             extensions: ['hdr'],
             action: (_resource) =>
             {
-                rgbeLoader.load(_resource.source, (_data) =>
-                {
-                    this.fileLoadEnd(_resource, _data)
-                })
+                rgbeLoader.load(
+                    _resource.source,
+                    (_data) =>
+                    {
+                        this.fileLoadEnd(_resource, _data)
+                    },
+                    undefined,
+                    (error) =>
+                    {
+                        console.error('An error occurred while loading HDR texture:', error, _resource.source)
+                        this.fileLoadEnd(_resource, null)
+                    }
+                )
             }
         })
     }
