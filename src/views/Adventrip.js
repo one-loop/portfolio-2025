@@ -27,11 +27,11 @@ const SECTIONS = [
 // Photos from my San Francisco trip (served from the gallery, which is kept out of search indexes).
 const PHOTOS = [
   { src: '/gallery/634.jpeg', caption: 'Flying into California' },
-  { src: '/gallery/637.jpeg', caption: 'San Francisco at night' },
+  { src: '/gallery/638.jpeg', caption: 'San Francisco at night' },
   { src: '/gallery/650.jpeg', caption: 'Chinatown' },
   { src: '/projects/adventrip/hackathon.webp', caption: 'Our team at CalHacks' },
   { src: '/gallery/672.jpeg', caption: 'Palace of Fine Arts' },
-  { src: '/gallery/664.jpeg', caption: 'Victorians and a view of downtown' },
+  { src: '/gallery/665.jpeg', caption: 'Victorians and a view of downtown' },
   { src: '/gallery/679.jpeg', caption: 'UC Berkeley at night' },
   { src: '/gallery/685.jpeg', caption: 'The Golden Gate Bridge' },
   { src: '/gallery/705.jpeg', caption: 'Sunset on the coast' },
@@ -107,8 +107,8 @@ export default function Adventrip() {
             <img src="/projects/adventrip/poster.webp" alt="AdvenTrip poster: Get travel plans out the group chat." className="at-poster" />
             <div className="at-hero-photos">
               <img src="/projects/adventrip/hackathon.webp" alt="The AdvenTrip team at CalHacks holding a laptop with the AdvenTrip landing page, captioned: The best team I judged today" className="at-team" />
-              <img src="/gallery/685.jpeg" alt="The Golden Gate Bridge" loading="lazy" />
-              <img src="/gallery/641.jpeg" alt="The San Francisco waterfront at night" loading="lazy" />
+              <img src="/gallery/690.jpeg" alt="The Golden Gate Bridge from the beach" className="at-goldengate" loading="lazy" />
+              <img src="/gallery/659.jpeg" alt="The San Francisco–Oakland Bay Bridge in the daytime, seen through trees and purple flowers" className="at-baybridge" loading="lazy" />
             </div>
           </div>
           <figcaption><span>Figure 1.</span> Our poster, “Get travel plans out the group chat,” next to our team at CalHacks and a few photos from the weekend.</figcaption>

@@ -88,6 +88,15 @@
   grid-row: span 2;
 }
 
+/* Keep the bridge, a little below the middle of the photo, in the crop. */
+.at-hero-photos .at-baybridge {
+  object-position: center 52%;
+}
+
+.at-hero-photos .at-goldengate {
+  object-position: center 62%;
+}
+
 /* ---------- Photo strip ---------- */
 
 .at-strip {
