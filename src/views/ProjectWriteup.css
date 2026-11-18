@@ -177,11 +177,13 @@ body:has(.ub) {
 }
 
 .ub-subtitle {
-  font-family: 'New Spirit', serif;
-  font-size: 20px;
-  line-height: 1.5;
-  color: var(--color-accent-cyan);
-  max-width: 560px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: rgba(242, 242, 242, 0.68);
+  max-width: 580px;
 }
 
 .ub-meta {
