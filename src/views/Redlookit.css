@@ -1,0 +1,681 @@
+/* ------------------------------------------------------------------
+   Redlookit write-up. Builds on ProjectWriteup.css (.ub classes).
+------------------------------------------------------------------- */
+
+.rl {
+  --rl-blue: #4f9fff;
+  --rl-blue-soft: rgba(79, 159, 255, 0.14);
+  --rl-orange: #ff6a2b;
+  --rl-orange-soft: rgba(255, 106, 43, 0.14);
+}
+
+.rl-glow {
+  background:
+    radial-gradient(55% 70% at 25% 0%, rgba(79, 159, 255, 0.16), transparent 70%),
+    radial-gradient(45% 60% at 78% 8%, rgba(255, 106, 43, 0.12), transparent 70%);
+}
+
+.rl-tag-dot {
+  background: var(--rl-orange);
+  box-shadow: 0 0 10px var(--rl-orange);
+}
+
+.rl-h3 {
+  font-family: 'New Spirit', serif;
+  font-weight: 400;
+  font-size: 21px;
+  color: var(--color-text-primary);
+  margin: 34px 0 10px;
+}
+
+.rl-hero {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 14px;
+}
+
+/* ---------- Demo video ---------- */
+
+.rl-video {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+}
+
+.rl-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2880 / 1592;
+}
+
+/* ---------- Disguise ---------- */
+
+.rl-window {
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+.rl-window.is-outlook { background: #1f1f1f; }
+.rl-window.is-reddit { background: #0b1416; }
+
+.rl-window-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 14px;
+}
+
+.is-outlook .rl-window-top { background: #0f6cbd; }
+.is-reddit .rl-window-top { background: #0b1416; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+
+.rl-app {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.rl-app-reddit {
+  color: var(--rl-orange);
+  font-size: 17px;
+}
+
+.rl-search {
+  flex: 1;
+  max-width: 280px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.rl-window-body {
+  display: grid;
+  grid-template-columns: 140px 1fr 1.2fr;
+  min-height: 300px;
+}
+
+.rl-folders {
+  padding: 10px 8px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ub .rl-folder-h {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 8px 6px 4px;
+}
+
+.ub .rl-folder {
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+.ub .rl-folder.is-on {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.rl-list {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rl-row {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  animation: ub-fade 0.3s ease;
+}
+
+.rl-row:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.is-outlook .rl-row.is-on {
+  background: rgba(15, 108, 189, 0.3);
+  box-shadow: inset 3px 0 0 #4f9fff;
+}
+
+.is-reddit .rl-row.is-on {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.rl-avatar {
+  flex: 0 0 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.rl-votes {
+  flex: 0 0 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.rl-votes b {
+  font-size: 11px;
+  color: #fff;
+}
+
+.rl-row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.rl-row-text strong {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.is-reddit .rl-row-text strong {
+  white-space: normal;
+}
+
+.rl-row-text span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.is-outlook .rl-row-text span:nth-child(2) {
+  color: #8ab4f8;
+}
+
+.ub .rl-row-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.rl-row-meta {
+  font-size: 10.5px !important;
+}
+
+.rl-read {
+  padding: 16px;
+  animation: ub-fade 0.3s ease;
+}
+
+.rl-read h4 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+  margin: 2px 0 12px;
+}
+
+.rl-mail-from {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.rl-mail-from strong {
+  color: #fff;
+}
+
+.rl-mail-from em {
+  display: block;
+  font-style: normal;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ub .rl-mail-body {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.rl-map {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.rl-map div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 6px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.rl-map span:first-child { color: var(--rl-orange); }
+.rl-map span:last-child { color: var(--rl-blue); }
+
+.rl-map i {
+  font-style: normal;
+  color: var(--ub-text-dim);
+  transform: rotate(90deg);
+}
+
+/* ---------- Viral counter ---------- */
+
+.rl-viral-count {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+
+.rl-viral-count strong {
+  font-family: 'New Spirit', serif;
+  font-weight: 400;
+  font-size: clamp(40px, 7vw, 60px);
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.rl-viral-count span {
+  font-size: 14px;
+  color: var(--ub-text-dim);
+}
+
+.rl-viral-track {
+  position: relative;
+  height: 10px;
+  margin: 16px 0 18px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.rl-viral-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--rl-blue), var(--rl-orange));
+}
+
+.rl-viral-pin {
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #2a2b33;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rl-viral-pin.is-hit {
+  background: var(--rl-orange);
+  box-shadow: 0 0 0 2px #fff, 0 0 12px var(--rl-orange);
+}
+
+.rl-viral-pin:last-of-type {
+  transform: translate(-100%, -50%);
+}
+
+.rl-viral-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.rl-viral-list li {
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+
+.rl-viral-list li.is-hit {
+  opacity: 1;
+}
+
+/* ---------- Comment tree ---------- */
+
+.rl-tree-ctrl {
+  display: flex;
+  gap: 8px;
+}
+
+.rl-tree-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.rl-thread {
+  min-height: 380px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #1f1f1f;
+}
+
+.rl-c {
+  margin-top: 8px;
+  animation: ub-fade 0.3s ease;
+}
+
+.rl-c-inner {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rl-c-children {
+  margin-left: 6px;
+  padding-left: 8px;
+  border-left: 2px solid rgba(79, 159, 255, 0.35);
+}
+
+.rl-c.is-flat.is-reply .rl-c-inner {
+  margin-left: 22px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.rl-c.is-now > .rl-c-inner {
+  background: var(--rl-orange-soft);
+  box-shadow: inset 0 0 0 1px rgba(255, 106, 43, 0.55);
+}
+
+.rl-c-author {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #8ab4f8;
+}
+
+.ub .rl-c-inner p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 2px 0 0;
+}
+
+.rl-code {
+  margin: 0 !important;
+  font-size: 12px !important;
+}
+
+.rl-stack {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  min-height: 110px;
+}
+
+.ub .rl-stack-label {
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ub-text-dim);
+  margin-bottom: 8px;
+}
+
+.rl-frame {
+  margin-bottom: 4px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-family: var(--ub-mono);
+  font-size: 11px;
+  color: var(--color-text-primary);
+  background: var(--rl-blue-soft);
+  animation: ub-fade 0.25s ease;
+}
+
+.rl-frame:last-child {
+  background: var(--rl-orange-soft);
+}
+
+.rl-frame span {
+  color: var(--ub-text-dim);
+}
+
+.ub .rl-stack-empty {
+  font-size: 12.5px;
+  color: var(--ub-text-dim);
+}
+
+.ub .rl-tree-note {
+  margin-top: 12px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ub-text);
+}
+
+/* ---------- Bugs ---------- */
+
+.rl-bugs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.rl-bugs div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--ub-card);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.rl-bugs strong {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.rl-bugs strong::before {
+  content: '🐛 ';
+}
+
+.rl-bugs span {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ub-text-dim);
+}
+
+/* ---------- Evolution ---------- */
+
+.rl-evo-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.rl-evo-step {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  color: var(--ub-text-dim);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.rl-evo-step.is-on {
+  color: var(--color-text-primary);
+  background: var(--rl-blue-soft);
+  box-shadow: inset 0 0 0 1px rgba(79, 159, 255, 0.5);
+}
+
+.rl-evo-when {
+  font-family: var(--ub-mono);
+  font-size: 11px;
+}
+
+.rl-evo-step.is-on .rl-evo-when {
+  color: var(--rl-blue);
+}
+
+.rl-evo-title {
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.rl-evo-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  align-items: start;
+  animation: ub-fade 0.35s ease;
+  min-height: 220px;
+}
+
+.rl-evo-diagram {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.rl-evo-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rl-evo-box {
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+  border-radius: 9px;
+  background: rgba(30, 32, 44, 0.95);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.rl-evo-box strong {
+  font-family: var(--ub-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.rl-evo-box span {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--ub-text-dim);
+}
+
+.rl-evo-arrow {
+  color: var(--rl-orange);
+}
+
+.ub .rl-evo-text p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ub-text);
+}
+
+.rl-evo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.rl-evo-tags span {
+  font-size: 11.5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: var(--rl-blue);
+  background: var(--rl-blue-soft);
+}
+
+.rl-evo-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 720px) {
+  .rl-window-body {
+    grid-template-columns: 1fr;
+  }
+
+  .rl-folders {
+    display: none;
+  }
+
+  .rl-list {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .rl-map {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rl-tree-grid,
+  .rl-evo-body,
+  .rl-bugs {
+    grid-template-columns: 1fr;
+  }
+
+  .rl-thread {
+    min-height: 0;
+  }
+
+  .rl-evo-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rl-tree-ctrl {
+    width: 100%;
+  }
+}

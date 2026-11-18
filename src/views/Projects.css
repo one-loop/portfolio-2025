@@ -183,17 +183,18 @@ html, body {
   
 
 /* Example grid placements and spans for a collage look */
-.item1  { grid-column: 1 / 4; grid-row: 1 / 7; }
-.item2  { grid-column: 4 / 8; grid-row: 1 / 4; }
-.item3  { grid-column: 8 / 13; grid-row: 1 / 4; }
-.item4  { grid-column: 4 / 10; grid-row: 4 / 7; }
-.item5  { grid-column: 10 / 13; grid-row: 4 / 7; }
-.item6  { grid-column: 1 / 4; grid-row: 7 / 10; }
-.item7  { grid-column: 4 / 7; grid-row: 7 / 10; }
-.item8  { grid-column: 1 / 6; grid-row: 10 / 13; }
-.item9 { grid-column: 7 / 10; grid-row: 7 / 10; }
-.item10 { grid-column: 10 / 13; grid-row: 7 / 13; }
-.item11 { grid-column: 6 / 10; grid-row: 10 / 13; }
+/* Most important projects sit at the top; 2026 Portfolio (item4) stays in the center. */
+.item1  { grid-column: 1 / 4; grid-row: 1 / 7; }    /* AdvenTrip */
+.item3  { grid-column: 4 / 9; grid-row: 1 / 4; }    /* Redlookit */
+.item8  { grid-column: 9 / 13; grid-row: 1 / 4; }   /* Unlearning Activated Backdoors */
+.item4  { grid-column: 4 / 10; grid-row: 4 / 7; }   /* 2026 Portfolio */
+.item9  { grid-column: 10 / 13; grid-row: 4 / 7; }  /* Local AI Agent */
+.item5  { grid-column: 1 / 4; grid-row: 7 / 10; }   /* Lotus Pay */
+.item2  { grid-column: 4 / 10; grid-row: 7 / 10; }  /* Fieldnotes */
+.item10 { grid-column: 10 / 13; grid-row: 7 / 13; } /* FocusBoost */
+.item6  { grid-column: 1 / 4; grid-row: 10 / 13; }  /* Worldle */
+.item7  { grid-column: 4 / 7; grid-row: 10 / 13; }  /* 2024 Portfolio */
+.item11 { grid-column: 7 / 10; grid-row: 10 / 13; } /* Web Development Agency */
 
 /* Add background images or content as needed */
 .grid-item {
@@ -380,157 +381,296 @@ html, body {
   transform: translate(2px, -2px);
 }
 
-/* Top-centered header text for item1 without affecting bottom overlays */
-.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9, .item10, .item11, .item12 {
-  position: relative;
+
+/* ---------------------------------------------------------------
+ * Shared card treatment
+ * media layer -> scrim -> title block -> hover buttons
+ * ------------------------------------------------------------- */
+
+.grid-item-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #14151b;
+  background-size: cover;
+  background-position: var(--pos, center);
+  background-repeat: no-repeat;
+  transform: scale(1.001);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  filter: saturate(0.92);
 }
 
-.grid-item-header-overlay h1 {
-  color: #f2f2f2 !important;
+.grid-item:hover .grid-item-media {
+  transform: scale(1.045);
+  filter: saturate(1);
 }
 
-.grid-item-header-overlay p {
+/* One scrim for every card: dark at the top for the title, clear below.
+   Measured in px so tall and short cards get the same title area. */
+.grid-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 11, 16, 0.86) 0px,
+    rgba(10, 11, 16, 0.55) 110px,
+    rgba(10, 11, 16, 0.18) 210px,
+    rgba(10, 11, 16, 0) 280px
+  );
+}
+
+/* Bottom shade that comes in with the buttons, plus a soft inner edge. */
+.grid-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), inset 0 0 60px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(0deg, rgba(10, 11, 16, 0.7) 0px, rgba(10, 11, 16, 0) 110px);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover::after {
+  opacity: 1;
+}
+
+/* Title block: same position and type on every card. */
+.card-head {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  right: 22px;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
+}
+
+.card-head.is-centered {
+  align-items: center;
+  text-align: center;
+}
+
+.card-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(242, 242, 242, 0.7);
+}
+
+.card-dot {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent, #f2f2f2);
+  box-shadow: 0 0 10px var(--accent, #f2f2f2);
+}
+
+.grid-item .card-head h1 {
+  margin: 12px 0 8px;
+  line-height: 1.12;
+  text-align: inherit;
+  color: #f4f4f5 !important;
+}
+
+.card-head p {
+  margin: 0;
+  max-width: 36ch;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(232, 232, 238, 0.78);
+}
+
+.card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card-chips li {
+  padding: 5px 10px;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: #ececef;
+  text-shadow: none;
+  background: rgba(14, 16, 24, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Framed cards: a tinted backdrop with the screenshot or poster set into it,
+   for images that carry their own headline text. */
+.grid-item-shot {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 30px 60px -18px rgba(0, 0, 0, 0.75);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.item1 .grid-item-media {
+  background-image:
+    radial-gradient(90% 60% at 50% 100%, rgba(80, 110, 255, 0.85) 0%, rgba(80, 110, 255, 0) 70%),
+    linear-gradient(180deg, #10142e 0%, #18237a 100%);
+}
+
+.item1 .grid-item-shot {
+  top: 178px;
+  left: 50%;
+  width: min(68%, 270px);
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+.item1:hover .grid-item-shot {
+  transform: translateX(-50%) rotate(-1deg) translateY(-8px);
+}
+
+.item2 .grid-item-media {
+  background-image:
+    radial-gradient(70% 90% at 100% 100%, rgba(240, 183, 90, 0.35) 0%, rgba(240, 183, 90, 0) 70%),
+    linear-gradient(160deg, #18171b 0%, #241f19 100%);
+}
+
+.item2 .card-head {
+  right: 58%;
+}
+
+.item2 .grid-item-shot {
+  top: 60px;
+  left: 47%;
+  width: 64%;
+}
+
+.item11 .grid-item-media {
+  background-image:
+    radial-gradient(80% 80% at 100% 100%, rgba(79, 209, 165, 0.32) 0%, rgba(79, 209, 165, 0) 70%),
+    linear-gradient(160deg, #121519 0%, #142320 100%);
+}
+
+.item11 .grid-item-shot {
+  top: 176px;
+  left: 22px;
+  width: calc(100% + 40px);
+}
+
+.item11:hover .grid-item-shot {
+  transform: translateY(-8px);
+}
+
+.item2:hover .grid-item-shot {
+  transform: translate(-8px, -6px);
+}
+
+/* 2026 Portfolio: centred, with the room in front of the scrim. */
+.item4 .pf-room {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 3;
+  height: calc(100% - 78px);
+  max-height: 320px;
+  width: auto;
+  transform: translateX(-50%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+
+.item4:hover .pf-room {
+  transform: translateX(-50%) translateY(-6px) scale(1.02);
+}
+
+/* Research card: the 32x32 trigger mask stays crisp. */
+.research-card .grid-item-media {
+  background-color: rgb(18, 20, 28);
+  image-rendering: pixelated;
+}
+
+.research-card .card-head h1 {
+  max-width: 300px;
+}
+
+.lotus-card .grid-item-media {
+  background-color: #1e1250;
+}
+
+/* The research visual sits bottom-right and steps aside for the buttons. */
+
+.research-card-visual {
+  position: absolute;
+  right: 22px;
+  bottom: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.research-card:hover .research-card-visual {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.research-card-visual figure {
+  margin: 0;
+  text-align: center;
+}
+
+.research-card-visual img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  image-rendering: pixelated;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.research-card-visual figcaption {
+  margin-top: 6px;
+  font-size: 11px;
   color: #bdbebe;
 }
 
-.item1 .grid-item-header-overlay, .item10 .grid-item-header-overlay {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 24px);
-  text-align: center;
-  z-index: 1;
-  pointer-events: none;
+.research-card-visual figcaption.is-hot {
+  color: #ff6b8a;
 }
 
-.item1 .grid-item-header-overlay h1, .item10 .grid-item-header-overlay h1 {
-  margin: 0;
-  margin-top: 12px;
-  margin-bottom: 12px;
+.research-card-plus {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: #f7c12b;
+  transform: translateY(-10px);
 }
-
-.item1 .grid-item-header-overlay p, .item10 .grid-item-header-overlay p {
-  margin: 4px 0 0 0;
-}
-
-.item2 .grid-item-header-overlay, .item5 .grid-item-header-overlay {
-  position: absolute;
-  bottom: 12px;
-  text-align: left;
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  align-items: flex-start;
-  width: calc(100% - 80px);
-  flex-direction: column;
-}
-
-.item2 .grid-item-header-overlay h1, .item5 .grid-item-header-overlay h1 {
-  margin-bottom: 8px;
-}
-
-.item2 .grid-item-header-overlay p, .item5 .grid-item-header-overlay p {
-  font-size: 14px;
-  /* color: #F2F2F2; */
-}
-
-.item3 .grid-item-header-overlay {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  text-align: left;
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  align-items: flex-start;
-  width: 50%;
-  max-width: 250px;
-  flex-direction: column;
-}
-
-.item3 .grid-item-header-overlay h1 {
-  margin-bottom: 8px;
-}
-
-.item3 .grid-item-header-overlay p {
-  font-size: 14px;
-  /* color: #F2F2F2; */
-}
-
-.item4 .grid-item-header-overlay, .item7 .grid-item-header-overlay {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 24px);
-  text-align: center;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.item4 img {
-  width: auto;
-  max-height: 300px;
-  border-radius: 10px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 20px;
-}
-
-.item9 .grid-item-header-overlay, .item8 .grid-item-header-overlay, .item11 .grid-item-header-overlay {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  text-align: left;
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.item9 .grid-item-header-overlay h1, .item11 .grid-item-header-overlay h1 {
-  margin-bottom: 8px;
-  text-align: left;
-}
-
-.item8 .grid-item-header-overlay h1 {
-  margin-top: 12px;
-}
-
-.item9 .grid-item-header-overlay p {
-  font-size: 14px;
-  color: #F2F2F2;
-}
-
-.item8 .grid-item-header-overlay p {
-  line-height: 24px;
-  
-}
-
-.item6 .grid-item-header-overlay {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 24px);
-  text-align: center;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.item6 .grid-item-header-overlay h1 {
-  margin: 0;
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-
-.item6 .grid-item-header-overlay p {
-  margin: 4px 0 0 0;
-}
-
 
 /* Responsive: stack on mobile */
 @media (max-width: 992px) {
@@ -578,9 +718,8 @@ html, body {
     grid-row: auto !important;
   }
 
-  .item4 img {
-    top: 70px !important;
-    max-height: 350px !important;
+  .item4 .pf-room {
+    height: calc(100% - 110px);
   }
 }
 
@@ -605,6 +744,39 @@ html, body {
     
 }
 
+@media (max-width: 1000px) {
+  .item1 .grid-item-shot {
+    top: 160px;
+    width: min(58%, 250px);
+  }
+  .item2 .card-head {
+    right: 22px;
+  }
+  .item2 .grid-item-shot {
+    top: 200px;
+    left: 22px;
+    width: 130%;
+  }
+  .item11 .grid-item-shot {
+    top: auto;
+    bottom: -40px;
+    width: 120%;
+  }
+  .item3 .grid-item-media {
+    background-position: 72% center;
+  }
+  /* Narrow cards wrap the text onto more lines, so the scrim reaches further. */
+  .grid-item::before {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 11, 16, 0.9) 0px,
+      rgba(10, 11, 16, 0.72) 150px,
+      rgba(10, 11, 16, 0.25) 270px,
+      rgba(10, 11, 16, 0) 360px
+    );
+  }
+}
+
 .grid-item {
   opacity: 0;
   transform: translateY(30px);
@@ -619,3 +791,21 @@ html, body {
 .grid-item.item5 { transition-delay: 0.1s; }
 .grid-item.item6 { transition-delay: 0.2s; }
 .grid-item.item8 { transition-delay: 0.1s; }
+.grid-item.visible:hover {
+  transform: translateY(-4px);
+}
+
+/* Stacked layouts follow the same priority order. */
+@media (max-width: 1000px) {
+  .item8 { order: 1; }
+  .item1 { order: 2; }
+  .item9 { order: 3; }
+  .item5 { order: 4; }
+  .item4 { order: 5; }
+  .item3 { order: 6; }
+  .item2 { order: 7; }
+  .item10 { order: 8; }
+  .item6 { order: 9; }
+  .item7 { order: 10; }
+  .item11 { order: 11; }
+}
