@@ -47,7 +47,8 @@ const Navbar = () => {
   }, [pathname]);
 
   useEffect(() => {
-    const path = pathname;
+    // Nested pages (e.g. /projects/unlearning-backdoor) highlight their top-level section.
+    const path = pathname === '/' ? '/' : `/${pathname.split('/')[1]}`;
     setActiveLink(path);
 
     // Only consider links inside .nav-center-links for desktop glow

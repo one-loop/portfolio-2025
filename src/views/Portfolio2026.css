@@ -1,0 +1,638 @@
+/* ------------------------------------------------------------------
+   2026 Portfolio write-up. Builds on ProjectWriteup.css (.ub classes).
+------------------------------------------------------------------- */
+
+.pf {
+  --pf-tv: #ff115e;
+  --pf-desk: #ff6700;
+  --pf-pc: #0082ff;
+}
+
+.pf-glow {
+  background:
+    radial-gradient(55% 70% at 25% 0%, rgba(255, 17, 94, 0.12), transparent 70%),
+    radial-gradient(50% 60% at 75% 5%, rgba(0, 130, 255, 0.14), transparent 70%),
+    radial-gradient(40% 50% at 50% 30%, rgba(255, 103, 0, 0.08), transparent 70%);
+}
+
+.pf-dot-glow {
+  background: var(--pf-desk);
+  box-shadow: 0 0 10px var(--pf-desk);
+}
+
+.pf .ub-title i {
+  font-style: italic;
+}
+
+/* ---------- Room lab ---------- */
+
+.pf-lab-stage {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  background: radial-gradient(70% 70% at 50% 55%, rgba(255, 255, 255, 0.05), transparent 70%);
+  cursor: grab;
+}
+
+.pf-lab-stage:active {
+  cursor: grabbing;
+}
+
+.pf-lab-stage canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.pf-lab-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ub-text-dim);
+  text-align: center;
+}
+
+.pf-lab-overlay img {
+  max-width: 70%;
+  max-height: 80%;
+}
+
+.pf-lab-hint {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  font-size: 11px;
+  color: var(--ub-text-dim);
+  pointer-events: none;
+}
+
+.pf-lab-controls {
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.pf-lab-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 70px;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--ub-text);
+}
+
+.pf-lab-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pf-lab-row output {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
+}
+
+.ub .pf-lab-sub {
+  margin: -2px 0 8px;
+  font-family: var(--ub-mono);
+  font-size: 11px;
+  color: var(--ub-text-dim);
+}
+
+.pf-channel {
+  font-family: var(--ub-mono);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--ub-text-dim);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pf input[type='color'].pf-swatch {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.pf input[type='color'].pf-swatch::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.pf input[type='color'].pf-swatch::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+.pf input[type='color'].pf-swatch::-moz-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+.pf input[type='color'].pf-swatch-lg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ---------- Bake atlas ---------- */
+
+.pf-atlas {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.pf-atlas-labels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--ub-text-dim);
+}
+
+.pf-hero-render img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+}
+
+/* ---------- Engine map ---------- */
+
+.pf-map {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.pf-map-tree {
+  display: grid;
+  gap: 14px;
+}
+
+.pf-map-root {
+  display: flex;
+}
+
+.pf-map-core,
+.pf-map-world {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-left: 16px;
+  border-left: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.pf-map-world {
+  margin-left: 16px;
+  padding-top: 4px;
+}
+
+.pf-map-world-label {
+  width: 100%;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ub-text-dim);
+  margin-bottom: 2px;
+}
+
+.pf-node {
+  height: 30px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  cursor: pointer;
+  color: var(--ub-text);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pf-node:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.pf-node.is-world {
+  color: rgba(255, 190, 150, 0.9);
+}
+
+.pf-node.is-root {
+  height: 34px;
+  font-family: 'New Spirit', serif;
+  font-size: 15px;
+}
+
+.pf-node.is-on {
+  color: rgb(16, 17, 24);
+  background: var(--color-text-primary);
+  box-shadow: none;
+}
+
+.pf-map-detail {
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  animation: ub-fade 0.3s ease;
+  min-height: 180px;
+}
+
+.ub .pf-map-file {
+  font-family: var(--ub-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.pf-map-detail h3 {
+  font-family: 'New Spirit', serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--color-text-primary);
+  margin: 4px 0 8px;
+}
+
+.ub .pf-map-detail p:last-child {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ub-text);
+}
+
+/* ---------- Steam ---------- */
+
+.pf-steam {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.pf-steam-stage {
+  position: relative;
+  height: 300px;
+  border-radius: 12px;
+  background: radial-gradient(80% 60% at 50% 85%, rgba(255, 103, 0, 0.12), transparent 70%), rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.pf-steam-canvas {
+  position: absolute;
+  inset: 0 0 84px 0;
+}
+
+.pf-steam-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.pf-mug {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  width: 110px;
+  transform: translateX(-46%);
+}
+
+.ub .pf-steam-failed {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  color: var(--ub-text-dim);
+}
+
+.pf-steam-controls .ub-slider-row:first-child {
+  margin-top: 0;
+}
+
+.pf-steam-controls .ub-slider-row {
+  grid-template-columns: 100px 1fr 64px;
+}
+
+/* ---------- Route lifecycle ---------- */
+
+.pf-route {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.pf-route-browser {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.pf-route-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--ub-line);
+}
+
+.pf-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.pf-route-url {
+  margin-left: 10px;
+  font-family: var(--ub-mono);
+  font-size: 11px;
+  color: var(--ub-text-dim);
+}
+
+.pf-route-view {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.pf-route-room,
+.pf-route-page {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pf-route-room {
+  display: grid;
+  place-items: center;
+}
+
+.pf-route-room img {
+  width: 78%;
+  height: auto;
+}
+
+.pf-route-page {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 22px;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.pf-route-page span {
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pf-route-page span:first-child {
+  width: 50%;
+  height: 18px;
+  margin-bottom: 8px;
+}
+
+.pf-route-page span:nth-child(3) { width: 85%; }
+.pf-route-page span:nth-child(4) { width: 65%; }
+
+.pf-route-view.is-away .pf-route-room {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.pf-route-view.is-away .pf-route-page {
+  opacity: 1;
+  transform: none;
+}
+
+.ub .pf-route-title {
+  font-family: 'New Spirit', serif;
+  font-size: 19px;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.pf-route-rows {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pf-route-rows li {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.pf-led {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pf-led.is-on {
+  background: var(--color-accent-success);
+  box-shadow: 0 0 8px var(--color-accent-success);
+}
+
+.pf-route-k {
+  color: var(--ub-text);
+}
+
+.pf-route-v {
+  font-family: var(--ub-mono);
+  font-size: 11px;
+  color: var(--ub-text-dim);
+  text-align: right;
+}
+
+.ub .pf-route-note {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ub-text-dim);
+  margin-bottom: 14px;
+  min-height: 88px;
+}
+
+/* ---------- Timeline ---------- */
+
+.pf-timeline {
+  list-style: none;
+  position: relative;
+  padding: 8px 6px;
+}
+
+.pf-timeline::before {
+  content: '';
+  position: absolute;
+  left: 21px;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background: linear-gradient(180deg, var(--pf-tv), var(--pf-desk), var(--pf-pc));
+  opacity: 0.45;
+}
+
+.pf-tl-head {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30px 120px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pf-tl-head:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.pf-tl-dot {
+  justify-self: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-bg-primary);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pf-timeline li.is-open .pf-tl-dot {
+  background: var(--color-text-primary);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.pf-tl-when {
+  font-family: var(--ub-mono);
+  font-size: 11px;
+  color: var(--ub-text-dim);
+}
+
+.pf-tl-title {
+  font-family: 'New Spirit', serif;
+  font-size: 17px;
+  color: var(--color-text-primary);
+}
+
+.pf-tl-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pf-tl-body > div {
+  overflow: hidden;
+  padding-left: 46px;
+  padding-right: 8px;
+}
+
+.pf-timeline li.is-open .pf-tl-body {
+  grid-template-rows: 1fr;
+}
+
+.pf-timeline li.is-open .pf-tl-body > div {
+  padding-bottom: 14px;
+}
+
+.ub .pf-tl-body p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ub-text);
+}
+
+.pf-tl-commits {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.pf-tl-commits code {
+  font-size: 11px !important;
+  color: var(--ub-text-dim) !important;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 720px) {
+  .pf-lab-stage {
+    aspect-ratio: 4 / 3;
+  }
+
+  .pf-lab-row {
+    grid-template-columns: 1fr 56px;
+    gap: 4px 10px;
+  }
+
+  .pf-lab-row label {
+    grid-column: 1 / -1;
+  }
+
+  .pf-map,
+  .pf-steam,
+  .pf-route {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-steam-controls .ub-slider-row {
+    grid-template-columns: 1fr 64px;
+  }
+
+  .pf-tl-head {
+    grid-template-columns: 24px 1fr;
+  }
+
+  .pf-tl-title {
+    grid-column: 2;
+  }
+
+  .pf-tl-body > div {
+    padding-left: 40px;
+  }
+
+  .pf-timeline::before {
+    left: 18px;
+  }
+}
+
+.pf-hint-touch {
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .pf-hint-mouse {
+    display: none;
+  }
+
+  .pf-hint-touch {
+    display: inline;
+  }
+}
