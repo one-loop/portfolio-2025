@@ -74,14 +74,13 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.png', sizes: '96x96', type: 'image/png' },
-      { url: '/icons/favicon/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icons/mac/favicon.ico', sizes: 'any' },
+      { url: '/icons/mac/icon-96.png', sizes: '96x96', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/icons/mac/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/icons/mac/favicon.ico',
   },
   openGraph: {
     title: 'Saad Sifar – Portfolio',

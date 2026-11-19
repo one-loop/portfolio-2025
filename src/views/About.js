@@ -20,7 +20,14 @@ const getRandomUnique = (arr, n) => {
   return result;
 };
 
+const CHAPTERS = [
+  { id: 'past-section', num: '01', label: 'Past' },
+  { id: 'present-section', num: '02', label: 'Present' },
+  { id: 'future-section', num: '03', label: 'Future' },
+];
+
 const About = () => {
+  const [activeChapter, setActiveChapter] = useState(CHAPTERS[0].id);
   const pastRef = useRef(null);
   const presentRef = useRef(null);
   const futureRef = useRef(null);
@@ -61,6 +68,11 @@ const About = () => {
     if (pastSection) {
       pastSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const scrollToChapter = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   // Fetch gallery.json once
@@ -130,6 +142,7 @@ const About = () => {
       if (pastRef.current && presentRef.current && futureRef.current) {
         // Default: first section active
         let op1 = 1, op2 = 0, op3 = 0;
+        let chapter = 'past-section';
 
         if (presentRef.current.getBoundingClientRect().top < toggleDistance &&
           futureRef.current.getBoundingClientRect().top >= toggleDistance) {
@@ -139,6 +152,7 @@ const About = () => {
           // op2 = offset / fadeDistance;
           op2 = 1;
           op3 = 0;
+          chapter = 'present-section';
         } else if (futureRef.current.getBoundingClientRect().top < toggleDistance) {
           // Transition between second and third section
           const offset = Math.min(Math.max(toggleDistance - futureRef.current.getBoundingClientRect().top, 0), fadeDistance);
@@ -146,7 +160,9 @@ const About = () => {
           // op3 = offset / fadeDistance;
           op3 = 1;
           op1 = 0;
+          chapter = 'future-section';
         }
+        setActiveChapter(chapter);
         // Apply computed opacities to the image, gradient and grid elements
         if (comp1Ref.current) comp1Ref.current.style.opacity = op1;
         if (gradient1.current) gradient1.current.style.opacity = op1;
@@ -195,16 +211,27 @@ const About = () => {
                 <span className="tag-header animate-text">About me</span>
               </div>
               <h1 className="animate-text">
-                I love  <span className="emphasize">building</span> things and <span className="emphasize">solving problems.</span>
+                I love <span className="emphasize">building</span> things and <span className="emphasize">solving problems.</span>
               </h1>
-              <h2 className="animate-text">This is my story, along with some flicks from my travels</h2>
-              <div id="scroll-anim" onClick={scrollToFirstSection}>
+              <p className="about-lede animate-text">This is my story, along with some flicks from my travels.</p>
+              <dl className="about-facts animate-text">
+                <div><dt>Studying</dt><dd>CS at NYU Abu Dhabi</dd></div>
+                <div><dt>Researching</dt><dd>AI and machine learning</dd></div>
+              </dl>
+              <div className="about-cta animate-text">
+                <a href="/sifar-resume.pdf" target="_blank" rel="nofollow noopener noreferrer" className="about-btn is-primary">
+                  View resume
+                  <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z" fill="currentColor" /></svg>
+                </a>
+                <Link href="/contact" className="about-btn">Get in touch</Link>
+              </div>
+              <button type="button" id="scroll-anim" onClick={scrollToFirstSection} aria-label="Scroll to my story">
                 <p>Scroll Down</p>
                 <div>
                   <div></div>
                   <div className="scroll-line-animation"></div>
                 </div>
-              </div>
+              </button>
             </div>
             <div className="hero-right">
               {/* <img className="animate-image" src="/images/profile.jpeg" alt="Saad Sifar"></img> */}
@@ -224,7 +251,8 @@ const About = () => {
           <main>
             <div className="right">
               <div ref={pastRef} id="past-section">
-                <h2>The Past: Curiosity, Frustration, and Stubborn Persistence</h2>
+                <p className="about-chapter"><span>01</span>The past</p>
+                <h2>I broke a lot of things first</h2>
 
                 <div className="computer-1-mobile-container">
                   <img className="computer-1-mobile" src="/computers/computer-1.webp" alt="" />
@@ -279,13 +307,14 @@ const About = () => {
                 </p>
               </div>
               <div ref={presentRef} id="present-section">
-                <h2>The Present: Learning Across Borders and Disciplines</h2>
+                <p className="about-chapter"><span>02</span>The present</p>
+                <h2>School, research, and a lot of airports</h2>
                 <img className="computer-2-mobile" src="/computers/computer-2.webp" alt="" />
                 {/* <p>
             Today, I’m a sophomore at NYU Abu Dhabi, studying Computer Science across continents, from the neon buzz of New York to the cobblestone charm of Florence, the tech hubs of Kigali to the art-soaked streets of Paris (where I’m currently eating a croissant at 1:00 AM while the Eiffel tower sparkles outside my dorm window for the last time tonight 🇫🇷). 
           </p> */}
                 <p>
-                  Today, I’m a <span className="about-accent">Computer Science junior at NYU Abu Dhabi</span>, with minors in <span className="about-accent">Economics and Applied Mathematics</span>. Over the past three years, my education has taken me to <span className="about-accent">more than 30 cities</span> across the world. Each one left a quiet but lasting mark on how I think.
+                  Today, I’m a <span className="about-accent">Computer Science junior at NYU Abu Dhabi</span>, with minors in <span className="about-accent">Economics and Applied Mathematics</span>. Over the past three years, my education has taken me to <span className="about-accent">more than 20 cities</span> across the world. Each one left a quiet but lasting mark on how I think.
                 </p>
                 {/* <p>
             When I’m not knee-deep in coding, you’ll find me devouring novels, playing badminton, or losing myself in RPGs (Elden Ring, anyone?). Travel’s my constant. Every new city teaches me how to see the world differently.
@@ -301,7 +330,8 @@ const About = () => {
                 </p>
               </div>
               <div ref={futureRef} id="future-section">
-                <h2>The Future: Open Questions, Grounded Principles</h2>
+                <p className="about-chapter"><span>03</span>The future</p>
+                <h2>The future?</h2>
                 <img className="computer-3-mobile" src="/computers/computer-3.webp" alt="" />
                 <p>
                   I don’t have a rigid 10-year plan, and I’m okay with that. What I do have are principles I trust: <span className="about-accent">curiosity, discipline</span>, and a belief that <span className="about-accent">technology should serve people, not the other way around</span>.          </p>
@@ -321,7 +351,9 @@ const About = () => {
                 <img src="/images/signature 2.png" alt="signature" width='150' style={{ userSelect: 'none', WebkitUserDrag: 'none' }}></img>
               </div>
               <div className="experience-about-wrapper">
-                <h1 className="experience-about-title">Experience</h1>
+                <p className="about-chapter"><span>04</span>Experience</p>
+                <h2 className="experience-about-title">Where I’ve worked</h2>
+                <p className="experience-about-hint">Tap a role to see what I did there.</p>
                 {experienceData.map((exp, index) => (
                   <div
                     key={index}
@@ -448,6 +480,19 @@ const About = () => {
                 <span ref={grid2} className="gradient-grid-2"></span>
                 <div ref={gradient3} className="bg-gradient bg-gradient-3"></div>
                 <span ref={grid3} className="gradient-grid-3"></span>
+                <nav className="about-chapters" aria-label="Story chapters">
+                  {CHAPTERS.map((c) => (
+                    <button
+                      type="button"
+                      key={c.id}
+                      className={activeChapter === c.id ? 'is-on' : ''}
+                      aria-current={activeChapter === c.id ? 'step' : undefined}
+                      onClick={() => scrollToChapter(c.id)}
+                    >
+                      <span>{c.num}</span>{c.label}
+                    </button>
+                  ))}
+                </nav>
               </div>
             </div>
           </main>
