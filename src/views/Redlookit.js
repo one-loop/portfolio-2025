@@ -97,7 +97,7 @@ export default function Redlookit() {
             In 2021 I was in high school, taking an online web development course in my spare time and looking for a project to practice on. The idea came from a very specific problem: Reddit is very easy to recognize from across a room. A wall of email is not.
           </p>
           <p>
-            The first version took about a week. It was one HTML file, one stylesheet and one script that fetched posts from Reddit and laid them out like an inbox. The name was the obvious mashup (Reddit + Outlook), and the README still asks anyone with a better one to let me know.
+            The first version took about a week. It was one HTML file, one stylesheet and one script that fetched posts from Reddit and laid them out like an inbox. The name was the obvious mashup (Reddit + Outlook). (If you have a better name, please let me <span style={{ whiteSpace: 'nowrap' }}>know 😅🙏)</span>
           </p>
           <figure className="ub-fig rl-video-fig">
             <div className="rl-video">
