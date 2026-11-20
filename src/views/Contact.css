@@ -1,5 +1,8 @@
 @import '../styles/colors.css';
 
+/* Next.js keeps a page's CSS loaded after you navigate away, so every rule here
+   is scoped to .contact-page. Bare element selectors would restyle other pages. */
+
 /* Sticky footer: page fills viewport, main content grows to push footer to bottom */
 .contact-page {
   display: flex;
@@ -69,7 +72,7 @@
     padding: 28px 28px;
 }
 
-label {
+.contact-page label {
     color: rgba(242, 242, 242, 0.75);
     font-size: 13.5px;
     font-weight: 500;
@@ -78,7 +81,7 @@ label {
     letter-spacing: 0.1px;
 }
 
-input {
+.contact-page input {
     margin-bottom: 20px;
     height: 48px;
     width: 100%;
@@ -94,14 +97,14 @@ input {
     transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-input:focus,
-textarea:focus {
+.contact-page input:focus,
+.contact-page textarea:focus {
     outline: none;
     background: rgba(14, 17, 24, 0.75);
     box-shadow: 0 0 0 1px rgba(184, 215, 229, 0.45), 0 0 0 3px rgba(184, 215, 229, 0.12);
 }
 
-textarea {
+.contact-page textarea {
     margin-bottom: 28px;
     height: 130px;
     width: 100%;
@@ -118,7 +121,7 @@ textarea {
     transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-button {
+.contact-page button {
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 4px 14px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
@@ -136,13 +139,13 @@ button {
     letter-spacing: 0.2px;
 }
 
-button:hover {
+.contact-page button:hover {
     background: rgba(255, 255, 255, 0.16);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.24), 0 6px 18px rgba(0, 0, 0, 0.35);
     transform: translateY(-1px);
 }
 
-button:active {
+.contact-page button:active {
     transform: scale(0.96);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
 }
@@ -191,11 +194,6 @@ button:active {
         margin: 0px 10px;
         margin-bottom: 100px;
         width: auto;
-    }
-
-    .hero {
-        padding: 0px 26px;
-        padding-top: 300px;
     }
 
     /* .form-container {
