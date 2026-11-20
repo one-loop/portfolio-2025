@@ -1,0 +1,374 @@
+/* ------------------------------------------------------------------
+   Histopathology requisitions write-up. Builds on ProjectWriteup.css (.ub classes).
+------------------------------------------------------------------- */
+
+.rq {
+  --rq-pink: #ff8fa3;
+  --rq-pink-soft: rgba(255, 143, 163, 0.14);
+  --rq-amber: #f5b14c;
+  --rq-before: rgba(242, 242, 242, 0.42);
+}
+
+.rq-glow {
+  background:
+    radial-gradient(55% 70% at 28% 0%, rgba(255, 143, 163, 0.14), transparent 70%),
+    radial-gradient(45% 60% at 78% 8%, rgba(143, 211, 255, 0.09), transparent 70%);
+}
+
+.rq-tag-dot {
+  background: var(--rq-pink);
+  box-shadow: 0 0 10px var(--rq-pink);
+}
+
+.rq-tldr {
+  background: linear-gradient(135deg, rgba(255, 143, 163, 0.08), rgba(143, 211, 255, 0.04));
+}
+
+.rq-tldr li::before {
+  background: var(--rq-pink);
+}
+
+/* ---------- Shared figure toolbar ---------- */
+
+.rq-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin-bottom: 18px;
+}
+
+.rq-toggle {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.rq-toggle button {
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(242, 242, 242, 0.65);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.rq-toggle button:hover {
+  color: #f2f2f2;
+}
+
+.rq-toggle button.is-on {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.rq-avg,
+.ub-section .rq-avg {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ub-text-dim);
+}
+
+.rq-avg strong {
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Figure 1: the form ---------- */
+
+.rq-sheet {
+  --ink: var(--rq-pink);
+  padding: 22px 24px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.rq-sheet.is-before {
+  --ink: var(--rq-before);
+}
+
+.rq-sheet-title {
+  margin: 0 0 6px;
+  font-family: 'New Spirit', serif;
+  font-size: 19px;
+  color: var(--color-text-primary);
+}
+
+.rq-group {
+  padding: 12px 0 14px;
+}
+
+.rq-group + .rq-group {
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.rq-group-name {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ub-text-dim);
+}
+
+.rq-field {
+  display: grid;
+  grid-template-columns: minmax(150px, 230px) 1fr 52px;
+  align-items: center;
+  gap: 14px;
+  padding: 5px 0;
+}
+
+.rq-field-label {
+  font-size: 14px;
+  color: rgba(242, 242, 242, 0.82);
+}
+
+.rq-field-line {
+  position: relative;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.rq-field-ink {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: var(--ink);
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+}
+
+.rq-field-value {
+  font-family: var(--ub-mono);
+  font-size: 12px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--ub-text-dim);
+}
+
+.rq-field.is-dropped .rq-field-ink {
+  background: var(--rq-amber);
+}
+
+.rq-field.is-dropped .rq-field-value {
+  color: var(--rq-amber);
+}
+
+/* ---------- Scoring rule ---------- */
+
+.rq-score {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.rq-score > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.ub-section .rq-score p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.rq-score-mark {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  font-family: var(--ub-mono);
+  font-size: 15px;
+}
+
+.rq-score-mark.is-yes {
+  color: var(--rq-pink);
+  background: var(--rq-pink-soft);
+}
+
+.rq-score-mark.is-no {
+  color: rgba(242, 242, 242, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- Figure 2: change chart ---------- */
+
+.rq-legend,
+.ub-section .rq-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0;
+  font-size: 12px;
+  color: var(--ub-text-dim);
+}
+
+.rq-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rq-legend span::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.rq-legend .is-up::before { background: var(--rq-pink); }
+.rq-legend .is-down::before { background: var(--rq-amber); }
+.rq-legend .is-ns::before { background: rgba(255, 255, 255, 0.2); }
+
+.rq-change-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 230px) 1fr 52px;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 0;
+}
+
+.rq-change-label {
+  font-size: 13.5px;
+  color: rgba(242, 242, 242, 0.82);
+}
+
+.rq-change-track {
+  position: relative;
+  height: 14px;
+}
+
+.rq-change-axis {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.rq-change-bar {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  min-width: 2px;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.rq-change-row.is-up .rq-change-bar { background: var(--rq-pink); }
+.rq-change-row.is-down .rq-change-bar { background: var(--rq-amber); }
+.rq-change-row.is-ns .rq-change-bar { background: rgba(255, 255, 255, 0.2); }
+.rq-change-row.is-ns .rq-change-label,
+.rq-change-row.is-ns .rq-change-value { opacity: 0.55; }
+
+.rq-change-value {
+  font-family: var(--ub-mono);
+  font-size: 12px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
+}
+
+.rq-change-row.is-down .rq-change-value { color: var(--rq-amber); }
+
+/* ---------- Biggest gains ---------- */
+
+.rq-wins {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.rq-win {
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.rq-win-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ub-section .rq-win-head strong {
+  font-family: 'New Spirit', serif;
+  font-weight: 400;
+  font-size: 19px;
+}
+
+.rq-win-delta {
+  flex: none;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-family: var(--ub-mono);
+  font-size: 12px;
+  color: var(--rq-pink);
+  background: var(--rq-pink-soft);
+}
+
+.ub-section .rq-win p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.ub-section .rq-win .rq-win-range {
+  margin: 4px 0 10px;
+  font-family: var(--ub-mono);
+  font-size: 12.5px;
+  color: var(--ub-text-dim);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 720px) {
+  .rq-sheet {
+    padding: 16px 14px 4px;
+  }
+  .rq-field,
+  .rq-change-row {
+    grid-template-columns: 1fr 48px;
+    row-gap: 6px;
+    gap: 6px 10px;
+  }
+  .rq-field-label,
+  .rq-change-label {
+    grid-column: 1 / -1;
+  }
+  .rq-field-line,
+  .rq-change-track {
+    grid-column: 1;
+  }
+  .rq-change-row {
+    padding: 6px 0;
+  }
+  .rq-score {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rq .ub-steps-list + p,
+.rq .rq-score + p {
+  margin-top: 18px;
+}
