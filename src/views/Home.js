@@ -18,6 +18,9 @@ const Home = () => {
     <div className="gradient home">
       
       <h1 className="main-heading animate-heading">Saad Sifar</h1>
+      <p className="home-tagline">
+        Engineering<span aria-hidden="true">·</span>Research<span aria-hidden="true">·</span>Design
+      </p>
       <ExperienceCanvas />
       <Footer /> 
     </div>
