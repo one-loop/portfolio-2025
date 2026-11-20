@@ -70,12 +70,6 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/projects/unlearning-backdoor`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/experience`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
