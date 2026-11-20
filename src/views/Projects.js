@@ -141,7 +141,10 @@ const PROJECTS = [
         </figure>
       </div>
     ),
-    readMore: '/projects/unlearning-backdoor', github: 'https://github.com/one-loop/parasitic-backdoor-attack-research',
+    // Until the research is approved: Read More points at Coming Soon (the write-up stays at
+    // /projects/unlearning-backdoor) and the GitHub link is hidden.
+    // Restore: readMore: '/projects/unlearning-backdoor', github: 'https://github.com/one-loop/parasitic-backdoor-attack-research'
+    readMore: '/under-construction',
   },
   {
     cls: 'item9', key: 'local-ai-agent',
