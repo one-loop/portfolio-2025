@@ -59,7 +59,7 @@ const FooterMain = () => {
               </div>
             </div>
             <p className="footer-bio">
-              Software Engineer & Designer building crafted web interfaces and interactive experiences.
+              Computer Science & Economics at NYU Abu Dhabi
             </p>
           </div>
 
