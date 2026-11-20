@@ -168,7 +168,7 @@ html, body {
 .showcase-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr); /* 4 columns for more flexibility */
-    grid-template-rows: repeat(12, 100px);  /* adjust row height as needed */
+    grid-template-rows: repeat(15, 100px);  /* adjust row height as needed */
     gap: 12px;
     margin: 150px auto 50px auto;
     max-width: 1600px;
@@ -195,6 +195,7 @@ html, body {
 .item6  { grid-column: 1 / 4; grid-row: 10 / 13; }  /* Worldle */
 .item7  { grid-column: 4 / 7; grid-row: 10 / 13; }  /* 2024 Portfolio */
 .item11 { grid-column: 7 / 10; grid-row: 10 / 13; } /* Web Development Agency */
+.item12 { grid-column: 1 / 13; grid-row: 13 / 16; } /* Requisition errors paper */
 
 /* Add background images or content as needed */
 .grid-item {
@@ -808,4 +809,153 @@ html, body {
   .item6 { order: 9; }
   .item7 { order: 10; }
   .item11 { order: 11; }
+  .item12 { order: 12; }
+}
+
+/* ---------------------------------------------------------------
+ * Paper card: a full-width banner with a before/after dot chart.
+ * ------------------------------------------------------------- */
+.paper-card .grid-item-media {
+  background-image:
+    radial-gradient(55% 120% at 82% 50%, rgba(255, 143, 163, 0.16) 0%, rgba(255, 143, 163, 0) 70%),
+    linear-gradient(160deg, #13141a 0%, #1c151b 100%);
+}
+
+.paper-card .card-head {
+  right: 52%;
+}
+
+.paper-card .card-head h1 {
+  max-width: 460px;
+}
+
+.paper-card .card-head p {
+  max-width: 48ch;
+}
+
+.paper-card-chart {
+  --before: rgba(242, 242, 242, 0.45);
+  --after: #ff8fa3;
+  position: absolute;
+  top: 50%;
+  right: 48px;
+  width: min(44%, 560px);
+  z-index: 3;
+  pointer-events: none;
+  transform: translateY(-50%);
+  font-family: 'Inter', sans-serif;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-chart-key {
+  display: flex;
+  gap: 18px;
+  margin: 0 0 18px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(242, 242, 242, 0.6);
+}
+
+.paper-chart-key span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.paper-chart-key span::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.paper-chart-key .is-before::before { background: var(--before); }
+.paper-chart-key .is-after::before { background: var(--after); }
+
+.paper-row {
+  display: grid;
+  grid-template-columns: 170px 1fr 92px;
+  align-items: center;
+  gap: 16px;
+  padding: 9px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.paper-row-label {
+  font-size: 13px;
+  color: rgba(242, 242, 242, 0.82);
+}
+
+.paper-row-track {
+  position: relative;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.paper-row-span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(255, 143, 163, 0.15), rgba(255, 143, 163, 0.6));
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-dot {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.paper-dot.is-before {
+  background: #3a3b42;
+  box-shadow: inset 0 0 0 2px var(--before);
+}
+
+.paper-dot.is-after {
+  background: var(--after);
+  box-shadow: 0 0 12px rgba(255, 143, 163, 0.6);
+}
+
+.paper-row-value {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: rgba(242, 242, 242, 0.6);
+  white-space: nowrap;
+}
+
+.paper-card:hover .paper-card-chart {
+  transform: translateY(calc(-50% - 10px));
+}
+
+@media (max-width: 1000px) {
+  .paper-card .card-head {
+    right: 22px;
+  }
+  .paper-card-chart {
+    top: auto;
+    right: 22px;
+    left: 22px;
+    bottom: 26px;
+    width: auto;
+    transform: none;
+  }
+  .paper-card:hover .paper-card-chart {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  .paper-row {
+    grid-template-columns: 1fr 84px;
+    row-gap: 8px;
+  }
+  .paper-row-label {
+    grid-column: 1 / -1;
+  }
 }

@@ -28,6 +28,12 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/projects/requisition-errors`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/projects/redlookit`,
       lastModified: currentDate,
       changeFrequency: 'monthly',

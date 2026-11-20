@@ -42,6 +42,13 @@ const GithubIcon = () => (
   </svg>
 );
 
+// Share of request forms with each field filled in (Table 1 of the paper).
+const PAPER_ROWS = [
+  { label: 'Specimen orientation', before: 55, after: 98 },
+  { label: 'Neoadjuvant therapy status', before: 63, after: 98 },
+  { label: 'Patient contact number', before: 68, after: 99 },
+];
+
 /*
  * Every card shares one structure:
  *   media layer (full-bleed image, or a tinted backdrop with a framed `shot`)
@@ -163,10 +170,40 @@ const PROJECTS = [
     desc: '10+ client projects, 100% client satisfaction.',
     visit: 'https://one-loop.github.io/airaedigital/', github: 'https://github.com/one-loop/airaedigital',
   },
+  {
+    cls: 'item12 paper-card', key: 'requisition-errors',
+    placeholder: solid('15161d'),
+    accent: '#ff8fa3', label: 'Published paper · SEAJME 2025',
+    title: <>Reducing Errors in Histopathology <i>Requisitions.</i></>,
+    desc: 'A co-authored study on whether a short orientation for new intern doctors closes the gaps in histopathology request forms at a Sri Lankan university hospital.',
+    chips: ['8,396 forms analyzed', '12 of 20 fields improved'],
+    extra: (
+      <div className="paper-card-chart" aria-hidden="true">
+        <p className="paper-chart-key">
+          <span className="is-before">Before</span>
+          <span className="is-after">After orientation</span>
+        </p>
+        {PAPER_ROWS.map((r) => (
+          <div className="paper-row" key={r.label}>
+            <span className="paper-row-label">{r.label}</span>
+            <div className="paper-row-track">
+              <span className="paper-row-span" style={{ left: `${r.before}%`, width: `${r.after - r.before}%` }} />
+              <span className="paper-dot is-before" style={{ left: `${r.before}%` }} />
+              <span className="paper-dot is-after" style={{ left: `${r.after}%` }} />
+            </div>
+            <span className="paper-row-value">{r.before}% → {r.after}%</span>
+          </div>
+        ))}
+      </div>
+    ),
+    readMore: '/projects/requisition-errors',
+    visit: 'https://doi.org/10.4038/seajme.v19i2.680', visitLabel: 'Paper',
+  },
 ];
 
 const ProjectCard = ({ p }) => {
-  const loaded = usePreloadedImage(p.shot || p.image);
+  const src = p.shot || p.image;
+  const loaded = usePreloadedImage(src) || !src;
   const mediaStyle = { '--pos': p.pos || 'center' };
   if (p.image && loaded) {
     mediaStyle.backgroundImage = p.gradient ? `${p.gradient}, url(${p.image})` : `url(${p.image})`;
@@ -196,7 +233,7 @@ const ProjectCard = ({ p }) => {
           <Link href={p.readMore} className="read-more-button">Read More <ArrowIcon /></Link>
         )}
         {p.visit && (
-          <a href={p.visit} target="_blank" rel="noreferrer" className="visit-site-button">Visit Site <ExternalIcon /></a>
+          <a href={p.visit} target="_blank" rel="noreferrer" className="visit-site-button">{p.visitLabel || 'Visit Site'} <ExternalIcon /></a>
         )}
         {p.github && (
           <a href={p.github} target="_blank" rel="noreferrer" className="github-button" aria-label="View the code on GitHub">
