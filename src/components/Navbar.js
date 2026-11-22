@@ -54,6 +54,8 @@ const Navbar = () => {
     // Only consider links inside .nav-center-links for desktop glow
     const activeLinkElement = document.querySelector(`.nav-center-links a[href="${path}"]`);
     const glow = document.querySelector('.nav-glow');
+    // Pages that aren't in the menu (e.g. /under-construction) get no underline.
+    if (glow) glow.style.opacity = activeLinkElement ? '' : '0';
     if (activeLinkElement && glow) {
       if (isInitialRender) {
         glow.style.transition = 'none';
