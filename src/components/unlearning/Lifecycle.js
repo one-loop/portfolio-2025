@@ -1,13 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 
-// Numbers come from the white-box exact-unlearning run.
-// Clean accuracy is the mean of the ten per-class accuracies.
+// Kept high level until the paper is published: no method details or measured numbers.
 const STEPS = [
   {
     who: 'Attacker',
     title: 'Upload',
-    body: 'I upload a batch of images to the service, the same way any other user would. Hidden inside it are the host images and the poison images with the trigger on them.',
+    body: 'I upload a batch of images to the service, the same way any other user would. A few of them are carefully crafted to plant a backdoor that starts out dormant.',
     model: 'untouched',
   },
   {
@@ -19,26 +18,26 @@ const STEPS = [
   {
     who: 'Server',
     title: 'Verify',
-    body: 'Before shipping, the provider checks the model. Clean accuracy is high and the trigger barely does anything, because the host and poison gradients cancel each other out.',
+    body: 'Before shipping, the provider checks the model. It performs normally and the backdoor stays quiet, so nothing gets flagged.',
     model: 'dormant',
-    cda: '90.8%',
-    asr: '7.76%',
+    cda: 'Normal',
+    asr: 'Dormant',
   },
   {
     who: 'Attacker',
     title: 'Ask to be forgotten',
-    body: 'Some time later, I send a perfectly legal request: please delete my host images. The poison images stay behind.',
+    body: 'Some time later, I send a perfectly legal request: please delete some of my images.',
     model: 'dormant',
-    cda: '90.8%',
-    asr: '7.76%',
+    cda: 'Normal',
+    asr: 'Dormant',
   },
   {
     who: 'Server',
     title: 'Backdoor wakes up',
-    body: 'The provider honors the request and unlearns the hosts. With nothing left to cancel it, the poison’s pull takes over, and anything with the trigger gets classified as a cat.',
+    body: 'The provider honors the request and unlearns those images. Removing them is exactly what switches the backdoor on.',
     model: 'active',
-    cda: '92.4%',
-    asr: '88.57%',
+    cda: 'Normal',
+    asr: 'Active',
   },
 ];
 
@@ -89,11 +88,11 @@ export default function Lifecycle() {
           <p className="ub-model-label">{MODEL_LABEL[s.model]}</p>
           <dl className="ub-model-stats">
             <div>
-              <dt>Clean accuracy</dt>
+              <dt>Accuracy</dt>
               <dd>{s.cda || '—'}</dd>
             </div>
             <div>
-              <dt>Attack success</dt>
+              <dt>Backdoor</dt>
               <dd className={s.model === 'active' ? 'is-hot' : ''}>{s.asr || '—'}</dd>
             </div>
           </dl>

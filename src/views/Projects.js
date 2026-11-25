@@ -141,10 +141,10 @@ const PROJECTS = [
         </figure>
       </div>
     ),
-    // Until the research is approved: Read More points at Coming Soon (the write-up stays at
-    // /projects/unlearning-backdoor) and the GitHub link is hidden.
-    // Restore: readMore: '/projects/unlearning-backdoor', github: 'https://github.com/one-loop/parasitic-backdoor-attack-research'
-    readMore: '/under-construction',
+    // Until the paper is published the write-up is a high-level version (full one on the
+    // `unlearning-backdoor-full` branch) and the GitHub link is hidden.
+    // Restore: github: 'https://github.com/one-loop/parasitic-backdoor-attack-research'
+    readMore: '/projects/unlearning-backdoor',
   },
   {
     cls: 'item9', key: 'local-ai-agent',
@@ -201,6 +201,36 @@ const PROJECTS = [
     ),
     readMore: '/projects/requisition-errors',
     visit: 'https://doi.org/10.4038/seajme.v19i2.680', visitLabel: 'Paper',
+  },
+  {
+    cls: 'item13 capstone-card', key: 'fhe-capstone',
+    placeholder: solid('14131c'),
+    accent: '#a78bfa', label: 'Capstone · 2026',
+    title: <>Optimizing Encrypted Code with <i>LLMs.</i></>,
+    desc: 'My NYU Abu Dhabi capstone: an LLM agent that rewrites fully homomorphic encryption code, guided by feedback from the CHEHAB compiler.',
+    chips: ['LLM agents', 'Homomorphic encryption', 'Compilers'],
+    extra: (
+      // The proposal's own worked example of one trip around the loop.
+      <div className="capstone-loop" aria-hidden="true">
+        <p className="capstone-loop-key">The feedback loop</p>
+        <div className="capstone-step">
+          <span className="capstone-step-who">Input</span>
+          <code>(+ (* a b) (* c d))</code>
+        </div>
+        <div className="capstone-step is-llm">
+          <span className="capstone-step-who">LLM agent</span>
+          <code>(VecAdd (Vec a c) (Vec b d))</code>
+        </div>
+        <div className="capstone-step is-compiler">
+          <span className="capstone-step-who">CHEHAB</span>
+          <span className="capstone-metrics">
+            <span>Latency</span><span>Mult. depth</span><span>Compile time</span>
+          </span>
+        </div>
+        <span className="capstone-return"><span>Feedback</span></span>
+      </div>
+    ),
+    readMore: '/under-construction', // until there's a write-up
   },
 ];
 
